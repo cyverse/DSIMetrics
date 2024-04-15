@@ -1,0 +1,19 @@
+2024-04-11 15:24:16,704 - DEBUG - Starting new HTTPS connection (1): zoom.us:443
+2024-04-11 15:24:17,068 - DEBUG - https://zoom.us:443 "POST /oauth/token HTTP/1.1" 200 None
+2024-04-11 15:24:17,080 - DEBUG - Starting new HTTPS connection (1): api.zoom.us:443
+2024-04-11 15:24:17,787 - DEBUG - https://api.zoom.us:443 "GET /v2/past_meetings/86423223879/participants HTTP/1.1" 200 1398
+2024-04-11 15:24:17,829 - INFO - Checked in:
+2024-04-11 15:24:17,829 - INFO - {'id': 'sD3qoXikR6mHJ_M1lpA2Vw', 'user_id': '16778240', 'name': 'Brenda Huppenthal', 'user_email': 'bhuppenthal@arizona.edu', 'join_time': '2024-04-11T20:44:36Z', 'leave_time': '2024-04-11T21:46:49Z', 'duration': 3733, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}
+2024-04-11 15:24:17,829 - INFO - --------------------------------------
+2024-04-11 15:24:17,833 - INFO - Checked in:
+2024-04-11 15:24:17,834 - INFO - {'id': 'yXxO1qhiQkmJy4b80J8xAQ', 'user_id': '16779264', 'name': 'Carlos Lizárraga', 'user_email': 'clizarraga@arizona.edu', 'join_time': '2024-04-11T20:46:28Z', 'leave_time': '2024-04-11T21:46:49Z', 'duration': 3621, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}
+2024-04-11 15:24:17,834 - INFO - --------------------------------------
+2024-04-11 15:24:17,838 - INFO - Checked in:
+2024-04-11 15:24:17,838 - INFO - {'id': 'o1pAyc_uTtuYYJLZ7uy_Cg', 'user_id': '16780288', 'name': 'Paul Gignac', 'user_email': 'pgignac@arizona.edu', 'join_time': '2024-04-11T20:59:02Z', 'leave_time': '2024-04-11T21:29:27Z', 'duration': 1825, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}
+2024-04-11 15:24:17,838 - INFO - --------------------------------------
+2024-04-11 15:24:17,841 - INFO - Checked in:
+2024-04-11 15:24:17,842 - INFO - {'id': 'rfI315RERdOdYj-pjZ6DdQ', 'user_id': '16781312', 'name': 'Christopher Bilinski', 'user_email': 'cbilinski@arizona.edu', 'join_time': '2024-04-11T21:00:00Z', 'leave_time': '2024-04-11T21:44:15Z', 'duration': 2655, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}
+2024-04-11 15:24:17,842 - INFO - --------------------------------------
+2024-04-11 15:24:17,848 - INFO - Checked in:
+2024-04-11 15:24:17,848 - INFO - {'id': 'vwMyYuolSe-jzaXoRXkOEQ', 'user_id': '16782336', 'name': 'Megh Krishnaswamy', 'user_email': 'mkrishnaswamy@arizona.edu', 'join_time': '2024-04-11T21:31:39Z', 'leave_time': '2024-04-11T21:46:49Z', 'duration': 910, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}
+2024-04-11 15:24:17,848 - INFO - --------------------------------------
