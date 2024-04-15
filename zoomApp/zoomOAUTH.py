@@ -1,12 +1,14 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, url_for, redirect, session, flash
 import requests
 import base64
 import psycopg2
 import logging
 
-#logging.basicConfig(filename = 'logging.log', level=logging.DEBUG)
+logging.basicConfig(filename = '/home/austinmedina/DataLabMetrtics/logging/ZoomFlaskAppLogging.log', level=logging.DEBUG)
 
 app = Flask(__name__)
+
+app.secret_key = 'DSIMetrics'
 
 @app.route('/')
 def credentials():
@@ -24,11 +26,11 @@ def getAccess():
                             port = 5432)
     cur = conn.cursor()
     cur.execute("""SELECT ElementValue FROM programvariables WHERE ElementName = 'zoom_client_id'""")
-    tokenList = cur.fetchall()
+    tokenList = cur.fetchone()
     client_id = tokenList[0]
 
     cur.execute("""SELECT ElementValue FROM programvariables WHERE ElementName = 'zoom_client_secret'""")
-    tokenList = cur.fetchall()
+    tokenList = cur.fetchone()
     client_secret = tokenList[0]
     conn.commit()
 
@@ -51,16 +53,45 @@ def getAccess():
     response = requests.post("https://zoom.us/oauth/token", headers=headers, data=data)
 
     re = response.json()
-    app.logger.debug(re)
-    refreshToken = re['refresh_token']
-
-    updateString = f"UPDATE programvariables SET ElementValue = '{refreshToken}' WHERE ElementName = 'refresh_token';"
-    cur.execute(updateString)
+    app.logger.info(re)
+    session['refresh_token'] = re['refresh_token']
+    
     conn.commit()
     cur.close()
     conn.close()
     
-    return "<h1>DONE!<h1>"
+    return redirect(url_for("getMeetingID"))
+
+@app.route('/getMeetingID', methods=["GET", "POST"])
+def getMeetingID():
+    if request.method == "POST":
+        zoomID = request.form.get("meetingID")
+
+        if not zoomID:
+            flash('Zoom Meeting ID is required!', 'error')
+            return redirect(url_for('getMeetingID'))
+        else:
+            conn = psycopg2.connect(database = "DataLab", 
+                                    user = "postgres", 
+                                    host= 'localhost',
+                                    password = "",
+                                    port = 5432)
+            cur = conn.cursor()
+
+            cur.execute("""
+                        INSERT INTO ZoomRefreshTokens (ZoomMeetingID, RefreshToken) 
+                        VALUES (%s, %s)
+                        ON CONFLICT (ZoomMeetingID) DO UPDATE
+                        SET RefreshToken = EXCLUDED.RefreshToken
+                        """, (zoomID, session['refresh_token']))
+            conn.commit()
+            cur.close()
+            conn.close()
+
+            flash(f'Successfully entered Meeting ID: {zoomID}', 'success')
+            return redirect(url_for('getMeetingID'))
+    
+    return render_template('zoomIDForm.html')
 
 if __name__ == '__main__':
   app.run()

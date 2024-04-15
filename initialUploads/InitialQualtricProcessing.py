@@ -72,9 +72,9 @@ def getResponse(surveyId, conn, cur):
 def processOldFile(file):
     try:
         with zipfile.ZipFile(io.BytesIO(file.content)) as z:
-            z.extractall('./qualtricsCSV/')
+            z.extractall('/home/austinmedina/DataLabMetrtics/initialUploads/qualtricsCSVs/')
             fileName = z.namelist()
-            rawSurvey = pd.read_csv('./qualtricsCSV/' + fileName[0])
+            rawSurvey = pd.read_csv('/home/austinmedina/DataLabMetrtics/initialUploads/qualtricsCSVs/' + fileName[0])
     except(zipfile.BadZipFile, IndexError, pd.errors.EmptyDataError, pd.errors.ParserError, KeyError) as e:
         logging.critical(f"Error processing file: {e}")
         return None, None
@@ -108,9 +108,9 @@ def processOldFile(file):
 def processSpecialFile(file):
     try:
         with zipfile.ZipFile(io.BytesIO(file.content)) as z:
-            z.extractall('./qualtricsCSV/')
+            z.extractall('/home/austinmedina/DataLabMetrtics/initialUploads/qualtricsCSVs/')
             fileName = z.namelist()
-            rawSurvey = pd.read_csv('./qualtricsCSV/' + fileName[0])
+            rawSurvey = pd.read_csv('/home/austinmedina/DataLabMetrtics/initialUploads/qualtricsCSVs/' + fileName[0])
     except(zipfile.BadZipFile, IndexError, pd.errors.EmptyDataError, pd.errors.ParserError, KeyError) as e:
         logging.critical(f"Error processing file: {e}")
         return None, None
@@ -176,7 +176,7 @@ def uploadRegistrees(UA, conn, cur):
         createRegistreeWorkshop(row, hashedNum, conn, cur)    
 
 def initializeQualtrics(conn, cur):
-    logging.basicConfig(filename='qualtricsLogging.log', level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
+    logging.basicConfig(filename='/home/austinmedina/DataLabMetrtics/logging/qualtricsInitialLogging.log', level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
     logging.info("Starting, initial qualtrics upload.")
     seriesSurveyIDs = ["SV_5BjjU8Exp3GS2sS", "SV_9mLQalGxqyBb7mK", "SV_0fbG5COlxNj5phI", "SV_9TDHtSJnP6d32gS", "SV_exLckAyzfnUTKHc", "SV_9Rfr1WtU3kfMXjw"]
 
