@@ -1,4 +1,4 @@
-#!/home/austinmedina/DataLabMetrtics/Metrics/bin/python3
+#!/home/austinmedina/DataLabMetrtics/Metrics/bin/python
 
 import requests
 import base64
@@ -149,23 +149,23 @@ def zoomProcess(conn, cur):
 
     for workshop in workshopList:
         participants = getParticipants(workshop[2], conn, cur) #ZoomMeetingID
+        if participants:
+            logging.info(participants)
 
-        for person in participants:
-            #Get the times the person was in the zoom
-            userJoin = convert_to_arizona_time(person['join_time'])
-            userLeave = convert_to_arizona_time(person['leave_time'])
+            for person in participants:
+                #Get the times the person was in the zoom
+                userJoin = convert_to_arizona_time(person['join_time'])
+                userLeave = convert_to_arizona_time(person['leave_time'])
 
-            #Find the difference between when they joined and when they left. The combine is needed since you cannot subtract datetime.time objects
-            joinDifference = abs(datetime.combine(today, userJoin) - datetime.combine(today, workshop[3]))
-            leaveDifference = abs(datetime.combine(today, userLeave) - datetime.combine(today, workshop[4]))
+                #Find the difference between when they joined and when they left. The combine is needed since you cannot subtract datetime.time objects
+                joinDifference = abs(datetime.combine(today, userJoin) - datetime.combine(today, workshop[3]))
+                leaveDifference = abs(datetime.combine(today, userLeave) - datetime.combine(today, workshop[4]))
 
-            #If they joined within 15 minutes of the start time or left within 15 minutes of the end time we will check them in
-            if ( joinDifference < timedelta(minutes=15) ) or  ( leaveDifference < timedelta(minutes=15) ):
-                print("Checked in: " + person['user_email'])
-                uploadCheckIn(pd.Series(person), workshop[0], conn, cur)
-                logging.info("Checked in:")
-                logging.info(person)
-                logging.info("--------------------------------------")
+                #If they joined within 15 minutes of the start time or left within 15 minutes of the end time we will check them in
+                if ( joinDifference < timedelta(minutes=15) ) or  ( leaveDifference < timedelta(minutes=15) ):
+                    uploadCheckIn(pd.Series(person), workshop[0], conn, cur)
+                    logging.info("Checked in: " + person['user_email'])
+                    logging.info("--------------------------------------")
 
 if __name__ == '__main__':
     conn = psycopg2.connect(database = "DataLab", 
@@ -177,7 +177,8 @@ if __name__ == '__main__':
     cur = conn.cursor()
 
     logging.basicConfig(filename='/home/austinmedina/DataLabMetrtics/logging/zoomLogging.log', level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
-    
+    logging.FileHandler('/home/austinmedina/DataLabMetrtics/logging/zoomLogging.log')
+
     logging.info("STARTING ZOOM CHECK IN PROCESS")
     logging.info("--------------------------------------")
     zoomProcess(conn, cur)

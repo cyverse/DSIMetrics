@@ -1,7 +1,14 @@
 version: "3"
 
-# optional ports are specified throughout for more advanced use cases.
+# Define the networks section
+networks:
+  metricsNetwork:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.18.0.0/24
 
+# Specify the services
 services:
   app-service:
     restart: unless-stopped
@@ -30,8 +37,8 @@ services:
     depends_on:
       - worker-service
       - redis-service
-  #    volumes:
-  #      - /some/path/to/plugins:/plugins
+    networks:
+      - metricsNetwork # Specify the network for this service
 
   worker-service:
     restart: unless-stopped
@@ -57,6 +64,8 @@ services:
     depends_on:
       - redis-service
       - minio-service
+    networks:
+      - metricsNetwork # Specify the network for this service
 
   minio-service:
     restart: unless-stopped
@@ -73,6 +82,8 @@ services:
       interval: 30s
       timeout: 20s
       retries: 3
+    networks:
+      - metricsNetwork # Specify the network for this service
 
   proxy-service:
     restart: unless-stopped
@@ -94,6 +105,8 @@ services:
       - worker-service
       - app-service
       - couchdb-service
+    networks:
+      - metricsNetwork # Specify the network for this service
 
   couchdb-service:
     restart: unless-stopped
@@ -104,6 +117,8 @@ services:
       - TARGETBUILD=docker-compose
     volumes:
       - couchdb3_data:/opt/couchdb/data
+    networks:
+      - metricsNetwork # Specify the network for this service
 
   redis-service:
     restart: unless-stopped
@@ -111,6 +126,8 @@ services:
     command: redis-server --requirepass "${REDIS_PASSWORD}"
     volumes:
       - redis_data:/data
+    networks:
+      - metricsNetwork # Specify the network for this service
 
   watchtower-service:
     restart: always
@@ -124,7 +141,10 @@ services:
       - WATCHTOWER_CLEANUP=true
     labels:
       - "com.centurylinklabs.watchtower.enable=false"
+    networks:
+      - metricsNetwork # Specify the network for this service
 
+# Define the volumes section
 volumes:
   couchdb3_data:
     driver: local

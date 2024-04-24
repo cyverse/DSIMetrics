@@ -2,4 +2,6 @@ Metrics/
 .vscode/
 initialUploads/zoomCSVs
 unitTesting/qualtricsCSV
+productionScripts/qualtricsCSVs
+initialUploads/qualtricsCSVs
 

@@ -4,6 +4,7 @@ import requests
 from bs4 import BeautifulSoup
 import re
 import json
+import logging
 
 def scrapeWorkshops(url, seriesName):
     response = requests.get(url)
@@ -104,14 +105,15 @@ def scrapeWorkshops(url, seriesName):
         return pd.DataFrame(data, columns = ['Date', 'WorkshopName'])
     else:
         return None
-    
-def uploadSeriesZoomID(id, conn, cur):
-    cur.execute("""
-        INSERT INTO ZoomRefreshTokens (ZoomMeetingID)
-        VALUES (%s)
-        ON CONFLICT DO NOTHING;
-    """, (id,))
-    conn.commit()
+
+# Not needed, because the zoom insert needs to happen before the series insert which is handled by budibase 
+# def uploadSeriesZoomID(id, conn, cur):
+#     cur.execute("""
+#         INSERT INTO ZoomRefreshTokens (ZoomMeetingID)
+#         VALUES (%s)
+#         ON CONFLICT DO NOTHING;
+#     """, (id,))
+#     conn.commit()
 
 def uploadWorkshops(workshops, conn, cur):
     for _, row in workshops.iterrows():
@@ -124,8 +126,11 @@ def uploadWorkshops(workshops, conn, cur):
     return
     
 def initializeWorkshops(series, conn, cur):
+    logging.basicConfig(filename='/home/austinmedina/DataLabMetrtics/logging/seriesListener.log', level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
+    logging.FileHandler('/home/austinmedina/DataLabMetrtics/logging/seriesListener.log')
+
     seriesDict = json.loads(series)
-    uploadSeriesZoomID(seriesDict['zoommeetingid'], conn, cur)
+    #uploadSeriesZoomID(seriesDict['zoommeetingid'], conn, cur)
     
     workshops = pd.DataFrame()
 

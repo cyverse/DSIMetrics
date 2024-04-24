@@ -1,8 +1,12 @@
+#!/home/austinmedina/DataLabMetrtics/Metrics/bin/python
+
 import pandas as pd
 import requests
 import time
 import zipfile
 import io
+import logging
+import psycopg2
 
 def getResponse(surveyId, conn, cur) :
     """Initiates the export for a qualtrics form to a csv.
@@ -35,8 +39,8 @@ def getResponse(surveyId, conn, cur) :
         status= ""
         percentComplete = ""
         exportProgressId = response["result"]["progressId"]
-        print("File Export Started")
-        print("---")
+        logging.info("File Export Started")
+        logging.info("---")
         url = f"https://iad1.qualtrics.com/API/v3/surveys/{surveyId}/export-responses/{exportProgressId}"
         while ((httpStatus == "200 - OK") and (percentComplete != 100) and (status != "failed")):
             headers = {
@@ -49,13 +53,13 @@ def getResponse(surveyId, conn, cur) :
             httpStatus = response["meta"]["httpStatus"]
             status = response["result"]["status"]
             percentComplete = response["result"]["percentComplete"]
-            print(f"File Export {percentComplete}% complete")
-            print("---")
+            logging.info(f"File Export {percentComplete}% complete")
+            logging.info("---")
             time.sleep(2)
 
         if((percentComplete == 100) and (status == "complete")):
-            print("File Export Complete")
-            print("---")
+            logging.info("File Export Complete")
+            logging.info("---")
             fileId = response["result"]["fileId"]
             url = f"https://iad1.qualtrics.com/API/v3/surveys/{surveyId}/export-responses/{fileId}/file"
             headers = {
@@ -64,18 +68,18 @@ def getResponse(surveyId, conn, cur) :
             }
             response = requests.get(url, headers=headers)
             if (response.status_code == 200):
-                print("File successfully retrieved!")
+                logging.info("File successfully retrieved!")
                 return response
             else:
-                print(f"Failed to retrieve file. Error: {response.status_code}")
-                print("---------------------------------------")
+                logging.info(f"Failed to retrieve file. Error: {response.status_code}")
+                logging.info("---------------------------------------")
                 return None
         else:
-            print(f'Export failed:\nhttpStatus: {response["meta"]["httpStatus"]}\npercentComplete: {response["result"]["percentComplete"]}\nStatus: {response["result"]["status"]}')
+            logging.info(f'Export failed:\nhttpStatus: {response["meta"]["httpStatus"]}\npercentComplete: {response["result"]["percentComplete"]}\nStatus: {response["result"]["status"]}')
 
             return None
     else:
-        print(f"Export unable to start. Error: {response.status_code}")
+        logging.info(f"Export unable to start. Error: {response.status_code}")
         return None
 
 def processFile(file, seriesName):
@@ -95,15 +99,15 @@ def processFile(file, seriesName):
     """
     try:
         with zipfile.ZipFile(io.BytesIO(file.content)) as z:
-            z.extractall()
+            z.extractall('/home/austinmedina/DataLabMetrtics/productionScripts/qualtricsCSVs/')
             fileName = z.namelist()
-            rawSurvey = pd.read_csv(fileName[0])
+            rawSurvey = pd.read_csv('/home/austinmedina/DataLabMetrtics/productionScripts/qualtricsCSVs/' + fileName[0])
     except(zipfile.BadZipFile, IndexError, pd.errors.EmptyDataError, pd.errors.ParserError, KeyError) as e:
-        print(f"Error processing file: {e}")
+        logging.critical(f"Error processing file: {e}")
         return None, None
 
-    print(f"File {fileName} extracted successfully")
-    print("---")
+    logging.info(f"File {fileName} extracted successfully")
+    logging.info("---")
     filteredSurvey = rawSurvey[rawSurvey.columns[18:25]]
     filteredSurvey.columns = ["UA_Afilliated", "FirstName", "LastName", "UAEmail", "Organization", "NonUAEmail", "Workshops", "Reconnect"]
     filteredSurvey = filteredSurvey.drop([0,1])
@@ -121,8 +125,8 @@ def processFile(file, seriesName):
     UA_Filtered = UA[["UAEmail", "FirstName", "LastName", "Workshops", "Series", "Reconnect"]]
     nonUA_Filtered = nonUA[["NonUAEmail", "FirstName", "LastName", "Organization", "Workshops", "Series", "Reconnect"]]
 
-    print(f"File {fileName} processed successfully")
-    print("---------------------------------------")
+    logging.info(f"File {fileName} processed successfully")
+    logging.info("---------------------------------------")
 
     return UA_Filtered, nonUA_Filtered
 
@@ -169,17 +173,17 @@ def processAllQualtrics(conn, cur):
         UA = pd.DataFrame()
         nonUA = pd.DataFrame()
 
-        print(f"Starting export for surveyId: {series[1]}")
-        print("------------------------------------------------")
+        logging.info(f"Starting export for surveyId: {series[1]}")
+        logging.info("------------------------------------------------")
         file = getResponse(series[1], conn, cur)
-        print("------------------------------------------------\n")
+        logging.info("------------------------------------------------\n")
 
-        print(f"Starting processing for surveyId: {series[1]}")
-        print("------------------------------------------------")
+        logging.info(f"Starting processing for surveyId: {series[1]}")
+        logging.info("------------------------------------------------")
         UA, nonUA = processFile(file, series[0])
 
-        print(f"Survey {series[1]} Complete!")
-        print("------------------------------------------------\n")
+        logging.info(f"Survey {series[1]} Complete!")
+        logging.info("------------------------------------------------\n")
 
         UA['NetID'] = None
         UA['College'] = None
@@ -187,11 +191,26 @@ def processAllQualtrics(conn, cur):
         UA['Major'] = None
         UA = UA[['FirstName', 'LastName', 'NetID', 'Email', 'College', 'Department', 'Major', 'Series', 'Workshops', 'Recontact']]
         #Once available, run the NetID system
-        uploadRegistrees(UA, series[2])
+        uploadRegistrees(UA, series[2], conn, cur)
 
         nonUA['Department'] = None
         nonUA['Major'] = None
         nonUA['NetID'] = None
         nonUA.columns = ['NonUAEmail', 'FirstName', 'LastName', 'College', 'Workshops', 'Series', 'Reconnect', 'Department', 'Major', 'NetID']
         nonUA = nonUA[['FirstName', 'LastName', 'NetID', 'Email', 'College', 'Department', 'Major', 'Series', 'Workshops', 'Reconnect']]
-        uploadRegistrees(nonUA, series[2])
+        uploadRegistrees(nonUA, series[2], conn, cur)
+
+if __name__ == '__main__':
+    conn = psycopg2.connect(database = "DataLab", 
+                            user = "postgres", 
+                            host= 'localhost',
+                            password = "",
+                            port = 5432)
+
+    cur = conn.cursor()
+
+    logging.basicConfig(filename='/home/austinmedina/DataLabMetrtics/logging/qualtricsLogging.log', level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
+    logging.FileHandler('/home/austinmedina/DataLabMetrtics/logging/qualtricsLogging.log')
+    logging.info("Starting, qualtrics check and upload.")
+
+    processAllQualtrics(conn, cur)

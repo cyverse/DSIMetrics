@@ -1,19 +1,1055 @@
-2024-04-11 15:24:16,704 - DEBUG - Starting new HTTPS connection (1): zoom.us:443
-2024-04-11 15:24:17,068 - DEBUG - https://zoom.us:443 "POST /oauth/token HTTP/1.1" 200 None
-2024-04-11 15:24:17,080 - DEBUG - Starting new HTTPS connection (1): api.zoom.us:443
-2024-04-11 15:24:17,787 - DEBUG - https://api.zoom.us:443 "GET /v2/past_meetings/86423223879/participants HTTP/1.1" 200 1398
-2024-04-11 15:24:17,829 - INFO - Checked in:
-2024-04-11 15:24:17,829 - INFO - {'id': 'sD3qoXikR6mHJ_M1lpA2Vw', 'user_id': '16778240', 'name': 'Brenda Huppenthal', 'user_email': 'bhuppenthal@arizona.edu', 'join_time': '2024-04-11T20:44:36Z', 'leave_time': '2024-04-11T21:46:49Z', 'duration': 3733, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}
-2024-04-11 15:24:17,829 - INFO - --------------------------------------
-2024-04-11 15:24:17,833 - INFO - Checked in:
-2024-04-11 15:24:17,834 - INFO - {'id': 'yXxO1qhiQkmJy4b80J8xAQ', 'user_id': '16779264', 'name': 'Carlos Lizárraga', 'user_email': 'clizarraga@arizona.edu', 'join_time': '2024-04-11T20:46:28Z', 'leave_time': '2024-04-11T21:46:49Z', 'duration': 3621, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}
-2024-04-11 15:24:17,834 - INFO - --------------------------------------
-2024-04-11 15:24:17,838 - INFO - Checked in:
-2024-04-11 15:24:17,838 - INFO - {'id': 'o1pAyc_uTtuYYJLZ7uy_Cg', 'user_id': '16780288', 'name': 'Paul Gignac', 'user_email': 'pgignac@arizona.edu', 'join_time': '2024-04-11T20:59:02Z', 'leave_time': '2024-04-11T21:29:27Z', 'duration': 1825, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}
-2024-04-11 15:24:17,838 - INFO - --------------------------------------
-2024-04-11 15:24:17,841 - INFO - Checked in:
-2024-04-11 15:24:17,842 - INFO - {'id': 'rfI315RERdOdYj-pjZ6DdQ', 'user_id': '16781312', 'name': 'Christopher Bilinski', 'user_email': 'cbilinski@arizona.edu', 'join_time': '2024-04-11T21:00:00Z', 'leave_time': '2024-04-11T21:44:15Z', 'duration': 2655, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}
-2024-04-11 15:24:17,842 - INFO - --------------------------------------
-2024-04-11 15:24:17,848 - INFO - Checked in:
-2024-04-11 15:24:17,848 - INFO - {'id': 'vwMyYuolSe-jzaXoRXkOEQ', 'user_id': '16782336', 'name': 'Megh Krishnaswamy', 'user_email': 'mkrishnaswamy@arizona.edu', 'join_time': '2024-04-11T21:31:39Z', 'leave_time': '2024-04-11T21:46:49Z', 'duration': 910, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}
-2024-04-11 15:24:17,848 - INFO - --------------------------------------
+2024-04-17 10:13:01,977 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-17 10:13:01,977 - INFO - --------------------------------------
+2024-04-17 10:13:01,986 - DEBUG - Starting new HTTPS connection (1): zoom.us:443
+2024-04-17 10:13:02,314 - DEBUG - https://zoom.us:443 "POST /oauth/token HTTP/1.1" 200 None
+2024-04-17 10:13:02,322 - DEBUG - Starting new HTTPS connection (1): api.zoom.us:443
+2024-04-17 10:13:02,866 - DEBUG - https://api.zoom.us:443 "GET /v2/past_meetings/86423223879/participants HTTP/1.1" 200 3503
+2024-04-17 10:13:02,870 - INFO - [{'id': 'sMyAcaaxTRqIxL1pmqO_tw', 'user_id': '16778240', 'name': 'Jeffrey Kent Gillan', 'user_email': 'jgillan@arizona.edu', 'join_time': '2024-04-16T20:47:38Z', 'leave_time': '2024-04-16T22:44:47Z', 'duration': 7029, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': 'yXxO1qhiQkmJy4b80J8xAQ', 'user_id': '16779264', 'name': 'Carlos Lizárraga', 'user_email': 'clizarraga@arizona.edu', 'join_time': '2024-04-16T20:49:23Z', 'leave_time': '2024-04-16T22:44:09Z', 'duration': 6886, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': '12q8HI6ZQp6rSJ3dIsgpPA', 'user_id': '16792576', 'name': 'Fangyue Zhang', 'user_email': 'fangyuezhang@arizona.edu', 'join_time': '2024-04-16T20:59:06Z', 'leave_time': '2024-04-16T22:44:47Z', 'duration': 6341, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': 'p98ewe2sRBqhhGzADPXuCg', 'user_id': '16793600', 'name': 'Rubab Saher', 'user_email': 'rsaher@arizona.edu', 'join_time': '2024-04-16T20:59:19Z', 'leave_time': '2024-04-16T21:55:48Z', 'duration': 3389, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': 'gNN3D7YDStWoXrlAcRBkww', 'user_id': '16794624', 'name': 'Ravindra Dwivedi', 'user_email': 'ravindradwivedi@arizona.edu', 'join_time': '2024-04-16T21:00:06Z', 'leave_time': '2024-04-16T21:55:40Z', 'duration': 3334, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': 'FB8-bAyqRoCCxoJM7lV4Tg', 'user_id': '16795648', 'name': 'Henri Combrink', 'user_email': 'henricombrink@arizona.edu', 'join_time': '2024-04-16T21:01:26Z', 'leave_time': '2024-04-16T21:55:44Z', 'duration': 3258, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': '', 'user_id': '16796672', 'name': 'PRANEETHA YANNAM', 'user_email': '', 'join_time': '2024-04-16T21:02:35Z', 'leave_time': '2024-04-16T21:49:04Z', 'duration': 2789, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': '', 'user_id': '16797696', 'name': 'Matina Donaldson-Matasci', 'user_email': '', 'join_time': '2024-04-16T21:04:05Z', 'leave_time': '2024-04-16T21:55:37Z', 'duration': 3092, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': '', 'user_id': '16798720', 'name': 'Ryan Stephenson', 'user_email': '', 'join_time': '2024-04-16T21:11:57Z', 'leave_time': '2024-04-16T21:55:49Z', 'duration': 2632, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': '', 'user_id': '16799744', 'name': 'Vidhya Anand', 'user_email': '', 'join_time': '2024-04-16T21:15:23Z', 'leave_time': '2024-04-16T21:56:17Z', 'duration': 2454, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': '', 'user_id': '16800768', 'name': 'PRANEETHA YANNAM', 'user_email': '', 'join_time': '2024-04-16T21:49:05Z', 'leave_time': '2024-04-16T21:56:18Z', 'duration': 433, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': 'rfI315RERdOdYj-pjZ6DdQ', 'user_id': '16801792', 'name': 'Christopher Bilinski', 'user_email': 'cbilinski@arizona.edu', 'join_time': '2024-04-16T22:01:47Z', 'leave_time': '2024-04-16T22:17:34Z', 'duration': 947, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': '', 'user_id': '16802816', 'name': 'LAKSHMI NEHARIKa ANCHULA', 'user_email': '', 'join_time': '2024-04-16T22:01:56Z', 'leave_time': '2024-04-16T22:18:02Z', 'duration': 966, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': 'gNN3D7YDStWoXrlAcRBkww', 'user_id': '16803840', 'name': 'Ravindra Dwivedi', 'user_email': 'ravindradwivedi@arizona.edu', 'join_time': '2024-04-16T22:10:48Z', 'leave_time': '2024-04-16T22:11:22Z', 'duration': 34, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}]
+2024-04-17 10:13:02,908 - DEBUG - Starting new HTTPS connection (1): zoom.us:443
+2024-04-17 10:13:03,263 - DEBUG - https://zoom.us:443 "POST /oauth/token HTTP/1.1" 200 None
+2024-04-17 10:13:03,274 - DEBUG - Starting new HTTPS connection (1): api.zoom.us:443
+2024-04-17 10:13:03,931 - DEBUG - https://api.zoom.us:443 "GET /v2/past_meetings/86423223879/participants HTTP/1.1" 200 3503
+2024-04-17 10:13:03,935 - INFO - [{'id': 'sMyAcaaxTRqIxL1pmqO_tw', 'user_id': '16778240', 'name': 'Jeffrey Kent Gillan', 'user_email': 'jgillan@arizona.edu', 'join_time': '2024-04-16T20:47:38Z', 'leave_time': '2024-04-16T22:44:47Z', 'duration': 7029, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': 'yXxO1qhiQkmJy4b80J8xAQ', 'user_id': '16779264', 'name': 'Carlos Lizárraga', 'user_email': 'clizarraga@arizona.edu', 'join_time': '2024-04-16T20:49:23Z', 'leave_time': '2024-04-16T22:44:09Z', 'duration': 6886, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': '12q8HI6ZQp6rSJ3dIsgpPA', 'user_id': '16792576', 'name': 'Fangyue Zhang', 'user_email': 'fangyuezhang@arizona.edu', 'join_time': '2024-04-16T20:59:06Z', 'leave_time': '2024-04-16T22:44:47Z', 'duration': 6341, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': 'p98ewe2sRBqhhGzADPXuCg', 'user_id': '16793600', 'name': 'Rubab Saher', 'user_email': 'rsaher@arizona.edu', 'join_time': '2024-04-16T20:59:19Z', 'leave_time': '2024-04-16T21:55:48Z', 'duration': 3389, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': 'gNN3D7YDStWoXrlAcRBkww', 'user_id': '16794624', 'name': 'Ravindra Dwivedi', 'user_email': 'ravindradwivedi@arizona.edu', 'join_time': '2024-04-16T21:00:06Z', 'leave_time': '2024-04-16T21:55:40Z', 'duration': 3334, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': 'FB8-bAyqRoCCxoJM7lV4Tg', 'user_id': '16795648', 'name': 'Henri Combrink', 'user_email': 'henricombrink@arizona.edu', 'join_time': '2024-04-16T21:01:26Z', 'leave_time': '2024-04-16T21:55:44Z', 'duration': 3258, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': '', 'user_id': '16796672', 'name': 'PRANEETHA YANNAM', 'user_email': '', 'join_time': '2024-04-16T21:02:35Z', 'leave_time': '2024-04-16T21:49:04Z', 'duration': 2789, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': '', 'user_id': '16797696', 'name': 'Matina Donaldson-Matasci', 'user_email': '', 'join_time': '2024-04-16T21:04:05Z', 'leave_time': '2024-04-16T21:55:37Z', 'duration': 3092, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': '', 'user_id': '16798720', 'name': 'Ryan Stephenson', 'user_email': '', 'join_time': '2024-04-16T21:11:57Z', 'leave_time': '2024-04-16T21:55:49Z', 'duration': 2632, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': '', 'user_id': '16799744', 'name': 'Vidhya Anand', 'user_email': '', 'join_time': '2024-04-16T21:15:23Z', 'leave_time': '2024-04-16T21:56:17Z', 'duration': 2454, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': '', 'user_id': '16800768', 'name': 'PRANEETHA YANNAM', 'user_email': '', 'join_time': '2024-04-16T21:49:05Z', 'leave_time': '2024-04-16T21:56:18Z', 'duration': 433, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': 'rfI315RERdOdYj-pjZ6DdQ', 'user_id': '16801792', 'name': 'Christopher Bilinski', 'user_email': 'cbilinski@arizona.edu', 'join_time': '2024-04-16T22:01:47Z', 'leave_time': '2024-04-16T22:17:34Z', 'duration': 947, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': '', 'user_id': '16802816', 'name': 'LAKSHMI NEHARIKa ANCHULA', 'user_email': '', 'join_time': '2024-04-16T22:01:56Z', 'leave_time': '2024-04-16T22:18:02Z', 'duration': 966, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': 'gNN3D7YDStWoXrlAcRBkww', 'user_id': '16803840', 'name': 'Ravindra Dwivedi', 'user_email': 'ravindradwivedi@arizona.edu', 'join_time': '2024-04-16T22:10:48Z', 'leave_time': '2024-04-16T22:11:22Z', 'duration': 34, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}]
+2024-04-17 10:30:02,259 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-17 10:30:02,259 - INFO - --------------------------------------
+2024-04-17 10:30:02,269 - DEBUG - Starting new HTTPS connection (1): zoom.us:443
+2024-04-17 10:30:02,618 - DEBUG - https://zoom.us:443 "POST /oauth/token HTTP/1.1" 200 None
+2024-04-17 10:30:02,627 - DEBUG - Starting new HTTPS connection (1): api.zoom.us:443
+2024-04-17 10:30:03,394 - DEBUG - https://api.zoom.us:443 "GET /v2/past_meetings/86423223879/participants HTTP/1.1" 200 3503
+2024-04-17 10:30:03,399 - INFO - [{'id': 'sMyAcaaxTRqIxL1pmqO_tw', 'user_id': '16778240', 'name': 'Jeffrey Kent Gillan', 'user_email': 'jgillan@arizona.edu', 'join_time': '2024-04-16T20:47:38Z', 'leave_time': '2024-04-16T22:44:47Z', 'duration': 7029, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': 'yXxO1qhiQkmJy4b80J8xAQ', 'user_id': '16779264', 'name': 'Carlos Lizárraga', 'user_email': 'clizarraga@arizona.edu', 'join_time': '2024-04-16T20:49:23Z', 'leave_time': '2024-04-16T22:44:09Z', 'duration': 6886, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': '12q8HI6ZQp6rSJ3dIsgpPA', 'user_id': '16792576', 'name': 'Fangyue Zhang', 'user_email': 'fangyuezhang@arizona.edu', 'join_time': '2024-04-16T20:59:06Z', 'leave_time': '2024-04-16T22:44:47Z', 'duration': 6341, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': 'p98ewe2sRBqhhGzADPXuCg', 'user_id': '16793600', 'name': 'Rubab Saher', 'user_email': 'rsaher@arizona.edu', 'join_time': '2024-04-16T20:59:19Z', 'leave_time': '2024-04-16T21:55:48Z', 'duration': 3389, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': 'gNN3D7YDStWoXrlAcRBkww', 'user_id': '16794624', 'name': 'Ravindra Dwivedi', 'user_email': 'ravindradwivedi@arizona.edu', 'join_time': '2024-04-16T21:00:06Z', 'leave_time': '2024-04-16T21:55:40Z', 'duration': 3334, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': 'FB8-bAyqRoCCxoJM7lV4Tg', 'user_id': '16795648', 'name': 'Henri Combrink', 'user_email': 'henricombrink@arizona.edu', 'join_time': '2024-04-16T21:01:26Z', 'leave_time': '2024-04-16T21:55:44Z', 'duration': 3258, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': '', 'user_id': '16796672', 'name': 'PRANEETHA YANNAM', 'user_email': '', 'join_time': '2024-04-16T21:02:35Z', 'leave_time': '2024-04-16T21:49:04Z', 'duration': 2789, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': '', 'user_id': '16797696', 'name': 'Matina Donaldson-Matasci', 'user_email': '', 'join_time': '2024-04-16T21:04:05Z', 'leave_time': '2024-04-16T21:55:37Z', 'duration': 3092, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': '', 'user_id': '16798720', 'name': 'Ryan Stephenson', 'user_email': '', 'join_time': '2024-04-16T21:11:57Z', 'leave_time': '2024-04-16T21:55:49Z', 'duration': 2632, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': '', 'user_id': '16799744', 'name': 'Vidhya Anand', 'user_email': '', 'join_time': '2024-04-16T21:15:23Z', 'leave_time': '2024-04-16T21:56:17Z', 'duration': 2454, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': '', 'user_id': '16800768', 'name': 'PRANEETHA YANNAM', 'user_email': '', 'join_time': '2024-04-16T21:49:05Z', 'leave_time': '2024-04-16T21:56:18Z', 'duration': 433, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': 'rfI315RERdOdYj-pjZ6DdQ', 'user_id': '16801792', 'name': 'Christopher Bilinski', 'user_email': 'cbilinski@arizona.edu', 'join_time': '2024-04-16T22:01:47Z', 'leave_time': '2024-04-16T22:17:34Z', 'duration': 947, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': '', 'user_id': '16802816', 'name': 'LAKSHMI NEHARIKa ANCHULA', 'user_email': '', 'join_time': '2024-04-16T22:01:56Z', 'leave_time': '2024-04-16T22:18:02Z', 'duration': 966, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': 'gNN3D7YDStWoXrlAcRBkww', 'user_id': '16803840', 'name': 'Ravindra Dwivedi', 'user_email': 'ravindradwivedi@arizona.edu', 'join_time': '2024-04-16T22:10:48Z', 'leave_time': '2024-04-16T22:11:22Z', 'duration': 34, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}]
+2024-04-17 10:30:03,435 - DEBUG - Starting new HTTPS connection (1): zoom.us:443
+2024-04-17 10:30:03,788 - DEBUG - https://zoom.us:443 "POST /oauth/token HTTP/1.1" 200 None
+2024-04-17 10:30:03,798 - DEBUG - Starting new HTTPS connection (1): api.zoom.us:443
+2024-04-17 10:30:04,678 - DEBUG - https://api.zoom.us:443 "GET /v2/past_meetings/86423223879/participants HTTP/1.1" 200 3503
+2024-04-17 10:30:04,683 - INFO - [{'id': 'sMyAcaaxTRqIxL1pmqO_tw', 'user_id': '16778240', 'name': 'Jeffrey Kent Gillan', 'user_email': 'jgillan@arizona.edu', 'join_time': '2024-04-16T20:47:38Z', 'leave_time': '2024-04-16T22:44:47Z', 'duration': 7029, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': 'yXxO1qhiQkmJy4b80J8xAQ', 'user_id': '16779264', 'name': 'Carlos Lizárraga', 'user_email': 'clizarraga@arizona.edu', 'join_time': '2024-04-16T20:49:23Z', 'leave_time': '2024-04-16T22:44:09Z', 'duration': 6886, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': '12q8HI6ZQp6rSJ3dIsgpPA', 'user_id': '16792576', 'name': 'Fangyue Zhang', 'user_email': 'fangyuezhang@arizona.edu', 'join_time': '2024-04-16T20:59:06Z', 'leave_time': '2024-04-16T22:44:47Z', 'duration': 6341, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': 'p98ewe2sRBqhhGzADPXuCg', 'user_id': '16793600', 'name': 'Rubab Saher', 'user_email': 'rsaher@arizona.edu', 'join_time': '2024-04-16T20:59:19Z', 'leave_time': '2024-04-16T21:55:48Z', 'duration': 3389, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': 'gNN3D7YDStWoXrlAcRBkww', 'user_id': '16794624', 'name': 'Ravindra Dwivedi', 'user_email': 'ravindradwivedi@arizona.edu', 'join_time': '2024-04-16T21:00:06Z', 'leave_time': '2024-04-16T21:55:40Z', 'duration': 3334, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': 'FB8-bAyqRoCCxoJM7lV4Tg', 'user_id': '16795648', 'name': 'Henri Combrink', 'user_email': 'henricombrink@arizona.edu', 'join_time': '2024-04-16T21:01:26Z', 'leave_time': '2024-04-16T21:55:44Z', 'duration': 3258, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': '', 'user_id': '16796672', 'name': 'PRANEETHA YANNAM', 'user_email': '', 'join_time': '2024-04-16T21:02:35Z', 'leave_time': '2024-04-16T21:49:04Z', 'duration': 2789, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': '', 'user_id': '16797696', 'name': 'Matina Donaldson-Matasci', 'user_email': '', 'join_time': '2024-04-16T21:04:05Z', 'leave_time': '2024-04-16T21:55:37Z', 'duration': 3092, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': '', 'user_id': '16798720', 'name': 'Ryan Stephenson', 'user_email': '', 'join_time': '2024-04-16T21:11:57Z', 'leave_time': '2024-04-16T21:55:49Z', 'duration': 2632, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': '', 'user_id': '16799744', 'name': 'Vidhya Anand', 'user_email': '', 'join_time': '2024-04-16T21:15:23Z', 'leave_time': '2024-04-16T21:56:17Z', 'duration': 2454, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': '', 'user_id': '16800768', 'name': 'PRANEETHA YANNAM', 'user_email': '', 'join_time': '2024-04-16T21:49:05Z', 'leave_time': '2024-04-16T21:56:18Z', 'duration': 433, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': 'rfI315RERdOdYj-pjZ6DdQ', 'user_id': '16801792', 'name': 'Christopher Bilinski', 'user_email': 'cbilinski@arizona.edu', 'join_time': '2024-04-16T22:01:47Z', 'leave_time': '2024-04-16T22:17:34Z', 'duration': 947, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': '', 'user_id': '16802816', 'name': 'LAKSHMI NEHARIKa ANCHULA', 'user_email': '', 'join_time': '2024-04-16T22:01:56Z', 'leave_time': '2024-04-16T22:18:02Z', 'duration': 966, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': 'gNN3D7YDStWoXrlAcRBkww', 'user_id': '16803840', 'name': 'Ravindra Dwivedi', 'user_email': 'ravindradwivedi@arizona.edu', 'join_time': '2024-04-16T22:10:48Z', 'leave_time': '2024-04-16T22:11:22Z', 'duration': 34, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}]
+2024-04-17 11:30:02,413 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-17 11:30:02,413 - INFO - --------------------------------------
+2024-04-17 11:30:02,424 - DEBUG - Starting new HTTPS connection (1): zoom.us:443
+2024-04-17 11:30:02,822 - DEBUG - https://zoom.us:443 "POST /oauth/token HTTP/1.1" 200 None
+2024-04-17 11:30:02,833 - DEBUG - Starting new HTTPS connection (1): api.zoom.us:443
+2024-04-17 11:30:03,468 - DEBUG - https://api.zoom.us:443 "GET /v2/past_meetings/86423223879/participants HTTP/1.1" 200 348
+2024-04-17 11:30:03,473 - INFO - [{'id': 'sD3qoXikR6mHJ_M1lpA2Vw', 'user_id': '16778240', 'name': 'Brenda Huppenthal', 'user_email': 'bhuppenthal@arizona.edu', 'join_time': '2024-04-17T18:12:14Z', 'leave_time': '2024-04-17T18:12:21Z', 'duration': 7, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}]
+2024-04-17 11:30:03,509 - DEBUG - Starting new HTTPS connection (1): zoom.us:443
+2024-04-17 11:30:03,865 - DEBUG - https://zoom.us:443 "POST /oauth/token HTTP/1.1" 200 None
+2024-04-17 11:30:03,876 - DEBUG - Starting new HTTPS connection (1): api.zoom.us:443
+2024-04-17 11:30:04,695 - DEBUG - https://api.zoom.us:443 "GET /v2/past_meetings/86423223879/participants HTTP/1.1" 200 348
+2024-04-17 11:30:04,700 - INFO - [{'id': 'sD3qoXikR6mHJ_M1lpA2Vw', 'user_id': '16778240', 'name': 'Brenda Huppenthal', 'user_email': 'bhuppenthal@arizona.edu', 'join_time': '2024-04-17T18:12:14Z', 'leave_time': '2024-04-17T18:12:21Z', 'duration': 7, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}]
+2024-04-17 12:30:02,333 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-17 12:30:02,333 - INFO - --------------------------------------
+2024-04-17 12:30:02,342 - DEBUG - Starting new HTTPS connection (1): zoom.us:443
+2024-04-17 12:30:02,768 - DEBUG - https://zoom.us:443 "POST /oauth/token HTTP/1.1" 200 None
+2024-04-17 12:30:02,779 - DEBUG - Starting new HTTPS connection (1): api.zoom.us:443
+2024-04-17 12:30:03,450 - DEBUG - https://api.zoom.us:443 "GET /v2/past_meetings/86423223879/participants HTTP/1.1" 200 348
+2024-04-17 12:30:03,455 - INFO - [{'id': 'sD3qoXikR6mHJ_M1lpA2Vw', 'user_id': '16778240', 'name': 'Brenda Huppenthal', 'user_email': 'bhuppenthal@arizona.edu', 'join_time': '2024-04-17T18:12:14Z', 'leave_time': '2024-04-17T18:12:21Z', 'duration': 7, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}]
+2024-04-17 12:30:03,493 - DEBUG - Starting new HTTPS connection (1): zoom.us:443
+2024-04-17 12:30:03,856 - DEBUG - https://zoom.us:443 "POST /oauth/token HTTP/1.1" 200 None
+2024-04-17 12:30:03,866 - DEBUG - Starting new HTTPS connection (1): api.zoom.us:443
+2024-04-17 12:30:04,445 - DEBUG - https://api.zoom.us:443 "GET /v2/past_meetings/86423223879/participants HTTP/1.1" 200 348
+2024-04-17 12:30:04,451 - INFO - [{'id': 'sD3qoXikR6mHJ_M1lpA2Vw', 'user_id': '16778240', 'name': 'Brenda Huppenthal', 'user_email': 'bhuppenthal@arizona.edu', 'join_time': '2024-04-17T18:12:14Z', 'leave_time': '2024-04-17T18:12:21Z', 'duration': 7, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}]
+2024-04-17 13:30:02,169 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-17 13:30:02,169 - INFO - --------------------------------------
+2024-04-17 13:30:02,183 - DEBUG - Starting new HTTPS connection (1): zoom.us:443
+2024-04-17 13:30:02,596 - DEBUG - https://zoom.us:443 "POST /oauth/token HTTP/1.1" 200 None
+2024-04-17 13:30:02,608 - DEBUG - Starting new HTTPS connection (1): api.zoom.us:443
+2024-04-17 13:30:03,223 - DEBUG - https://api.zoom.us:443 "GET /v2/past_meetings/86423223879/participants HTTP/1.1" 200 348
+2024-04-17 13:30:03,228 - INFO - [{'id': 'sD3qoXikR6mHJ_M1lpA2Vw', 'user_id': '16778240', 'name': 'Brenda Huppenthal', 'user_email': 'bhuppenthal@arizona.edu', 'join_time': '2024-04-17T18:12:14Z', 'leave_time': '2024-04-17T18:12:21Z', 'duration': 7, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}]
+2024-04-17 13:30:03,263 - DEBUG - Starting new HTTPS connection (1): zoom.us:443
+2024-04-17 13:30:03,630 - DEBUG - https://zoom.us:443 "POST /oauth/token HTTP/1.1" 200 None
+2024-04-17 13:30:03,641 - DEBUG - Starting new HTTPS connection (1): api.zoom.us:443
+2024-04-17 13:30:04,478 - DEBUG - https://api.zoom.us:443 "GET /v2/past_meetings/86423223879/participants HTTP/1.1" 200 348
+2024-04-17 13:30:04,483 - INFO - [{'id': 'sD3qoXikR6mHJ_M1lpA2Vw', 'user_id': '16778240', 'name': 'Brenda Huppenthal', 'user_email': 'bhuppenthal@arizona.edu', 'join_time': '2024-04-17T18:12:14Z', 'leave_time': '2024-04-17T18:12:21Z', 'duration': 7, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}]
+2024-04-17 14:30:02,167 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-17 14:30:02,168 - INFO - --------------------------------------
+2024-04-17 14:30:02,177 - DEBUG - Starting new HTTPS connection (1): zoom.us:443
+2024-04-17 14:30:02,504 - DEBUG - https://zoom.us:443 "POST /oauth/token HTTP/1.1" 200 None
+2024-04-17 14:30:02,513 - DEBUG - Starting new HTTPS connection (1): api.zoom.us:443
+2024-04-17 14:30:03,012 - DEBUG - https://api.zoom.us:443 "GET /v2/past_meetings/86423223879/participants HTTP/1.1" 200 348
+2024-04-17 14:30:03,015 - INFO - [{'id': 'sD3qoXikR6mHJ_M1lpA2Vw', 'user_id': '16778240', 'name': 'Brenda Huppenthal', 'user_email': 'bhuppenthal@arizona.edu', 'join_time': '2024-04-17T18:12:14Z', 'leave_time': '2024-04-17T18:12:21Z', 'duration': 7, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}]
+2024-04-17 14:30:03,049 - DEBUG - Starting new HTTPS connection (1): zoom.us:443
+2024-04-17 14:30:03,407 - DEBUG - https://zoom.us:443 "POST /oauth/token HTTP/1.1" 200 None
+2024-04-17 14:30:03,417 - DEBUG - Starting new HTTPS connection (1): api.zoom.us:443
+2024-04-17 14:30:04,100 - DEBUG - https://api.zoom.us:443 "GET /v2/past_meetings/86423223879/participants HTTP/1.1" 200 348
+2024-04-17 14:30:04,105 - INFO - [{'id': 'sD3qoXikR6mHJ_M1lpA2Vw', 'user_id': '16778240', 'name': 'Brenda Huppenthal', 'user_email': 'bhuppenthal@arizona.edu', 'join_time': '2024-04-17T18:12:14Z', 'leave_time': '2024-04-17T18:12:21Z', 'duration': 7, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}]
+2024-04-17 15:30:02,780 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-17 15:30:02,781 - INFO - --------------------------------------
+2024-04-17 15:30:02,790 - DEBUG - Starting new HTTPS connection (1): zoom.us:443
+2024-04-17 15:30:03,109 - DEBUG - https://zoom.us:443 "POST /oauth/token HTTP/1.1" 200 None
+2024-04-17 15:30:03,117 - DEBUG - Starting new HTTPS connection (1): api.zoom.us:443
+2024-04-17 15:30:03,694 - DEBUG - https://api.zoom.us:443 "GET /v2/past_meetings/86423223879/participants HTTP/1.1" 200 348
+2024-04-17 15:30:03,698 - INFO - [{'id': 'sD3qoXikR6mHJ_M1lpA2Vw', 'user_id': '16778240', 'name': 'Brenda Huppenthal', 'user_email': 'bhuppenthal@arizona.edu', 'join_time': '2024-04-17T18:12:14Z', 'leave_time': '2024-04-17T18:12:21Z', 'duration': 7, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}]
+2024-04-17 15:30:03,733 - DEBUG - Starting new HTTPS connection (1): zoom.us:443
+2024-04-17 15:30:04,320 - DEBUG - https://zoom.us:443 "POST /oauth/token HTTP/1.1" 200 None
+2024-04-17 15:30:04,332 - DEBUG - Starting new HTTPS connection (1): api.zoom.us:443
+2024-04-17 15:30:04,819 - DEBUG - https://api.zoom.us:443 "GET /v2/past_meetings/86423223879/participants HTTP/1.1" 200 348
+2024-04-17 15:30:04,824 - INFO - [{'id': 'sD3qoXikR6mHJ_M1lpA2Vw', 'user_id': '16778240', 'name': 'Brenda Huppenthal', 'user_email': 'bhuppenthal@arizona.edu', 'join_time': '2024-04-17T18:12:14Z', 'leave_time': '2024-04-17T18:12:21Z', 'duration': 7, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}]
+2024-04-17 16:30:02,537 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-17 16:30:02,538 - INFO - --------------------------------------
+2024-04-17 16:30:02,547 - DEBUG - Starting new HTTPS connection (1): zoom.us:443
+2024-04-17 16:30:02,861 - DEBUG - https://zoom.us:443 "POST /oauth/token HTTP/1.1" 200 None
+2024-04-17 16:30:02,870 - DEBUG - Starting new HTTPS connection (1): api.zoom.us:443
+2024-04-17 16:30:03,523 - DEBUG - https://api.zoom.us:443 "GET /v2/past_meetings/86423223879/participants HTTP/1.1" 200 348
+2024-04-17 16:30:03,528 - INFO - [{'id': 'sD3qoXikR6mHJ_M1lpA2Vw', 'user_id': '16778240', 'name': 'Brenda Huppenthal', 'user_email': 'bhuppenthal@arizona.edu', 'join_time': '2024-04-17T18:12:14Z', 'leave_time': '2024-04-17T18:12:21Z', 'duration': 7, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}]
+2024-04-17 16:30:03,562 - DEBUG - Starting new HTTPS connection (1): zoom.us:443
+2024-04-17 16:30:03,935 - DEBUG - https://zoom.us:443 "POST /oauth/token HTTP/1.1" 200 None
+2024-04-17 16:30:03,946 - DEBUG - Starting new HTTPS connection (1): api.zoom.us:443
+2024-04-17 16:30:04,452 - DEBUG - https://api.zoom.us:443 "GET /v2/past_meetings/86423223879/participants HTTP/1.1" 200 348
+2024-04-17 16:30:04,458 - INFO - [{'id': 'sD3qoXikR6mHJ_M1lpA2Vw', 'user_id': '16778240', 'name': 'Brenda Huppenthal', 'user_email': 'bhuppenthal@arizona.edu', 'join_time': '2024-04-17T18:12:14Z', 'leave_time': '2024-04-17T18:12:21Z', 'duration': 7, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}]
+2024-04-17 17:30:02,228 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-17 17:30:02,228 - INFO - --------------------------------------
+2024-04-17 17:30:02,239 - DEBUG - Starting new HTTPS connection (1): zoom.us:443
+2024-04-17 17:30:02,641 - DEBUG - https://zoom.us:443 "POST /oauth/token HTTP/1.1" 200 None
+2024-04-17 17:30:02,652 - DEBUG - Starting new HTTPS connection (1): api.zoom.us:443
+2024-04-17 17:30:03,328 - DEBUG - https://api.zoom.us:443 "GET /v2/past_meetings/86423223879/participants HTTP/1.1" 200 823
+2024-04-17 17:30:03,332 - INFO - [{'id': 'Wg8f7A1CSZWFuyvumeq5Hw', 'user_id': '16778240', 'name': 'Mithün', 'user_email': 'mithunpaul@arizona.edu', 'join_time': '2024-04-17T23:02:30Z', 'leave_time': '2024-04-18T00:23:05Z', 'duration': 4835, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': '', 'user_id': '16779264', 'name': 'Urvika Gola', 'user_email': '', 'join_time': '2024-04-17T23:06:24Z', 'leave_time': '2024-04-18T00:23:05Z', 'duration': 4601, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': '02Kj-nRRSO2ySEejRfgICA', 'user_id': '16792576', 'name': 'Lyndsey (she/her/hers)', 'user_email': 'lyndseyedmonds@arizona.edu', 'join_time': '2024-04-17T23:23:57Z', 'leave_time': '2024-04-17T23:24:14Z', 'duration': 17, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}]
+2024-04-17 17:30:03,371 - INFO - Checked in:
+2024-04-17 17:30:03,371 - INFO - {'id': 'Wg8f7A1CSZWFuyvumeq5Hw', 'user_id': '16778240', 'name': 'Mithün', 'user_email': 'mithunpaul@arizona.edu', 'join_time': '2024-04-17T23:02:30Z', 'leave_time': '2024-04-18T00:23:05Z', 'duration': 4835, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}
+2024-04-17 17:30:03,371 - INFO - --------------------------------------
+2024-04-17 18:30:02,273 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-17 18:30:02,273 - INFO - --------------------------------------
+2024-04-17 18:30:02,284 - DEBUG - Starting new HTTPS connection (1): zoom.us:443
+2024-04-17 18:30:02,657 - DEBUG - https://zoom.us:443 "POST /oauth/token HTTP/1.1" 200 None
+2024-04-17 18:30:02,667 - DEBUG - Starting new HTTPS connection (1): api.zoom.us:443
+2024-04-17 18:30:03,292 - DEBUG - https://api.zoom.us:443 "GET /v2/past_meetings/86423223879/participants HTTP/1.1" 200 823
+2024-04-17 18:30:03,297 - INFO - [{'id': 'Wg8f7A1CSZWFuyvumeq5Hw', 'user_id': '16778240', 'name': 'Mithün', 'user_email': 'mithunpaul@arizona.edu', 'join_time': '2024-04-17T23:02:30Z', 'leave_time': '2024-04-18T00:23:05Z', 'duration': 4835, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': '', 'user_id': '16779264', 'name': 'Urvika Gola', 'user_email': '', 'join_time': '2024-04-17T23:06:24Z', 'leave_time': '2024-04-18T00:23:05Z', 'duration': 4601, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': '02Kj-nRRSO2ySEejRfgICA', 'user_id': '16792576', 'name': 'Lyndsey (she/her/hers)', 'user_email': 'lyndseyedmonds@arizona.edu', 'join_time': '2024-04-17T23:23:57Z', 'leave_time': '2024-04-17T23:24:14Z', 'duration': 17, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}]
+2024-04-17 18:30:03,335 - INFO - Checked in:
+2024-04-17 18:30:03,335 - INFO - {'id': 'Wg8f7A1CSZWFuyvumeq5Hw', 'user_id': '16778240', 'name': 'Mithün', 'user_email': 'mithunpaul@arizona.edu', 'join_time': '2024-04-17T23:02:30Z', 'leave_time': '2024-04-18T00:23:05Z', 'duration': 4835, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}
+2024-04-17 18:30:03,335 - INFO - --------------------------------------
+2024-04-17 19:30:02,264 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-17 19:30:02,265 - INFO - --------------------------------------
+2024-04-17 19:30:02,276 - DEBUG - Starting new HTTPS connection (1): zoom.us:443
+2024-04-17 19:30:02,648 - DEBUG - https://zoom.us:443 "POST /oauth/token HTTP/1.1" 200 None
+2024-04-17 19:30:02,657 - DEBUG - Starting new HTTPS connection (1): api.zoom.us:443
+2024-04-17 19:30:03,207 - DEBUG - https://api.zoom.us:443 "GET /v2/past_meetings/86423223879/participants HTTP/1.1" 200 823
+2024-04-17 19:30:03,212 - INFO - [{'id': 'Wg8f7A1CSZWFuyvumeq5Hw', 'user_id': '16778240', 'name': 'Mithün', 'user_email': 'mithunpaul@arizona.edu', 'join_time': '2024-04-17T23:02:30Z', 'leave_time': '2024-04-18T00:23:05Z', 'duration': 4835, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': '', 'user_id': '16779264', 'name': 'Urvika Gola', 'user_email': '', 'join_time': '2024-04-17T23:06:24Z', 'leave_time': '2024-04-18T00:23:05Z', 'duration': 4601, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': '02Kj-nRRSO2ySEejRfgICA', 'user_id': '16792576', 'name': 'Lyndsey (she/her/hers)', 'user_email': 'lyndseyedmonds@arizona.edu', 'join_time': '2024-04-17T23:23:57Z', 'leave_time': '2024-04-17T23:24:14Z', 'duration': 17, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}]
+2024-04-17 19:30:03,248 - INFO - Checked in:
+2024-04-17 19:30:03,248 - INFO - {'id': 'Wg8f7A1CSZWFuyvumeq5Hw', 'user_id': '16778240', 'name': 'Mithün', 'user_email': 'mithunpaul@arizona.edu', 'join_time': '2024-04-17T23:02:30Z', 'leave_time': '2024-04-18T00:23:05Z', 'duration': 4835, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}
+2024-04-17 19:30:03,248 - INFO - --------------------------------------
+2024-04-17 20:30:02,166 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-17 20:30:02,167 - INFO - --------------------------------------
+2024-04-17 20:30:02,178 - DEBUG - Starting new HTTPS connection (1): zoom.us:443
+2024-04-17 20:30:02,609 - DEBUG - https://zoom.us:443 "POST /oauth/token HTTP/1.1" 200 None
+2024-04-17 20:30:02,620 - DEBUG - Starting new HTTPS connection (1): api.zoom.us:443
+2024-04-17 20:30:03,370 - DEBUG - https://api.zoom.us:443 "GET /v2/past_meetings/86423223879/participants HTTP/1.1" 200 823
+2024-04-17 20:30:03,374 - INFO - [{'id': 'Wg8f7A1CSZWFuyvumeq5Hw', 'user_id': '16778240', 'name': 'Mithün', 'user_email': 'mithunpaul@arizona.edu', 'join_time': '2024-04-17T23:02:30Z', 'leave_time': '2024-04-18T00:23:05Z', 'duration': 4835, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': '', 'user_id': '16779264', 'name': 'Urvika Gola', 'user_email': '', 'join_time': '2024-04-17T23:06:24Z', 'leave_time': '2024-04-18T00:23:05Z', 'duration': 4601, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': '02Kj-nRRSO2ySEejRfgICA', 'user_id': '16792576', 'name': 'Lyndsey (she/her/hers)', 'user_email': 'lyndseyedmonds@arizona.edu', 'join_time': '2024-04-17T23:23:57Z', 'leave_time': '2024-04-17T23:24:14Z', 'duration': 17, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}]
+2024-04-17 20:30:03,408 - INFO - Checked in:
+2024-04-17 20:30:03,408 - INFO - {'id': 'Wg8f7A1CSZWFuyvumeq5Hw', 'user_id': '16778240', 'name': 'Mithün', 'user_email': 'mithunpaul@arizona.edu', 'join_time': '2024-04-17T23:02:30Z', 'leave_time': '2024-04-18T00:23:05Z', 'duration': 4835, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}
+2024-04-17 20:30:03,408 - INFO - --------------------------------------
+2024-04-17 21:30:02,313 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-17 21:30:02,314 - INFO - --------------------------------------
+2024-04-17 21:30:02,325 - DEBUG - Starting new HTTPS connection (1): zoom.us:443
+2024-04-17 21:30:02,724 - DEBUG - https://zoom.us:443 "POST /oauth/token HTTP/1.1" 200 None
+2024-04-17 21:30:02,736 - DEBUG - Starting new HTTPS connection (1): api.zoom.us:443
+2024-04-17 21:30:03,314 - DEBUG - https://api.zoom.us:443 "GET /v2/past_meetings/86423223879/participants HTTP/1.1" 200 823
+2024-04-17 21:30:03,318 - INFO - [{'id': 'Wg8f7A1CSZWFuyvumeq5Hw', 'user_id': '16778240', 'name': 'Mithün', 'user_email': 'mithunpaul@arizona.edu', 'join_time': '2024-04-17T23:02:30Z', 'leave_time': '2024-04-18T00:23:05Z', 'duration': 4835, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': '', 'user_id': '16779264', 'name': 'Urvika Gola', 'user_email': '', 'join_time': '2024-04-17T23:06:24Z', 'leave_time': '2024-04-18T00:23:05Z', 'duration': 4601, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': '02Kj-nRRSO2ySEejRfgICA', 'user_id': '16792576', 'name': 'Lyndsey (she/her/hers)', 'user_email': 'lyndseyedmonds@arizona.edu', 'join_time': '2024-04-17T23:23:57Z', 'leave_time': '2024-04-17T23:24:14Z', 'duration': 17, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}]
+2024-04-17 21:30:03,355 - INFO - Checked in:
+2024-04-17 21:30:03,355 - INFO - {'id': 'Wg8f7A1CSZWFuyvumeq5Hw', 'user_id': '16778240', 'name': 'Mithün', 'user_email': 'mithunpaul@arizona.edu', 'join_time': '2024-04-17T23:02:30Z', 'leave_time': '2024-04-18T00:23:05Z', 'duration': 4835, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}
+2024-04-17 21:30:03,356 - INFO - --------------------------------------
+2024-04-17 22:30:02,106 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-17 22:30:02,106 - INFO - --------------------------------------
+2024-04-17 22:30:02,119 - DEBUG - Starting new HTTPS connection (1): zoom.us:443
+2024-04-17 22:30:02,560 - DEBUG - https://zoom.us:443 "POST /oauth/token HTTP/1.1" 200 None
+2024-04-17 22:30:02,571 - DEBUG - Starting new HTTPS connection (1): api.zoom.us:443
+2024-04-17 22:30:03,334 - DEBUG - https://api.zoom.us:443 "GET /v2/past_meetings/86423223879/participants HTTP/1.1" 200 823
+2024-04-17 22:30:03,339 - INFO - [{'id': 'Wg8f7A1CSZWFuyvumeq5Hw', 'user_id': '16778240', 'name': 'Mithün', 'user_email': 'mithunpaul@arizona.edu', 'join_time': '2024-04-17T23:02:30Z', 'leave_time': '2024-04-18T00:23:05Z', 'duration': 4835, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': '', 'user_id': '16779264', 'name': 'Urvika Gola', 'user_email': '', 'join_time': '2024-04-17T23:06:24Z', 'leave_time': '2024-04-18T00:23:05Z', 'duration': 4601, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': '02Kj-nRRSO2ySEejRfgICA', 'user_id': '16792576', 'name': 'Lyndsey (she/her/hers)', 'user_email': 'lyndseyedmonds@arizona.edu', 'join_time': '2024-04-17T23:23:57Z', 'leave_time': '2024-04-17T23:24:14Z', 'duration': 17, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}]
+2024-04-17 22:30:03,377 - INFO - Checked in:
+2024-04-17 22:30:03,377 - INFO - {'id': 'Wg8f7A1CSZWFuyvumeq5Hw', 'user_id': '16778240', 'name': 'Mithün', 'user_email': 'mithunpaul@arizona.edu', 'join_time': '2024-04-17T23:02:30Z', 'leave_time': '2024-04-18T00:23:05Z', 'duration': 4835, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}
+2024-04-17 22:30:03,377 - INFO - --------------------------------------
+2024-04-17 23:30:02,288 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-17 23:30:02,288 - INFO - --------------------------------------
+2024-04-17 23:30:02,299 - DEBUG - Starting new HTTPS connection (1): zoom.us:443
+2024-04-17 23:30:02,688 - DEBUG - https://zoom.us:443 "POST /oauth/token HTTP/1.1" 200 None
+2024-04-17 23:30:02,700 - DEBUG - Starting new HTTPS connection (1): api.zoom.us:443
+2024-04-17 23:30:03,419 - DEBUG - https://api.zoom.us:443 "GET /v2/past_meetings/86423223879/participants HTTP/1.1" 200 823
+2024-04-17 23:30:03,424 - INFO - [{'id': 'Wg8f7A1CSZWFuyvumeq5Hw', 'user_id': '16778240', 'name': 'Mithün', 'user_email': 'mithunpaul@arizona.edu', 'join_time': '2024-04-17T23:02:30Z', 'leave_time': '2024-04-18T00:23:05Z', 'duration': 4835, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': '', 'user_id': '16779264', 'name': 'Urvika Gola', 'user_email': '', 'join_time': '2024-04-17T23:06:24Z', 'leave_time': '2024-04-18T00:23:05Z', 'duration': 4601, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': '02Kj-nRRSO2ySEejRfgICA', 'user_id': '16792576', 'name': 'Lyndsey (she/her/hers)', 'user_email': 'lyndseyedmonds@arizona.edu', 'join_time': '2024-04-17T23:23:57Z', 'leave_time': '2024-04-17T23:24:14Z', 'duration': 17, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}]
+2024-04-17 23:30:03,461 - INFO - Checked in:
+2024-04-17 23:30:03,461 - INFO - {'id': 'Wg8f7A1CSZWFuyvumeq5Hw', 'user_id': '16778240', 'name': 'Mithün', 'user_email': 'mithunpaul@arizona.edu', 'join_time': '2024-04-17T23:02:30Z', 'leave_time': '2024-04-18T00:23:05Z', 'duration': 4835, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}
+2024-04-17 23:30:03,461 - INFO - --------------------------------------
+2024-04-18 00:30:02,386 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-18 00:30:02,386 - INFO - --------------------------------------
+2024-04-18 00:30:02,396 - DEBUG - Starting new HTTPS connection (1): zoom.us:443
+2024-04-18 00:30:02,762 - DEBUG - https://zoom.us:443 "POST /oauth/token HTTP/1.1" 200 None
+2024-04-18 00:30:02,771 - DEBUG - Starting new HTTPS connection (1): api.zoom.us:443
+2024-04-18 00:30:03,501 - DEBUG - https://api.zoom.us:443 "GET /v2/past_meetings/86423223879/participants HTTP/1.1" 200 823
+2024-04-18 00:30:03,506 - INFO - [{'id': 'Wg8f7A1CSZWFuyvumeq5Hw', 'user_id': '16778240', 'name': 'Mithün', 'user_email': 'mithunpaul@arizona.edu', 'join_time': '2024-04-17T23:02:30Z', 'leave_time': '2024-04-18T00:23:05Z', 'duration': 4835, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': '', 'user_id': '16779264', 'name': 'Urvika Gola', 'user_email': '', 'join_time': '2024-04-17T23:06:24Z', 'leave_time': '2024-04-18T00:23:05Z', 'duration': 4601, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': '02Kj-nRRSO2ySEejRfgICA', 'user_id': '16792576', 'name': 'Lyndsey (she/her/hers)', 'user_email': 'lyndseyedmonds@arizona.edu', 'join_time': '2024-04-17T23:23:57Z', 'leave_time': '2024-04-17T23:24:14Z', 'duration': 17, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}]
+2024-04-18 01:30:02,312 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-18 01:30:02,312 - INFO - --------------------------------------
+2024-04-18 01:30:02,321 - DEBUG - Starting new HTTPS connection (1): zoom.us:443
+2024-04-18 01:30:02,687 - DEBUG - https://zoom.us:443 "POST /oauth/token HTTP/1.1" 200 None
+2024-04-18 01:30:02,697 - DEBUG - Starting new HTTPS connection (1): api.zoom.us:443
+2024-04-18 01:30:03,437 - DEBUG - https://api.zoom.us:443 "GET /v2/past_meetings/86423223879/participants HTTP/1.1" 200 823
+2024-04-18 01:30:03,441 - INFO - [{'id': 'Wg8f7A1CSZWFuyvumeq5Hw', 'user_id': '16778240', 'name': 'Mithün', 'user_email': 'mithunpaul@arizona.edu', 'join_time': '2024-04-17T23:02:30Z', 'leave_time': '2024-04-18T00:23:05Z', 'duration': 4835, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': '', 'user_id': '16779264', 'name': 'Urvika Gola', 'user_email': '', 'join_time': '2024-04-17T23:06:24Z', 'leave_time': '2024-04-18T00:23:05Z', 'duration': 4601, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': '02Kj-nRRSO2ySEejRfgICA', 'user_id': '16792576', 'name': 'Lyndsey (she/her/hers)', 'user_email': 'lyndseyedmonds@arizona.edu', 'join_time': '2024-04-17T23:23:57Z', 'leave_time': '2024-04-17T23:24:14Z', 'duration': 17, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}]
+2024-04-18 02:30:02,100 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-18 02:30:02,101 - INFO - --------------------------------------
+2024-04-18 02:30:02,111 - DEBUG - Starting new HTTPS connection (1): zoom.us:443
+2024-04-18 02:30:02,434 - DEBUG - https://zoom.us:443 "POST /oauth/token HTTP/1.1" 200 None
+2024-04-18 02:30:02,442 - DEBUG - Starting new HTTPS connection (1): api.zoom.us:443
+2024-04-18 02:30:03,056 - DEBUG - https://api.zoom.us:443 "GET /v2/past_meetings/86423223879/participants HTTP/1.1" 200 823
+2024-04-18 02:30:03,060 - INFO - [{'id': 'Wg8f7A1CSZWFuyvumeq5Hw', 'user_id': '16778240', 'name': 'Mithün', 'user_email': 'mithunpaul@arizona.edu', 'join_time': '2024-04-17T23:02:30Z', 'leave_time': '2024-04-18T00:23:05Z', 'duration': 4835, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': '', 'user_id': '16779264', 'name': 'Urvika Gola', 'user_email': '', 'join_time': '2024-04-17T23:06:24Z', 'leave_time': '2024-04-18T00:23:05Z', 'duration': 4601, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': '02Kj-nRRSO2ySEejRfgICA', 'user_id': '16792576', 'name': 'Lyndsey (she/her/hers)', 'user_email': 'lyndseyedmonds@arizona.edu', 'join_time': '2024-04-17T23:23:57Z', 'leave_time': '2024-04-17T23:24:14Z', 'duration': 17, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}]
+2024-04-18 03:30:02,753 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-18 03:30:02,753 - INFO - --------------------------------------
+2024-04-18 03:30:02,762 - DEBUG - Starting new HTTPS connection (1): zoom.us:443
+2024-04-18 03:30:03,112 - DEBUG - https://zoom.us:443 "POST /oauth/token HTTP/1.1" 200 None
+2024-04-18 03:30:03,122 - DEBUG - Starting new HTTPS connection (1): api.zoom.us:443
+2024-04-18 03:30:03,764 - DEBUG - https://api.zoom.us:443 "GET /v2/past_meetings/86423223879/participants HTTP/1.1" 200 823
+2024-04-18 03:30:03,769 - INFO - [{'id': 'Wg8f7A1CSZWFuyvumeq5Hw', 'user_id': '16778240', 'name': 'Mithün', 'user_email': 'mithunpaul@arizona.edu', 'join_time': '2024-04-17T23:02:30Z', 'leave_time': '2024-04-18T00:23:05Z', 'duration': 4835, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': '', 'user_id': '16779264', 'name': 'Urvika Gola', 'user_email': '', 'join_time': '2024-04-17T23:06:24Z', 'leave_time': '2024-04-18T00:23:05Z', 'duration': 4601, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': '02Kj-nRRSO2ySEejRfgICA', 'user_id': '16792576', 'name': 'Lyndsey (she/her/hers)', 'user_email': 'lyndseyedmonds@arizona.edu', 'join_time': '2024-04-17T23:23:57Z', 'leave_time': '2024-04-17T23:24:14Z', 'duration': 17, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}]
+2024-04-18 04:30:02,344 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-18 04:30:02,344 - INFO - --------------------------------------
+2024-04-18 04:30:02,352 - DEBUG - Starting new HTTPS connection (1): zoom.us:443
+2024-04-18 04:30:02,719 - DEBUG - https://zoom.us:443 "POST /oauth/token HTTP/1.1" 200 None
+2024-04-18 04:30:02,727 - DEBUG - Starting new HTTPS connection (1): api.zoom.us:443
+2024-04-18 04:30:03,392 - DEBUG - https://api.zoom.us:443 "GET /v2/past_meetings/86423223879/participants HTTP/1.1" 200 823
+2024-04-18 04:30:03,396 - INFO - [{'id': 'Wg8f7A1CSZWFuyvumeq5Hw', 'user_id': '16778240', 'name': 'Mithün', 'user_email': 'mithunpaul@arizona.edu', 'join_time': '2024-04-17T23:02:30Z', 'leave_time': '2024-04-18T00:23:05Z', 'duration': 4835, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': '', 'user_id': '16779264', 'name': 'Urvika Gola', 'user_email': '', 'join_time': '2024-04-17T23:06:24Z', 'leave_time': '2024-04-18T00:23:05Z', 'duration': 4601, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': '02Kj-nRRSO2ySEejRfgICA', 'user_id': '16792576', 'name': 'Lyndsey (she/her/hers)', 'user_email': 'lyndseyedmonds@arizona.edu', 'join_time': '2024-04-17T23:23:57Z', 'leave_time': '2024-04-17T23:24:14Z', 'duration': 17, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}]
+2024-04-18 05:30:02,096 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-18 05:30:02,096 - INFO - --------------------------------------
+2024-04-18 05:30:02,105 - DEBUG - Starting new HTTPS connection (1): zoom.us:443
+2024-04-18 05:30:02,438 - DEBUG - https://zoom.us:443 "POST /oauth/token HTTP/1.1" 200 None
+2024-04-18 05:30:02,447 - DEBUG - Starting new HTTPS connection (1): api.zoom.us:443
+2024-04-18 05:30:03,293 - DEBUG - https://api.zoom.us:443 "GET /v2/past_meetings/86423223879/participants HTTP/1.1" 200 823
+2024-04-18 05:30:03,298 - INFO - [{'id': 'Wg8f7A1CSZWFuyvumeq5Hw', 'user_id': '16778240', 'name': 'Mithün', 'user_email': 'mithunpaul@arizona.edu', 'join_time': '2024-04-17T23:02:30Z', 'leave_time': '2024-04-18T00:23:05Z', 'duration': 4835, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': '', 'user_id': '16779264', 'name': 'Urvika Gola', 'user_email': '', 'join_time': '2024-04-17T23:06:24Z', 'leave_time': '2024-04-18T00:23:05Z', 'duration': 4601, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': '02Kj-nRRSO2ySEejRfgICA', 'user_id': '16792576', 'name': 'Lyndsey (she/her/hers)', 'user_email': 'lyndseyedmonds@arizona.edu', 'join_time': '2024-04-17T23:23:57Z', 'leave_time': '2024-04-17T23:24:14Z', 'duration': 17, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}]
+2024-04-18 06:30:02,088 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-18 06:30:02,089 - INFO - --------------------------------------
+2024-04-18 06:30:02,098 - DEBUG - Starting new HTTPS connection (1): zoom.us:443
+2024-04-18 06:30:02,497 - DEBUG - https://zoom.us:443 "POST /oauth/token HTTP/1.1" 200 None
+2024-04-18 06:30:02,509 - DEBUG - Starting new HTTPS connection (1): api.zoom.us:443
+2024-04-18 06:30:03,254 - DEBUG - https://api.zoom.us:443 "GET /v2/past_meetings/86423223879/participants HTTP/1.1" 200 823
+2024-04-18 06:30:03,258 - INFO - [{'id': 'Wg8f7A1CSZWFuyvumeq5Hw', 'user_id': '16778240', 'name': 'Mithün', 'user_email': 'mithunpaul@arizona.edu', 'join_time': '2024-04-17T23:02:30Z', 'leave_time': '2024-04-18T00:23:05Z', 'duration': 4835, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': '', 'user_id': '16779264', 'name': 'Urvika Gola', 'user_email': '', 'join_time': '2024-04-17T23:06:24Z', 'leave_time': '2024-04-18T00:23:05Z', 'duration': 4601, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': '02Kj-nRRSO2ySEejRfgICA', 'user_id': '16792576', 'name': 'Lyndsey (she/her/hers)', 'user_email': 'lyndseyedmonds@arizona.edu', 'join_time': '2024-04-17T23:23:57Z', 'leave_time': '2024-04-17T23:24:14Z', 'duration': 17, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}]
+2024-04-18 07:30:02,045 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-18 07:30:02,045 - INFO - --------------------------------------
+2024-04-18 07:30:02,054 - DEBUG - Starting new HTTPS connection (1): zoom.us:443
+2024-04-18 07:30:02,451 - DEBUG - https://zoom.us:443 "POST /oauth/token HTTP/1.1" 200 None
+2024-04-18 07:30:02,460 - DEBUG - Starting new HTTPS connection (1): api.zoom.us:443
+2024-04-18 07:30:03,239 - DEBUG - https://api.zoom.us:443 "GET /v2/past_meetings/86423223879/participants HTTP/1.1" 200 823
+2024-04-18 07:30:03,244 - INFO - [{'id': 'Wg8f7A1CSZWFuyvumeq5Hw', 'user_id': '16778240', 'name': 'Mithün', 'user_email': 'mithunpaul@arizona.edu', 'join_time': '2024-04-17T23:02:30Z', 'leave_time': '2024-04-18T00:23:05Z', 'duration': 4835, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': '', 'user_id': '16779264', 'name': 'Urvika Gola', 'user_email': '', 'join_time': '2024-04-17T23:06:24Z', 'leave_time': '2024-04-18T00:23:05Z', 'duration': 4601, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': '02Kj-nRRSO2ySEejRfgICA', 'user_id': '16792576', 'name': 'Lyndsey (she/her/hers)', 'user_email': 'lyndseyedmonds@arizona.edu', 'join_time': '2024-04-17T23:23:57Z', 'leave_time': '2024-04-17T23:24:14Z', 'duration': 17, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}]
+2024-04-18 08:30:02,066 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-18 08:30:02,067 - INFO - --------------------------------------
+2024-04-18 08:30:02,077 - DEBUG - Starting new HTTPS connection (1): zoom.us:443
+2024-04-18 08:30:02,497 - DEBUG - https://zoom.us:443 "POST /oauth/token HTTP/1.1" 200 None
+2024-04-18 08:30:02,508 - DEBUG - Starting new HTTPS connection (1): api.zoom.us:443
+2024-04-18 08:30:03,349 - DEBUG - https://api.zoom.us:443 "GET /v2/past_meetings/86423223879/participants HTTP/1.1" 200 823
+2024-04-18 08:30:03,354 - INFO - [{'id': 'Wg8f7A1CSZWFuyvumeq5Hw', 'user_id': '16778240', 'name': 'Mithün', 'user_email': 'mithunpaul@arizona.edu', 'join_time': '2024-04-17T23:02:30Z', 'leave_time': '2024-04-18T00:23:05Z', 'duration': 4835, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': '', 'user_id': '16779264', 'name': 'Urvika Gola', 'user_email': '', 'join_time': '2024-04-17T23:06:24Z', 'leave_time': '2024-04-18T00:23:05Z', 'duration': 4601, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': '02Kj-nRRSO2ySEejRfgICA', 'user_id': '16792576', 'name': 'Lyndsey (she/her/hers)', 'user_email': 'lyndseyedmonds@arizona.edu', 'join_time': '2024-04-17T23:23:57Z', 'leave_time': '2024-04-17T23:24:14Z', 'duration': 17, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}]
+2024-04-18 09:30:02,030 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-18 09:30:02,030 - INFO - --------------------------------------
+2024-04-18 09:30:02,039 - DEBUG - Starting new HTTPS connection (1): zoom.us:443
+2024-04-18 09:30:02,432 - DEBUG - https://zoom.us:443 "POST /oauth/token HTTP/1.1" 200 None
+2024-04-18 09:30:02,443 - DEBUG - Starting new HTTPS connection (1): api.zoom.us:443
+2024-04-18 09:30:03,100 - DEBUG - https://api.zoom.us:443 "GET /v2/past_meetings/86423223879/participants HTTP/1.1" 200 823
+2024-04-18 09:30:03,104 - INFO - [{'id': 'Wg8f7A1CSZWFuyvumeq5Hw', 'user_id': '16778240', 'name': 'Mithün', 'user_email': 'mithunpaul@arizona.edu', 'join_time': '2024-04-17T23:02:30Z', 'leave_time': '2024-04-18T00:23:05Z', 'duration': 4835, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': '', 'user_id': '16779264', 'name': 'Urvika Gola', 'user_email': '', 'join_time': '2024-04-17T23:06:24Z', 'leave_time': '2024-04-18T00:23:05Z', 'duration': 4601, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': '02Kj-nRRSO2ySEejRfgICA', 'user_id': '16792576', 'name': 'Lyndsey (she/her/hers)', 'user_email': 'lyndseyedmonds@arizona.edu', 'join_time': '2024-04-17T23:23:57Z', 'leave_time': '2024-04-17T23:24:14Z', 'duration': 17, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}]
+2024-04-18 10:30:02,902 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-18 10:30:02,902 - INFO - --------------------------------------
+2024-04-18 10:30:02,912 - DEBUG - Starting new HTTPS connection (1): zoom.us:443
+2024-04-18 10:30:03,283 - DEBUG - https://zoom.us:443 "POST /oauth/token HTTP/1.1" 200 None
+2024-04-18 10:30:03,292 - DEBUG - Starting new HTTPS connection (1): api.zoom.us:443
+2024-04-18 10:30:04,044 - DEBUG - https://api.zoom.us:443 "GET /v2/past_meetings/86423223879/participants HTTP/1.1" 200 823
+2024-04-18 10:30:04,050 - INFO - [{'id': 'Wg8f7A1CSZWFuyvumeq5Hw', 'user_id': '16778240', 'name': 'Mithün', 'user_email': 'mithunpaul@arizona.edu', 'join_time': '2024-04-17T23:02:30Z', 'leave_time': '2024-04-18T00:23:05Z', 'duration': 4835, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': '', 'user_id': '16779264', 'name': 'Urvika Gola', 'user_email': '', 'join_time': '2024-04-17T23:06:24Z', 'leave_time': '2024-04-18T00:23:05Z', 'duration': 4601, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': '02Kj-nRRSO2ySEejRfgICA', 'user_id': '16792576', 'name': 'Lyndsey (she/her/hers)', 'user_email': 'lyndseyedmonds@arizona.edu', 'join_time': '2024-04-17T23:23:57Z', 'leave_time': '2024-04-17T23:24:14Z', 'duration': 17, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}]
+2024-04-18 11:30:02,782 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-18 11:30:02,782 - INFO - --------------------------------------
+2024-04-18 11:30:02,792 - DEBUG - Starting new HTTPS connection (1): zoom.us:443
+2024-04-18 11:30:03,150 - DEBUG - https://zoom.us:443 "POST /oauth/token HTTP/1.1" 200 None
+2024-04-18 11:30:03,159 - DEBUG - Starting new HTTPS connection (1): api.zoom.us:443
+2024-04-18 11:30:03,932 - DEBUG - https://api.zoom.us:443 "GET /v2/past_meetings/86423223879/participants HTTP/1.1" 200 823
+2024-04-18 11:30:03,937 - INFO - [{'id': 'Wg8f7A1CSZWFuyvumeq5Hw', 'user_id': '16778240', 'name': 'Mithün', 'user_email': 'mithunpaul@arizona.edu', 'join_time': '2024-04-17T23:02:30Z', 'leave_time': '2024-04-18T00:23:05Z', 'duration': 4835, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': '', 'user_id': '16779264', 'name': 'Urvika Gola', 'user_email': '', 'join_time': '2024-04-17T23:06:24Z', 'leave_time': '2024-04-18T00:23:05Z', 'duration': 4601, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': '02Kj-nRRSO2ySEejRfgICA', 'user_id': '16792576', 'name': 'Lyndsey (she/her/hers)', 'user_email': 'lyndseyedmonds@arizona.edu', 'join_time': '2024-04-17T23:23:57Z', 'leave_time': '2024-04-17T23:24:14Z', 'duration': 17, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}]
+2024-04-18 12:30:02,749 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-18 12:30:02,749 - INFO - --------------------------------------
+2024-04-18 12:30:02,761 - DEBUG - Starting new HTTPS connection (1): zoom.us:443
+2024-04-18 12:30:03,167 - DEBUG - https://zoom.us:443 "POST /oauth/token HTTP/1.1" 200 None
+2024-04-18 12:30:03,179 - DEBUG - Starting new HTTPS connection (1): api.zoom.us:443
+2024-04-18 12:30:03,998 - DEBUG - https://api.zoom.us:443 "GET /v2/past_meetings/86423223879/participants HTTP/1.1" 200 823
+2024-04-18 12:30:04,002 - INFO - [{'id': 'Wg8f7A1CSZWFuyvumeq5Hw', 'user_id': '16778240', 'name': 'Mithün', 'user_email': 'mithunpaul@arizona.edu', 'join_time': '2024-04-17T23:02:30Z', 'leave_time': '2024-04-18T00:23:05Z', 'duration': 4835, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': '', 'user_id': '16779264', 'name': 'Urvika Gola', 'user_email': '', 'join_time': '2024-04-17T23:06:24Z', 'leave_time': '2024-04-18T00:23:05Z', 'duration': 4601, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': '02Kj-nRRSO2ySEejRfgICA', 'user_id': '16792576', 'name': 'Lyndsey (she/her/hers)', 'user_email': 'lyndseyedmonds@arizona.edu', 'join_time': '2024-04-17T23:23:57Z', 'leave_time': '2024-04-17T23:24:14Z', 'duration': 17, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}]
+2024-04-18 13:30:02,494 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-18 13:30:02,494 - INFO - --------------------------------------
+2024-04-18 13:30:02,503 - DEBUG - Starting new HTTPS connection (1): zoom.us:443
+2024-04-18 13:30:02,867 - DEBUG - https://zoom.us:443 "POST /oauth/token HTTP/1.1" 200 None
+2024-04-18 13:30:02,876 - DEBUG - Starting new HTTPS connection (1): api.zoom.us:443
+2024-04-18 13:30:03,632 - DEBUG - https://api.zoom.us:443 "GET /v2/past_meetings/86423223879/participants HTTP/1.1" 200 823
+2024-04-18 13:30:03,637 - INFO - [{'id': 'Wg8f7A1CSZWFuyvumeq5Hw', 'user_id': '16778240', 'name': 'Mithün', 'user_email': 'mithunpaul@arizona.edu', 'join_time': '2024-04-17T23:02:30Z', 'leave_time': '2024-04-18T00:23:05Z', 'duration': 4835, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': '', 'user_id': '16779264', 'name': 'Urvika Gola', 'user_email': '', 'join_time': '2024-04-17T23:06:24Z', 'leave_time': '2024-04-18T00:23:05Z', 'duration': 4601, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': '02Kj-nRRSO2ySEejRfgICA', 'user_id': '16792576', 'name': 'Lyndsey (she/her/hers)', 'user_email': 'lyndseyedmonds@arizona.edu', 'join_time': '2024-04-17T23:23:57Z', 'leave_time': '2024-04-17T23:24:14Z', 'duration': 17, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}]
+2024-04-18 14:30:02,259 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-18 14:30:02,260 - INFO - --------------------------------------
+2024-04-18 14:30:02,271 - DEBUG - Starting new HTTPS connection (1): zoom.us:443
+2024-04-18 14:30:02,654 - DEBUG - https://zoom.us:443 "POST /oauth/token HTTP/1.1" 200 None
+2024-04-18 14:30:02,666 - DEBUG - Starting new HTTPS connection (1): api.zoom.us:443
+2024-04-18 14:30:03,341 - DEBUG - https://api.zoom.us:443 "GET /v2/past_meetings/86423223879/participants HTTP/1.1" 200 349
+2024-04-18 14:30:03,346 - INFO - [{'id': 'sD3qoXikR6mHJ_M1lpA2Vw', 'user_id': '16778240', 'name': 'Brenda Huppenthal', 'user_email': 'bhuppenthal@arizona.edu', 'join_time': '2024-04-18T21:14:06Z', 'leave_time': '2024-04-18T21:15:37Z', 'duration': 91, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}]
+2024-04-18 14:30:03,389 - INFO - Checked in: bhuppenthal@arizona.edu
+2024-04-18 14:30:03,389 - INFO - --------------------------------------
+2024-04-18 15:30:02,627 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-18 15:30:02,627 - INFO - --------------------------------------
+2024-04-18 15:30:02,638 - DEBUG - Starting new HTTPS connection (1): zoom.us:443
+2024-04-18 15:30:03,062 - DEBUG - https://zoom.us:443 "POST /oauth/token HTTP/1.1" 200 None
+2024-04-18 15:30:03,073 - DEBUG - Starting new HTTPS connection (1): api.zoom.us:443
+2024-04-18 15:30:03,835 - DEBUG - https://api.zoom.us:443 "GET /v2/past_meetings/86423223879/participants HTTP/1.1" 200 349
+2024-04-18 15:30:03,840 - INFO - [{'id': 'sD3qoXikR6mHJ_M1lpA2Vw', 'user_id': '16778240', 'name': 'Brenda Huppenthal', 'user_email': 'bhuppenthal@arizona.edu', 'join_time': '2024-04-18T21:14:06Z', 'leave_time': '2024-04-18T21:15:37Z', 'duration': 91, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}]
+2024-04-18 15:30:03,879 - INFO - Checked in: bhuppenthal@arizona.edu
+2024-04-18 15:30:03,879 - INFO - --------------------------------------
+2024-04-18 16:30:02,396 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-18 16:30:02,396 - INFO - --------------------------------------
+2024-04-18 16:30:02,405 - DEBUG - Starting new HTTPS connection (1): zoom.us:443
+2024-04-18 16:30:02,697 - DEBUG - https://zoom.us:443 "POST /oauth/token HTTP/1.1" 200 None
+2024-04-18 16:30:02,706 - DEBUG - Starting new HTTPS connection (1): api.zoom.us:443
+2024-04-18 16:30:03,403 - DEBUG - https://api.zoom.us:443 "GET /v2/past_meetings/86423223879/participants HTTP/1.1" 200 349
+2024-04-18 16:30:03,407 - INFO - [{'id': 'sD3qoXikR6mHJ_M1lpA2Vw', 'user_id': '16778240', 'name': 'Brenda Huppenthal', 'user_email': 'bhuppenthal@arizona.edu', 'join_time': '2024-04-18T21:14:06Z', 'leave_time': '2024-04-18T21:15:37Z', 'duration': 91, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}]
+2024-04-18 16:30:03,443 - INFO - Checked in: bhuppenthal@arizona.edu
+2024-04-18 16:30:03,443 - INFO - --------------------------------------
+2024-04-18 17:30:02,205 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-18 17:30:02,205 - INFO - --------------------------------------
+2024-04-18 17:30:02,217 - DEBUG - Starting new HTTPS connection (1): zoom.us:443
+2024-04-18 17:30:02,605 - DEBUG - https://zoom.us:443 "POST /oauth/token HTTP/1.1" 200 None
+2024-04-18 17:30:02,616 - DEBUG - Starting new HTTPS connection (1): api.zoom.us:443
+2024-04-18 17:30:03,368 - DEBUG - https://api.zoom.us:443 "GET /v2/past_meetings/86423223879/participants HTTP/1.1" 200 349
+2024-04-18 17:30:03,372 - INFO - [{'id': 'sD3qoXikR6mHJ_M1lpA2Vw', 'user_id': '16778240', 'name': 'Brenda Huppenthal', 'user_email': 'bhuppenthal@arizona.edu', 'join_time': '2024-04-18T21:14:06Z', 'leave_time': '2024-04-18T21:15:37Z', 'duration': 91, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}]
+2024-04-18 17:30:03,409 - INFO - Checked in: bhuppenthal@arizona.edu
+2024-04-18 17:30:03,409 - INFO - --------------------------------------
+2024-04-18 18:30:02,242 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-18 18:30:02,242 - INFO - --------------------------------------
+2024-04-18 18:30:02,251 - DEBUG - Starting new HTTPS connection (1): zoom.us:443
+2024-04-18 18:30:02,594 - DEBUG - https://zoom.us:443 "POST /oauth/token HTTP/1.1" 200 None
+2024-04-18 18:30:02,604 - DEBUG - Starting new HTTPS connection (1): api.zoom.us:443
+2024-04-18 18:30:03,274 - DEBUG - https://api.zoom.us:443 "GET /v2/past_meetings/86423223879/participants HTTP/1.1" 200 349
+2024-04-18 18:30:03,279 - INFO - [{'id': 'sD3qoXikR6mHJ_M1lpA2Vw', 'user_id': '16778240', 'name': 'Brenda Huppenthal', 'user_email': 'bhuppenthal@arizona.edu', 'join_time': '2024-04-18T21:14:06Z', 'leave_time': '2024-04-18T21:15:37Z', 'duration': 91, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}]
+2024-04-18 18:30:03,315 - INFO - Checked in: bhuppenthal@arizona.edu
+2024-04-18 18:30:03,315 - INFO - --------------------------------------
+2024-04-18 19:30:02,906 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-18 19:30:02,907 - INFO - --------------------------------------
+2024-04-18 19:30:02,917 - DEBUG - Starting new HTTPS connection (1): zoom.us:443
+2024-04-18 19:30:03,311 - DEBUG - https://zoom.us:443 "POST /oauth/token HTTP/1.1" 200 None
+2024-04-18 19:30:03,323 - DEBUG - Starting new HTTPS connection (1): api.zoom.us:443
+2024-04-18 19:30:04,165 - DEBUG - https://api.zoom.us:443 "GET /v2/past_meetings/86423223879/participants HTTP/1.1" 200 349
+2024-04-18 19:30:04,169 - INFO - [{'id': 'sD3qoXikR6mHJ_M1lpA2Vw', 'user_id': '16778240', 'name': 'Brenda Huppenthal', 'user_email': 'bhuppenthal@arizona.edu', 'join_time': '2024-04-18T21:14:06Z', 'leave_time': '2024-04-18T21:15:37Z', 'duration': 91, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}]
+2024-04-18 19:30:04,204 - INFO - Checked in: bhuppenthal@arizona.edu
+2024-04-18 19:30:04,205 - INFO - --------------------------------------
+2024-04-18 20:30:02,828 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-18 20:30:02,828 - INFO - --------------------------------------
+2024-04-18 20:30:02,839 - DEBUG - Starting new HTTPS connection (1): zoom.us:443
+2024-04-18 20:30:03,259 - DEBUG - https://zoom.us:443 "POST /oauth/token HTTP/1.1" 200 None
+2024-04-18 20:30:03,269 - DEBUG - Starting new HTTPS connection (1): api.zoom.us:443
+2024-04-18 20:30:03,924 - DEBUG - https://api.zoom.us:443 "GET /v2/past_meetings/86423223879/participants HTTP/1.1" 200 349
+2024-04-18 20:30:03,928 - INFO - [{'id': 'sD3qoXikR6mHJ_M1lpA2Vw', 'user_id': '16778240', 'name': 'Brenda Huppenthal', 'user_email': 'bhuppenthal@arizona.edu', 'join_time': '2024-04-18T21:14:06Z', 'leave_time': '2024-04-18T21:15:37Z', 'duration': 91, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}]
+2024-04-18 20:30:03,964 - INFO - Checked in: bhuppenthal@arizona.edu
+2024-04-18 20:30:03,965 - INFO - --------------------------------------
+2024-04-18 21:30:02,840 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-18 21:30:02,840 - INFO - --------------------------------------
+2024-04-18 21:30:02,849 - DEBUG - Starting new HTTPS connection (1): zoom.us:443
+2024-04-18 21:30:03,180 - DEBUG - https://zoom.us:443 "POST /oauth/token HTTP/1.1" 200 None
+2024-04-18 21:30:03,189 - DEBUG - Starting new HTTPS connection (1): api.zoom.us:443
+2024-04-18 21:30:03,769 - DEBUG - https://api.zoom.us:443 "GET /v2/past_meetings/86423223879/participants HTTP/1.1" 200 349
+2024-04-18 21:30:03,773 - INFO - [{'id': 'sD3qoXikR6mHJ_M1lpA2Vw', 'user_id': '16778240', 'name': 'Brenda Huppenthal', 'user_email': 'bhuppenthal@arizona.edu', 'join_time': '2024-04-18T21:14:06Z', 'leave_time': '2024-04-18T21:15:37Z', 'duration': 91, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}]
+2024-04-18 21:30:03,811 - INFO - Checked in: bhuppenthal@arizona.edu
+2024-04-18 21:30:03,811 - INFO - --------------------------------------
+2024-04-18 22:30:02,397 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-18 22:30:02,397 - INFO - --------------------------------------
+2024-04-18 22:30:02,408 - DEBUG - Starting new HTTPS connection (1): zoom.us:443
+2024-04-18 22:30:02,759 - DEBUG - https://zoom.us:443 "POST /oauth/token HTTP/1.1" 200 None
+2024-04-18 22:30:02,768 - DEBUG - Starting new HTTPS connection (1): api.zoom.us:443
+2024-04-18 22:30:03,419 - DEBUG - https://api.zoom.us:443 "GET /v2/past_meetings/86423223879/participants HTTP/1.1" 200 349
+2024-04-18 22:30:03,423 - INFO - [{'id': 'sD3qoXikR6mHJ_M1lpA2Vw', 'user_id': '16778240', 'name': 'Brenda Huppenthal', 'user_email': 'bhuppenthal@arizona.edu', 'join_time': '2024-04-18T21:14:06Z', 'leave_time': '2024-04-18T21:15:37Z', 'duration': 91, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}]
+2024-04-18 22:30:03,459 - INFO - Checked in: bhuppenthal@arizona.edu
+2024-04-18 22:30:03,459 - INFO - --------------------------------------
+2024-04-18 23:30:02,243 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-18 23:30:02,243 - INFO - --------------------------------------
+2024-04-18 23:30:02,254 - DEBUG - Starting new HTTPS connection (1): zoom.us:443
+2024-04-18 23:30:02,640 - DEBUG - https://zoom.us:443 "POST /oauth/token HTTP/1.1" 200 None
+2024-04-18 23:30:02,648 - DEBUG - Starting new HTTPS connection (1): api.zoom.us:443
+2024-04-18 23:30:03,218 - DEBUG - https://api.zoom.us:443 "GET /v2/past_meetings/86423223879/participants HTTP/1.1" 200 349
+2024-04-18 23:30:03,223 - INFO - [{'id': 'sD3qoXikR6mHJ_M1lpA2Vw', 'user_id': '16778240', 'name': 'Brenda Huppenthal', 'user_email': 'bhuppenthal@arizona.edu', 'join_time': '2024-04-18T21:14:06Z', 'leave_time': '2024-04-18T21:15:37Z', 'duration': 91, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}]
+2024-04-18 23:30:03,258 - INFO - Checked in: bhuppenthal@arizona.edu
+2024-04-18 23:30:03,259 - INFO - --------------------------------------
+2024-04-19 00:30:02,886 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-19 00:30:02,887 - INFO - --------------------------------------
+2024-04-19 00:30:02,896 - DEBUG - Starting new HTTPS connection (1): zoom.us:443
+2024-04-19 00:30:03,238 - DEBUG - https://zoom.us:443 "POST /oauth/token HTTP/1.1" 200 None
+2024-04-19 00:30:03,246 - DEBUG - Starting new HTTPS connection (1): api.zoom.us:443
+2024-04-19 00:30:03,772 - DEBUG - https://api.zoom.us:443 "GET /v2/past_meetings/86423223879/participants HTTP/1.1" 200 349
+2024-04-19 00:30:03,776 - INFO - [{'id': 'sD3qoXikR6mHJ_M1lpA2Vw', 'user_id': '16778240', 'name': 'Brenda Huppenthal', 'user_email': 'bhuppenthal@arizona.edu', 'join_time': '2024-04-18T21:14:06Z', 'leave_time': '2024-04-18T21:15:37Z', 'duration': 91, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}]
+2024-04-19 01:30:02,505 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-19 01:30:02,505 - INFO - --------------------------------------
+2024-04-19 01:30:02,516 - DEBUG - Starting new HTTPS connection (1): zoom.us:443
+2024-04-19 01:30:02,936 - DEBUG - https://zoom.us:443 "POST /oauth/token HTTP/1.1" 200 None
+2024-04-19 01:30:02,948 - DEBUG - Starting new HTTPS connection (1): api.zoom.us:443
+2024-04-19 01:30:03,774 - DEBUG - https://api.zoom.us:443 "GET /v2/past_meetings/86423223879/participants HTTP/1.1" 200 349
+2024-04-19 01:30:03,779 - INFO - [{'id': 'sD3qoXikR6mHJ_M1lpA2Vw', 'user_id': '16778240', 'name': 'Brenda Huppenthal', 'user_email': 'bhuppenthal@arizona.edu', 'join_time': '2024-04-18T21:14:06Z', 'leave_time': '2024-04-18T21:15:37Z', 'duration': 91, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}]
+2024-04-19 02:30:02,007 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-19 02:30:02,007 - INFO - --------------------------------------
+2024-04-19 02:30:02,018 - DEBUG - Starting new HTTPS connection (1): zoom.us:443
+2024-04-19 02:30:02,400 - DEBUG - https://zoom.us:443 "POST /oauth/token HTTP/1.1" 200 None
+2024-04-19 02:30:02,433 - DEBUG - Starting new HTTPS connection (1): api.zoom.us:443
+2024-04-19 02:30:03,155 - DEBUG - https://api.zoom.us:443 "GET /v2/past_meetings/86423223879/participants HTTP/1.1" 200 349
+2024-04-19 02:30:03,160 - INFO - [{'id': 'sD3qoXikR6mHJ_M1lpA2Vw', 'user_id': '16778240', 'name': 'Brenda Huppenthal', 'user_email': 'bhuppenthal@arizona.edu', 'join_time': '2024-04-18T21:14:06Z', 'leave_time': '2024-04-18T21:15:37Z', 'duration': 91, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}]
+2024-04-19 03:30:02,273 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-19 03:30:02,273 - INFO - --------------------------------------
+2024-04-19 03:30:02,284 - DEBUG - Starting new HTTPS connection (1): zoom.us:443
+2024-04-19 03:30:02,680 - DEBUG - https://zoom.us:443 "POST /oauth/token HTTP/1.1" 200 None
+2024-04-19 03:30:02,690 - DEBUG - Starting new HTTPS connection (1): api.zoom.us:443
+2024-04-19 03:30:03,423 - DEBUG - https://api.zoom.us:443 "GET /v2/past_meetings/86423223879/participants HTTP/1.1" 200 349
+2024-04-19 03:30:03,428 - INFO - [{'id': 'sD3qoXikR6mHJ_M1lpA2Vw', 'user_id': '16778240', 'name': 'Brenda Huppenthal', 'user_email': 'bhuppenthal@arizona.edu', 'join_time': '2024-04-18T21:14:06Z', 'leave_time': '2024-04-18T21:15:37Z', 'duration': 91, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}]
+2024-04-19 04:30:02,284 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-19 04:30:02,284 - INFO - --------------------------------------
+2024-04-19 04:30:02,293 - DEBUG - Starting new HTTPS connection (1): zoom.us:443
+2024-04-19 04:30:02,659 - DEBUG - https://zoom.us:443 "POST /oauth/token HTTP/1.1" 200 None
+2024-04-19 04:30:02,668 - DEBUG - Starting new HTTPS connection (1): api.zoom.us:443
+2024-04-19 04:30:03,469 - DEBUG - https://api.zoom.us:443 "GET /v2/past_meetings/86423223879/participants HTTP/1.1" 200 349
+2024-04-19 04:30:03,474 - INFO - [{'id': 'sD3qoXikR6mHJ_M1lpA2Vw', 'user_id': '16778240', 'name': 'Brenda Huppenthal', 'user_email': 'bhuppenthal@arizona.edu', 'join_time': '2024-04-18T21:14:06Z', 'leave_time': '2024-04-18T21:15:37Z', 'duration': 91, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}]
+2024-04-19 05:30:02,722 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-19 05:30:02,723 - INFO - --------------------------------------
+2024-04-19 05:30:02,732 - DEBUG - Starting new HTTPS connection (1): zoom.us:443
+2024-04-19 05:30:03,080 - DEBUG - https://zoom.us:443 "POST /oauth/token HTTP/1.1" 200 None
+2024-04-19 05:30:03,090 - DEBUG - Starting new HTTPS connection (1): api.zoom.us:443
+2024-04-19 05:30:03,742 - DEBUG - https://api.zoom.us:443 "GET /v2/past_meetings/86423223879/participants HTTP/1.1" 200 349
+2024-04-19 05:30:03,746 - INFO - [{'id': 'sD3qoXikR6mHJ_M1lpA2Vw', 'user_id': '16778240', 'name': 'Brenda Huppenthal', 'user_email': 'bhuppenthal@arizona.edu', 'join_time': '2024-04-18T21:14:06Z', 'leave_time': '2024-04-18T21:15:37Z', 'duration': 91, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}]
+2024-04-19 06:30:02,551 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-19 06:30:02,551 - INFO - --------------------------------------
+2024-04-19 06:30:02,561 - DEBUG - Starting new HTTPS connection (1): zoom.us:443
+2024-04-19 06:30:02,932 - DEBUG - https://zoom.us:443 "POST /oauth/token HTTP/1.1" 200 None
+2024-04-19 06:30:02,941 - DEBUG - Starting new HTTPS connection (1): api.zoom.us:443
+2024-04-19 06:30:03,562 - DEBUG - https://api.zoom.us:443 "GET /v2/past_meetings/86423223879/participants HTTP/1.1" 200 349
+2024-04-19 06:30:03,567 - INFO - [{'id': 'sD3qoXikR6mHJ_M1lpA2Vw', 'user_id': '16778240', 'name': 'Brenda Huppenthal', 'user_email': 'bhuppenthal@arizona.edu', 'join_time': '2024-04-18T21:14:06Z', 'leave_time': '2024-04-18T21:15:37Z', 'duration': 91, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}]
+2024-04-19 07:30:02,198 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-19 07:30:02,198 - INFO - --------------------------------------
+2024-04-19 07:30:02,210 - DEBUG - Starting new HTTPS connection (1): zoom.us:443
+2024-04-19 07:30:02,598 - DEBUG - https://zoom.us:443 "POST /oauth/token HTTP/1.1" 200 None
+2024-04-19 07:30:02,608 - DEBUG - Starting new HTTPS connection (1): api.zoom.us:443
+2024-04-19 07:30:03,586 - DEBUG - https://api.zoom.us:443 "GET /v2/past_meetings/86423223879/participants HTTP/1.1" 200 349
+2024-04-19 07:30:03,591 - INFO - [{'id': 'sD3qoXikR6mHJ_M1lpA2Vw', 'user_id': '16778240', 'name': 'Brenda Huppenthal', 'user_email': 'bhuppenthal@arizona.edu', 'join_time': '2024-04-18T21:14:06Z', 'leave_time': '2024-04-18T21:15:37Z', 'duration': 91, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}]
+2024-04-19 08:30:02,422 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-19 08:30:02,422 - INFO - --------------------------------------
+2024-04-19 08:30:02,433 - DEBUG - Starting new HTTPS connection (1): zoom.us:443
+2024-04-19 08:30:02,819 - DEBUG - https://zoom.us:443 "POST /oauth/token HTTP/1.1" 200 None
+2024-04-19 08:30:02,828 - DEBUG - Starting new HTTPS connection (1): api.zoom.us:443
+2024-04-19 08:30:03,360 - DEBUG - https://api.zoom.us:443 "GET /v2/past_meetings/86423223879/participants HTTP/1.1" 200 349
+2024-04-19 08:30:03,364 - INFO - [{'id': 'sD3qoXikR6mHJ_M1lpA2Vw', 'user_id': '16778240', 'name': 'Brenda Huppenthal', 'user_email': 'bhuppenthal@arizona.edu', 'join_time': '2024-04-18T21:14:06Z', 'leave_time': '2024-04-18T21:15:37Z', 'duration': 91, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}]
+2024-04-19 09:30:02,078 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-19 09:30:02,078 - INFO - --------------------------------------
+2024-04-19 09:30:02,088 - DEBUG - Starting new HTTPS connection (1): zoom.us:443
+2024-04-19 09:30:02,424 - DEBUG - https://zoom.us:443 "POST /oauth/token HTTP/1.1" 200 None
+2024-04-19 09:30:02,434 - DEBUG - Starting new HTTPS connection (1): api.zoom.us:443
+2024-04-19 09:30:03,048 - DEBUG - https://api.zoom.us:443 "GET /v2/past_meetings/86423223879/participants HTTP/1.1" 200 349
+2024-04-19 09:30:03,052 - INFO - [{'id': 'sD3qoXikR6mHJ_M1lpA2Vw', 'user_id': '16778240', 'name': 'Brenda Huppenthal', 'user_email': 'bhuppenthal@arizona.edu', 'join_time': '2024-04-18T21:14:06Z', 'leave_time': '2024-04-18T21:15:37Z', 'duration': 91, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}]
+2024-04-19 10:30:02,590 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-19 10:30:02,590 - INFO - --------------------------------------
+2024-04-19 10:30:02,599 - DEBUG - Starting new HTTPS connection (1): zoom.us:443
+2024-04-19 10:30:02,948 - DEBUG - https://zoom.us:443 "POST /oauth/token HTTP/1.1" 200 None
+2024-04-19 10:30:02,958 - DEBUG - Starting new HTTPS connection (1): api.zoom.us:443
+2024-04-19 10:30:03,693 - DEBUG - https://api.zoom.us:443 "GET /v2/past_meetings/86423223879/participants HTTP/1.1" 200 349
+2024-04-19 10:30:03,698 - INFO - [{'id': 'sD3qoXikR6mHJ_M1lpA2Vw', 'user_id': '16778240', 'name': 'Brenda Huppenthal', 'user_email': 'bhuppenthal@arizona.edu', 'join_time': '2024-04-18T21:14:06Z', 'leave_time': '2024-04-18T21:15:37Z', 'duration': 91, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}]
+2024-04-19 11:30:02,872 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-19 11:30:02,873 - INFO - --------------------------------------
+2024-04-19 11:30:02,884 - DEBUG - Starting new HTTPS connection (1): zoom.us:443
+2024-04-19 11:30:03,276 - DEBUG - https://zoom.us:443 "POST /oauth/token HTTP/1.1" 200 None
+2024-04-19 11:30:03,285 - DEBUG - Starting new HTTPS connection (1): api.zoom.us:443
+2024-04-19 11:30:03,846 - DEBUG - https://api.zoom.us:443 "GET /v2/past_meetings/86423223879/participants HTTP/1.1" 200 349
+2024-04-19 11:30:03,850 - INFO - [{'id': 'sD3qoXikR6mHJ_M1lpA2Vw', 'user_id': '16778240', 'name': 'Brenda Huppenthal', 'user_email': 'bhuppenthal@arizona.edu', 'join_time': '2024-04-18T21:14:06Z', 'leave_time': '2024-04-18T21:15:37Z', 'duration': 91, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}]
+2024-04-19 12:30:02,605 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-19 12:30:02,605 - INFO - --------------------------------------
+2024-04-19 12:30:02,614 - DEBUG - Starting new HTTPS connection (1): zoom.us:443
+2024-04-19 12:30:02,929 - DEBUG - https://zoom.us:443 "POST /oauth/token HTTP/1.1" 200 None
+2024-04-19 12:30:02,938 - DEBUG - Starting new HTTPS connection (1): api.zoom.us:443
+2024-04-19 12:30:03,692 - DEBUG - https://api.zoom.us:443 "GET /v2/past_meetings/86423223879/participants HTTP/1.1" 200 349
+2024-04-19 12:30:03,697 - INFO - [{'id': 'sD3qoXikR6mHJ_M1lpA2Vw', 'user_id': '16778240', 'name': 'Brenda Huppenthal', 'user_email': 'bhuppenthal@arizona.edu', 'join_time': '2024-04-18T21:14:06Z', 'leave_time': '2024-04-18T21:15:37Z', 'duration': 91, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}]
+2024-04-19 13:30:02,546 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-19 13:30:02,546 - INFO - --------------------------------------
+2024-04-19 13:30:02,555 - DEBUG - Starting new HTTPS connection (1): zoom.us:443
+2024-04-19 13:30:02,973 - DEBUG - https://zoom.us:443 "POST /oauth/token HTTP/1.1" 200 None
+2024-04-19 13:30:02,984 - DEBUG - Starting new HTTPS connection (1): api.zoom.us:443
+2024-04-19 13:30:03,682 - DEBUG - https://api.zoom.us:443 "GET /v2/past_meetings/86423223879/participants HTTP/1.1" 200 349
+2024-04-19 13:30:03,686 - INFO - [{'id': 'sD3qoXikR6mHJ_M1lpA2Vw', 'user_id': '16778240', 'name': 'Brenda Huppenthal', 'user_email': 'bhuppenthal@arizona.edu', 'join_time': '2024-04-18T21:14:06Z', 'leave_time': '2024-04-18T21:15:37Z', 'duration': 91, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}]
+2024-04-19 14:30:02,357 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-19 14:30:02,357 - INFO - --------------------------------------
+2024-04-19 14:30:02,368 - DEBUG - Starting new HTTPS connection (1): zoom.us:443
+2024-04-19 14:30:02,719 - DEBUG - https://zoom.us:443 "POST /oauth/token HTTP/1.1" 200 None
+2024-04-19 14:30:02,727 - DEBUG - Starting new HTTPS connection (1): api.zoom.us:443
+2024-04-19 14:30:03,423 - DEBUG - https://api.zoom.us:443 "GET /v2/past_meetings/86423223879/participants HTTP/1.1" 200 349
+2024-04-19 14:30:03,427 - INFO - [{'id': 'sD3qoXikR6mHJ_M1lpA2Vw', 'user_id': '16778240', 'name': 'Brenda Huppenthal', 'user_email': 'bhuppenthal@arizona.edu', 'join_time': '2024-04-18T21:14:06Z', 'leave_time': '2024-04-18T21:15:37Z', 'duration': 91, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}]
+2024-04-19 15:30:01,986 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-19 15:30:01,986 - INFO - --------------------------------------
+2024-04-19 15:30:01,995 - DEBUG - Starting new HTTPS connection (1): zoom.us:443
+2024-04-19 15:30:02,369 - DEBUG - https://zoom.us:443 "POST /oauth/token HTTP/1.1" 200 None
+2024-04-19 15:30:02,380 - DEBUG - Starting new HTTPS connection (1): api.zoom.us:443
+2024-04-19 15:30:02,962 - DEBUG - https://api.zoom.us:443 "GET /v2/past_meetings/86423223879/participants HTTP/1.1" 200 349
+2024-04-19 15:30:02,966 - INFO - [{'id': 'sD3qoXikR6mHJ_M1lpA2Vw', 'user_id': '16778240', 'name': 'Brenda Huppenthal', 'user_email': 'bhuppenthal@arizona.edu', 'join_time': '2024-04-18T21:14:06Z', 'leave_time': '2024-04-18T21:15:37Z', 'duration': 91, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}]
+2024-04-19 16:30:02,720 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-19 16:30:02,720 - INFO - --------------------------------------
+2024-04-19 16:30:02,729 - DEBUG - Starting new HTTPS connection (1): zoom.us:443
+2024-04-19 16:30:03,375 - DEBUG - https://zoom.us:443 "POST /oauth/token HTTP/1.1" 200 None
+2024-04-19 16:30:03,387 - DEBUG - Starting new HTTPS connection (1): api.zoom.us:443
+2024-04-19 16:30:03,897 - DEBUG - https://api.zoom.us:443 "GET /v2/past_meetings/86423223879/participants HTTP/1.1" 200 339
+2024-04-19 16:30:03,902 - INFO - [{'id': 'Wg8f7A1CSZWFuyvumeq5Hw', 'user_id': '16778240', 'name': 'Mithün', 'user_email': 'mithunpaul@arizona.edu', 'join_time': '2024-04-19T23:01:16Z', 'leave_time': '2024-04-19T23:05:48Z', 'duration': 272, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}]
+2024-04-19 16:30:03,939 - INFO - Checked in: mithunpaul@arizona.edu
+2024-04-19 16:30:03,939 - INFO - --------------------------------------
+2024-04-19 17:30:02,909 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-19 17:30:02,909 - INFO - --------------------------------------
+2024-04-19 17:30:02,920 - DEBUG - Starting new HTTPS connection (1): zoom.us:443
+2024-04-19 17:30:03,292 - DEBUG - https://zoom.us:443 "POST /oauth/token HTTP/1.1" 200 None
+2024-04-19 17:30:03,305 - DEBUG - Starting new HTTPS connection (1): api.zoom.us:443
+2024-04-19 17:30:03,901 - DEBUG - https://api.zoom.us:443 "GET /v2/past_meetings/86423223879/participants HTTP/1.1" 200 553
+2024-04-19 17:30:03,906 - INFO - [{'id': 'Wg8f7A1CSZWFuyvumeq5Hw', 'user_id': '16778240', 'name': 'Mithün', 'user_email': 'mithunpaul@arizona.edu', 'join_time': '2024-04-19T23:25:05Z', 'leave_time': '2024-04-20T00:06:28Z', 'duration': 2483, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': '', 'user_id': '16779264', 'name': 'Urvika Gola', 'user_email': '', 'join_time': '2024-04-19T23:29:22Z', 'leave_time': '2024-04-20T00:06:27Z', 'duration': 2225, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}]
+2024-04-19 17:30:03,943 - INFO - Checked in: mithunpaul@arizona.edu
+2024-04-19 17:30:03,943 - INFO - --------------------------------------
+2024-04-19 18:30:02,566 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-19 18:30:02,566 - INFO - --------------------------------------
+2024-04-19 18:30:02,575 - DEBUG - Starting new HTTPS connection (1): zoom.us:443
+2024-04-19 18:30:02,895 - DEBUG - https://zoom.us:443 "POST /oauth/token HTTP/1.1" 200 None
+2024-04-19 18:30:02,902 - DEBUG - Starting new HTTPS connection (1): api.zoom.us:443
+2024-04-19 18:30:03,433 - DEBUG - https://api.zoom.us:443 "GET /v2/past_meetings/86423223879/participants HTTP/1.1" 200 553
+2024-04-19 18:30:03,438 - INFO - [{'id': 'Wg8f7A1CSZWFuyvumeq5Hw', 'user_id': '16778240', 'name': 'Mithün', 'user_email': 'mithunpaul@arizona.edu', 'join_time': '2024-04-19T23:25:05Z', 'leave_time': '2024-04-20T00:06:28Z', 'duration': 2483, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': '', 'user_id': '16779264', 'name': 'Urvika Gola', 'user_email': '', 'join_time': '2024-04-19T23:29:22Z', 'leave_time': '2024-04-20T00:06:27Z', 'duration': 2225, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}]
+2024-04-19 18:30:03,474 - INFO - Checked in: mithunpaul@arizona.edu
+2024-04-19 18:30:03,474 - INFO - --------------------------------------
+2024-04-19 19:30:03,056 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-19 19:30:03,056 - INFO - --------------------------------------
+2024-04-19 19:30:03,067 - DEBUG - Starting new HTTPS connection (1): zoom.us:443
+2024-04-19 19:30:03,504 - DEBUG - https://zoom.us:443 "POST /oauth/token HTTP/1.1" 200 None
+2024-04-19 19:30:03,514 - DEBUG - Starting new HTTPS connection (1): api.zoom.us:443
+2024-04-19 19:30:04,095 - DEBUG - https://api.zoom.us:443 "GET /v2/past_meetings/86423223879/participants HTTP/1.1" 200 553
+2024-04-19 19:30:04,100 - INFO - [{'id': 'Wg8f7A1CSZWFuyvumeq5Hw', 'user_id': '16778240', 'name': 'Mithün', 'user_email': 'mithunpaul@arizona.edu', 'join_time': '2024-04-19T23:25:05Z', 'leave_time': '2024-04-20T00:06:28Z', 'duration': 2483, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': '', 'user_id': '16779264', 'name': 'Urvika Gola', 'user_email': '', 'join_time': '2024-04-19T23:29:22Z', 'leave_time': '2024-04-20T00:06:27Z', 'duration': 2225, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}]
+2024-04-19 19:30:04,138 - INFO - Checked in: mithunpaul@arizona.edu
+2024-04-19 19:30:04,138 - INFO - --------------------------------------
+2024-04-19 20:30:02,185 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-19 20:30:02,185 - INFO - --------------------------------------
+2024-04-19 20:30:02,196 - DEBUG - Starting new HTTPS connection (1): zoom.us:443
+2024-04-19 20:30:02,536 - DEBUG - https://zoom.us:443 "POST /oauth/token HTTP/1.1" 200 None
+2024-04-19 20:30:02,559 - DEBUG - Starting new HTTPS connection (1): api.zoom.us:443
+2024-04-19 20:30:03,324 - DEBUG - https://api.zoom.us:443 "GET /v2/past_meetings/86423223879/participants HTTP/1.1" 200 553
+2024-04-19 20:30:03,329 - INFO - [{'id': 'Wg8f7A1CSZWFuyvumeq5Hw', 'user_id': '16778240', 'name': 'Mithün', 'user_email': 'mithunpaul@arizona.edu', 'join_time': '2024-04-19T23:25:05Z', 'leave_time': '2024-04-20T00:06:28Z', 'duration': 2483, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': '', 'user_id': '16779264', 'name': 'Urvika Gola', 'user_email': '', 'join_time': '2024-04-19T23:29:22Z', 'leave_time': '2024-04-20T00:06:27Z', 'duration': 2225, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}]
+2024-04-19 20:30:03,365 - INFO - Checked in: mithunpaul@arizona.edu
+2024-04-19 20:30:03,365 - INFO - --------------------------------------
+2024-04-19 21:30:02,913 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-19 21:30:02,913 - INFO - --------------------------------------
+2024-04-19 21:30:02,923 - DEBUG - Starting new HTTPS connection (1): zoom.us:443
+2024-04-19 21:30:03,308 - DEBUG - https://zoom.us:443 "POST /oauth/token HTTP/1.1" 200 None
+2024-04-19 21:30:03,318 - DEBUG - Starting new HTTPS connection (1): api.zoom.us:443
+2024-04-19 21:30:03,947 - DEBUG - https://api.zoom.us:443 "GET /v2/past_meetings/86423223879/participants HTTP/1.1" 200 553
+2024-04-19 21:30:03,952 - INFO - [{'id': 'Wg8f7A1CSZWFuyvumeq5Hw', 'user_id': '16778240', 'name': 'Mithün', 'user_email': 'mithunpaul@arizona.edu', 'join_time': '2024-04-19T23:25:05Z', 'leave_time': '2024-04-20T00:06:28Z', 'duration': 2483, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': '', 'user_id': '16779264', 'name': 'Urvika Gola', 'user_email': '', 'join_time': '2024-04-19T23:29:22Z', 'leave_time': '2024-04-20T00:06:27Z', 'duration': 2225, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}]
+2024-04-19 21:30:03,988 - INFO - Checked in: mithunpaul@arizona.edu
+2024-04-19 21:30:03,988 - INFO - --------------------------------------
+2024-04-19 22:30:02,472 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-19 22:30:02,472 - INFO - --------------------------------------
+2024-04-19 22:30:02,483 - DEBUG - Starting new HTTPS connection (1): zoom.us:443
+2024-04-19 22:30:02,866 - DEBUG - https://zoom.us:443 "POST /oauth/token HTTP/1.1" 200 None
+2024-04-19 22:30:02,875 - DEBUG - Starting new HTTPS connection (1): api.zoom.us:443
+2024-04-19 22:30:03,654 - DEBUG - https://api.zoom.us:443 "GET /v2/past_meetings/86423223879/participants HTTP/1.1" 200 553
+2024-04-19 22:30:03,659 - INFO - [{'id': 'Wg8f7A1CSZWFuyvumeq5Hw', 'user_id': '16778240', 'name': 'Mithün', 'user_email': 'mithunpaul@arizona.edu', 'join_time': '2024-04-19T23:25:05Z', 'leave_time': '2024-04-20T00:06:28Z', 'duration': 2483, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': '', 'user_id': '16779264', 'name': 'Urvika Gola', 'user_email': '', 'join_time': '2024-04-19T23:29:22Z', 'leave_time': '2024-04-20T00:06:27Z', 'duration': 2225, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}]
+2024-04-19 22:30:03,695 - INFO - Checked in: mithunpaul@arizona.edu
+2024-04-19 22:30:03,695 - INFO - --------------------------------------
+2024-04-19 23:30:02,865 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-19 23:30:02,865 - INFO - --------------------------------------
+2024-04-19 23:30:02,874 - DEBUG - Starting new HTTPS connection (1): zoom.us:443
+2024-04-19 23:30:03,183 - DEBUG - https://zoom.us:443 "POST /oauth/token HTTP/1.1" 200 None
+2024-04-19 23:30:03,202 - DEBUG - Starting new HTTPS connection (1): api.zoom.us:443
+2024-04-19 23:30:03,828 - DEBUG - https://api.zoom.us:443 "GET /v2/past_meetings/86423223879/participants HTTP/1.1" 200 553
+2024-04-19 23:30:03,833 - INFO - [{'id': 'Wg8f7A1CSZWFuyvumeq5Hw', 'user_id': '16778240', 'name': 'Mithün', 'user_email': 'mithunpaul@arizona.edu', 'join_time': '2024-04-19T23:25:05Z', 'leave_time': '2024-04-20T00:06:28Z', 'duration': 2483, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': '', 'user_id': '16779264', 'name': 'Urvika Gola', 'user_email': '', 'join_time': '2024-04-19T23:29:22Z', 'leave_time': '2024-04-20T00:06:27Z', 'duration': 2225, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}]
+2024-04-19 23:30:03,868 - INFO - Checked in: mithunpaul@arizona.edu
+2024-04-19 23:30:03,868 - INFO - --------------------------------------
+2024-04-20 00:30:02,740 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-20 00:30:02,741 - INFO - --------------------------------------
+2024-04-20 01:30:02,741 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-20 01:30:02,741 - INFO - --------------------------------------
+2024-04-20 02:30:18,297 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-20 02:30:18,302 - INFO - --------------------------------------
+2024-04-20 03:30:02,178 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-20 03:30:02,178 - INFO - --------------------------------------
+2024-04-20 04:30:02,110 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-20 04:30:02,111 - INFO - --------------------------------------
+2024-04-20 05:30:02,830 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-20 05:30:02,830 - INFO - --------------------------------------
+2024-04-20 06:30:03,593 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-20 06:30:03,596 - INFO - --------------------------------------
+2024-04-20 07:30:04,608 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-20 07:30:04,609 - INFO - --------------------------------------
+2024-04-20 08:30:01,997 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-20 08:30:01,997 - INFO - --------------------------------------
+2024-04-20 09:30:02,352 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-20 09:30:02,352 - INFO - --------------------------------------
+2024-04-20 10:30:02,630 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-20 10:30:02,630 - INFO - --------------------------------------
+2024-04-20 11:30:02,615 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-20 11:30:02,615 - INFO - --------------------------------------
+2024-04-20 12:30:02,701 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-20 12:30:02,701 - INFO - --------------------------------------
+2024-04-20 13:30:02,724 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-20 13:30:02,724 - INFO - --------------------------------------
+2024-04-20 14:30:02,144 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-20 14:30:02,144 - INFO - --------------------------------------
+2024-04-20 15:30:02,254 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-20 15:30:02,254 - INFO - --------------------------------------
+2024-04-20 16:30:02,456 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-20 16:30:02,456 - INFO - --------------------------------------
+2024-04-20 17:30:02,743 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-20 17:30:02,743 - INFO - --------------------------------------
+2024-04-20 18:30:02,701 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-20 18:30:02,701 - INFO - --------------------------------------
+2024-04-20 19:30:02,482 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-20 19:30:02,483 - INFO - --------------------------------------
+2024-04-20 20:30:02,542 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-20 20:30:02,542 - INFO - --------------------------------------
+2024-04-20 21:30:02,348 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-20 21:30:02,348 - INFO - --------------------------------------
+2024-04-20 22:30:02,825 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-20 22:30:02,825 - INFO - --------------------------------------
+2024-04-20 23:30:02,788 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-20 23:30:02,788 - INFO - --------------------------------------
+2024-04-21 00:30:02,293 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-21 00:30:02,294 - INFO - --------------------------------------
+2024-04-21 01:30:02,302 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-21 01:30:02,302 - INFO - --------------------------------------
+2024-04-21 02:30:21,861 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-21 02:30:21,905 - INFO - --------------------------------------
+2024-04-21 03:30:02,432 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-21 03:30:02,432 - INFO - --------------------------------------
+2024-04-21 04:30:03,025 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-21 04:30:03,025 - INFO - --------------------------------------
+2024-04-21 05:30:01,947 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-21 05:30:01,947 - INFO - --------------------------------------
+2024-04-21 06:30:02,322 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-21 06:30:02,323 - INFO - --------------------------------------
+2024-04-21 07:30:02,238 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-21 07:30:02,238 - INFO - --------------------------------------
+2024-04-21 08:30:02,629 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-21 08:30:02,629 - INFO - --------------------------------------
+2024-04-21 09:30:02,704 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-21 09:30:02,704 - INFO - --------------------------------------
+2024-04-21 10:30:02,478 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-21 10:30:02,479 - INFO - --------------------------------------
+2024-04-21 11:30:02,496 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-21 11:30:02,496 - INFO - --------------------------------------
+2024-04-21 12:30:02,163 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-21 12:30:02,164 - INFO - --------------------------------------
+2024-04-21 13:30:02,498 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-21 13:30:02,498 - INFO - --------------------------------------
+2024-04-21 14:30:02,914 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-21 14:30:02,914 - INFO - --------------------------------------
+2024-04-21 15:30:02,368 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-21 15:30:02,368 - INFO - --------------------------------------
+2024-04-21 16:30:02,548 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-21 16:30:02,548 - INFO - --------------------------------------
+2024-04-21 17:30:02,344 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-21 17:30:02,345 - INFO - --------------------------------------
+2024-04-21 18:30:02,947 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-21 18:30:02,947 - INFO - --------------------------------------
+2024-04-21 19:30:02,564 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-21 19:30:02,564 - INFO - --------------------------------------
+2024-04-21 20:30:02,241 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-21 20:30:02,241 - INFO - --------------------------------------
+2024-04-21 21:30:02,375 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-21 21:30:02,375 - INFO - --------------------------------------
+2024-04-21 22:30:02,477 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-21 22:30:02,478 - INFO - --------------------------------------
+2024-04-21 23:30:02,843 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-21 23:30:02,843 - INFO - --------------------------------------
+2024-04-22 00:30:02,689 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-22 00:30:02,689 - INFO - --------------------------------------
+2024-04-22 00:30:02,728 - DEBUG - Starting new HTTPS connection (1): zoom.us:443
+2024-04-22 00:30:03,093 - DEBUG - https://zoom.us:443 "POST /oauth/token HTTP/1.1" 200 None
+2024-04-22 00:30:03,130 - DEBUG - Starting new HTTPS connection (1): api.zoom.us:443
+2024-04-22 00:30:03,966 - DEBUG - https://api.zoom.us:443 "GET /v2/past_meetings/86423223879/participants HTTP/1.1" 200 553
+2024-04-22 00:30:03,971 - INFO - [{'id': 'Wg8f7A1CSZWFuyvumeq5Hw', 'user_id': '16778240', 'name': 'Mithün', 'user_email': 'mithunpaul@arizona.edu', 'join_time': '2024-04-19T23:25:05Z', 'leave_time': '2024-04-20T00:06:28Z', 'duration': 2483, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': '', 'user_id': '16779264', 'name': 'Urvika Gola', 'user_email': '', 'join_time': '2024-04-19T23:29:22Z', 'leave_time': '2024-04-20T00:06:27Z', 'duration': 2225, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}]
+2024-04-22 00:30:04,300 - INFO - Checked in: mithunpaul@arizona.edu
+2024-04-22 00:30:04,300 - INFO - --------------------------------------
+2024-04-22 01:30:02,166 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-22 01:30:02,166 - INFO - --------------------------------------
+2024-04-22 01:30:02,176 - DEBUG - Starting new HTTPS connection (1): zoom.us:443
+2024-04-22 01:30:02,574 - DEBUG - https://zoom.us:443 "POST /oauth/token HTTP/1.1" 200 None
+2024-04-22 01:30:02,587 - DEBUG - Starting new HTTPS connection (1): api.zoom.us:443
+2024-04-22 01:30:03,571 - DEBUG - https://api.zoom.us:443 "GET /v2/past_meetings/86423223879/participants HTTP/1.1" 200 553
+2024-04-22 01:30:03,575 - INFO - [{'id': 'Wg8f7A1CSZWFuyvumeq5Hw', 'user_id': '16778240', 'name': 'Mithün', 'user_email': 'mithunpaul@arizona.edu', 'join_time': '2024-04-19T23:25:05Z', 'leave_time': '2024-04-20T00:06:28Z', 'duration': 2483, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': '', 'user_id': '16779264', 'name': 'Urvika Gola', 'user_email': '', 'join_time': '2024-04-19T23:29:22Z', 'leave_time': '2024-04-20T00:06:27Z', 'duration': 2225, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}]
+2024-04-22 01:30:03,609 - INFO - Checked in: mithunpaul@arizona.edu
+2024-04-22 01:30:03,609 - INFO - --------------------------------------
+2024-04-22 02:30:02,130 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-22 02:30:02,130 - INFO - --------------------------------------
+2024-04-22 02:30:02,140 - DEBUG - Starting new HTTPS connection (1): zoom.us:443
+2024-04-22 02:30:02,559 - DEBUG - https://zoom.us:443 "POST /oauth/token HTTP/1.1" 200 None
+2024-04-22 02:30:02,573 - DEBUG - Starting new HTTPS connection (1): api.zoom.us:443
+2024-04-22 02:30:03,491 - DEBUG - https://api.zoom.us:443 "GET /v2/past_meetings/86423223879/participants HTTP/1.1" 200 553
+2024-04-22 02:30:03,495 - INFO - [{'id': 'Wg8f7A1CSZWFuyvumeq5Hw', 'user_id': '16778240', 'name': 'Mithün', 'user_email': 'mithunpaul@arizona.edu', 'join_time': '2024-04-19T23:25:05Z', 'leave_time': '2024-04-20T00:06:28Z', 'duration': 2483, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': '', 'user_id': '16779264', 'name': 'Urvika Gola', 'user_email': '', 'join_time': '2024-04-19T23:29:22Z', 'leave_time': '2024-04-20T00:06:27Z', 'duration': 2225, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}]
+2024-04-22 02:30:03,528 - INFO - Checked in: mithunpaul@arizona.edu
+2024-04-22 02:30:03,529 - INFO - --------------------------------------
+2024-04-22 03:30:02,083 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-22 03:30:02,083 - INFO - --------------------------------------
+2024-04-22 03:30:02,094 - DEBUG - Starting new HTTPS connection (1): zoom.us:443
+2024-04-22 03:30:02,494 - DEBUG - https://zoom.us:443 "POST /oauth/token HTTP/1.1" 200 None
+2024-04-22 03:30:02,506 - DEBUG - Starting new HTTPS connection (1): api.zoom.us:443
+2024-04-22 03:30:03,312 - DEBUG - https://api.zoom.us:443 "GET /v2/past_meetings/86423223879/participants HTTP/1.1" 200 553
+2024-04-22 03:30:03,317 - INFO - [{'id': 'Wg8f7A1CSZWFuyvumeq5Hw', 'user_id': '16778240', 'name': 'Mithün', 'user_email': 'mithunpaul@arizona.edu', 'join_time': '2024-04-19T23:25:05Z', 'leave_time': '2024-04-20T00:06:28Z', 'duration': 2483, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': '', 'user_id': '16779264', 'name': 'Urvika Gola', 'user_email': '', 'join_time': '2024-04-19T23:29:22Z', 'leave_time': '2024-04-20T00:06:27Z', 'duration': 2225, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}]
+2024-04-22 03:30:03,357 - INFO - Checked in: mithunpaul@arizona.edu
+2024-04-22 03:30:03,357 - INFO - --------------------------------------
+2024-04-22 04:30:03,001 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-22 04:30:03,001 - INFO - --------------------------------------
+2024-04-22 04:30:03,012 - DEBUG - Starting new HTTPS connection (1): zoom.us:443
+2024-04-22 04:30:03,460 - DEBUG - https://zoom.us:443 "POST /oauth/token HTTP/1.1" 200 None
+2024-04-22 04:30:03,472 - DEBUG - Starting new HTTPS connection (1): api.zoom.us:443
+2024-04-22 04:30:04,152 - DEBUG - https://api.zoom.us:443 "GET /v2/past_meetings/86423223879/participants HTTP/1.1" 200 553
+2024-04-22 04:30:04,157 - INFO - [{'id': 'Wg8f7A1CSZWFuyvumeq5Hw', 'user_id': '16778240', 'name': 'Mithün', 'user_email': 'mithunpaul@arizona.edu', 'join_time': '2024-04-19T23:25:05Z', 'leave_time': '2024-04-20T00:06:28Z', 'duration': 2483, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': '', 'user_id': '16779264', 'name': 'Urvika Gola', 'user_email': '', 'join_time': '2024-04-19T23:29:22Z', 'leave_time': '2024-04-20T00:06:27Z', 'duration': 2225, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}]
+2024-04-22 04:30:04,195 - INFO - Checked in: mithunpaul@arizona.edu
+2024-04-22 04:30:04,195 - INFO - --------------------------------------
+2024-04-22 05:30:02,384 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-22 05:30:02,385 - INFO - --------------------------------------
+2024-04-22 05:30:02,394 - DEBUG - Starting new HTTPS connection (1): zoom.us:443
+2024-04-22 05:30:02,692 - DEBUG - https://zoom.us:443 "POST /oauth/token HTTP/1.1" 200 None
+2024-04-22 05:30:02,701 - DEBUG - Starting new HTTPS connection (1): api.zoom.us:443
+2024-04-22 05:30:03,515 - DEBUG - https://api.zoom.us:443 "GET /v2/past_meetings/86423223879/participants HTTP/1.1" 200 553
+2024-04-22 05:30:03,520 - INFO - [{'id': 'Wg8f7A1CSZWFuyvumeq5Hw', 'user_id': '16778240', 'name': 'Mithün', 'user_email': 'mithunpaul@arizona.edu', 'join_time': '2024-04-19T23:25:05Z', 'leave_time': '2024-04-20T00:06:28Z', 'duration': 2483, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': '', 'user_id': '16779264', 'name': 'Urvika Gola', 'user_email': '', 'join_time': '2024-04-19T23:29:22Z', 'leave_time': '2024-04-20T00:06:27Z', 'duration': 2225, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}]
+2024-04-22 05:30:03,556 - INFO - Checked in: mithunpaul@arizona.edu
+2024-04-22 05:30:03,556 - INFO - --------------------------------------
+2024-04-22 06:30:02,919 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-22 06:30:02,919 - INFO - --------------------------------------
+2024-04-22 06:30:02,928 - DEBUG - Starting new HTTPS connection (1): zoom.us:443
+2024-04-22 06:30:03,225 - DEBUG - https://zoom.us:443 "POST /oauth/token HTTP/1.1" 200 None
+2024-04-22 06:30:03,233 - DEBUG - Starting new HTTPS connection (1): api.zoom.us:443
+2024-04-22 06:30:03,869 - DEBUG - https://api.zoom.us:443 "GET /v2/past_meetings/86423223879/participants HTTP/1.1" 200 553
+2024-04-22 06:30:03,873 - INFO - [{'id': 'Wg8f7A1CSZWFuyvumeq5Hw', 'user_id': '16778240', 'name': 'Mithün', 'user_email': 'mithunpaul@arizona.edu', 'join_time': '2024-04-19T23:25:05Z', 'leave_time': '2024-04-20T00:06:28Z', 'duration': 2483, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': '', 'user_id': '16779264', 'name': 'Urvika Gola', 'user_email': '', 'join_time': '2024-04-19T23:29:22Z', 'leave_time': '2024-04-20T00:06:27Z', 'duration': 2225, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}]
+2024-04-22 06:30:03,909 - INFO - Checked in: mithunpaul@arizona.edu
+2024-04-22 06:30:03,909 - INFO - --------------------------------------
+2024-04-22 07:30:02,373 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-22 07:30:02,373 - INFO - --------------------------------------
+2024-04-22 07:30:02,382 - DEBUG - Starting new HTTPS connection (1): zoom.us:443
+2024-04-22 07:30:02,767 - DEBUG - https://zoom.us:443 "POST /oauth/token HTTP/1.1" 200 None
+2024-04-22 07:30:02,777 - DEBUG - Starting new HTTPS connection (1): api.zoom.us:443
+2024-04-22 07:30:03,353 - DEBUG - https://api.zoom.us:443 "GET /v2/past_meetings/86423223879/participants HTTP/1.1" 200 553
+2024-04-22 07:30:03,358 - INFO - [{'id': 'Wg8f7A1CSZWFuyvumeq5Hw', 'user_id': '16778240', 'name': 'Mithün', 'user_email': 'mithunpaul@arizona.edu', 'join_time': '2024-04-19T23:25:05Z', 'leave_time': '2024-04-20T00:06:28Z', 'duration': 2483, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': '', 'user_id': '16779264', 'name': 'Urvika Gola', 'user_email': '', 'join_time': '2024-04-19T23:29:22Z', 'leave_time': '2024-04-20T00:06:27Z', 'duration': 2225, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}]
+2024-04-22 07:30:03,395 - INFO - Checked in: mithunpaul@arizona.edu
+2024-04-22 07:30:03,395 - INFO - --------------------------------------
+2024-04-22 08:30:02,610 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-22 08:30:02,610 - INFO - --------------------------------------
+2024-04-22 08:30:02,620 - DEBUG - Starting new HTTPS connection (1): zoom.us:443
+2024-04-22 08:30:02,956 - DEBUG - https://zoom.us:443 "POST /oauth/token HTTP/1.1" 200 None
+2024-04-22 08:30:02,964 - DEBUG - Starting new HTTPS connection (1): api.zoom.us:443
+2024-04-22 08:30:03,863 - DEBUG - https://api.zoom.us:443 "GET /v2/past_meetings/86423223879/participants HTTP/1.1" 200 553
+2024-04-22 08:30:03,868 - INFO - [{'id': 'Wg8f7A1CSZWFuyvumeq5Hw', 'user_id': '16778240', 'name': 'Mithün', 'user_email': 'mithunpaul@arizona.edu', 'join_time': '2024-04-19T23:25:05Z', 'leave_time': '2024-04-20T00:06:28Z', 'duration': 2483, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': '', 'user_id': '16779264', 'name': 'Urvika Gola', 'user_email': '', 'join_time': '2024-04-19T23:29:22Z', 'leave_time': '2024-04-20T00:06:27Z', 'duration': 2225, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}]
+2024-04-22 08:30:03,904 - INFO - Checked in: mithunpaul@arizona.edu
+2024-04-22 08:30:03,904 - INFO - --------------------------------------
+2024-04-22 09:30:02,057 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-22 09:30:02,058 - INFO - --------------------------------------
+2024-04-22 09:30:02,069 - DEBUG - Starting new HTTPS connection (1): zoom.us:443
+2024-04-22 09:30:02,433 - DEBUG - https://zoom.us:443 "POST /oauth/token HTTP/1.1" 200 None
+2024-04-22 09:30:02,444 - DEBUG - Starting new HTTPS connection (1): api.zoom.us:443
+2024-04-22 09:30:03,564 - DEBUG - https://api.zoom.us:443 "GET /v2/past_meetings/86423223879/participants HTTP/1.1" 200 553
+2024-04-22 09:30:03,570 - INFO - [{'id': 'Wg8f7A1CSZWFuyvumeq5Hw', 'user_id': '16778240', 'name': 'Mithün', 'user_email': 'mithunpaul@arizona.edu', 'join_time': '2024-04-19T23:25:05Z', 'leave_time': '2024-04-20T00:06:28Z', 'duration': 2483, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': '', 'user_id': '16779264', 'name': 'Urvika Gola', 'user_email': '', 'join_time': '2024-04-19T23:29:22Z', 'leave_time': '2024-04-20T00:06:27Z', 'duration': 2225, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}]
+2024-04-22 09:30:03,608 - INFO - Checked in: mithunpaul@arizona.edu
+2024-04-22 09:30:03,608 - INFO - --------------------------------------
+2024-04-22 10:30:02,174 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-22 10:30:02,174 - INFO - --------------------------------------
+2024-04-22 10:30:02,184 - DEBUG - Starting new HTTPS connection (1): zoom.us:443
+2024-04-22 10:30:02,533 - DEBUG - https://zoom.us:443 "POST /oauth/token HTTP/1.1" 200 None
+2024-04-22 10:30:02,545 - DEBUG - Starting new HTTPS connection (1): api.zoom.us:443
+2024-04-22 10:30:03,441 - DEBUG - https://api.zoom.us:443 "GET /v2/past_meetings/86423223879/participants HTTP/1.1" 200 553
+2024-04-22 10:30:03,446 - INFO - [{'id': 'Wg8f7A1CSZWFuyvumeq5Hw', 'user_id': '16778240', 'name': 'Mithün', 'user_email': 'mithunpaul@arizona.edu', 'join_time': '2024-04-19T23:25:05Z', 'leave_time': '2024-04-20T00:06:28Z', 'duration': 2483, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': '', 'user_id': '16779264', 'name': 'Urvika Gola', 'user_email': '', 'join_time': '2024-04-19T23:29:22Z', 'leave_time': '2024-04-20T00:06:27Z', 'duration': 2225, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}]
+2024-04-22 10:30:03,483 - INFO - Checked in: mithunpaul@arizona.edu
+2024-04-22 10:30:03,483 - INFO - --------------------------------------
+2024-04-22 11:30:02,267 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-22 11:30:02,267 - INFO - --------------------------------------
+2024-04-22 11:30:02,277 - DEBUG - Starting new HTTPS connection (1): zoom.us:443
+2024-04-22 11:30:02,625 - DEBUG - https://zoom.us:443 "POST /oauth/token HTTP/1.1" 200 None
+2024-04-22 11:30:02,636 - DEBUG - Starting new HTTPS connection (1): api.zoom.us:443
+2024-04-22 11:30:03,767 - DEBUG - https://api.zoom.us:443 "GET /v2/past_meetings/86423223879/participants HTTP/1.1" 200 553
+2024-04-22 11:30:03,772 - INFO - [{'id': 'Wg8f7A1CSZWFuyvumeq5Hw', 'user_id': '16778240', 'name': 'Mithün', 'user_email': 'mithunpaul@arizona.edu', 'join_time': '2024-04-19T23:25:05Z', 'leave_time': '2024-04-20T00:06:28Z', 'duration': 2483, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': '', 'user_id': '16779264', 'name': 'Urvika Gola', 'user_email': '', 'join_time': '2024-04-19T23:29:22Z', 'leave_time': '2024-04-20T00:06:27Z', 'duration': 2225, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}]
+2024-04-22 11:30:03,806 - INFO - Checked in: mithunpaul@arizona.edu
+2024-04-22 11:30:03,806 - INFO - --------------------------------------
+2024-04-22 12:30:02,167 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-22 12:30:02,167 - INFO - --------------------------------------
+2024-04-22 12:30:02,175 - DEBUG - Starting new HTTPS connection (1): zoom.us:443
+2024-04-22 12:30:02,477 - DEBUG - https://zoom.us:443 "POST /oauth/token HTTP/1.1" 200 None
+2024-04-22 12:30:02,486 - DEBUG - Starting new HTTPS connection (1): api.zoom.us:443
+2024-04-22 12:30:03,084 - DEBUG - https://api.zoom.us:443 "GET /v2/past_meetings/86423223879/participants HTTP/1.1" 200 553
+2024-04-22 12:30:03,089 - INFO - [{'id': 'Wg8f7A1CSZWFuyvumeq5Hw', 'user_id': '16778240', 'name': 'Mithün', 'user_email': 'mithunpaul@arizona.edu', 'join_time': '2024-04-19T23:25:05Z', 'leave_time': '2024-04-20T00:06:28Z', 'duration': 2483, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': '', 'user_id': '16779264', 'name': 'Urvika Gola', 'user_email': '', 'join_time': '2024-04-19T23:29:22Z', 'leave_time': '2024-04-20T00:06:27Z', 'duration': 2225, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}]
+2024-04-22 12:30:03,125 - INFO - Checked in: mithunpaul@arizona.edu
+2024-04-22 12:30:03,125 - INFO - --------------------------------------
+2024-04-22 13:30:02,310 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-22 13:30:02,311 - INFO - --------------------------------------
+2024-04-22 13:30:02,319 - DEBUG - Starting new HTTPS connection (1): zoom.us:443
+2024-04-22 13:30:02,667 - DEBUG - https://zoom.us:443 "POST /oauth/token HTTP/1.1" 200 None
+2024-04-22 13:30:02,675 - DEBUG - Starting new HTTPS connection (1): api.zoom.us:443
+2024-04-22 13:30:03,439 - DEBUG - https://api.zoom.us:443 "GET /v2/past_meetings/86423223879/participants HTTP/1.1" 200 553
+2024-04-22 13:30:03,444 - INFO - [{'id': 'Wg8f7A1CSZWFuyvumeq5Hw', 'user_id': '16778240', 'name': 'Mithün', 'user_email': 'mithunpaul@arizona.edu', 'join_time': '2024-04-19T23:25:05Z', 'leave_time': '2024-04-20T00:06:28Z', 'duration': 2483, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': '', 'user_id': '16779264', 'name': 'Urvika Gola', 'user_email': '', 'join_time': '2024-04-19T23:29:22Z', 'leave_time': '2024-04-20T00:06:27Z', 'duration': 2225, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}]
+2024-04-22 13:30:03,484 - INFO - Checked in: mithunpaul@arizona.edu
+2024-04-22 13:30:03,485 - INFO - --------------------------------------
+2024-04-22 14:30:02,448 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-22 14:30:02,448 - INFO - --------------------------------------
+2024-04-22 14:30:02,458 - DEBUG - Starting new HTTPS connection (1): zoom.us:443
+2024-04-22 14:30:02,785 - DEBUG - https://zoom.us:443 "POST /oauth/token HTTP/1.1" 200 None
+2024-04-22 14:30:02,795 - DEBUG - Starting new HTTPS connection (1): api.zoom.us:443
+2024-04-22 14:30:03,332 - DEBUG - https://api.zoom.us:443 "GET /v2/past_meetings/86423223879/participants HTTP/1.1" 200 553
+2024-04-22 14:30:03,336 - INFO - [{'id': 'Wg8f7A1CSZWFuyvumeq5Hw', 'user_id': '16778240', 'name': 'Mithün', 'user_email': 'mithunpaul@arizona.edu', 'join_time': '2024-04-19T23:25:05Z', 'leave_time': '2024-04-20T00:06:28Z', 'duration': 2483, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': '', 'user_id': '16779264', 'name': 'Urvika Gola', 'user_email': '', 'join_time': '2024-04-19T23:29:22Z', 'leave_time': '2024-04-20T00:06:27Z', 'duration': 2225, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}]
+2024-04-22 14:30:03,372 - INFO - Checked in: mithunpaul@arizona.edu
+2024-04-22 14:30:03,372 - INFO - --------------------------------------
+2024-04-22 15:30:02,091 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-22 15:30:02,092 - INFO - --------------------------------------
+2024-04-22 15:30:02,104 - DEBUG - Starting new HTTPS connection (1): zoom.us:443
+2024-04-22 15:30:02,462 - DEBUG - https://zoom.us:443 "POST /oauth/token HTTP/1.1" 200 None
+2024-04-22 15:30:02,474 - DEBUG - Starting new HTTPS connection (1): api.zoom.us:443
+2024-04-22 15:30:03,412 - DEBUG - https://api.zoom.us:443 "GET /v2/past_meetings/86423223879/participants HTTP/1.1" 200 553
+2024-04-22 15:30:03,417 - INFO - [{'id': 'Wg8f7A1CSZWFuyvumeq5Hw', 'user_id': '16778240', 'name': 'Mithün', 'user_email': 'mithunpaul@arizona.edu', 'join_time': '2024-04-19T23:25:05Z', 'leave_time': '2024-04-20T00:06:28Z', 'duration': 2483, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': '', 'user_id': '16779264', 'name': 'Urvika Gola', 'user_email': '', 'join_time': '2024-04-19T23:29:22Z', 'leave_time': '2024-04-20T00:06:27Z', 'duration': 2225, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}]
+2024-04-22 15:30:03,453 - INFO - Checked in: mithunpaul@arizona.edu
+2024-04-22 15:30:03,454 - INFO - --------------------------------------
+2024-04-22 16:30:02,976 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-22 16:30:02,976 - INFO - --------------------------------------
+2024-04-22 16:30:02,985 - DEBUG - Starting new HTTPS connection (1): zoom.us:443
+2024-04-22 16:30:03,320 - DEBUG - https://zoom.us:443 "POST /oauth/token HTTP/1.1" 200 None
+2024-04-22 16:30:03,329 - DEBUG - Starting new HTTPS connection (1): api.zoom.us:443
+2024-04-22 16:30:04,184 - DEBUG - https://api.zoom.us:443 "GET /v2/past_meetings/86423223879/participants HTTP/1.1" 200 338
+2024-04-22 16:30:04,189 - INFO - [{'id': '2M9An2omS9KPM8Rxz2lwfw', 'user_id': '16778240', 'name': 'Michele Cosi', 'user_email': 'cosi@arizona.edu', 'join_time': '2024-04-22T22:38:58Z', 'leave_time': '2024-04-22T22:51:02Z', 'duration': 724, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}]
+2024-04-22 17:30:02,664 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-22 17:30:02,665 - INFO - --------------------------------------
+2024-04-22 17:30:02,674 - DEBUG - Starting new HTTPS connection (1): zoom.us:443
+2024-04-22 17:30:02,974 - DEBUG - https://zoom.us:443 "POST /oauth/token HTTP/1.1" 200 None
+2024-04-22 17:30:02,982 - DEBUG - Starting new HTTPS connection (1): api.zoom.us:443
+2024-04-22 17:30:03,569 - DEBUG - https://api.zoom.us:443 "GET /v2/past_meetings/86423223879/participants HTTP/1.1" 200 348
+2024-04-22 17:30:03,574 - INFO - [{'id': 'yXxO1qhiQkmJy4b80J8xAQ', 'user_id': '16778240', 'name': 'Carlos Lizárraga', 'user_email': 'clizarraga@arizona.edu', 'join_time': '2024-04-22T23:50:25Z', 'leave_time': '2024-04-22T23:50:38Z', 'duration': 13, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}]
+2024-04-22 17:30:03,610 - INFO - Checked in: clizarraga@arizona.edu
+2024-04-22 17:30:03,610 - INFO - --------------------------------------
+2024-04-22 18:30:02,552 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-22 18:30:02,552 - INFO - --------------------------------------
+2024-04-22 18:30:02,564 - DEBUG - Starting new HTTPS connection (1): zoom.us:443
+2024-04-22 18:30:02,907 - DEBUG - https://zoom.us:443 "POST /oauth/token HTTP/1.1" 200 None
+2024-04-22 18:30:02,919 - DEBUG - Starting new HTTPS connection (1): api.zoom.us:443
+2024-04-22 18:30:03,554 - DEBUG - https://api.zoom.us:443 "GET /v2/past_meetings/86423223879/participants HTTP/1.1" 200 348
+2024-04-22 18:30:03,558 - INFO - [{'id': 'yXxO1qhiQkmJy4b80J8xAQ', 'user_id': '16778240', 'name': 'Carlos Lizárraga', 'user_email': 'clizarraga@arizona.edu', 'join_time': '2024-04-22T23:50:25Z', 'leave_time': '2024-04-22T23:50:38Z', 'duration': 13, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}]
+2024-04-22 18:30:03,595 - INFO - Checked in: clizarraga@arizona.edu
+2024-04-22 18:30:03,596 - INFO - --------------------------------------
+2024-04-22 19:30:02,577 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-22 19:30:02,578 - INFO - --------------------------------------
+2024-04-22 19:30:02,589 - DEBUG - Starting new HTTPS connection (1): zoom.us:443
+2024-04-22 19:30:02,960 - DEBUG - https://zoom.us:443 "POST /oauth/token HTTP/1.1" 200 None
+2024-04-22 19:30:02,970 - DEBUG - Starting new HTTPS connection (1): api.zoom.us:443
+2024-04-22 19:30:03,776 - DEBUG - https://api.zoom.us:443 "GET /v2/past_meetings/86423223879/participants HTTP/1.1" 200 348
+2024-04-22 19:30:03,781 - INFO - [{'id': 'yXxO1qhiQkmJy4b80J8xAQ', 'user_id': '16778240', 'name': 'Carlos Lizárraga', 'user_email': 'clizarraga@arizona.edu', 'join_time': '2024-04-22T23:50:25Z', 'leave_time': '2024-04-22T23:50:38Z', 'duration': 13, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}]
+2024-04-22 19:30:03,816 - INFO - Checked in: clizarraga@arizona.edu
+2024-04-22 19:30:03,816 - INFO - --------------------------------------
+2024-04-22 20:30:02,487 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-22 20:30:02,488 - INFO - --------------------------------------
+2024-04-22 20:30:02,497 - DEBUG - Starting new HTTPS connection (1): zoom.us:443
+2024-04-22 20:30:02,862 - DEBUG - https://zoom.us:443 "POST /oauth/token HTTP/1.1" 200 None
+2024-04-22 20:30:02,873 - DEBUG - Starting new HTTPS connection (1): api.zoom.us:443
+2024-04-22 20:30:03,510 - DEBUG - https://api.zoom.us:443 "GET /v2/past_meetings/86423223879/participants HTTP/1.1" 200 348
+2024-04-22 20:30:03,516 - INFO - [{'id': 'yXxO1qhiQkmJy4b80J8xAQ', 'user_id': '16778240', 'name': 'Carlos Lizárraga', 'user_email': 'clizarraga@arizona.edu', 'join_time': '2024-04-22T23:50:25Z', 'leave_time': '2024-04-22T23:50:38Z', 'duration': 13, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}]
+2024-04-22 20:30:03,555 - INFO - Checked in: clizarraga@arizona.edu
+2024-04-22 20:30:03,555 - INFO - --------------------------------------
+2024-04-22 21:30:02,121 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-22 21:30:02,121 - INFO - --------------------------------------
+2024-04-22 21:30:02,132 - DEBUG - Starting new HTTPS connection (1): zoom.us:443
+2024-04-22 21:30:02,455 - DEBUG - https://zoom.us:443 "POST /oauth/token HTTP/1.1" 200 None
+2024-04-22 21:30:02,465 - DEBUG - Starting new HTTPS connection (1): api.zoom.us:443
+2024-04-22 21:30:03,284 - DEBUG - https://api.zoom.us:443 "GET /v2/past_meetings/86423223879/participants HTTP/1.1" 200 348
+2024-04-22 21:30:03,289 - INFO - [{'id': 'yXxO1qhiQkmJy4b80J8xAQ', 'user_id': '16778240', 'name': 'Carlos Lizárraga', 'user_email': 'clizarraga@arizona.edu', 'join_time': '2024-04-22T23:50:25Z', 'leave_time': '2024-04-22T23:50:38Z', 'duration': 13, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}]
+2024-04-22 21:30:03,325 - INFO - Checked in: clizarraga@arizona.edu
+2024-04-22 21:30:03,326 - INFO - --------------------------------------
+2024-04-22 22:30:01,977 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-22 22:30:01,977 - INFO - --------------------------------------
+2024-04-22 22:30:01,986 - DEBUG - Starting new HTTPS connection (1): zoom.us:443
+2024-04-22 22:30:02,370 - DEBUG - https://zoom.us:443 "POST /oauth/token HTTP/1.1" 200 None
+2024-04-22 22:30:02,380 - DEBUG - Starting new HTTPS connection (1): api.zoom.us:443
+2024-04-22 22:30:03,270 - DEBUG - https://api.zoom.us:443 "GET /v2/past_meetings/86423223879/participants HTTP/1.1" 200 348
+2024-04-22 22:30:03,275 - INFO - [{'id': 'yXxO1qhiQkmJy4b80J8xAQ', 'user_id': '16778240', 'name': 'Carlos Lizárraga', 'user_email': 'clizarraga@arizona.edu', 'join_time': '2024-04-22T23:50:25Z', 'leave_time': '2024-04-22T23:50:38Z', 'duration': 13, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}]
+2024-04-22 22:30:03,311 - INFO - Checked in: clizarraga@arizona.edu
+2024-04-22 22:30:03,311 - INFO - --------------------------------------
+2024-04-22 23:30:02,231 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-22 23:30:02,231 - INFO - --------------------------------------
+2024-04-22 23:30:02,241 - DEBUG - Starting new HTTPS connection (1): zoom.us:443
+2024-04-22 23:30:02,561 - DEBUG - https://zoom.us:443 "POST /oauth/token HTTP/1.1" 200 None
+2024-04-22 23:30:02,571 - DEBUG - Starting new HTTPS connection (1): api.zoom.us:443
+2024-04-22 23:30:03,335 - DEBUG - https://api.zoom.us:443 "GET /v2/past_meetings/86423223879/participants HTTP/1.1" 200 348
+2024-04-22 23:30:03,340 - INFO - [{'id': 'yXxO1qhiQkmJy4b80J8xAQ', 'user_id': '16778240', 'name': 'Carlos Lizárraga', 'user_email': 'clizarraga@arizona.edu', 'join_time': '2024-04-22T23:50:25Z', 'leave_time': '2024-04-22T23:50:38Z', 'duration': 13, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}]
+2024-04-22 23:30:03,376 - INFO - Checked in: clizarraga@arizona.edu
+2024-04-22 23:30:03,377 - INFO - --------------------------------------
+2024-04-23 00:30:02,324 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-23 00:30:02,324 - INFO - --------------------------------------
+2024-04-23 00:30:02,333 - DEBUG - Starting new HTTPS connection (1): zoom.us:443
+2024-04-23 00:30:02,694 - DEBUG - https://zoom.us:443 "POST /oauth/token HTTP/1.1" 200 None
+2024-04-23 00:30:02,705 - DEBUG - Starting new HTTPS connection (1): api.zoom.us:443
+2024-04-23 00:30:03,636 - DEBUG - https://api.zoom.us:443 "GET /v2/past_meetings/86423223879/participants HTTP/1.1" 200 348
+2024-04-23 00:30:03,641 - INFO - [{'id': 'yXxO1qhiQkmJy4b80J8xAQ', 'user_id': '16778240', 'name': 'Carlos Lizárraga', 'user_email': 'clizarraga@arizona.edu', 'join_time': '2024-04-22T23:50:25Z', 'leave_time': '2024-04-22T23:50:38Z', 'duration': 13, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}]
+2024-04-23 00:30:03,676 - DEBUG - Starting new HTTPS connection (1): zoom.us:443
+2024-04-23 00:30:04,015 - DEBUG - https://zoom.us:443 "POST /oauth/token HTTP/1.1" 200 None
+2024-04-23 00:30:04,027 - DEBUG - Starting new HTTPS connection (1): api.zoom.us:443
+2024-04-23 00:30:04,620 - DEBUG - https://api.zoom.us:443 "GET /v2/past_meetings/86423223879/participants HTTP/1.1" 200 348
+2024-04-23 00:30:04,624 - INFO - [{'id': 'yXxO1qhiQkmJy4b80J8xAQ', 'user_id': '16778240', 'name': 'Carlos Lizárraga', 'user_email': 'clizarraga@arizona.edu', 'join_time': '2024-04-22T23:50:25Z', 'leave_time': '2024-04-22T23:50:38Z', 'duration': 13, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}]
+2024-04-23 01:30:02,164 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-23 01:30:02,165 - INFO - --------------------------------------
+2024-04-23 01:30:02,174 - DEBUG - Starting new HTTPS connection (1): zoom.us:443
+2024-04-23 01:30:02,573 - DEBUG - https://zoom.us:443 "POST /oauth/token HTTP/1.1" 200 None
+2024-04-23 01:30:02,585 - DEBUG - Starting new HTTPS connection (1): api.zoom.us:443
+2024-04-23 01:30:03,588 - DEBUG - https://api.zoom.us:443 "GET /v2/past_meetings/86423223879/participants HTTP/1.1" 200 348
+2024-04-23 01:30:03,593 - INFO - [{'id': 'yXxO1qhiQkmJy4b80J8xAQ', 'user_id': '16778240', 'name': 'Carlos Lizárraga', 'user_email': 'clizarraga@arizona.edu', 'join_time': '2024-04-22T23:50:25Z', 'leave_time': '2024-04-22T23:50:38Z', 'duration': 13, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}]
+2024-04-23 01:30:03,629 - DEBUG - Starting new HTTPS connection (1): zoom.us:443
+2024-04-23 01:30:03,964 - DEBUG - https://zoom.us:443 "POST /oauth/token HTTP/1.1" 200 None
+2024-04-23 01:30:03,974 - DEBUG - Starting new HTTPS connection (1): api.zoom.us:443
+2024-04-23 01:30:04,775 - DEBUG - https://api.zoom.us:443 "GET /v2/past_meetings/86423223879/participants HTTP/1.1" 200 348
+2024-04-23 01:30:04,780 - INFO - [{'id': 'yXxO1qhiQkmJy4b80J8xAQ', 'user_id': '16778240', 'name': 'Carlos Lizárraga', 'user_email': 'clizarraga@arizona.edu', 'join_time': '2024-04-22T23:50:25Z', 'leave_time': '2024-04-22T23:50:38Z', 'duration': 13, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}]
+2024-04-23 02:30:02,149 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-23 02:30:02,150 - INFO - --------------------------------------
+2024-04-23 02:30:02,158 - DEBUG - Starting new HTTPS connection (1): zoom.us:443
+2024-04-23 02:30:02,492 - DEBUG - https://zoom.us:443 "POST /oauth/token HTTP/1.1" 200 None
+2024-04-23 02:30:02,501 - DEBUG - Starting new HTTPS connection (1): api.zoom.us:443
+2024-04-23 02:30:03,080 - DEBUG - https://api.zoom.us:443 "GET /v2/past_meetings/86423223879/participants HTTP/1.1" 200 348
+2024-04-23 02:30:03,084 - INFO - [{'id': 'yXxO1qhiQkmJy4b80J8xAQ', 'user_id': '16778240', 'name': 'Carlos Lizárraga', 'user_email': 'clizarraga@arizona.edu', 'join_time': '2024-04-22T23:50:25Z', 'leave_time': '2024-04-22T23:50:38Z', 'duration': 13, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}]
+2024-04-23 02:30:03,119 - DEBUG - Starting new HTTPS connection (1): zoom.us:443
+2024-04-23 02:30:03,663 - DEBUG - https://zoom.us:443 "POST /oauth/token HTTP/1.1" 200 None
+2024-04-23 02:30:03,673 - DEBUG - Starting new HTTPS connection (1): api.zoom.us:443
+2024-04-23 02:30:04,294 - DEBUG - https://api.zoom.us:443 "GET /v2/past_meetings/86423223879/participants HTTP/1.1" 200 348
+2024-04-23 02:30:04,298 - INFO - [{'id': 'yXxO1qhiQkmJy4b80J8xAQ', 'user_id': '16778240', 'name': 'Carlos Lizárraga', 'user_email': 'clizarraga@arizona.edu', 'join_time': '2024-04-22T23:50:25Z', 'leave_time': '2024-04-22T23:50:38Z', 'duration': 13, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}]
+2024-04-23 03:30:02,291 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-23 03:30:02,292 - INFO - --------------------------------------
+2024-04-23 03:30:02,302 - DEBUG - Starting new HTTPS connection (1): zoom.us:443
+2024-04-23 03:30:02,675 - DEBUG - https://zoom.us:443 "POST /oauth/token HTTP/1.1" 200 None
+2024-04-23 03:30:02,684 - DEBUG - Starting new HTTPS connection (1): api.zoom.us:443
+2024-04-23 03:30:03,335 - DEBUG - https://api.zoom.us:443 "GET /v2/past_meetings/86423223879/participants HTTP/1.1" 200 348
+2024-04-23 03:30:03,339 - INFO - [{'id': 'yXxO1qhiQkmJy4b80J8xAQ', 'user_id': '16778240', 'name': 'Carlos Lizárraga', 'user_email': 'clizarraga@arizona.edu', 'join_time': '2024-04-22T23:50:25Z', 'leave_time': '2024-04-22T23:50:38Z', 'duration': 13, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}]
+2024-04-23 03:30:03,376 - DEBUG - Starting new HTTPS connection (1): zoom.us:443
+2024-04-23 03:30:03,710 - DEBUG - https://zoom.us:443 "POST /oauth/token HTTP/1.1" 200 None
+2024-04-23 03:30:03,722 - DEBUG - Starting new HTTPS connection (1): api.zoom.us:443
+2024-04-23 03:30:04,656 - DEBUG - https://api.zoom.us:443 "GET /v2/past_meetings/86423223879/participants HTTP/1.1" 200 348
+2024-04-23 03:30:04,661 - INFO - [{'id': 'yXxO1qhiQkmJy4b80J8xAQ', 'user_id': '16778240', 'name': 'Carlos Lizárraga', 'user_email': 'clizarraga@arizona.edu', 'join_time': '2024-04-22T23:50:25Z', 'leave_time': '2024-04-22T23:50:38Z', 'duration': 13, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}]
+2024-04-23 04:30:02,231 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-23 04:30:02,232 - INFO - --------------------------------------
+2024-04-23 04:30:02,240 - DEBUG - Starting new HTTPS connection (1): zoom.us:443
+2024-04-23 04:30:02,582 - DEBUG - https://zoom.us:443 "POST /oauth/token HTTP/1.1" 200 None
+2024-04-23 04:30:02,592 - DEBUG - Starting new HTTPS connection (1): api.zoom.us:443
+2024-04-23 04:30:03,195 - DEBUG - https://api.zoom.us:443 "GET /v2/past_meetings/86423223879/participants HTTP/1.1" 200 348
+2024-04-23 04:30:03,200 - INFO - [{'id': 'yXxO1qhiQkmJy4b80J8xAQ', 'user_id': '16778240', 'name': 'Carlos Lizárraga', 'user_email': 'clizarraga@arizona.edu', 'join_time': '2024-04-22T23:50:25Z', 'leave_time': '2024-04-22T23:50:38Z', 'duration': 13, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}]
+2024-04-23 04:30:03,235 - DEBUG - Starting new HTTPS connection (1): zoom.us:443
+2024-04-23 04:30:03,570 - DEBUG - https://zoom.us:443 "POST /oauth/token HTTP/1.1" 200 None
+2024-04-23 04:30:03,580 - DEBUG - Starting new HTTPS connection (1): api.zoom.us:443
+2024-04-23 04:30:04,098 - DEBUG - https://api.zoom.us:443 "GET /v2/past_meetings/86423223879/participants HTTP/1.1" 200 348
+2024-04-23 04:30:04,103 - INFO - [{'id': 'yXxO1qhiQkmJy4b80J8xAQ', 'user_id': '16778240', 'name': 'Carlos Lizárraga', 'user_email': 'clizarraga@arizona.edu', 'join_time': '2024-04-22T23:50:25Z', 'leave_time': '2024-04-22T23:50:38Z', 'duration': 13, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}]
+2024-04-23 05:30:02,738 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-23 05:30:02,738 - INFO - --------------------------------------
+2024-04-23 05:30:02,747 - DEBUG - Starting new HTTPS connection (1): zoom.us:443
+2024-04-23 05:30:03,076 - DEBUG - https://zoom.us:443 "POST /oauth/token HTTP/1.1" 200 None
+2024-04-23 05:30:03,088 - DEBUG - Starting new HTTPS connection (1): api.zoom.us:443
+2024-04-23 05:30:03,942 - DEBUG - https://api.zoom.us:443 "GET /v2/past_meetings/86423223879/participants HTTP/1.1" 200 348
+2024-04-23 05:30:03,947 - INFO - [{'id': 'yXxO1qhiQkmJy4b80J8xAQ', 'user_id': '16778240', 'name': 'Carlos Lizárraga', 'user_email': 'clizarraga@arizona.edu', 'join_time': '2024-04-22T23:50:25Z', 'leave_time': '2024-04-22T23:50:38Z', 'duration': 13, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}]
+2024-04-23 05:30:03,984 - DEBUG - Starting new HTTPS connection (1): zoom.us:443
+2024-04-23 05:30:04,316 - DEBUG - https://zoom.us:443 "POST /oauth/token HTTP/1.1" 200 None
+2024-04-23 05:30:04,330 - DEBUG - Starting new HTTPS connection (1): api.zoom.us:443
+2024-04-23 05:30:05,136 - DEBUG - https://api.zoom.us:443 "GET /v2/past_meetings/86423223879/participants HTTP/1.1" 200 348
+2024-04-23 05:30:05,140 - INFO - [{'id': 'yXxO1qhiQkmJy4b80J8xAQ', 'user_id': '16778240', 'name': 'Carlos Lizárraga', 'user_email': 'clizarraga@arizona.edu', 'join_time': '2024-04-22T23:50:25Z', 'leave_time': '2024-04-22T23:50:38Z', 'duration': 13, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}]
+2024-04-23 06:30:02,549 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-23 06:30:02,550 - INFO - --------------------------------------
+2024-04-23 06:30:02,559 - DEBUG - Starting new HTTPS connection (1): zoom.us:443
+2024-04-23 06:30:02,900 - DEBUG - https://zoom.us:443 "POST /oauth/token HTTP/1.1" 200 None
+2024-04-23 06:30:02,910 - DEBUG - Starting new HTTPS connection (1): api.zoom.us:443
+2024-04-23 06:30:03,735 - DEBUG - https://api.zoom.us:443 "GET /v2/past_meetings/86423223879/participants HTTP/1.1" 200 348
+2024-04-23 06:30:03,740 - INFO - [{'id': 'yXxO1qhiQkmJy4b80J8xAQ', 'user_id': '16778240', 'name': 'Carlos Lizárraga', 'user_email': 'clizarraga@arizona.edu', 'join_time': '2024-04-22T23:50:25Z', 'leave_time': '2024-04-22T23:50:38Z', 'duration': 13, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}]
+2024-04-23 06:30:03,777 - DEBUG - Starting new HTTPS connection (1): zoom.us:443
+2024-04-23 06:30:04,107 - DEBUG - https://zoom.us:443 "POST /oauth/token HTTP/1.1" 200 None
+2024-04-23 06:30:04,118 - DEBUG - Starting new HTTPS connection (1): api.zoom.us:443
+2024-04-23 06:30:04,891 - DEBUG - https://api.zoom.us:443 "GET /v2/past_meetings/86423223879/participants HTTP/1.1" 200 348
+2024-04-23 06:30:04,896 - INFO - [{'id': 'yXxO1qhiQkmJy4b80J8xAQ', 'user_id': '16778240', 'name': 'Carlos Lizárraga', 'user_email': 'clizarraga@arizona.edu', 'join_time': '2024-04-22T23:50:25Z', 'leave_time': '2024-04-22T23:50:38Z', 'duration': 13, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}]
+2024-04-23 07:30:02,262 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-23 07:30:02,262 - INFO - --------------------------------------
+2024-04-23 07:30:02,273 - DEBUG - Starting new HTTPS connection (1): zoom.us:443
+2024-04-23 07:30:02,619 - DEBUG - https://zoom.us:443 "POST /oauth/token HTTP/1.1" 200 None
+2024-04-23 07:30:02,628 - DEBUG - Starting new HTTPS connection (1): api.zoom.us:443
+2024-04-23 07:30:03,597 - DEBUG - https://api.zoom.us:443 "GET /v2/past_meetings/86423223879/participants HTTP/1.1" 200 348
+2024-04-23 07:30:03,602 - INFO - [{'id': 'yXxO1qhiQkmJy4b80J8xAQ', 'user_id': '16778240', 'name': 'Carlos Lizárraga', 'user_email': 'clizarraga@arizona.edu', 'join_time': '2024-04-22T23:50:25Z', 'leave_time': '2024-04-22T23:50:38Z', 'duration': 13, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}]
+2024-04-23 07:30:03,637 - DEBUG - Starting new HTTPS connection (1): zoom.us:443
+2024-04-23 07:30:03,979 - DEBUG - https://zoom.us:443 "POST /oauth/token HTTP/1.1" 200 None
+2024-04-23 07:30:03,989 - DEBUG - Starting new HTTPS connection (1): api.zoom.us:443
+2024-04-23 07:30:04,726 - DEBUG - https://api.zoom.us:443 "GET /v2/past_meetings/86423223879/participants HTTP/1.1" 200 348
+2024-04-23 07:30:04,731 - INFO - [{'id': 'yXxO1qhiQkmJy4b80J8xAQ', 'user_id': '16778240', 'name': 'Carlos Lizárraga', 'user_email': 'clizarraga@arizona.edu', 'join_time': '2024-04-22T23:50:25Z', 'leave_time': '2024-04-22T23:50:38Z', 'duration': 13, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}]
+2024-04-23 08:30:02,244 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-23 08:30:02,244 - INFO - --------------------------------------
+2024-04-23 08:30:02,255 - DEBUG - Starting new HTTPS connection (1): zoom.us:443
+2024-04-23 08:30:02,615 - DEBUG - https://zoom.us:443 "POST /oauth/token HTTP/1.1" 200 None
+2024-04-23 08:30:02,627 - DEBUG - Starting new HTTPS connection (1): api.zoom.us:443
+2024-04-23 08:30:03,538 - DEBUG - https://api.zoom.us:443 "GET /v2/past_meetings/86423223879/participants HTTP/1.1" 200 348
+2024-04-23 08:30:03,543 - INFO - [{'id': 'yXxO1qhiQkmJy4b80J8xAQ', 'user_id': '16778240', 'name': 'Carlos Lizárraga', 'user_email': 'clizarraga@arizona.edu', 'join_time': '2024-04-22T23:50:25Z', 'leave_time': '2024-04-22T23:50:38Z', 'duration': 13, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}]
+2024-04-23 08:30:03,579 - DEBUG - Starting new HTTPS connection (1): zoom.us:443
+2024-04-23 08:30:03,923 - DEBUG - https://zoom.us:443 "POST /oauth/token HTTP/1.1" 200 None
+2024-04-23 08:30:03,934 - DEBUG - Starting new HTTPS connection (1): api.zoom.us:443
+2024-04-23 08:30:04,716 - DEBUG - https://api.zoom.us:443 "GET /v2/past_meetings/86423223879/participants HTTP/1.1" 200 348
+2024-04-23 08:30:04,721 - INFO - [{'id': 'yXxO1qhiQkmJy4b80J8xAQ', 'user_id': '16778240', 'name': 'Carlos Lizárraga', 'user_email': 'clizarraga@arizona.edu', 'join_time': '2024-04-22T23:50:25Z', 'leave_time': '2024-04-22T23:50:38Z', 'duration': 13, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}]
+2024-04-23 09:30:02,137 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-23 09:30:02,137 - INFO - --------------------------------------
+2024-04-23 09:30:02,147 - DEBUG - Starting new HTTPS connection (1): zoom.us:443
+2024-04-23 09:30:02,714 - DEBUG - https://zoom.us:443 "POST /oauth/token HTTP/1.1" 200 None
+2024-04-23 09:30:02,724 - DEBUG - Starting new HTTPS connection (1): api.zoom.us:443
+2024-04-23 09:30:03,572 - DEBUG - https://api.zoom.us:443 "GET /v2/past_meetings/86423223879/participants HTTP/1.1" 200 348
+2024-04-23 09:30:03,577 - INFO - [{'id': 'yXxO1qhiQkmJy4b80J8xAQ', 'user_id': '16778240', 'name': 'Carlos Lizárraga', 'user_email': 'clizarraga@arizona.edu', 'join_time': '2024-04-22T23:50:25Z', 'leave_time': '2024-04-22T23:50:38Z', 'duration': 13, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}]
+2024-04-23 09:30:03,612 - DEBUG - Starting new HTTPS connection (1): zoom.us:443
+2024-04-23 09:30:03,958 - DEBUG - https://zoom.us:443 "POST /oauth/token HTTP/1.1" 200 None
+2024-04-23 09:30:03,968 - DEBUG - Starting new HTTPS connection (1): api.zoom.us:443
+2024-04-23 09:30:04,943 - DEBUG - https://api.zoom.us:443 "GET /v2/past_meetings/86423223879/participants HTTP/1.1" 200 348
+2024-04-23 09:30:04,948 - INFO - [{'id': 'yXxO1qhiQkmJy4b80J8xAQ', 'user_id': '16778240', 'name': 'Carlos Lizárraga', 'user_email': 'clizarraga@arizona.edu', 'join_time': '2024-04-22T23:50:25Z', 'leave_time': '2024-04-22T23:50:38Z', 'duration': 13, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}]
+2024-04-23 10:30:02,306 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-23 10:30:02,307 - INFO - --------------------------------------
+2024-04-23 10:30:02,316 - DEBUG - Starting new HTTPS connection (1): zoom.us:443
+2024-04-23 10:30:02,621 - DEBUG - https://zoom.us:443 "POST /oauth/token HTTP/1.1" 200 None
+2024-04-23 10:30:02,631 - DEBUG - Starting new HTTPS connection (1): api.zoom.us:443
+2024-04-23 10:30:03,327 - DEBUG - https://api.zoom.us:443 "GET /v2/past_meetings/86423223879/participants HTTP/1.1" 200 348
+2024-04-23 10:30:03,332 - INFO - [{'id': 'yXxO1qhiQkmJy4b80J8xAQ', 'user_id': '16778240', 'name': 'Carlos Lizárraga', 'user_email': 'clizarraga@arizona.edu', 'join_time': '2024-04-22T23:50:25Z', 'leave_time': '2024-04-22T23:50:38Z', 'duration': 13, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}]
+2024-04-23 10:30:03,368 - DEBUG - Starting new HTTPS connection (1): zoom.us:443
+2024-04-23 10:30:03,712 - DEBUG - https://zoom.us:443 "POST /oauth/token HTTP/1.1" 200 None
+2024-04-23 10:30:03,722 - DEBUG - Starting new HTTPS connection (1): api.zoom.us:443
+2024-04-23 10:30:04,480 - DEBUG - https://api.zoom.us:443 "GET /v2/past_meetings/86423223879/participants HTTP/1.1" 200 348
+2024-04-23 10:30:04,485 - INFO - [{'id': 'yXxO1qhiQkmJy4b80J8xAQ', 'user_id': '16778240', 'name': 'Carlos Lizárraga', 'user_email': 'clizarraga@arizona.edu', 'join_time': '2024-04-22T23:50:25Z', 'leave_time': '2024-04-22T23:50:38Z', 'duration': 13, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}]
+2024-04-23 11:30:02,589 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-23 11:30:02,589 - INFO - --------------------------------------
+2024-04-23 11:30:02,599 - DEBUG - Starting new HTTPS connection (1): zoom.us:443
+2024-04-23 11:30:02,971 - DEBUG - https://zoom.us:443 "POST /oauth/token HTTP/1.1" 200 None
+2024-04-23 11:30:02,982 - DEBUG - Starting new HTTPS connection (1): api.zoom.us:443
+2024-04-23 11:30:04,000 - DEBUG - https://api.zoom.us:443 "GET /v2/past_meetings/86423223879/participants HTTP/1.1" 200 348
+2024-04-23 11:30:04,004 - INFO - [{'id': 'yXxO1qhiQkmJy4b80J8xAQ', 'user_id': '16778240', 'name': 'Carlos Lizárraga', 'user_email': 'clizarraga@arizona.edu', 'join_time': '2024-04-22T23:50:25Z', 'leave_time': '2024-04-22T23:50:38Z', 'duration': 13, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}]
+2024-04-23 11:30:04,039 - DEBUG - Starting new HTTPS connection (1): zoom.us:443
+2024-04-23 11:30:04,379 - DEBUG - https://zoom.us:443 "POST /oauth/token HTTP/1.1" 200 None
+2024-04-23 11:30:04,389 - DEBUG - Starting new HTTPS connection (1): api.zoom.us:443
+2024-04-23 11:30:05,039 - DEBUG - https://api.zoom.us:443 "GET /v2/past_meetings/86423223879/participants HTTP/1.1" 200 348
+2024-04-23 11:30:05,043 - INFO - [{'id': 'yXxO1qhiQkmJy4b80J8xAQ', 'user_id': '16778240', 'name': 'Carlos Lizárraga', 'user_email': 'clizarraga@arizona.edu', 'join_time': '2024-04-22T23:50:25Z', 'leave_time': '2024-04-22T23:50:38Z', 'duration': 13, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}]
+2024-04-23 12:30:02,654 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-23 12:30:02,654 - INFO - --------------------------------------
+2024-04-23 12:30:02,665 - DEBUG - Starting new HTTPS connection (1): zoom.us:443
+2024-04-23 12:30:03,011 - DEBUG - https://zoom.us:443 "POST /oauth/token HTTP/1.1" 200 None
+2024-04-23 12:30:03,020 - DEBUG - Starting new HTTPS connection (1): api.zoom.us:443
+2024-04-23 12:30:03,989 - DEBUG - https://api.zoom.us:443 "GET /v2/past_meetings/86423223879/participants HTTP/1.1" 200 348
+2024-04-23 12:30:03,994 - INFO - [{'id': 'yXxO1qhiQkmJy4b80J8xAQ', 'user_id': '16778240', 'name': 'Carlos Lizárraga', 'user_email': 'clizarraga@arizona.edu', 'join_time': '2024-04-22T23:50:25Z', 'leave_time': '2024-04-22T23:50:38Z', 'duration': 13, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}]
+2024-04-23 12:30:04,030 - DEBUG - Starting new HTTPS connection (1): zoom.us:443
+2024-04-23 12:30:04,366 - DEBUG - https://zoom.us:443 "POST /oauth/token HTTP/1.1" 200 None
+2024-04-23 12:30:04,377 - DEBUG - Starting new HTTPS connection (1): api.zoom.us:443
+2024-04-23 12:30:04,988 - DEBUG - https://api.zoom.us:443 "GET /v2/past_meetings/86423223879/participants HTTP/1.1" 200 348
+2024-04-23 12:30:04,992 - INFO - [{'id': 'yXxO1qhiQkmJy4b80J8xAQ', 'user_id': '16778240', 'name': 'Carlos Lizárraga', 'user_email': 'clizarraga@arizona.edu', 'join_time': '2024-04-22T23:50:25Z', 'leave_time': '2024-04-22T23:50:38Z', 'duration': 13, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}]
+2024-04-23 13:30:02,590 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-23 13:30:02,590 - INFO - --------------------------------------
+2024-04-23 13:30:02,601 - DEBUG - Starting new HTTPS connection (1): zoom.us:443
+2024-04-23 13:30:02,950 - DEBUG - https://zoom.us:443 "POST /oauth/token HTTP/1.1" 200 None
+2024-04-23 13:30:02,960 - DEBUG - Starting new HTTPS connection (1): api.zoom.us:443
+2024-04-23 13:30:03,564 - DEBUG - https://api.zoom.us:443 "GET /v2/past_meetings/86423223879/participants HTTP/1.1" 200 348
+2024-04-23 13:30:03,569 - INFO - [{'id': 'yXxO1qhiQkmJy4b80J8xAQ', 'user_id': '16778240', 'name': 'Carlos Lizárraga', 'user_email': 'clizarraga@arizona.edu', 'join_time': '2024-04-22T23:50:25Z', 'leave_time': '2024-04-22T23:50:38Z', 'duration': 13, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}]
+2024-04-23 13:30:03,604 - DEBUG - Starting new HTTPS connection (1): zoom.us:443
+2024-04-23 13:30:03,959 - DEBUG - https://zoom.us:443 "POST /oauth/token HTTP/1.1" 200 None
+2024-04-23 13:30:03,969 - DEBUG - Starting new HTTPS connection (1): api.zoom.us:443
+2024-04-23 13:30:04,818 - DEBUG - https://api.zoom.us:443 "GET /v2/past_meetings/86423223879/participants HTTP/1.1" 200 348
+2024-04-23 13:30:04,823 - INFO - [{'id': 'yXxO1qhiQkmJy4b80J8xAQ', 'user_id': '16778240', 'name': 'Carlos Lizárraga', 'user_email': 'clizarraga@arizona.edu', 'join_time': '2024-04-22T23:50:25Z', 'leave_time': '2024-04-22T23:50:38Z', 'duration': 13, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}]
+2024-04-23 14:30:01,931 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-23 14:30:01,931 - INFO - --------------------------------------
+2024-04-23 14:30:01,941 - DEBUG - Starting new HTTPS connection (1): zoom.us:443
+2024-04-23 14:30:02,301 - DEBUG - https://zoom.us:443 "POST /oauth/token HTTP/1.1" 200 None
+2024-04-23 14:30:02,310 - DEBUG - Starting new HTTPS connection (1): api.zoom.us:443
+2024-04-23 14:30:02,866 - DEBUG - https://api.zoom.us:443 "GET /v2/past_meetings/86423223879/participants HTTP/1.1" 200 348
+2024-04-23 14:30:02,871 - INFO - [{'id': 'yXxO1qhiQkmJy4b80J8xAQ', 'user_id': '16778240', 'name': 'Carlos Lizárraga', 'user_email': 'clizarraga@arizona.edu', 'join_time': '2024-04-22T23:50:25Z', 'leave_time': '2024-04-22T23:50:38Z', 'duration': 13, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}]
+2024-04-23 14:30:02,907 - DEBUG - Starting new HTTPS connection (1): zoom.us:443
+2024-04-23 14:30:03,249 - DEBUG - https://zoom.us:443 "POST /oauth/token HTTP/1.1" 200 None
+2024-04-23 14:30:03,260 - DEBUG - Starting new HTTPS connection (1): api.zoom.us:443
+2024-04-23 14:30:03,837 - DEBUG - https://api.zoom.us:443 "GET /v2/past_meetings/86423223879/participants HTTP/1.1" 200 348
+2024-04-23 14:30:03,841 - INFO - [{'id': 'yXxO1qhiQkmJy4b80J8xAQ', 'user_id': '16778240', 'name': 'Carlos Lizárraga', 'user_email': 'clizarraga@arizona.edu', 'join_time': '2024-04-22T23:50:25Z', 'leave_time': '2024-04-22T23:50:38Z', 'duration': 13, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}]
+2024-04-23 15:30:02,846 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-23 15:30:02,846 - INFO - --------------------------------------
+2024-04-23 15:30:02,858 - DEBUG - Starting new HTTPS connection (1): zoom.us:443
+2024-04-23 15:30:03,263 - DEBUG - https://zoom.us:443 "POST /oauth/token HTTP/1.1" 200 None
+2024-04-23 15:30:03,274 - DEBUG - Starting new HTTPS connection (1): api.zoom.us:443
+2024-04-23 15:30:04,125 - DEBUG - https://api.zoom.us:443 "GET /v2/past_meetings/86423223879/participants HTTP/1.1" 200 3661
+2024-04-23 15:30:04,130 - INFO - [{'id': 'sMyAcaaxTRqIxL1pmqO_tw', 'user_id': '16778240', 'name': 'Jeffrey Kent Gillan', 'user_email': 'jgillan@arizona.edu', 'join_time': '2024-04-23T20:39:27Z', 'leave_time': '2024-04-23T22:11:37Z', 'duration': 5530, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': '', 'user_id': '16779264', 'name': 'Austin Stone', 'user_email': '', 'join_time': '2024-04-23T20:45:58Z', 'leave_time': '2024-04-23T21:58:21Z', 'duration': 4343, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': 'yXxO1qhiQkmJy4b80J8xAQ', 'user_id': '16780288', 'name': 'Carlos Lizárraga', 'user_email': 'clizarraga@arizona.edu', 'join_time': '2024-04-23T20:47:34Z', 'leave_time': '2024-04-23T22:11:37Z', 'duration': 5043, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': '12q8HI6ZQp6rSJ3dIsgpPA', 'user_id': '16793600', 'name': 'Fangyue Zhang', 'user_email': 'fangyuezhang@arizona.edu', 'join_time': '2024-04-23T20:58:42Z', 'leave_time': '2024-04-23T22:00:15Z', 'duration': 3693, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': 'cZWGYWGsQMWL1p1dec7k8A', 'user_id': '16794624', 'name': 'Dave Drainer', 'user_email': 'ddrainer@arizona.edu', 'join_time': '2024-04-23T20:58:44Z', 'leave_time': '2024-04-23T21:58:30Z', 'duration': 3586, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': '', 'user_id': '16795648', 'name': 'Shannon Taylor', 'user_email': '', 'join_time': '2024-04-23T20:59:07Z', 'leave_time': '2024-04-23T20:59:12Z', 'duration': 5, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': '', 'user_id': '16796672', 'name': 'Shannon Taylor', 'user_email': '', 'join_time': '2024-04-23T20:59:12Z', 'leave_time': '2024-04-23T21:58:29Z', 'duration': 3557, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': 'FB8-bAyqRoCCxoJM7lV4Tg', 'user_id': '16797696', 'name': 'Henri Combrink', 'user_email': 'henricombrink@arizona.edu', 'join_time': '2024-04-23T20:59:43Z', 'leave_time': '2024-04-23T21:54:45Z', 'duration': 3302, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': 'ZkLdqAwUSNinABHJ4DJuTg', 'user_id': '16798720', 'name': 'Charlene Aparicio', 'user_email': 'caparicio@arizona.edu', 'join_time': '2024-04-23T21:00:01Z', 'leave_time': '2024-04-23T21:58:31Z', 'duration': 3510, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': 'oTq48YD9QmuN7WkvyiQZRQ', 'user_id': '16799744', 'name': 'Omid Zandi', 'user_email': 'omidzandi@arizona.edu', 'join_time': '2024-04-23T21:00:31Z', 'leave_time': '2024-04-23T21:35:22Z', 'duration': 2091, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': '', 'user_id': '16800768', 'name': 'Matina Donaldson-Matasci', 'user_email': '', 'join_time': '2024-04-23T21:00:42Z', 'leave_time': '2024-04-23T21:58:22Z', 'duration': 3460, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': '', 'user_id': '16801792', 'name': 'Lauren Baldarelli', 'user_email': '', 'join_time': '2024-04-23T21:01:13Z', 'leave_time': '2024-04-23T21:58:22Z', 'duration': 3429, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': '', 'user_id': '16802816', 'name': 'Garrett Ryan Smith', 'user_email': '', 'join_time': '2024-04-23T21:01:26Z', 'leave_time': '2024-04-23T21:58:52Z', 'duration': 3446, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': '', 'user_id': '16803840', 'name': 'Erich Christopher Eisenhart', 'user_email': '', 'join_time': '2024-04-23T21:01:31Z', 'leave_time': '2024-04-23T21:58:37Z', 'duration': 3426, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': '', 'user_id': '16808960', 'name': 'Vidhya Anand', 'user_email': '', 'join_time': '2024-04-23T21:28:07Z', 'leave_time': '2024-04-23T21:52:52Z', 'duration': 1485, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}]
+2024-04-23 15:30:04,167 - INFO - Checked in: jgillan@arizona.edu
+2024-04-23 15:30:04,167 - INFO - --------------------------------------
+2024-04-23 16:30:02,180 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-23 16:30:02,180 - INFO - --------------------------------------
+2024-04-23 16:30:02,189 - DEBUG - Starting new HTTPS connection (1): zoom.us:443
+2024-04-23 16:30:02,532 - DEBUG - https://zoom.us:443 "POST /oauth/token HTTP/1.1" 200 None
+2024-04-23 16:30:02,542 - DEBUG - Starting new HTTPS connection (1): api.zoom.us:443
+2024-04-23 16:30:03,258 - DEBUG - https://api.zoom.us:443 "GET /v2/past_meetings/86423223879/participants HTTP/1.1" 200 3661
+2024-04-23 16:30:03,264 - INFO - [{'id': 'sMyAcaaxTRqIxL1pmqO_tw', 'user_id': '16778240', 'name': 'Jeffrey Kent Gillan', 'user_email': 'jgillan@arizona.edu', 'join_time': '2024-04-23T20:39:27Z', 'leave_time': '2024-04-23T22:11:37Z', 'duration': 5530, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': '', 'user_id': '16779264', 'name': 'Austin Stone', 'user_email': '', 'join_time': '2024-04-23T20:45:58Z', 'leave_time': '2024-04-23T21:58:21Z', 'duration': 4343, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': 'yXxO1qhiQkmJy4b80J8xAQ', 'user_id': '16780288', 'name': 'Carlos Lizárraga', 'user_email': 'clizarraga@arizona.edu', 'join_time': '2024-04-23T20:47:34Z', 'leave_time': '2024-04-23T22:11:37Z', 'duration': 5043, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': '12q8HI6ZQp6rSJ3dIsgpPA', 'user_id': '16793600', 'name': 'Fangyue Zhang', 'user_email': 'fangyuezhang@arizona.edu', 'join_time': '2024-04-23T20:58:42Z', 'leave_time': '2024-04-23T22:00:15Z', 'duration': 3693, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': 'cZWGYWGsQMWL1p1dec7k8A', 'user_id': '16794624', 'name': 'Dave Drainer', 'user_email': 'ddrainer@arizona.edu', 'join_time': '2024-04-23T20:58:44Z', 'leave_time': '2024-04-23T21:58:30Z', 'duration': 3586, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': '', 'user_id': '16795648', 'name': 'Shannon Taylor', 'user_email': '', 'join_time': '2024-04-23T20:59:07Z', 'leave_time': '2024-04-23T20:59:12Z', 'duration': 5, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': '', 'user_id': '16796672', 'name': 'Shannon Taylor', 'user_email': '', 'join_time': '2024-04-23T20:59:12Z', 'leave_time': '2024-04-23T21:58:29Z', 'duration': 3557, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': 'FB8-bAyqRoCCxoJM7lV4Tg', 'user_id': '16797696', 'name': 'Henri Combrink', 'user_email': 'henricombrink@arizona.edu', 'join_time': '2024-04-23T20:59:43Z', 'leave_time': '2024-04-23T21:54:45Z', 'duration': 3302, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': 'ZkLdqAwUSNinABHJ4DJuTg', 'user_id': '16798720', 'name': 'Charlene Aparicio', 'user_email': 'caparicio@arizona.edu', 'join_time': '2024-04-23T21:00:01Z', 'leave_time': '2024-04-23T21:58:31Z', 'duration': 3510, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': 'oTq48YD9QmuN7WkvyiQZRQ', 'user_id': '16799744', 'name': 'Omid Zandi', 'user_email': 'omidzandi@arizona.edu', 'join_time': '2024-04-23T21:00:31Z', 'leave_time': '2024-04-23T21:35:22Z', 'duration': 2091, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': '', 'user_id': '16800768', 'name': 'Matina Donaldson-Matasci', 'user_email': '', 'join_time': '2024-04-23T21:00:42Z', 'leave_time': '2024-04-23T21:58:22Z', 'duration': 3460, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': '', 'user_id': '16801792', 'name': 'Lauren Baldarelli', 'user_email': '', 'join_time': '2024-04-23T21:01:13Z', 'leave_time': '2024-04-23T21:58:22Z', 'duration': 3429, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': '', 'user_id': '16802816', 'name': 'Garrett Ryan Smith', 'user_email': '', 'join_time': '2024-04-23T21:01:26Z', 'leave_time': '2024-04-23T21:58:52Z', 'duration': 3446, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': '', 'user_id': '16803840', 'name': 'Erich Christopher Eisenhart', 'user_email': '', 'join_time': '2024-04-23T21:01:31Z', 'leave_time': '2024-04-23T21:58:37Z', 'duration': 3426, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': '', 'user_id': '16808960', 'name': 'Vidhya Anand', 'user_email': '', 'join_time': '2024-04-23T21:28:07Z', 'leave_time': '2024-04-23T21:52:52Z', 'duration': 1485, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}]
+2024-04-23 16:30:03,300 - INFO - Checked in: jgillan@arizona.edu
+2024-04-23 16:30:03,301 - INFO - --------------------------------------
+2024-04-23 17:30:02,096 - INFO - STARTING ZOOM CHECK IN PROCESS
+2024-04-23 17:30:02,096 - INFO - --------------------------------------
+2024-04-23 17:30:02,106 - DEBUG - Starting new HTTPS connection (1): zoom.us:443
+2024-04-23 17:30:02,471 - DEBUG - https://zoom.us:443 "POST /oauth/token HTTP/1.1" 200 None
+2024-04-23 17:30:02,481 - DEBUG - Starting new HTTPS connection (1): api.zoom.us:443
+2024-04-23 17:30:03,201 - DEBUG - https://api.zoom.us:443 "GET /v2/past_meetings/86423223879/participants HTTP/1.1" 200 3661
+2024-04-23 17:30:03,206 - INFO - [{'id': 'sMyAcaaxTRqIxL1pmqO_tw', 'user_id': '16778240', 'name': 'Jeffrey Kent Gillan', 'user_email': 'jgillan@arizona.edu', 'join_time': '2024-04-23T20:39:27Z', 'leave_time': '2024-04-23T22:11:37Z', 'duration': 5530, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': '', 'user_id': '16779264', 'name': 'Austin Stone', 'user_email': '', 'join_time': '2024-04-23T20:45:58Z', 'leave_time': '2024-04-23T21:58:21Z', 'duration': 4343, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': 'yXxO1qhiQkmJy4b80J8xAQ', 'user_id': '16780288', 'name': 'Carlos Lizárraga', 'user_email': 'clizarraga@arizona.edu', 'join_time': '2024-04-23T20:47:34Z', 'leave_time': '2024-04-23T22:11:37Z', 'duration': 5043, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': '12q8HI6ZQp6rSJ3dIsgpPA', 'user_id': '16793600', 'name': 'Fangyue Zhang', 'user_email': 'fangyuezhang@arizona.edu', 'join_time': '2024-04-23T20:58:42Z', 'leave_time': '2024-04-23T22:00:15Z', 'duration': 3693, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': 'cZWGYWGsQMWL1p1dec7k8A', 'user_id': '16794624', 'name': 'Dave Drainer', 'user_email': 'ddrainer@arizona.edu', 'join_time': '2024-04-23T20:58:44Z', 'leave_time': '2024-04-23T21:58:30Z', 'duration': 3586, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': '', 'user_id': '16795648', 'name': 'Shannon Taylor', 'user_email': '', 'join_time': '2024-04-23T20:59:07Z', 'leave_time': '2024-04-23T20:59:12Z', 'duration': 5, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': '', 'user_id': '16796672', 'name': 'Shannon Taylor', 'user_email': '', 'join_time': '2024-04-23T20:59:12Z', 'leave_time': '2024-04-23T21:58:29Z', 'duration': 3557, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': 'FB8-bAyqRoCCxoJM7lV4Tg', 'user_id': '16797696', 'name': 'Henri Combrink', 'user_email': 'henricombrink@arizona.edu', 'join_time': '2024-04-23T20:59:43Z', 'leave_time': '2024-04-23T21:54:45Z', 'duration': 3302, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': 'ZkLdqAwUSNinABHJ4DJuTg', 'user_id': '16798720', 'name': 'Charlene Aparicio', 'user_email': 'caparicio@arizona.edu', 'join_time': '2024-04-23T21:00:01Z', 'leave_time': '2024-04-23T21:58:31Z', 'duration': 3510, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': 'oTq48YD9QmuN7WkvyiQZRQ', 'user_id': '16799744', 'name': 'Omid Zandi', 'user_email': 'omidzandi@arizona.edu', 'join_time': '2024-04-23T21:00:31Z', 'leave_time': '2024-04-23T21:35:22Z', 'duration': 2091, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': '', 'user_id': '16800768', 'name': 'Matina Donaldson-Matasci', 'user_email': '', 'join_time': '2024-04-23T21:00:42Z', 'leave_time': '2024-04-23T21:58:22Z', 'duration': 3460, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': '', 'user_id': '16801792', 'name': 'Lauren Baldarelli', 'user_email': '', 'join_time': '2024-04-23T21:01:13Z', 'leave_time': '2024-04-23T21:58:22Z', 'duration': 3429, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': '', 'user_id': '16802816', 'name': 'Garrett Ryan Smith', 'user_email': '', 'join_time': '2024-04-23T21:01:26Z', 'leave_time': '2024-04-23T21:58:52Z', 'duration': 3446, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': '', 'user_id': '16803840', 'name': 'Erich Christopher Eisenhart', 'user_email': '', 'join_time': '2024-04-23T21:01:31Z', 'leave_time': '2024-04-23T21:58:37Z', 'duration': 3426, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}, {'id': '', 'user_id': '16808960', 'name': 'Vidhya Anand', 'user_email': '', 'join_time': '2024-04-23T21:28:07Z', 'leave_time': '2024-04-23T21:52:52Z', 'duration': 1485, 'registrant_id': '', 'failover': False, 'status': 'in_meeting'}]
+2024-04-23 17:30:03,243 - INFO - Checked in: jgillan@arizona.edu
+2024-04-23 17:30:03,243 - INFO - --------------------------------------

@@ -1,11 +1,12 @@
 import psycopg2
 import asyncio
 from seriesProcessing import initializeWorkshops
+import logging
 
 def handle_notify():
     conn.poll()
     for notify in conn.notifies:
-        print("THE FOLLOWING WAS CAUGHT: " + notify.payload)
+        logging.info("THE FOLLOWING WAS CAUGHT: " + notify.payload)
         initializeWorkshops(notify.payload, conn, cur)
     conn.notifies.clear()
 
@@ -19,6 +20,11 @@ def listenNewSeries():
     loop.run_forever()
 
 if __name__ == '__main__':
+    logging.basicConfig(filename='/home/austinmedina/DataLabMetrtics/logging/seriesListener.log', level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
+    logging.FileHandler('/home/austinmedina/DataLabMetrtics/logging/seriesListener.log')
+
+    logging.info("STARTING SERIES INSERT LISTENER")
+
     conn = psycopg2.connect(database = "DataLab", 
                             user = "postgres", 
                             host= 'localhost',
