@@ -161,210 +161,210 @@ VALUES
 ;
 
 /*Total Attendance*/
-SELECT 
-    CheckedIn.CheckedIn,
-    Attended.Attended,
-    CheckedIn.CheckedIn + Attended.Attended AS TotalPeopleAttended
-FROM
-    (SELECT COUNT(DISTINCT RegistreeWorkshops.RegID) as CheckedIn
-     FROM RegistreeWorkshops
-     LEFT JOIN Workshops ON Workshops.WorkshopID = RegistreeWorkshops.WorkshopID
-     LEFT JOIN Series ON Series.SeriesID = Workshops.SeriesID
-     WHERE Series.SeriesYear = '2024' AND Series.Semester = 'SP' AND RegistreeWorkshops.CheckedIn = TRUE) AS CheckedIn,
+-- SELECT 
+--     CheckedIn.CheckedIn,
+--     Attended.Attended,
+--     CheckedIn.CheckedIn + Attended.Attended AS TotalPeopleAttended
+-- FROM
+--     (SELECT COUNT(DISTINCT RegistreeWorkshops.RegID) as CheckedIn
+--      FROM RegistreeWorkshops
+--      LEFT JOIN Workshops ON Workshops.WorkshopID = RegistreeWorkshops.WorkshopID
+--      LEFT JOIN Series ON Series.SeriesID = Workshops.SeriesID
+--      WHERE Series.SeriesYear = '2024' AND Series.Semester = 'SP' AND RegistreeWorkshops.CheckedIn = TRUE) AS CheckedIn,
      
-    (SELECT COUNT(DISTINCT CONCAT(UnknownPeople.FirstName, UnknownPeople.LastName)) as Attended
-     FROM UnknownPeople
-     LEFT JOIN Workshops ON Workshops.WorkshopID = UnknownPeople.WorkshopID
-     LEFT JOIN Series ON Series.SeriesID = Workshops.SeriesID
-     WHERE Series.SeriesYear = '2024' AND Series.Semester = 'SP') AS Attended;
+--     (SELECT COUNT(DISTINCT CONCAT(UnknownPeople.FirstName, UnknownPeople.LastName)) as Attended
+--      FROM UnknownPeople
+--      LEFT JOIN Workshops ON Workshops.WorkshopID = UnknownPeople.WorkshopID
+--      LEFT JOIN Series ON Series.SeriesID = Workshops.SeriesID
+--      WHERE Series.SeriesYear = '2024' AND Series.Semester = 'SP') AS Attended;
 
-/*All registered participants*/
-SELECT COUNT(DISTINCT RegistreeWorkshops.RegID) as Registered
-FROM RegistreeWorkshops 
-LEFT JOIN Workshops ON Workshops.WorkshopID = RegistreeWorkshops.WorkshopID
-LEFT JOIN Series ON Series.SeriesID = Workshops.SeriesID
-WHERE Series.SeriesYear = {{ seriesYear }} AND Series.Semester = {{ semester }} AND RegistreeWorkshops.Registered = True;
+-- /*All registered participants*/
+-- SELECT COUNT(DISTINCT RegistreeWorkshops.RegID) as Registered
+-- FROM RegistreeWorkshops 
+-- LEFT JOIN Workshops ON Workshops.WorkshopID = RegistreeWorkshops.WorkshopID
+-- LEFT JOIN Series ON Series.SeriesID = Workshops.SeriesID
+-- WHERE Series.SeriesYear = {{ seriesYear }} AND Series.Semester = {{ semester }} AND RegistreeWorkshops.Registered = True;
 
-/*People who checked in and registered for at least one workshop*/
-SELECT COUNT(DISTINCT RegistreeWorkshops.RegID) as CheckedReg
-FROM RegistreeWorkshops
-LEFT JOIN Workshops ON Workshops.WorkshopID = RegistreeWorkshops.WorkshopID
-LEFT JOIN Series ON Series.SeriesID = Workshops.SeriesID
-WHERE Series.SeriesYear = {{ seriesYear }} AND Series.Semester = {{ semester }} AND RegistreeWorkshops.Registered = True AND RegistreeWorkshops.CheckedIn = True;
+-- /*People who checked in and registered for at least one workshop*/
+-- SELECT COUNT(DISTINCT RegistreeWorkshops.RegID) as CheckedReg
+-- FROM RegistreeWorkshops
+-- LEFT JOIN Workshops ON Workshops.WorkshopID = RegistreeWorkshops.WorkshopID
+-- LEFT JOIN Series ON Series.SeriesID = Workshops.SeriesID
+-- WHERE Series.SeriesYear = {{ seriesYear }} AND Series.Semester = {{ semester }} AND RegistreeWorkshops.Registered = True AND RegistreeWorkshops.CheckedIn = True;
 
-/*People who checked in for a workshop but didnt register (maybe add unknownpeople)*/
-SELECT COUNT(DISTINCT RegistreeWorkshops.RegID) as CheckedNoReg
-FROM RegistreeWorkshops
-LEFT JOIN Workshops ON Workshops.WorkshopID = RegistreeWorkshops.WorkshopID
-LEFT JOIN Series ON Series.SeriesID = Workshops.SeriesID
-WHERE Series.SeriesYear = {{ seriesYear }} AND Series.Semester = {{ semester }} AND RegistreeWorkshops.Registered = FALSE AND RegistreeWorkshops.CheckedIn = True;
+-- /*People who checked in for a workshop but didnt register (maybe add unknownpeople)*/
+-- SELECT COUNT(DISTINCT RegistreeWorkshops.RegID) as CheckedNoReg
+-- FROM RegistreeWorkshops
+-- LEFT JOIN Workshops ON Workshops.WorkshopID = RegistreeWorkshops.WorkshopID
+-- LEFT JOIN Series ON Series.SeriesID = Workshops.SeriesID
+-- WHERE Series.SeriesYear = {{ seriesYear }} AND Series.Semester = {{ semester }} AND RegistreeWorkshops.Registered = FALSE AND RegistreeWorkshops.CheckedIn = True;
 
-/*Gets All people who registered for a workshop and didnt attend a single one*/
-SELECT COUNT(DISTINCT RegID) as RegNoChecked
-FROM RegistreeWorkshops
-LEFT JOIN Workshops ON Workshops.WorkshopID = RegistreeWorkshops.WorkshopID
-LEFT JOIN Series ON Series.SeriesID = Workshops.SeriesID
-WHERE Series.SeriesYear = {{ seriesYear }} AND Series.Semester = {{ semester }} AND RegistreeWorkshops.Registered = TRUE 
-AND RegistreeWorkshops.RegID NOT IN (
-    SELECT DISTINCT RegID
-    FROM RegistreeWorkshops
-    WHERE CheckedIn = TRUE
-);
+-- /*Gets All people who registered for a workshop and didnt attend a single one*/
+-- SELECT COUNT(DISTINCT RegID) as RegNoChecked
+-- FROM RegistreeWorkshops
+-- LEFT JOIN Workshops ON Workshops.WorkshopID = RegistreeWorkshops.WorkshopID
+-- LEFT JOIN Series ON Series.SeriesID = Workshops.SeriesID
+-- WHERE Series.SeriesYear = {{ seriesYear }} AND Series.Semester = {{ semester }} AND RegistreeWorkshops.Registered = TRUE 
+-- AND RegistreeWorkshops.RegID NOT IN (
+--     SELECT DISTINCT RegID
+--     FROM RegistreeWorkshops
+--     WHERE CheckedIn = TRUE
+-- );
 
-/*One combined query*/
-WITH TotalAttendance AS (
-    SELECT 
-        COUNT(DISTINCT CASE WHEN rw.CheckedIn = TRUE THEN rw.RegID END) AS CheckedIn,
-        COUNT(DISTINCT CASE WHEN up.FirstName IS NOT NULL THEN CONCAT(up.FirstName, up.LastName) END) AS Attended
-    FROM RegistreeWorkshops rw
-    LEFT JOIN Workshops w ON w.WorkshopID = rw.WorkshopID
-    LEFT JOIN Series s ON s.SeriesID = w.SeriesID
-    LEFT JOIN UnknownPeople up ON w.WorkshopID = up.WorkshopID
-    WHERE s.SeriesYear = '2024' AND s.Semester = 'SP'
-),
-AllRegistered AS (
-    SELECT COUNT(DISTINCT RegID) as Registered
-    FROM RegistreeWorkshops 
-    LEFT JOIN Workshops ON Workshops.WorkshopID = RegistreeWorkshops.WorkshopID
-    LEFT JOIN Series ON Series.SeriesID = Workshops.SeriesID
-    WHERE Series.SeriesYear = '2024' AND Series.Semester = 'SP' AND RegistreeWorkshops.Registered = TRUE
-),
-CheckedRegistered AS (
-    SELECT COUNT(DISTINCT RegistreeWorkshops.RegID) as CheckedReg
-    FROM RegistreeWorkshops
-    LEFT JOIN Workshops ON Workshops.WorkshopID = RegistreeWorkshops.WorkshopID
-    LEFT JOIN Series ON Series.SeriesID = Workshops.SeriesID
-    WHERE Series.SeriesYear = '2024' AND Series.Semester = 'SP' AND RegistreeWorkshops.Registered = TRUE AND RegistreeWorkshops.CheckedIn = TRUE
-),
-CheckedNoRegistered AS (
-    SELECT COUNT(DISTINCT RegistreeWorkshops.RegID) as CheckedNoReg
-    FROM RegistreeWorkshops
-    LEFT JOIN Workshops ON Workshops.WorkshopID = RegistreeWorkshops.WorkshopID
-    LEFT JOIN Series ON Series.SeriesID = Workshops.SeriesID
-    WHERE Series.SeriesYear = '2024' AND Series.Semester = 'SP' AND RegistreeWorkshops.Registered = FALSE AND RegistreeWorkshops.CheckedIn = TRUE
-),
-RegisteredNoChecked AS (
-    SELECT COUNT(DISTINCT RegID) as RegNoChecked
-    FROM RegistreeWorkshops
-    LEFT JOIN Workshops ON Workshops.WorkshopID = RegistreeWorkshops.WorkshopID
-    LEFT JOIN Series ON Series.SeriesID = Workshops.SeriesID
-    WHERE Series.SeriesYear = '2024' AND Series.Semester = 'SP' AND RegistreeWorkshops.Registered = TRUE 
-    AND RegistreeWorkshops.RegID NOT IN (
-        SELECT DISTINCT RegID
-        FROM RegistreeWorkshops
-        WHERE CheckedIn = TRUE
-    )
-)
-SELECT 
-    ta.CheckedIn,
-    ta.Attended,
-    ta.CheckedIn + ta.Attended AS TotalPeopleAttended,
-    ar.Registered,
-    cr.CheckedReg,
-    cnr.CheckedNoReg,
-    rnc.RegNoChecked
-FROM 
-    TotalAttendance ta,
-    AllRegistered ar,
-    CheckedRegistered cr,
-    CheckedNoRegistered cnr,
-    RegisteredNoChecked rnc;
+-- /*One combined query*/
+-- WITH TotalAttendance AS (
+--     SELECT 
+--         COUNT(DISTINCT CASE WHEN rw.CheckedIn = TRUE THEN rw.RegID END) AS CheckedIn,
+--         COUNT(DISTINCT CASE WHEN up.FirstName IS NOT NULL THEN CONCAT(up.FirstName, up.LastName) END) AS Attended
+--     FROM RegistreeWorkshops rw
+--     LEFT JOIN Workshops w ON w.WorkshopID = rw.WorkshopID
+--     LEFT JOIN Series s ON s.SeriesID = w.SeriesID
+--     LEFT JOIN UnknownPeople up ON w.WorkshopID = up.WorkshopID
+--     WHERE s.SeriesYear = '2024' AND s.Semester = 'SP'
+-- ),
+-- AllRegistered AS (
+--     SELECT COUNT(DISTINCT RegID) as Registered
+--     FROM RegistreeWorkshops 
+--     LEFT JOIN Workshops ON Workshops.WorkshopID = RegistreeWorkshops.WorkshopID
+--     LEFT JOIN Series ON Series.SeriesID = Workshops.SeriesID
+--     WHERE Series.SeriesYear = '2024' AND Series.Semester = 'SP' AND RegistreeWorkshops.Registered = TRUE
+-- ),
+-- CheckedRegistered AS (
+--     SELECT COUNT(DISTINCT RegistreeWorkshops.RegID) as CheckedReg
+--     FROM RegistreeWorkshops
+--     LEFT JOIN Workshops ON Workshops.WorkshopID = RegistreeWorkshops.WorkshopID
+--     LEFT JOIN Series ON Series.SeriesID = Workshops.SeriesID
+--     WHERE Series.SeriesYear = '2024' AND Series.Semester = 'SP' AND RegistreeWorkshops.Registered = TRUE AND RegistreeWorkshops.CheckedIn = TRUE
+-- ),
+-- CheckedNoRegistered AS (
+--     SELECT COUNT(DISTINCT RegistreeWorkshops.RegID) as CheckedNoReg
+--     FROM RegistreeWorkshops
+--     LEFT JOIN Workshops ON Workshops.WorkshopID = RegistreeWorkshops.WorkshopID
+--     LEFT JOIN Series ON Series.SeriesID = Workshops.SeriesID
+--     WHERE Series.SeriesYear = '2024' AND Series.Semester = 'SP' AND RegistreeWorkshops.Registered = FALSE AND RegistreeWorkshops.CheckedIn = TRUE
+-- ),
+-- RegisteredNoChecked AS (
+--     SELECT COUNT(DISTINCT RegID) as RegNoChecked
+--     FROM RegistreeWorkshops
+--     LEFT JOIN Workshops ON Workshops.WorkshopID = RegistreeWorkshops.WorkshopID
+--     LEFT JOIN Series ON Series.SeriesID = Workshops.SeriesID
+--     WHERE Series.SeriesYear = '2024' AND Series.Semester = 'SP' AND RegistreeWorkshops.Registered = TRUE 
+--     AND RegistreeWorkshops.RegID NOT IN (
+--         SELECT DISTINCT RegID
+--         FROM RegistreeWorkshops
+--         WHERE CheckedIn = TRUE
+--     )
+-- )
+-- SELECT 
+--     ta.CheckedIn,
+--     ta.Attended,
+--     ta.CheckedIn + ta.Attended AS TotalPeopleAttended,
+--     ar.Registered,
+--     cr.CheckedReg,
+--     cnr.CheckedNoReg,
+--     rnc.RegNoChecked
+-- FROM 
+--     TotalAttendance ta,
+--     AllRegistered ar,
+--     CheckedRegistered cr,
+--     CheckedNoRegistered cnr,
+--     RegisteredNoChecked rnc;
 
 
-/*Same query just transposed*/
-WITH TotalAttendance AS (
-    SELECT 
-        COUNT(DISTINCT CASE WHEN rw.CheckedIn = TRUE THEN rw.RegID END) AS CheckedIn,
-        COUNT(DISTINCT CASE WHEN up.FirstName IS NOT NULL THEN CONCAT(up.FirstName, up.LastName) END) AS Attended
-    FROM 
-        RegistreeWorkshops rw
-        LEFT JOIN Workshops w ON w.WorkshopID = rw.WorkshopID
-        LEFT JOIN Series s ON s.SeriesID = w.SeriesID
-        LEFT JOIN UnknownPeople up ON w.WorkshopID = up.WorkshopID
-    WHERE 
-        s.SeriesYear = {{ seriesYear }} AND s.Semester = {{ semester }}
-),
-AllRegistered AS (
-    SELECT COUNT(DISTINCT RegID) as Registered
-    FROM 
-        RegistreeWorkshops 
-        LEFT JOIN Workshops ON Workshops.WorkshopID = RegistreeWorkshops.WorkshopID
-        LEFT JOIN Series ON Series.SeriesID = Workshops.SeriesID
-    WHERE 
-        Series.SeriesYear = {{ seriesYear }} AND Series.Semester = {{ semester }} AND RegistreeWorkshops.Registered = TRUE
-),
-CheckedRegistered AS (
-    SELECT COUNT(DISTINCT RegID) as CheckedReg
-    FROM 
-        RegistreeWorkshops
-        LEFT JOIN Workshops ON Workshops.WorkshopID = RegistreeWorkshops.WorkshopID
-        LEFT JOIN Series ON Series.SeriesID = Workshops.SeriesID
-    WHERE 
-        Series.SeriesYear = {{ seriesYear }} AND Series.Semester = {{ semester }} AND RegistreeWorkshops.Registered = TRUE AND RegistreeWorkshops.CheckedIn = TRUE
-),
-CheckedNoRegistered AS (
-    SELECT COUNT(DISTINCT RegID) as CheckedNoReg
-    FROM 
-        RegistreeWorkshops
-        LEFT JOIN Workshops ON Workshops.WorkshopID = RegistreeWorkshops.WorkshopID
-        LEFT JOIN Series ON Series.SeriesID = Workshops.SeriesID
-    WHERE 
-        Series.SeriesYear = {{ seriesYear }} AND Series.Semester = {{ semester }} AND RegistreeWorkshops.Registered = FALSE AND RegistreeWorkshops.CheckedIn = TRUE
-),
-RegisteredNoChecked AS (
-    SELECT COUNT(DISTINCT RegID) as RegNoChecked
-    FROM 
-        RegistreeWorkshops
-        LEFT JOIN Workshops ON Workshops.WorkshopID = RegistreeWorkshops.WorkshopID
-        LEFT JOIN Series ON Series.SeriesID = Workshops.SeriesID
-    WHERE 
-        Series.SeriesYear = {{ seriesYear }} AND Series.Semester = {{ semester }} AND RegistreeWorkshops.Registered = TRUE 
-        AND RegistreeWorkshops.RegID NOT IN (
-            SELECT DISTINCT RegID
-            FROM RegistreeWorkshops
-            WHERE CheckedIn = TRUE
-        )
-)
-SELECT 
-    'Registered' AS Metric, 
-    Registered AS Value 
-FROM 
-    AllRegistered
-UNION ALL
-SELECT 
-    'TotalAttended' AS Metric, 
-    CheckedIn + Attended AS Value 
-FROM 
-    TotalAttendance
-UNION ALL
-SELECT 
-    'CheckedIn' AS Metric, 
-    CheckedIn AS Value 
-FROM 
-    TotalAttendance
-UNION ALL
-SELECT 
-    'Attended' AS Metric, 
-    Attended AS Value 
-FROM 
-    TotalAttendance
-UNION ALL
-SELECT 
-    'CheckReg' AS Metric, 
-    CheckedReg AS Value 
-FROM 
-    CheckedRegistered
-UNION ALL
-SELECT 
-    'CheckNoReg' AS Metric, 
-    CheckedNoReg AS Value 
-FROM 
-    CheckedNoRegistered
-UNION ALL
-SELECT 
-    'RegNoChecked' AS Metric, 
-    RegNoChecked AS Value 
-FROM 
-    RegisteredNoChecked;
+-- /*Same query just transposed*/
+-- WITH TotalAttendance AS (
+--     SELECT 
+--         COUNT(DISTINCT CASE WHEN rw.CheckedIn = TRUE THEN rw.RegID END) AS CheckedIn,
+--         COUNT(DISTINCT CASE WHEN up.FirstName IS NOT NULL THEN CONCAT(up.FirstName, up.LastName) END) AS Attended
+--     FROM 
+--         RegistreeWorkshops rw
+--         LEFT JOIN Workshops w ON w.WorkshopID = rw.WorkshopID
+--         LEFT JOIN Series s ON s.SeriesID = w.SeriesID
+--         LEFT JOIN UnknownPeople up ON w.WorkshopID = up.WorkshopID
+--     WHERE 
+--         s.SeriesYear = {{ seriesYear }} AND s.Semester = {{ semester }}
+-- ),
+-- AllRegistered AS (
+--     SELECT COUNT(DISTINCT RegID) as Registered
+--     FROM 
+--         RegistreeWorkshops 
+--         LEFT JOIN Workshops ON Workshops.WorkshopID = RegistreeWorkshops.WorkshopID
+--         LEFT JOIN Series ON Series.SeriesID = Workshops.SeriesID
+--     WHERE 
+--         Series.SeriesYear = {{ seriesYear }} AND Series.Semester = {{ semester }} AND RegistreeWorkshops.Registered = TRUE
+-- ),
+-- CheckedRegistered AS (
+--     SELECT COUNT(DISTINCT RegID) as CheckedReg
+--     FROM 
+--         RegistreeWorkshops
+--         LEFT JOIN Workshops ON Workshops.WorkshopID = RegistreeWorkshops.WorkshopID
+--         LEFT JOIN Series ON Series.SeriesID = Workshops.SeriesID
+--     WHERE 
+--         Series.SeriesYear = {{ seriesYear }} AND Series.Semester = {{ semester }} AND RegistreeWorkshops.Registered = TRUE AND RegistreeWorkshops.CheckedIn = TRUE
+-- ),
+-- CheckedNoRegistered AS (
+--     SELECT COUNT(DISTINCT RegID) as CheckedNoReg
+--     FROM 
+--         RegistreeWorkshops
+--         LEFT JOIN Workshops ON Workshops.WorkshopID = RegistreeWorkshops.WorkshopID
+--         LEFT JOIN Series ON Series.SeriesID = Workshops.SeriesID
+--     WHERE 
+--         Series.SeriesYear = {{ seriesYear }} AND Series.Semester = {{ semester }} AND RegistreeWorkshops.Registered = FALSE AND RegistreeWorkshops.CheckedIn = TRUE
+-- ),
+-- RegisteredNoChecked AS (
+--     SELECT COUNT(DISTINCT RegID) as RegNoChecked
+--     FROM 
+--         RegistreeWorkshops
+--         LEFT JOIN Workshops ON Workshops.WorkshopID = RegistreeWorkshops.WorkshopID
+--         LEFT JOIN Series ON Series.SeriesID = Workshops.SeriesID
+--     WHERE 
+--         Series.SeriesYear = {{ seriesYear }} AND Series.Semester = {{ semester }} AND RegistreeWorkshops.Registered = TRUE 
+--         AND RegistreeWorkshops.RegID NOT IN (
+--             SELECT DISTINCT RegID
+--             FROM RegistreeWorkshops
+--             WHERE CheckedIn = TRUE
+--         )
+-- )
+-- SELECT 
+--     'Registered' AS Metric, 
+--     Registered AS Value 
+-- FROM 
+--     AllRegistered
+-- UNION ALL
+-- SELECT 
+--     'TotalAttended' AS Metric, 
+--     CheckedIn + Attended AS Value 
+-- FROM 
+--     TotalAttendance
+-- UNION ALL
+-- SELECT 
+--     'CheckedIn' AS Metric, 
+--     CheckedIn AS Value 
+-- FROM 
+--     TotalAttendance
+-- UNION ALL
+-- SELECT 
+--     'Attended' AS Metric, 
+--     Attended AS Value 
+-- FROM 
+--     TotalAttendance
+-- UNION ALL
+-- SELECT 
+--     'CheckReg' AS Metric, 
+--     CheckedReg AS Value 
+-- FROM 
+--     CheckedRegistered
+-- UNION ALL
+-- SELECT 
+--     'CheckNoReg' AS Metric, 
+--     CheckedNoReg AS Value 
+-- FROM 
+--     CheckedNoRegistered
+-- UNION ALL
+-- SELECT 
+--     'RegNoChecked' AS Metric, 
+--     RegNoChecked AS Value 
+-- FROM 
+--     RegisteredNoChecked;
 
 

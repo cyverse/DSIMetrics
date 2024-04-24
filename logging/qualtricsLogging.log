@@ -3406,3 +3406,435 @@
 2024-04-23 18:00:09,396 - INFO - ------------------------------------------------
 2024-04-23 18:00:09,404 - INFO - File ['UA DataLab: Cracking the coding interview.csv'] extracted successfully
 2024-04-23 18:00:09,405 - INFO - ---
+2024-04-23 19:00:02,303 - INFO - Starting, qualtrics check and upload.
+2024-04-23 19:00:02,306 - INFO - Starting export for surveyId: SV_9oGXsP5SKL9jNRA
+2024-04-23 19:00:02,307 - INFO - ------------------------------------------------
+2024-04-23 19:00:02,311 - DEBUG - Starting new HTTPS connection (1): iad1.qualtrics.com:443
+2024-04-23 19:00:03,665 - DEBUG - https://iad1.qualtrics.com:443 "POST /API/v3/surveys/SV_9oGXsP5SKL9jNRA/export-responses HTTP/1.1" 200 174
+2024-04-23 19:00:03,669 - INFO - File Export Started
+2024-04-23 19:00:03,669 - INFO - ---
+2024-04-23 19:00:03,672 - DEBUG - Starting new HTTPS connection (1): iad1.qualtrics.com:443
+2024-04-23 19:00:04,263 - DEBUG - https://iad1.qualtrics.com:443 "GET /API/v3/surveys/SV_9oGXsP5SKL9jNRA/export-responses/ES_3yGViXGmZdCm6Fg HTTP/1.1" 200 140
+2024-04-23 19:00:04,266 - INFO - File Export 0.0% complete
+2024-04-23 19:00:04,267 - INFO - ---
+2024-04-23 19:00:06,271 - DEBUG - Starting new HTTPS connection (1): iad1.qualtrics.com:443
+2024-04-23 19:00:06,921 - DEBUG - https://iad1.qualtrics.com:443 "GET /API/v3/surveys/SV_9oGXsP5SKL9jNRA/export-responses/ES_3yGViXGmZdCm6Fg HTTP/1.1" 200 192
+2024-04-23 19:00:06,925 - INFO - File Export 100.0% complete
+2024-04-23 19:00:06,926 - INFO - ---
+2024-04-23 19:00:08,928 - INFO - File Export Complete
+2024-04-23 19:00:08,929 - INFO - ---
+2024-04-23 19:00:08,932 - DEBUG - Starting new HTTPS connection (1): iad1.qualtrics.com:443
+2024-04-23 19:00:09,328 - DEBUG - https://iad1.qualtrics.com:443 "GET /API/v3/surveys/SV_9oGXsP5SKL9jNRA/export-responses/f3ac8f9e-012c-48ba-a6db-309d0da2b18e-def/file HTTP/1.1" 200 4196
+2024-04-23 19:00:09,331 - INFO - File successfully retrieved!
+2024-04-23 19:00:09,332 - INFO - ------------------------------------------------
+
+2024-04-23 19:00:09,332 - INFO - Starting processing for surveyId: SV_9oGXsP5SKL9jNRA
+2024-04-23 19:00:09,332 - INFO - ------------------------------------------------
+2024-04-23 19:00:09,340 - INFO - File ['UA DataLab: Cracking the coding interview.csv'] extracted successfully
+2024-04-23 19:00:09,340 - INFO - ---
+2024-04-23 20:00:02,420 - INFO - Starting, qualtrics check and upload.
+2024-04-23 20:00:02,425 - INFO - Starting export for surveyId: SV_9oGXsP5SKL9jNRA
+2024-04-23 20:00:02,425 - INFO - ------------------------------------------------
+2024-04-23 20:00:02,431 - DEBUG - Starting new HTTPS connection (1): iad1.qualtrics.com:443
+2024-04-23 20:00:03,200 - DEBUG - https://iad1.qualtrics.com:443 "POST /API/v3/surveys/SV_9oGXsP5SKL9jNRA/export-responses HTTP/1.1" 200 174
+2024-04-23 20:00:03,203 - INFO - File Export Started
+2024-04-23 20:00:03,204 - INFO - ---
+2024-04-23 20:00:03,206 - DEBUG - Starting new HTTPS connection (1): iad1.qualtrics.com:443
+2024-04-23 20:00:03,617 - DEBUG - https://iad1.qualtrics.com:443 "GET /API/v3/surveys/SV_9oGXsP5SKL9jNRA/export-responses/ES_8A4EQFq7NlxfrhA HTTP/1.1" 200 140
+2024-04-23 20:00:03,620 - INFO - File Export 0.0% complete
+2024-04-23 20:00:03,621 - INFO - ---
+2024-04-23 20:00:05,626 - DEBUG - Starting new HTTPS connection (1): iad1.qualtrics.com:443
+2024-04-23 20:00:05,984 - DEBUG - https://iad1.qualtrics.com:443 "GET /API/v3/surveys/SV_9oGXsP5SKL9jNRA/export-responses/ES_8A4EQFq7NlxfrhA HTTP/1.1" 200 140
+2024-04-23 20:00:05,987 - INFO - File Export 0.0% complete
+2024-04-23 20:00:05,988 - INFO - ---
+2024-04-23 20:00:07,993 - DEBUG - Starting new HTTPS connection (1): iad1.qualtrics.com:443
+2024-04-23 20:00:08,543 - DEBUG - https://iad1.qualtrics.com:443 "GET /API/v3/surveys/SV_9oGXsP5SKL9jNRA/export-responses/ES_8A4EQFq7NlxfrhA HTTP/1.1" 200 192
+2024-04-23 20:00:08,547 - INFO - File Export 100.0% complete
+2024-04-23 20:00:08,548 - INFO - ---
+2024-04-23 20:00:10,550 - INFO - File Export Complete
+2024-04-23 20:00:10,550 - INFO - ---
+2024-04-23 20:00:10,553 - DEBUG - Starting new HTTPS connection (1): iad1.qualtrics.com:443
+2024-04-23 20:00:10,979 - DEBUG - https://iad1.qualtrics.com:443 "GET /API/v3/surveys/SV_9oGXsP5SKL9jNRA/export-responses/69bfdfb7-3b81-4f2c-9589-efeccdb73731-def/file HTTP/1.1" 200 4196
+2024-04-23 20:00:10,995 - INFO - File successfully retrieved!
+2024-04-23 20:00:10,995 - INFO - ------------------------------------------------
+
+2024-04-23 20:00:10,996 - INFO - Starting processing for surveyId: SV_9oGXsP5SKL9jNRA
+2024-04-23 20:00:10,996 - INFO - ------------------------------------------------
+2024-04-23 20:00:11,004 - INFO - File ['UA DataLab: Cracking the coding interview.csv'] extracted successfully
+2024-04-23 20:00:11,004 - INFO - ---
+2024-04-23 21:00:02,542 - INFO - Starting, qualtrics check and upload.
+2024-04-23 21:00:02,546 - INFO - Starting export for surveyId: SV_9oGXsP5SKL9jNRA
+2024-04-23 21:00:02,546 - INFO - ------------------------------------------------
+2024-04-23 21:00:02,551 - DEBUG - Starting new HTTPS connection (1): iad1.qualtrics.com:443
+2024-04-23 21:00:03,510 - DEBUG - https://iad1.qualtrics.com:443 "POST /API/v3/surveys/SV_9oGXsP5SKL9jNRA/export-responses HTTP/1.1" 200 174
+2024-04-23 21:00:03,513 - INFO - File Export Started
+2024-04-23 21:00:03,514 - INFO - ---
+2024-04-23 21:00:03,516 - DEBUG - Starting new HTTPS connection (1): iad1.qualtrics.com:443
+2024-04-23 21:00:04,163 - DEBUG - https://iad1.qualtrics.com:443 "GET /API/v3/surveys/SV_9oGXsP5SKL9jNRA/export-responses/ES_9v0zY9xxzIMlel0 HTTP/1.1" 200 140
+2024-04-23 21:00:04,166 - INFO - File Export 0.0% complete
+2024-04-23 21:00:04,167 - INFO - ---
+2024-04-23 21:00:06,171 - DEBUG - Starting new HTTPS connection (1): iad1.qualtrics.com:443
+2024-04-23 21:00:06,867 - DEBUG - https://iad1.qualtrics.com:443 "GET /API/v3/surveys/SV_9oGXsP5SKL9jNRA/export-responses/ES_9v0zY9xxzIMlel0 HTTP/1.1" 200 192
+2024-04-23 21:00:06,870 - INFO - File Export 100.0% complete
+2024-04-23 21:00:06,871 - INFO - ---
+2024-04-23 21:00:08,873 - INFO - File Export Complete
+2024-04-23 21:00:08,874 - INFO - ---
+2024-04-23 21:00:08,876 - DEBUG - Starting new HTTPS connection (1): iad1.qualtrics.com:443
+2024-04-23 21:00:09,346 - DEBUG - https://iad1.qualtrics.com:443 "GET /API/v3/surveys/SV_9oGXsP5SKL9jNRA/export-responses/7b51a54a-89f4-498a-b4ee-fd3511a0687e-def/file HTTP/1.1" 200 4196
+2024-04-23 21:00:09,347 - INFO - File successfully retrieved!
+2024-04-23 21:00:09,348 - INFO - ------------------------------------------------
+
+2024-04-23 21:00:09,348 - INFO - Starting processing for surveyId: SV_9oGXsP5SKL9jNRA
+2024-04-23 21:00:09,348 - INFO - ------------------------------------------------
+2024-04-23 21:00:09,356 - INFO - File ['UA DataLab: Cracking the coding interview.csv'] extracted successfully
+2024-04-23 21:00:09,356 - INFO - ---
+2024-04-23 22:00:02,874 - INFO - Starting, qualtrics check and upload.
+2024-04-23 22:00:02,879 - INFO - Starting export for surveyId: SV_9oGXsP5SKL9jNRA
+2024-04-23 22:00:02,879 - INFO - ------------------------------------------------
+2024-04-23 22:00:02,885 - DEBUG - Starting new HTTPS connection (1): iad1.qualtrics.com:443
+2024-04-23 22:00:03,702 - DEBUG - https://iad1.qualtrics.com:443 "POST /API/v3/surveys/SV_9oGXsP5SKL9jNRA/export-responses HTTP/1.1" 200 174
+2024-04-23 22:00:03,705 - INFO - File Export Started
+2024-04-23 22:00:03,706 - INFO - ---
+2024-04-23 22:00:03,708 - DEBUG - Starting new HTTPS connection (1): iad1.qualtrics.com:443
+2024-04-23 22:00:04,204 - DEBUG - https://iad1.qualtrics.com:443 "GET /API/v3/surveys/SV_9oGXsP5SKL9jNRA/export-responses/ES_55cBGW1p1oZL8lo HTTP/1.1" 200 140
+2024-04-23 22:00:04,207 - INFO - File Export 0.0% complete
+2024-04-23 22:00:04,207 - INFO - ---
+2024-04-23 22:00:06,212 - DEBUG - Starting new HTTPS connection (1): iad1.qualtrics.com:443
+2024-04-23 22:00:06,606 - DEBUG - https://iad1.qualtrics.com:443 "GET /API/v3/surveys/SV_9oGXsP5SKL9jNRA/export-responses/ES_55cBGW1p1oZL8lo HTTP/1.1" 200 140
+2024-04-23 22:00:06,608 - INFO - File Export 0.0% complete
+2024-04-23 22:00:06,609 - INFO - ---
+2024-04-23 22:00:08,614 - DEBUG - Starting new HTTPS connection (1): iad1.qualtrics.com:443
+2024-04-23 22:00:09,005 - DEBUG - https://iad1.qualtrics.com:443 "GET /API/v3/surveys/SV_9oGXsP5SKL9jNRA/export-responses/ES_55cBGW1p1oZL8lo HTTP/1.1" 200 192
+2024-04-23 22:00:09,008 - INFO - File Export 100.0% complete
+2024-04-23 22:00:09,009 - INFO - ---
+2024-04-23 22:00:11,011 - INFO - File Export Complete
+2024-04-23 22:00:11,011 - INFO - ---
+2024-04-23 22:00:11,014 - DEBUG - Starting new HTTPS connection (1): iad1.qualtrics.com:443
+2024-04-23 22:00:11,374 - DEBUG - https://iad1.qualtrics.com:443 "GET /API/v3/surveys/SV_9oGXsP5SKL9jNRA/export-responses/27319e4f-608e-4e42-ba02-87b22add712c-def/file HTTP/1.1" 200 4196
+2024-04-23 22:00:11,394 - INFO - File successfully retrieved!
+2024-04-23 22:00:11,394 - INFO - ------------------------------------------------
+
+2024-04-23 22:00:11,394 - INFO - Starting processing for surveyId: SV_9oGXsP5SKL9jNRA
+2024-04-23 22:00:11,395 - INFO - ------------------------------------------------
+2024-04-23 22:00:11,403 - INFO - File ['UA DataLab: Cracking the coding interview.csv'] extracted successfully
+2024-04-23 22:00:11,403 - INFO - ---
+2024-04-23 23:00:02,501 - INFO - Starting, qualtrics check and upload.
+2024-04-23 23:00:02,506 - INFO - Starting export for surveyId: SV_9oGXsP5SKL9jNRA
+2024-04-23 23:00:02,507 - INFO - ------------------------------------------------
+2024-04-23 23:00:02,513 - DEBUG - Starting new HTTPS connection (1): iad1.qualtrics.com:443
+2024-04-23 23:00:03,630 - DEBUG - https://iad1.qualtrics.com:443 "POST /API/v3/surveys/SV_9oGXsP5SKL9jNRA/export-responses HTTP/1.1" 200 174
+2024-04-23 23:00:03,633 - INFO - File Export Started
+2024-04-23 23:00:03,634 - INFO - ---
+2024-04-23 23:00:03,636 - DEBUG - Starting new HTTPS connection (1): iad1.qualtrics.com:443
+2024-04-23 23:00:04,149 - DEBUG - https://iad1.qualtrics.com:443 "GET /API/v3/surveys/SV_9oGXsP5SKL9jNRA/export-responses/ES_816QSXk1PaQDL2C HTTP/1.1" 200 140
+2024-04-23 23:00:04,153 - INFO - File Export 0.0% complete
+2024-04-23 23:00:04,153 - INFO - ---
+2024-04-23 23:00:06,158 - DEBUG - Starting new HTTPS connection (1): iad1.qualtrics.com:443
+2024-04-23 23:00:06,765 - DEBUG - https://iad1.qualtrics.com:443 "GET /API/v3/surveys/SV_9oGXsP5SKL9jNRA/export-responses/ES_816QSXk1PaQDL2C HTTP/1.1" 200 192
+2024-04-23 23:00:06,771 - INFO - File Export 100.0% complete
+2024-04-23 23:00:06,772 - INFO - ---
+2024-04-23 23:00:08,774 - INFO - File Export Complete
+2024-04-23 23:00:08,775 - INFO - ---
+2024-04-23 23:00:08,777 - DEBUG - Starting new HTTPS connection (1): iad1.qualtrics.com:443
+2024-04-23 23:00:09,374 - DEBUG - https://iad1.qualtrics.com:443 "GET /API/v3/surveys/SV_9oGXsP5SKL9jNRA/export-responses/42686a27-370f-44c9-82a7-18d3975c7bfb-def/file HTTP/1.1" 200 4196
+2024-04-23 23:00:09,375 - INFO - File successfully retrieved!
+2024-04-23 23:00:09,375 - INFO - ------------------------------------------------
+
+2024-04-23 23:00:09,376 - INFO - Starting processing for surveyId: SV_9oGXsP5SKL9jNRA
+2024-04-23 23:00:09,376 - INFO - ------------------------------------------------
+2024-04-23 23:00:09,383 - INFO - File ['UA DataLab: Cracking the coding interview.csv'] extracted successfully
+2024-04-23 23:00:09,384 - INFO - ---
+2024-04-24 00:00:02,429 - INFO - Starting, qualtrics check and upload.
+2024-04-24 00:00:02,433 - INFO - Starting export for surveyId: SV_9oGXsP5SKL9jNRA
+2024-04-24 00:00:02,433 - INFO - ------------------------------------------------
+2024-04-24 00:00:02,438 - DEBUG - Starting new HTTPS connection (1): iad1.qualtrics.com:443
+2024-04-24 00:00:03,203 - DEBUG - https://iad1.qualtrics.com:443 "POST /API/v3/surveys/SV_9oGXsP5SKL9jNRA/export-responses HTTP/1.1" 200 174
+2024-04-24 00:00:03,206 - INFO - File Export Started
+2024-04-24 00:00:03,206 - INFO - ---
+2024-04-24 00:00:03,208 - DEBUG - Starting new HTTPS connection (1): iad1.qualtrics.com:443
+2024-04-24 00:00:03,649 - DEBUG - https://iad1.qualtrics.com:443 "GET /API/v3/surveys/SV_9oGXsP5SKL9jNRA/export-responses/ES_ebM1Otrr4w6le3Y HTTP/1.1" 200 140
+2024-04-24 00:00:03,652 - INFO - File Export 0.0% complete
+2024-04-24 00:00:03,652 - INFO - ---
+2024-04-24 00:00:05,657 - DEBUG - Starting new HTTPS connection (1): iad1.qualtrics.com:443
+2024-04-24 00:00:06,082 - DEBUG - https://iad1.qualtrics.com:443 "GET /API/v3/surveys/SV_9oGXsP5SKL9jNRA/export-responses/ES_ebM1Otrr4w6le3Y HTTP/1.1" 200 192
+2024-04-24 00:00:06,085 - INFO - File Export 100.0% complete
+2024-04-24 00:00:06,086 - INFO - ---
+2024-04-24 00:00:08,088 - INFO - File Export Complete
+2024-04-24 00:00:08,089 - INFO - ---
+2024-04-24 00:00:08,091 - DEBUG - Starting new HTTPS connection (1): iad1.qualtrics.com:443
+2024-04-24 00:00:08,707 - DEBUG - https://iad1.qualtrics.com:443 "GET /API/v3/surveys/SV_9oGXsP5SKL9jNRA/export-responses/8721e8c6-491f-4f74-b22e-a0576786470f-def/file HTTP/1.1" 200 4196
+2024-04-24 00:00:08,726 - INFO - File successfully retrieved!
+2024-04-24 00:00:08,726 - INFO - ------------------------------------------------
+
+2024-04-24 00:00:08,726 - INFO - Starting processing for surveyId: SV_9oGXsP5SKL9jNRA
+2024-04-24 00:00:08,727 - INFO - ------------------------------------------------
+2024-04-24 00:00:08,735 - INFO - File ['UA DataLab: Cracking the coding interview.csv'] extracted successfully
+2024-04-24 00:00:08,735 - INFO - ---
+2024-04-24 01:00:02,010 - INFO - Starting, qualtrics check and upload.
+2024-04-24 01:00:02,014 - INFO - Starting export for surveyId: SV_9oGXsP5SKL9jNRA
+2024-04-24 01:00:02,014 - INFO - ------------------------------------------------
+2024-04-24 01:00:02,019 - DEBUG - Starting new HTTPS connection (1): iad1.qualtrics.com:443
+2024-04-24 01:00:04,095 - DEBUG - https://iad1.qualtrics.com:443 "POST /API/v3/surveys/SV_9oGXsP5SKL9jNRA/export-responses HTTP/1.1" 200 174
+2024-04-24 01:00:04,098 - INFO - File Export Started
+2024-04-24 01:00:04,099 - INFO - ---
+2024-04-24 01:00:04,101 - DEBUG - Starting new HTTPS connection (1): iad1.qualtrics.com:443
+2024-04-24 01:00:04,880 - DEBUG - https://iad1.qualtrics.com:443 "GET /API/v3/surveys/SV_9oGXsP5SKL9jNRA/export-responses/ES_0i8kYDgZXPsgIiW HTTP/1.1" 200 140
+2024-04-24 01:00:04,883 - INFO - File Export 0.0% complete
+2024-04-24 01:00:04,884 - INFO - ---
+2024-04-24 01:00:06,889 - DEBUG - Starting new HTTPS connection (1): iad1.qualtrics.com:443
+2024-04-24 01:00:07,764 - DEBUG - https://iad1.qualtrics.com:443 "GET /API/v3/surveys/SV_9oGXsP5SKL9jNRA/export-responses/ES_0i8kYDgZXPsgIiW HTTP/1.1" 200 140
+2024-04-24 01:00:07,768 - INFO - File Export 0.0% complete
+2024-04-24 01:00:07,769 - INFO - ---
+2024-04-24 01:00:09,773 - DEBUG - Starting new HTTPS connection (1): iad1.qualtrics.com:443
+2024-04-24 01:00:10,181 - DEBUG - https://iad1.qualtrics.com:443 "GET /API/v3/surveys/SV_9oGXsP5SKL9jNRA/export-responses/ES_0i8kYDgZXPsgIiW HTTP/1.1" 200 192
+2024-04-24 01:00:10,183 - INFO - File Export 100.0% complete
+2024-04-24 01:00:10,184 - INFO - ---
+2024-04-24 01:00:12,187 - INFO - File Export Complete
+2024-04-24 01:00:12,187 - INFO - ---
+2024-04-24 01:00:12,189 - DEBUG - Starting new HTTPS connection (1): iad1.qualtrics.com:443
+2024-04-24 01:00:12,540 - DEBUG - https://iad1.qualtrics.com:443 "GET /API/v3/surveys/SV_9oGXsP5SKL9jNRA/export-responses/b468f450-0627-4ebb-9874-d0cb81f3b25b-def/file HTTP/1.1" 200 4196
+2024-04-24 01:00:12,549 - INFO - File successfully retrieved!
+2024-04-24 01:00:12,549 - INFO - ------------------------------------------------
+
+2024-04-24 01:00:12,550 - INFO - Starting processing for surveyId: SV_9oGXsP5SKL9jNRA
+2024-04-24 01:00:12,550 - INFO - ------------------------------------------------
+2024-04-24 01:00:12,557 - INFO - File ['UA DataLab: Cracking the coding interview.csv'] extracted successfully
+2024-04-24 01:00:12,558 - INFO - ---
+2024-04-24 02:00:02,260 - INFO - Starting, qualtrics check and upload.
+2024-04-24 02:00:02,264 - INFO - Starting export for surveyId: SV_9oGXsP5SKL9jNRA
+2024-04-24 02:00:02,264 - INFO - ------------------------------------------------
+2024-04-24 02:00:02,269 - DEBUG - Starting new HTTPS connection (1): iad1.qualtrics.com:443
+2024-04-24 02:00:03,054 - DEBUG - https://iad1.qualtrics.com:443 "POST /API/v3/surveys/SV_9oGXsP5SKL9jNRA/export-responses HTTP/1.1" 200 174
+2024-04-24 02:00:03,057 - INFO - File Export Started
+2024-04-24 02:00:03,057 - INFO - ---
+2024-04-24 02:00:03,060 - DEBUG - Starting new HTTPS connection (1): iad1.qualtrics.com:443
+2024-04-24 02:00:03,530 - DEBUG - https://iad1.qualtrics.com:443 "GET /API/v3/surveys/SV_9oGXsP5SKL9jNRA/export-responses/ES_5j0KdtP83w1FJtA HTTP/1.1" 200 140
+2024-04-24 02:00:03,533 - INFO - File Export 0.0% complete
+2024-04-24 02:00:03,533 - INFO - ---
+2024-04-24 02:00:05,538 - DEBUG - Starting new HTTPS connection (1): iad1.qualtrics.com:443
+2024-04-24 02:00:06,086 - DEBUG - https://iad1.qualtrics.com:443 "GET /API/v3/surveys/SV_9oGXsP5SKL9jNRA/export-responses/ES_5j0KdtP83w1FJtA HTTP/1.1" 200 192
+2024-04-24 02:00:06,089 - INFO - File Export 100.0% complete
+2024-04-24 02:00:06,090 - INFO - ---
+2024-04-24 02:00:08,092 - INFO - File Export Complete
+2024-04-24 02:00:08,093 - INFO - ---
+2024-04-24 02:00:08,095 - DEBUG - Starting new HTTPS connection (1): iad1.qualtrics.com:443
+2024-04-24 02:00:08,619 - DEBUG - https://iad1.qualtrics.com:443 "GET /API/v3/surveys/SV_9oGXsP5SKL9jNRA/export-responses/bd5aba84-1f8b-4ff2-b884-e1540cfdd25d-def/file HTTP/1.1" 200 4196
+2024-04-24 02:00:08,641 - INFO - File successfully retrieved!
+2024-04-24 02:00:08,641 - INFO - ------------------------------------------------
+
+2024-04-24 02:00:08,641 - INFO - Starting processing for surveyId: SV_9oGXsP5SKL9jNRA
+2024-04-24 02:00:08,641 - INFO - ------------------------------------------------
+2024-04-24 02:00:08,649 - INFO - File ['UA DataLab: Cracking the coding interview.csv'] extracted successfully
+2024-04-24 02:00:08,649 - INFO - ---
+2024-04-24 03:00:02,822 - INFO - Starting, qualtrics check and upload.
+2024-04-24 03:00:02,826 - INFO - Starting export for surveyId: SV_9oGXsP5SKL9jNRA
+2024-04-24 03:00:02,826 - INFO - ------------------------------------------------
+2024-04-24 03:00:02,831 - DEBUG - Starting new HTTPS connection (1): iad1.qualtrics.com:443
+2024-04-24 03:00:04,115 - DEBUG - https://iad1.qualtrics.com:443 "POST /API/v3/surveys/SV_9oGXsP5SKL9jNRA/export-responses HTTP/1.1" 200 174
+2024-04-24 03:00:04,118 - INFO - File Export Started
+2024-04-24 03:00:04,118 - INFO - ---
+2024-04-24 03:00:04,121 - DEBUG - Starting new HTTPS connection (1): iad1.qualtrics.com:443
+2024-04-24 03:00:04,964 - DEBUG - https://iad1.qualtrics.com:443 "GET /API/v3/surveys/SV_9oGXsP5SKL9jNRA/export-responses/ES_3HLhB6kN7SyAq22 HTTP/1.1" 200 140
+2024-04-24 03:00:04,967 - INFO - File Export 0.0% complete
+2024-04-24 03:00:04,967 - INFO - ---
+2024-04-24 03:00:06,972 - DEBUG - Starting new HTTPS connection (1): iad1.qualtrics.com:443
+2024-04-24 03:00:07,427 - DEBUG - https://iad1.qualtrics.com:443 "GET /API/v3/surveys/SV_9oGXsP5SKL9jNRA/export-responses/ES_3HLhB6kN7SyAq22 HTTP/1.1" 200 192
+2024-04-24 03:00:07,431 - INFO - File Export 100.0% complete
+2024-04-24 03:00:07,431 - INFO - ---
+2024-04-24 03:00:09,434 - INFO - File Export Complete
+2024-04-24 03:00:09,434 - INFO - ---
+2024-04-24 03:00:09,436 - DEBUG - Starting new HTTPS connection (1): iad1.qualtrics.com:443
+2024-04-24 03:00:09,984 - DEBUG - https://iad1.qualtrics.com:443 "GET /API/v3/surveys/SV_9oGXsP5SKL9jNRA/export-responses/0cba0736-a530-4971-8083-5fe00e5defbe-def/file HTTP/1.1" 200 4196
+2024-04-24 03:00:10,046 - INFO - File successfully retrieved!
+2024-04-24 03:00:10,046 - INFO - ------------------------------------------------
+
+2024-04-24 03:00:10,046 - INFO - Starting processing for surveyId: SV_9oGXsP5SKL9jNRA
+2024-04-24 03:00:10,046 - INFO - ------------------------------------------------
+2024-04-24 03:00:10,054 - INFO - File ['UA DataLab: Cracking the coding interview.csv'] extracted successfully
+2024-04-24 03:00:10,054 - INFO - ---
+2024-04-24 04:00:02,746 - INFO - Starting, qualtrics check and upload.
+2024-04-24 04:00:02,750 - INFO - Starting export for surveyId: SV_9oGXsP5SKL9jNRA
+2024-04-24 04:00:02,750 - INFO - ------------------------------------------------
+2024-04-24 04:00:02,755 - DEBUG - Starting new HTTPS connection (1): iad1.qualtrics.com:443
+2024-04-24 04:00:03,611 - DEBUG - https://iad1.qualtrics.com:443 "POST /API/v3/surveys/SV_9oGXsP5SKL9jNRA/export-responses HTTP/1.1" 200 174
+2024-04-24 04:00:03,614 - INFO - File Export Started
+2024-04-24 04:00:03,615 - INFO - ---
+2024-04-24 04:00:03,617 - DEBUG - Starting new HTTPS connection (1): iad1.qualtrics.com:443
+2024-04-24 04:00:04,072 - DEBUG - https://iad1.qualtrics.com:443 "GET /API/v3/surveys/SV_9oGXsP5SKL9jNRA/export-responses/ES_0CinA5FFOkwANCe HTTP/1.1" 200 140
+2024-04-24 04:00:04,075 - INFO - File Export 0.0% complete
+2024-04-24 04:00:04,076 - INFO - ---
+2024-04-24 04:00:06,081 - DEBUG - Starting new HTTPS connection (1): iad1.qualtrics.com:443
+2024-04-24 04:00:06,514 - DEBUG - https://iad1.qualtrics.com:443 "GET /API/v3/surveys/SV_9oGXsP5SKL9jNRA/export-responses/ES_0CinA5FFOkwANCe HTTP/1.1" 200 192
+2024-04-24 04:00:06,517 - INFO - File Export 100.0% complete
+2024-04-24 04:00:06,518 - INFO - ---
+2024-04-24 04:00:08,520 - INFO - File Export Complete
+2024-04-24 04:00:08,520 - INFO - ---
+2024-04-24 04:00:08,523 - DEBUG - Starting new HTTPS connection (1): iad1.qualtrics.com:443
+2024-04-24 04:00:09,176 - DEBUG - https://iad1.qualtrics.com:443 "GET /API/v3/surveys/SV_9oGXsP5SKL9jNRA/export-responses/9259808f-7b61-49d8-b845-a8b357fefa68-def/file HTTP/1.1" 200 4196
+2024-04-24 04:00:09,177 - INFO - File successfully retrieved!
+2024-04-24 04:00:09,177 - INFO - ------------------------------------------------
+
+2024-04-24 04:00:09,177 - INFO - Starting processing for surveyId: SV_9oGXsP5SKL9jNRA
+2024-04-24 04:00:09,177 - INFO - ------------------------------------------------
+2024-04-24 04:00:09,185 - INFO - File ['UA DataLab: Cracking the coding interview.csv'] extracted successfully
+2024-04-24 04:00:09,185 - INFO - ---
+2024-04-24 05:00:02,193 - INFO - Starting, qualtrics check and upload.
+2024-04-24 05:00:02,197 - INFO - Starting export for surveyId: SV_9oGXsP5SKL9jNRA
+2024-04-24 05:00:02,197 - INFO - ------------------------------------------------
+2024-04-24 05:00:02,202 - DEBUG - Starting new HTTPS connection (1): iad1.qualtrics.com:443
+2024-04-24 05:00:03,716 - DEBUG - https://iad1.qualtrics.com:443 "POST /API/v3/surveys/SV_9oGXsP5SKL9jNRA/export-responses HTTP/1.1" 200 174
+2024-04-24 05:00:03,719 - INFO - File Export Started
+2024-04-24 05:00:03,720 - INFO - ---
+2024-04-24 05:00:03,722 - DEBUG - Starting new HTTPS connection (1): iad1.qualtrics.com:443
+2024-04-24 05:00:04,434 - DEBUG - https://iad1.qualtrics.com:443 "GET /API/v3/surveys/SV_9oGXsP5SKL9jNRA/export-responses/ES_9Z8o2kUky7yauXQ HTTP/1.1" 200 140
+2024-04-24 05:00:04,437 - INFO - File Export 0.0% complete
+2024-04-24 05:00:04,438 - INFO - ---
+2024-04-24 05:00:06,443 - DEBUG - Starting new HTTPS connection (1): iad1.qualtrics.com:443
+2024-04-24 05:00:06,992 - DEBUG - https://iad1.qualtrics.com:443 "GET /API/v3/surveys/SV_9oGXsP5SKL9jNRA/export-responses/ES_9Z8o2kUky7yauXQ HTTP/1.1" 200 192
+2024-04-24 05:00:06,994 - INFO - File Export 100.0% complete
+2024-04-24 05:00:06,995 - INFO - ---
+2024-04-24 05:00:08,998 - INFO - File Export Complete
+2024-04-24 05:00:08,998 - INFO - ---
+2024-04-24 05:00:09,000 - DEBUG - Starting new HTTPS connection (1): iad1.qualtrics.com:443
+2024-04-24 05:00:09,510 - DEBUG - https://iad1.qualtrics.com:443 "GET /API/v3/surveys/SV_9oGXsP5SKL9jNRA/export-responses/ca807492-9c4d-4509-974b-5f361a2bc674-def/file HTTP/1.1" 200 4196
+2024-04-24 05:00:09,511 - INFO - File successfully retrieved!
+2024-04-24 05:00:09,511 - INFO - ------------------------------------------------
+
+2024-04-24 05:00:09,511 - INFO - Starting processing for surveyId: SV_9oGXsP5SKL9jNRA
+2024-04-24 05:00:09,511 - INFO - ------------------------------------------------
+2024-04-24 05:00:09,520 - INFO - File ['UA DataLab: Cracking the coding interview.csv'] extracted successfully
+2024-04-24 05:00:09,520 - INFO - ---
+2024-04-24 06:00:02,892 - INFO - Starting, qualtrics check and upload.
+2024-04-24 06:00:02,896 - INFO - Starting export for surveyId: SV_9oGXsP5SKL9jNRA
+2024-04-24 06:00:02,896 - INFO - ------------------------------------------------
+2024-04-24 06:00:02,901 - DEBUG - Starting new HTTPS connection (1): iad1.qualtrics.com:443
+2024-04-24 06:00:03,782 - DEBUG - https://iad1.qualtrics.com:443 "POST /API/v3/surveys/SV_9oGXsP5SKL9jNRA/export-responses HTTP/1.1" 200 174
+2024-04-24 06:00:03,785 - INFO - File Export Started
+2024-04-24 06:00:03,786 - INFO - ---
+2024-04-24 06:00:03,788 - DEBUG - Starting new HTTPS connection (1): iad1.qualtrics.com:443
+2024-04-24 06:00:04,275 - DEBUG - https://iad1.qualtrics.com:443 "GET /API/v3/surveys/SV_9oGXsP5SKL9jNRA/export-responses/ES_5py28WcP5xISUse HTTP/1.1" 200 140
+2024-04-24 06:00:04,278 - INFO - File Export 0.0% complete
+2024-04-24 06:00:04,279 - INFO - ---
+2024-04-24 06:00:06,283 - DEBUG - Starting new HTTPS connection (1): iad1.qualtrics.com:443
+2024-04-24 06:00:06,872 - DEBUG - https://iad1.qualtrics.com:443 "GET /API/v3/surveys/SV_9oGXsP5SKL9jNRA/export-responses/ES_5py28WcP5xISUse HTTP/1.1" 200 192
+2024-04-24 06:00:06,875 - INFO - File Export 100.0% complete
+2024-04-24 06:00:06,876 - INFO - ---
+2024-04-24 06:00:08,878 - INFO - File Export Complete
+2024-04-24 06:00:08,879 - INFO - ---
+2024-04-24 06:00:08,881 - DEBUG - Starting new HTTPS connection (1): iad1.qualtrics.com:443
+2024-04-24 06:00:09,378 - DEBUG - https://iad1.qualtrics.com:443 "GET /API/v3/surveys/SV_9oGXsP5SKL9jNRA/export-responses/a0570666-3009-45b3-b334-4150e1f4e3e2-def/file HTTP/1.1" 200 4196
+2024-04-24 06:00:09,398 - INFO - File successfully retrieved!
+2024-04-24 06:00:09,398 - INFO - ------------------------------------------------
+
+2024-04-24 06:00:09,398 - INFO - Starting processing for surveyId: SV_9oGXsP5SKL9jNRA
+2024-04-24 06:00:09,398 - INFO - ------------------------------------------------
+2024-04-24 06:00:09,406 - INFO - File ['UA DataLab: Cracking the coding interview.csv'] extracted successfully
+2024-04-24 06:00:09,406 - INFO - ---
+2024-04-24 07:00:02,655 - INFO - Starting, qualtrics check and upload.
+2024-04-24 07:00:02,659 - INFO - Starting export for surveyId: SV_9oGXsP5SKL9jNRA
+2024-04-24 07:00:02,659 - INFO - ------------------------------------------------
+2024-04-24 07:00:02,663 - DEBUG - Starting new HTTPS connection (1): iad1.qualtrics.com:443
+2024-04-24 07:00:04,350 - DEBUG - https://iad1.qualtrics.com:443 "POST /API/v3/surveys/SV_9oGXsP5SKL9jNRA/export-responses HTTP/1.1" 200 174
+2024-04-24 07:00:04,352 - INFO - File Export Started
+2024-04-24 07:00:04,352 - INFO - ---
+2024-04-24 07:00:04,353 - DEBUG - Starting new HTTPS connection (1): iad1.qualtrics.com:443
+2024-04-24 07:00:05,076 - DEBUG - https://iad1.qualtrics.com:443 "GET /API/v3/surveys/SV_9oGXsP5SKL9jNRA/export-responses/ES_cNJW2dJTRd3kRg2 HTTP/1.1" 200 140
+2024-04-24 07:00:05,079 - INFO - File Export 0.0% complete
+2024-04-24 07:00:05,080 - INFO - ---
+2024-04-24 07:00:07,084 - DEBUG - Starting new HTTPS connection (1): iad1.qualtrics.com:443
+2024-04-24 07:00:08,061 - DEBUG - https://iad1.qualtrics.com:443 "GET /API/v3/surveys/SV_9oGXsP5SKL9jNRA/export-responses/ES_cNJW2dJTRd3kRg2 HTTP/1.1" 200 140
+2024-04-24 07:00:08,064 - INFO - File Export 0.0% complete
+2024-04-24 07:00:08,065 - INFO - ---
+2024-04-24 07:00:10,067 - DEBUG - Starting new HTTPS connection (1): iad1.qualtrics.com:443
+2024-04-24 07:00:10,462 - DEBUG - https://iad1.qualtrics.com:443 "GET /API/v3/surveys/SV_9oGXsP5SKL9jNRA/export-responses/ES_cNJW2dJTRd3kRg2 HTTP/1.1" 200 192
+2024-04-24 07:00:10,465 - INFO - File Export 100.0% complete
+2024-04-24 07:00:10,465 - INFO - ---
+2024-04-24 07:00:12,468 - INFO - File Export Complete
+2024-04-24 07:00:12,468 - INFO - ---
+2024-04-24 07:00:12,469 - DEBUG - Starting new HTTPS connection (1): iad1.qualtrics.com:443
+2024-04-24 07:00:12,885 - DEBUG - https://iad1.qualtrics.com:443 "GET /API/v3/surveys/SV_9oGXsP5SKL9jNRA/export-responses/074e01e4-3451-4c29-bf59-4682ce55b295-def/file HTTP/1.1" 200 4196
+2024-04-24 07:00:12,945 - INFO - File successfully retrieved!
+2024-04-24 07:00:12,946 - INFO - ------------------------------------------------
+
+2024-04-24 07:00:12,946 - INFO - Starting processing for surveyId: SV_9oGXsP5SKL9jNRA
+2024-04-24 07:00:12,946 - INFO - ------------------------------------------------
+2024-04-24 07:00:12,953 - INFO - File ['UA DataLab: Cracking the coding interview.csv'] extracted successfully
+2024-04-24 07:00:12,953 - INFO - ---
+2024-04-24 08:00:02,511 - INFO - Starting, qualtrics check and upload.
+2024-04-24 08:00:02,517 - INFO - Starting export for surveyId: SV_9oGXsP5SKL9jNRA
+2024-04-24 08:00:02,517 - INFO - ------------------------------------------------
+2024-04-24 08:00:02,523 - DEBUG - Starting new HTTPS connection (1): iad1.qualtrics.com:443
+2024-04-24 08:00:03,961 - DEBUG - https://iad1.qualtrics.com:443 "POST /API/v3/surveys/SV_9oGXsP5SKL9jNRA/export-responses HTTP/1.1" 200 174
+2024-04-24 08:00:03,964 - INFO - File Export Started
+2024-04-24 08:00:03,964 - INFO - ---
+2024-04-24 08:00:03,966 - DEBUG - Starting new HTTPS connection (1): iad1.qualtrics.com:443
+2024-04-24 08:00:04,705 - DEBUG - https://iad1.qualtrics.com:443 "GET /API/v3/surveys/SV_9oGXsP5SKL9jNRA/export-responses/ES_daPDutQc97VSc3Y HTTP/1.1" 200 140
+2024-04-24 08:00:04,708 - INFO - File Export 0.0% complete
+2024-04-24 08:00:04,709 - INFO - ---
+2024-04-24 08:00:06,713 - DEBUG - Starting new HTTPS connection (1): iad1.qualtrics.com:443
+2024-04-24 08:00:07,199 - DEBUG - https://iad1.qualtrics.com:443 "GET /API/v3/surveys/SV_9oGXsP5SKL9jNRA/export-responses/ES_daPDutQc97VSc3Y HTTP/1.1" 200 192
+2024-04-24 08:00:07,202 - INFO - File Export 100.0% complete
+2024-04-24 08:00:07,203 - INFO - ---
+2024-04-24 08:00:09,205 - INFO - File Export Complete
+2024-04-24 08:00:09,205 - INFO - ---
+2024-04-24 08:00:09,208 - DEBUG - Starting new HTTPS connection (1): iad1.qualtrics.com:443
+2024-04-24 08:00:09,568 - DEBUG - https://iad1.qualtrics.com:443 "GET /API/v3/surveys/SV_9oGXsP5SKL9jNRA/export-responses/91f0cdef-e87e-4323-926a-7c2607ad126a-def/file HTTP/1.1" 200 4196
+2024-04-24 08:00:09,579 - INFO - File successfully retrieved!
+2024-04-24 08:00:09,579 - INFO - ------------------------------------------------
+
+2024-04-24 08:00:09,579 - INFO - Starting processing for surveyId: SV_9oGXsP5SKL9jNRA
+2024-04-24 08:00:09,580 - INFO - ------------------------------------------------
+2024-04-24 08:00:09,587 - INFO - File ['UA DataLab: Cracking the coding interview.csv'] extracted successfully
+2024-04-24 08:00:09,588 - INFO - ---
+2024-04-24 09:00:02,863 - INFO - Starting, qualtrics check and upload.
+2024-04-24 09:00:02,867 - INFO - Starting export for surveyId: SV_9oGXsP5SKL9jNRA
+2024-04-24 09:00:02,867 - INFO - ------------------------------------------------
+2024-04-24 09:00:02,872 - DEBUG - Starting new HTTPS connection (1): iad1.qualtrics.com:443
+2024-04-24 09:00:04,754 - DEBUG - https://iad1.qualtrics.com:443 "POST /API/v3/surveys/SV_9oGXsP5SKL9jNRA/export-responses HTTP/1.1" 200 174
+2024-04-24 09:00:04,757 - INFO - File Export Started
+2024-04-24 09:00:04,758 - INFO - ---
+2024-04-24 09:00:04,760 - DEBUG - Starting new HTTPS connection (1): iad1.qualtrics.com:443
+2024-04-24 09:00:05,694 - DEBUG - https://iad1.qualtrics.com:443 "GET /API/v3/surveys/SV_9oGXsP5SKL9jNRA/export-responses/ES_eIDM2Ja3aBgzHLg HTTP/1.1" 200 140
+2024-04-24 09:00:05,697 - INFO - File Export 0.0% complete
+2024-04-24 09:00:05,698 - INFO - ---
+2024-04-24 09:00:07,702 - DEBUG - Starting new HTTPS connection (1): iad1.qualtrics.com:443
+2024-04-24 09:00:08,190 - DEBUG - https://iad1.qualtrics.com:443 "GET /API/v3/surveys/SV_9oGXsP5SKL9jNRA/export-responses/ES_eIDM2Ja3aBgzHLg HTTP/1.1" 200 192
+2024-04-24 09:00:08,193 - INFO - File Export 100.0% complete
+2024-04-24 09:00:08,194 - INFO - ---
+2024-04-24 09:00:10,196 - INFO - File Export Complete
+2024-04-24 09:00:10,196 - INFO - ---
+2024-04-24 09:00:10,199 - DEBUG - Starting new HTTPS connection (1): iad1.qualtrics.com:443
+2024-04-24 09:00:10,663 - DEBUG - https://iad1.qualtrics.com:443 "GET /API/v3/surveys/SV_9oGXsP5SKL9jNRA/export-responses/1ae30566-cf74-45c6-b482-210504029be0-def/file HTTP/1.1" 200 4196
+2024-04-24 09:00:10,682 - INFO - File successfully retrieved!
+2024-04-24 09:00:10,682 - INFO - ------------------------------------------------
+
+2024-04-24 09:00:10,682 - INFO - Starting processing for surveyId: SV_9oGXsP5SKL9jNRA
+2024-04-24 09:00:10,682 - INFO - ------------------------------------------------
+2024-04-24 09:00:10,690 - INFO - File ['UA DataLab: Cracking the coding interview.csv'] extracted successfully
+2024-04-24 09:00:10,690 - INFO - ---
+2024-04-24 10:00:01,796 - INFO - Starting, qualtrics check and upload.
+2024-04-24 10:00:01,799 - INFO - Starting export for surveyId: SV_9oGXsP5SKL9jNRA
+2024-04-24 10:00:01,799 - INFO - ------------------------------------------------
+2024-04-24 10:00:01,803 - DEBUG - Starting new HTTPS connection (1): iad1.qualtrics.com:443
+2024-04-24 10:00:02,881 - DEBUG - https://iad1.qualtrics.com:443 "POST /API/v3/surveys/SV_9oGXsP5SKL9jNRA/export-responses HTTP/1.1" 200 174
+2024-04-24 10:00:02,885 - INFO - File Export Started
+2024-04-24 10:00:02,885 - INFO - ---
+2024-04-24 10:00:02,888 - DEBUG - Starting new HTTPS connection (1): iad1.qualtrics.com:443
+2024-04-24 10:00:03,723 - DEBUG - https://iad1.qualtrics.com:443 "GET /API/v3/surveys/SV_9oGXsP5SKL9jNRA/export-responses/ES_6Y9RZSsFE3rleJw HTTP/1.1" 200 140
+2024-04-24 10:00:03,727 - INFO - File Export 0.0% complete
+2024-04-24 10:00:03,727 - INFO - ---
+2024-04-24 10:00:05,732 - DEBUG - Starting new HTTPS connection (1): iad1.qualtrics.com:443
+2024-04-24 10:00:06,280 - DEBUG - https://iad1.qualtrics.com:443 "GET /API/v3/surveys/SV_9oGXsP5SKL9jNRA/export-responses/ES_6Y9RZSsFE3rleJw HTTP/1.1" 200 192
+2024-04-24 10:00:06,283 - INFO - File Export 100.0% complete
+2024-04-24 10:00:06,284 - INFO - ---
+2024-04-24 10:00:08,286 - INFO - File Export Complete
+2024-04-24 10:00:08,286 - INFO - ---
+2024-04-24 10:00:08,289 - DEBUG - Starting new HTTPS connection (1): iad1.qualtrics.com:443
+2024-04-24 10:00:08,817 - DEBUG - https://iad1.qualtrics.com:443 "GET /API/v3/surveys/SV_9oGXsP5SKL9jNRA/export-responses/5e562dd3-26ef-42a4-903d-6e06df885fe2-def/file HTTP/1.1" 200 4196
+2024-04-24 10:00:08,819 - INFO - File successfully retrieved!
+2024-04-24 10:00:08,819 - INFO - ------------------------------------------------
+
+2024-04-24 10:00:08,819 - INFO - Starting processing for surveyId: SV_9oGXsP5SKL9jNRA
+2024-04-24 10:00:08,820 - INFO - ------------------------------------------------
+2024-04-24 10:00:08,829 - INFO - File ['UA DataLab: Cracking the coding interview.csv'] extracted successfully
+2024-04-24 10:00:08,830 - INFO - ---

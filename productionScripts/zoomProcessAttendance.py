@@ -97,30 +97,61 @@ def uploadCheckIn(row, workshopID, conn, cur):
         conn.commit()
     #If the list is empty, there is no registrant matching the workshop so we will need to create an entry for them
     else:
-        print("New registree created: " + str(hashedNum))
+        logging.info("New registree created: " + str(hashedNum))
         #Create a registreeInfo entry for the person
-        splitName = row.iloc[2].split(' ').strip()
-        if (len(splitName) == 2):
-            firstName = splitName[0]
-            lastName = splitName[1]
-        else:
-            firstName = row.iloc[2]
-            lastName = ''
-    
-        cur.execute("""
-                    INSERT INTO registreeInfo (RegID, FirstName, LastName, NetID, Email, College, Department, Major, Recontact)
-                    VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
-                    ON CONFLICT DO NOTHING;
-                    """, (hashedNum, firstName, lastName, None, row.iloc[3].lower(), None, None, None, 0))
-        conn.commit()
+        splitName = row.iloc[2]
+        splitName = splitName.split(' ')
+        splitName = [name.strip() for name in splitName]
+        if (len(splitName) > 0):
+            if (len(splitName) == 2):
+                firstName = splitName[0]
+                lastName = splitName[1]
+            elif (len(splitName) > 2):
+                firstName = splitName[0]
+                lastName = ' '.join(splitName[1:])
+            else:
+                firstName = splitName[0]
+                lastName = ''
+        
+            cur.execute("""
+                        INSERT INTO registreeInfo (RegID, FirstName, LastName, NetID, Email, College, Department, Major, Recontact)
+                        VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
+                        ON CONFLICT DO NOTHING;
+                        """, (hashedNum, firstName, lastName, None, row.iloc[3].lower(), None, None, None, 0))
+            conn.commit()
 
-        #Create an entry for the person and the specific workshop they attended
+            #Create an entry for the person and the specific workshop they attended
+            cur.execute("""
+                        INSERT INTO RegistreeWorkshops (RegID, WorkshopID, Registered, CheckedIn)
+                        VALUES (%s, %s, %s, %s)
+                        ON CONFLICT DO NOTHING
+                        """, (hashedNum, workshopID, False, True))
+            conn.commit()   
+
+def uploadWithoutEmail(FirstName, LastName, workshopID, conn, cur):
+    FirstName = FirstName.lower().capitalize()
+    LastName = LastName.lower().capitalize()
+    cur.execute("""SELECT RegID FROM registreeInfo 
+                WHERE FirstName = %s AND LastName = %s
+                """, (FirstName, LastName))
+    match = cur.fetchone()
+    conn.commit()
+
+    if (match):
         cur.execute("""
-                    INSERT INTO RegistreeWorkshops (RegID, WorkshopID, Registered, CheckedIn)
-                    VALUES (%s, %s, %s, %s)
+                    UPDATE RegistreeWorkshops
+                    SET CheckedIn = TRUE
+                    WHERE RegID = %s AND WorkshopId = %s
+                    """, (match[0], workshopID))
+        conn.commit()
+        logging.info("Checked in by name: " + FirstName + " " + LastName)
+    else:
+        cur.execute("""INSERT INTO UnknownPeople (FirstName, LastName, WorkshopID)
+                    VALUES(%s, %s, %s)
                     ON CONFLICT DO NOTHING
-                    """, (hashedNum, workshopID, False, True))
-        conn.commit()   
+                    """, (FirstName, LastName, workshopID))
+        conn.commit()
+        logging.info("Unknown Person Without Email: " + FirstName + " " + LastName)
 
 def convert_to_arizona_time(utc_time_str):
     # Parse the UTC time string into a datetime object
@@ -142,6 +173,7 @@ def zoomProcess(conn, cur):
                 JOIN series on workshops.SeriesID = series.SeriesID
                 WHERE workshops.Workshopdate = now()::date
                 """)
+
     workshopList = cur.fetchall()
     conn.commit()
 
@@ -163,9 +195,28 @@ def zoomProcess(conn, cur):
 
                 #If they joined within 15 minutes of the start time or left within 15 minutes of the end time we will check them in
                 if ( joinDifference < timedelta(minutes=15) ) or  ( leaveDifference < timedelta(minutes=15) ):
-                    uploadCheckIn(pd.Series(person), workshop[0], conn, cur)
-                    logging.info("Checked in: " + person['user_email'])
-                    logging.info("--------------------------------------")
+                    if person['user_email']:
+                        uploadCheckIn(pd.Series(person), workshop[0], conn, cur)
+                        logging.info("Checked in: " + person['user_email'])
+                        logging.info("--------------------------------------")
+                    else:
+                        splitName = person['name']
+                        splitName = splitName.split(' ')
+                        splitName = [name.strip() for name in splitName]
+                        if (len(splitName) > 0):
+                            if (len(splitName) == 2):
+                                firstName = splitName[0]
+                                lastName = splitName[1]
+                            elif (len(splitName) > 2):
+                                firstName = splitName[0]
+                                lastName = ' '.join(splitName[1:])
+                            else:
+                                firstName = splitName[0]
+                                lastName = ''
+
+                            uploadWithoutEmail(firstName, lastName, workshop[0], conn, cur)
+                            logging.info("--------------------------------------")
+                        
 
 if __name__ == '__main__':
     conn = psycopg2.connect(database = "DataLab", 
@@ -179,9 +230,12 @@ if __name__ == '__main__':
     logging.basicConfig(filename='/home/austinmedina/DataLabMetrtics/logging/zoomLogging.log', level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
     logging.FileHandler('/home/austinmedina/DataLabMetrtics/logging/zoomLogging.log')
 
-    logging.info("STARTING ZOOM CHECK IN PROCESS")
+    logging.info("STARTING ZOOM CHECK IN PROCESS TESTING")
     logging.info("--------------------------------------")
     zoomProcess(conn, cur)
+    logging.info("--------------------------------------")
+    logging.info("ENDING ZOOM CHECK IN PROCESS")
+    
     
     cur.close()
     conn.close()
