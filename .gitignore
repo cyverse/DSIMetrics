@@ -4,4 +4,5 @@ initialUploads/zoomCSVs
 unitTesting/qualtricsCSV
 productionScripts/qualtricsCSVs
 initialUploads/qualtricsCSVs
+logging/*
 

@@ -2,7 +2,7 @@
 
 import requests
 import base64
-from datetime import datetime, timedelta, date
+from datetime import datetime, timedelta, date, timezone
 import pytz
 import psycopg2
 import pandas as pd
@@ -115,9 +115,9 @@ def uploadCheckIn(row, workshopID, conn, cur):
         
             cur.execute("""
                         INSERT INTO registreeInfo (RegID, FirstName, LastName, NetID, Email, College, Department, Major, Recontact)
-                        VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
+                        VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
                         ON CONFLICT DO NOTHING;
-                        """, (hashedNum, firstName, lastName, None, row.iloc[3].lower(), None, None, None, 0))
+                        """, (hashedNum, firstName, lastName, None, row.iloc[3].lower(), None, None, None, False))
             conn.commit()
 
             #Create an entry for the person and the specific workshop they attended
@@ -151,7 +151,10 @@ def uploadWithoutEmail(FirstName, LastName, workshopID, conn, cur):
                     ON CONFLICT DO NOTHING
                     """, (FirstName, LastName, workshopID))
         conn.commit()
-        logging.info("Unknown Person Without Email: " + FirstName + " " + LastName)
+        if cur.rowcount == 1:
+            logging.info("Unknown Person Without Email Added: " + FirstName + " " + LastName)
+        else:
+            logging.debug("Unknown Person Already in Database: " + FirstName + " " + LastName)
 
 def convert_to_arizona_time(utc_time_str):
     # Parse the UTC time string into a datetime object
@@ -166,10 +169,15 @@ def convert_to_arizona_time(utc_time_str):
 
     return arizona_time.time()
 
+def are_dates_equal(arizona_date, utc_date_str):
+    utc_date = datetime.strptime(utc_date_str, "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=timezone.utc)
+    arizona_to_utc_offset = timedelta(hours=7)  # Arizona is UTC-7
+    arizona_date_utc = utc_date - arizona_to_utc_offset
+    return arizona_date_utc.date() == utc_date.date()
+
 def zoomProcess(conn, cur):
-    #86423223879
     cur.execute("""
-                SELECT workshops.WorkshopID, workshops.SeriesID, series.ZoomMeetingID, series.StartTime, series.EndTime FROM workshops
+                SELECT workshops.WorkshopID, workshops.SeriesID, series.ZoomMeetingID, series.StartTime, series.EndTime, workshops.WorkshopDate FROM workshops
                 JOIN series on workshops.SeriesID = series.SeriesID
                 WHERE workshops.Workshopdate = now()::date
                 """)
@@ -193,8 +201,11 @@ def zoomProcess(conn, cur):
                 joinDifference = abs(datetime.combine(today, userJoin) - datetime.combine(today, workshop[3]))
                 leaveDifference = abs(datetime.combine(today, userLeave) - datetime.combine(today, workshop[4]))
 
+                #Verify the dates are equal
+                datesEqual = are_dates_equal(workshop[5], person['join_time'])
+
                 #If they joined within 15 minutes of the start time or left within 15 minutes of the end time we will check them in
-                if ( joinDifference < timedelta(minutes=15) ) or  ( leaveDifference < timedelta(minutes=15) ):
+                if (( joinDifference < timedelta(minutes=15) ) or ( leaveDifference < timedelta(minutes=15) )) and (datesEqual):
                     if person['user_email']:
                         uploadCheckIn(pd.Series(person), workshop[0], conn, cur)
                         logging.info("Checked in: " + person['user_email'])
@@ -230,7 +241,7 @@ if __name__ == '__main__':
     logging.basicConfig(filename='/home/austinmedina/DataLabMetrtics/logging/zoomLogging.log', level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
     logging.FileHandler('/home/austinmedina/DataLabMetrtics/logging/zoomLogging.log')
 
-    logging.info("STARTING ZOOM CHECK IN PROCESS TESTING")
+    logging.info("STARTING ZOOM CHECK IN PROCESS")
     logging.info("--------------------------------------")
     zoomProcess(conn, cur)
     logging.info("--------------------------------------")
