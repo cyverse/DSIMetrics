@@ -303,3 +303,9 @@ FROM (
 ) AS combined_data
 GROUP BY combined_data.SeriesName
 ORDER BY combined_data.SeriesName;
+
+
+SELECT * FROM RegistreeWorkshops
+LEFT JOIN Workshops ON Workshops.WorkshopID = RegistreeWorkshops.WorkshopID
+LEFT JOIN Series ON Series.SeriesID = Workshops.SeriesID
+WHERE Series.SeriesID = 5;

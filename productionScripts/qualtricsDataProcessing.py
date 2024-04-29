@@ -8,6 +8,12 @@ import io
 import logging
 import psycopg2
 
+def create_workshops_list(row):
+    if pd.notnull(row.iloc[6]):
+        return list(range(len(row) - 8))
+    else:
+        return [i for i, workshop in enumerate(row[7:-1], start=0) if pd.notnull(workshop)]
+
 def getResponse(surveyId, conn, cur) :
     """Initiates the export for a qualtrics form to a csv.
     
@@ -108,36 +114,39 @@ def processFile(file, seriesName):
 
     logging.info(f"File {fileName} extracted successfully")
     logging.info("---")
-    filteredSurvey = rawSurvey[rawSurvey.columns[18:25]]
-    filteredSurvey.columns = ["UA_Afilliated", "FirstName", "LastName", "UAEmail", "Organization", "NonUAEmail", "Workshops", "Reconnect"]
-    filteredSurvey = filteredSurvey.drop([0,1])
-    filteredSurvey = filteredSurvey.dropna(subset=["UAEmail"])
-    filteredSurvey = filteredSurvey.drop_duplicates(subset=["NonUAEmail"])
-    filteredSurvey["Series"] = seriesName
-    filteredSurvey["Recontact"] = filteredSurvey["Recontact"].fillna('No').map({'Yes': True, 'No': False})
 
+    filteredSurvey = rawSurvey[rawSurvey.columns[18:]]
+    filteredSurvey = filteredSurvey.drop([0,1])
+    filteredSurvey.reset_index(inplace=True, drop=True)
+    filteredSurvey['Workshops'] = filteredSurvey.apply(create_workshops_list, axis=1)
+    filteredSurvey.drop(columns = filteredSurvey.columns[6:-2], inplace=True)
+    filteredSurvey["Recontact"] = filteredSurvey["Recontact"].fillna('No').map({'Yes': True, 'No': False})
+    filteredSurvey['Series'] = seriesName
     UA = filteredSurvey.dropna(subset=["UAEmail"])
-    nonUA = filteredSurvey.dropna(subset=["Non_UA_Email"])
+    nonUA = filteredSurvey.dropna(subset=["NonUAEmail"])
 
     UA = UA.reset_index(drop=True)
     nonUA = nonUA.reset_index(drop=True)
 
-    UA_Filtered = UA[["UAEmail", "FirstName", "LastName", "Workshops", "Series", "Reconnect"]]
-    nonUA_Filtered = nonUA[["NonUAEmail", "FirstName", "LastName", "Organization", "Workshops", "Series", "Reconnect"]]
+    UA_Filtered = UA[["UAEmail", "FirstName", "LastName", "Workshops", "Series", "Recontact"]]
+    nonUA_Filtered = nonUA[["NonUAEmail", "FirstName", "LastName", "Organization", "Workshops", "Series", "Recontact"]]
 
     logging.info(f"File {fileName} processed successfully")
     logging.info("---------------------------------------")
 
     return UA_Filtered, nonUA_Filtered
 
-def createRegistreeWorkshop(regID, seriesID, conn, cur):
+def createRegistreeWorkshop(regID, seriesID, row, conn, cur):
     cur.execute("""
                 SELECT workshopID FROM workshops WHERE seriesID = %s
+                ORDER BY workshopDate
                 """, (seriesID,))
     conn.commit()
+
     workshops = cur.fetchall()
-    for ID in workshops:
-        workshopID = ID[0]
+    workshopsToAdd = [workshops[i][0] for i in row.loc['Workshops']]
+
+    for workshopID in workshopsToAdd:
         cur.execute("""
                         INSERT INTO registreeworkshops (RegID, WorkshopID, Registered)
                         VALUES (%s, %s, %s)
@@ -159,12 +168,12 @@ def uploadRegistrees(UA, seriesID, conn, cur):
                     """, (hashedNum, row.iloc[0], row.iloc[1], row.iloc[2], row.iloc[3], row.iloc[4], row.iloc[5], row.iloc[6], row.iloc[9]))
         conn.commit()
 
-        createRegistreeWorkshop(hashedNum, seriesID, conn, cur)    
+        createRegistreeWorkshop(hashedNum, seriesID, row, conn, cur)    
 
 def processAllQualtrics(conn, cur):
     cur.execute("""
                 SELECT SeriesName, QualtricsID, SeriesID FROM Series
-                WHERE StartDate < now() AND EndDate > now();
+                WHERE StartDate <= now()::date AND EndDate >= now()::date;
                 """)
     seriesList = cur.fetchall()
     conn.commit()
@@ -189,7 +198,7 @@ def processAllQualtrics(conn, cur):
         UA['College'] = None
         UA['Department'] = None
         UA['Major'] = None
-        UA = UA[['FirstName', 'LastName', 'NetID', 'Email', 'College', 'Department', 'Major', 'Series', 'Workshops', 'Recontact']]
+        UA = UA[['FirstName', 'LastName', 'NetID', 'UAEmail', 'College', 'Department', 'Major', 'Series', 'Workshops', 'Recontact']]
         #Once available, run the NetID system
         uploadRegistrees(UA, series[2], conn, cur)
 
@@ -197,7 +206,7 @@ def processAllQualtrics(conn, cur):
         nonUA['Major'] = None
         nonUA['NetID'] = None
         nonUA.columns = ['NonUAEmail', 'FirstName', 'LastName', 'College', 'Workshops', 'Series', 'Reconnect', 'Department', 'Major', 'NetID']
-        nonUA = nonUA[['FirstName', 'LastName', 'NetID', 'Email', 'College', 'Department', 'Major', 'Series', 'Workshops', 'Reconnect']]
+        nonUA = nonUA[['FirstName', 'LastName', 'NetID', 'NonUAEmail', 'College', 'Department', 'Major', 'Series', 'Workshops', 'Reconnect']]
         uploadRegistrees(nonUA, series[2], conn, cur)
 
 if __name__ == '__main__':
