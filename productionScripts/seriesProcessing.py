@@ -107,7 +107,6 @@ def scrapeWorkshops(url, seriesName):
         else:
             return None
     except Exception as e:
-        logging.info("Failed to get URL:" + e.response.text)
         logging.info("Error handled gracefully. Continuing listening")
         return None
 

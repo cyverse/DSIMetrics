@@ -35,7 +35,7 @@ CREATE TABLE Series (
     EndDate DATE NOT NULL,
     Semester VARCHAR (2) NOT NULL,
     SeriesYear VARCHAR(4) NOT NULL,
-    FOREIGN KEY (ZoomMeetingID) REFERENCES ZoomRefreshTokens(ZoomMeetingID)
+    FOREIGN KEY (ZoomMeetingID) REFERENCES ZoomRefreshTokens(ZoomMeetingID) ON DELETE CASCADE
 );
 
 CREATE TABLE Workshops (
@@ -43,7 +43,7 @@ CREATE TABLE Workshops (
     SeriesID INTEGER NOT NULL,
     WorkshopName VARCHAR(255) NOT NULL,
     WorkshopDate DATE NOT NULL,
-    FOREIGN KEY (SeriesID) REFERENCES Series(SeriesID) 
+    FOREIGN KEY (SeriesID) REFERENCES Series(SeriesID) ON DELETE CASCADE
 );
 
 CREATE TABLE RegistreeWorkshops (
@@ -52,8 +52,8 @@ CREATE TABLE RegistreeWorkshops (
     Registered BOOLEAN,
     CheckedIn Boolean,
     PRIMARY KEY (RegID, WorkshopID),
-    FOREIGN KEY (RegID) REFERENCES RegistreeInfo(RegID),
-    FOREIGN KEY (WorkshopID) REFERENCES Workshops(WorkshopID)
+    FOREIGN KEY (RegID) REFERENCES RegistreeInfo(RegID) ON DELETE CASCADE,
+    FOREIGN KEY (WorkshopID) REFERENCES Workshops(WorkshopID) ON DELETE CASCADE
 );
 
 CREATE TABLE ProgramVariables (
@@ -66,7 +66,7 @@ CREATE TABLE UnknownPeople (
     LastName VARCHAR(255),
     WorkshopID INTEGER,
     PRIMARY KEY (FirstName, LastName, WorkshopID),
-    FOREIGN KEY (WorkshopID) REFERENCES Workshops(WorkshopID)
+    FOREIGN KEY (WorkshopID) REFERENCES Workshops(WorkshopID) ON DELETE CASCADE
 );
 
 INSERT INTO ZoomRefreshTokens

@@ -220,6 +220,7 @@ if __name__ == '__main__':
 
     logging.basicConfig(filename='/home/austinmedina/DataLabMetrtics/logging/qualtricsLogging.log', level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
     logging.FileHandler('/home/austinmedina/DataLabMetrtics/logging/qualtricsLogging.log')
-    logging.info("Starting, qualtrics check and upload.")
+    logging.info("Starting qualtrics check and upload.")
 
     processAllQualtrics(conn, cur)
+    logging.info("Finished qualtrics check and upload.")
