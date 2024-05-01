@@ -21,6 +21,12 @@ if __name__ == '__main__':
     cur.execute(sql_script)
     conn.commit()
 
+    with open("./postgreSQLScripts/functions.sql", 'r') as f:
+        sql_script = f.read()
+
+    cur.execute(sql_script)
+    conn.commit()
+
     initializeWorkshops(conn, cur)
 
     initializeQualtrics(conn, cur)
@@ -28,3 +34,6 @@ if __name__ == '__main__':
     initializeCheckIn(conn, cur)
 
     zoomProcess(conn,cur)
+
+    cur.close()
+    conn.close()

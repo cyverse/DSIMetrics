@@ -84,23 +84,23 @@ VALUES
 /*psql -U postgres -d DataLab -a -f ./tableInitialize.sql*/
 
 
-SELECT WeekStarting, WorkshopName, SUM(TotalCount) AS TotalCount
-FROM (
-    SELECT DATE_TRUNC('week', Workshops.WorkshopDate)::DATE AS WeekStarting, Workshops.WorkshopName, COUNT(RegistreeWorkshops.RegID) as TotalCount 
-    FROM RegistreeWorkshops
-    LEFT JOIN Workshops ON Workshops.WorkshopID = RegistreeWorkshops.WorkshopID
-    LEFT JOIN Series ON Series.SeriesID = Workshops.SeriesID
-    WHERE Series.SeriesID = 1 AND RegistreeWorkshops.CheckedIn = TRUE
-    GROUP BY WeekStarting, Workshops.WorkshopName
+-- SELECT WeekStarting, WorkshopName, SUM(TotalCount) AS TotalCount
+-- FROM (
+--     SELECT DATE_TRUNC('week', Workshops.WorkshopDate)::DATE AS WeekStarting, Workshops.WorkshopName, COUNT(RegistreeWorkshops.RegID) as TotalCount 
+--     FROM RegistreeWorkshops
+--     LEFT JOIN Workshops ON Workshops.WorkshopID = RegistreeWorkshops.WorkshopID
+--     LEFT JOIN Series ON Series.SeriesID = Workshops.SeriesID
+--     WHERE Series.SeriesID = 1 AND RegistreeWorkshops.CheckedIn = TRUE
+--     GROUP BY WeekStarting, Workshops.WorkshopName
 
-    UNION ALL
+--     UNION ALL
 
-    SELECT DATE_TRUNC('week', Workshops.WorkshopDate)::DATE AS WeekStarting, Workshops.WorkshopName, COUNT(UnknownPeople.FirstName) as TotalCount 
-    FROM UnknownPeople
-    LEFT JOIN Workshops ON Workshops.WorkshopID = UnknownPeople.WorkshopID
-    LEFT JOIN Series ON Series.SeriesID = Workshops.SeriesID
-    WHERE Series.SeriesID = 1
-    GROUP BY WeekStarting, Workshops.WorkshopName
-) AS combined_data
-GROUP BY WeekStarting, WorkshopName
-ORDER BY WeekStarting;
+--     SELECT DATE_TRUNC('week', Workshops.WorkshopDate)::DATE AS WeekStarting, Workshops.WorkshopName, COUNT(UnknownPeople.FirstName) as TotalCount 
+--     FROM UnknownPeople
+--     LEFT JOIN Workshops ON Workshops.WorkshopID = UnknownPeople.WorkshopID
+--     LEFT JOIN Series ON Series.SeriesID = Workshops.SeriesID
+--     WHERE Series.SeriesID = 1
+--     GROUP BY WeekStarting, Workshops.WorkshopName
+-- ) AS combined_data
+-- GROUP BY WeekStarting, WorkshopName
+-- ORDER BY WeekStarting;

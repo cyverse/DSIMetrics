@@ -14,7 +14,7 @@ def scrapeWorkshops(url, seriesName):
         
         data = []
 
-        if (len(results) != 0):
+        if (len(results) != 0) and (seriesName != 'Cracking The Coding Interview') and (seriesName != 'Data Science Tapas'):
             spans = results[0].find_all('span')
             #error handler for if zero
             #Sometimes the header is disconnected from the main list so we need the next element
@@ -31,61 +31,63 @@ def scrapeWorkshops(url, seriesName):
             while i < len(spans):
                 temp = []
                 text = spans[i].get_text().strip()
+                if (text != ''):
+                    #isName = re.findall(r'^[A-Za-z\s]+$', text) #Finds if a line contains just a name and no date
 
-                #isName = re.findall(r'^[A-Za-z\s]+$', text) #Finds if a line contains just a name and no date
-
-                #Checks if the next element is a 'c-mrkdwn__tab' and skips it if so
-                try:
-                    attrs = spans[i+1].attrs
-                    if (len(attrs) != 0) and attrs["class"][0] == 'c-mrkdwn__tab':
-                        i += 1
-                except:
-                    pass
-
-                #Checks to see if the element is a date in the format mm/dd
-                if re.findall(r'^\d{1,2}/\d{1,2}$', text):
-                    date = text + '/' + str(year)
-                    temp.append(datetime.strptime(date, '%m/%d/%Y'))
-                    temp.append(spans[i+1].get_text().strip())
-                    i += 1
-                elif re.findall(r'^\d{1,2}/\d{1,2}:$', text):
-                    date = text + '/' + str(year)
-                    temp.append(datetime.strptime(date, '%m/%d/%Y:'))
-                    temp.append(spans[i+1].get_text().strip())
-                    i += 1
-                elif re.findall(r'^\d{1,2}/\d{1,2}/\d{1,2}$', text):
-                    temp.append(datetime.strptime(text, '%m/%d/%y'))
-                    temp.append(spans[i+1].get_text().strip())
-                    i += 1
-                elif re.findall(r'^\d{1,2}/\d{1,2}/\d{1,2}:$', text):
-                    temp.append(datetime.strptime(text, '%m/%d/%y:'))
-                    temp.append(spans[i+1].get_text().strip())
-                    i += 1
-                #If neither of those, then the date and name are in the same span and need to be split
-                else:
-                    split_content = text.split(maxsplit=1)
-                    #Checks the format of the date mm/dd
-                    if re.findall(r'^\d{1,2}/\d{1,2}$', split_content[0]): 
-                        date = split_content[0] + '/' + str(year)
-                        temp.append(datetime.strptime(date, '%m/%d/%Y'))
-                    elif re.findall(r'^\d{1,2}/\d{1,2}:$', split_content[0]): 
-                        date = split_content[0] + '/' + str(year)
-                        temp.append(datetime.strptime(date, '%m/%d/%Y:'))
-                    #Checks to see if the format of the date is mm/dd/yy
-                    elif re.findall(r'^\d{1,2}/\d{1,2}/\d{1,2}$', split_content[0]):
-                        temp.append(datetime.strptime(split_content[0], '%m/%d/%y'))
-                    elif re.findall(r'^\d{1,2}/\d{1,2}/\d{1,2}:$', split_content[0]):
-                        temp.append(datetime.strptime(split_content[0], '%m/%d/%y:'))
-
+                    #Checks if the next element is a 'c-mrkdwn__tab' and skips it if so
                     try:
-                        temp.append(split_content[1])
-                    except IndexError:
-                        temp.append(None)
-                    
-                data.append(temp)
+                        attrs = spans[i+1].attrs
+                        if (len(attrs) != 0) and attrs["class"][0] == 'c-mrkdwn__tab':
+                            i += 1
+                    except:
+                        pass
+
+                    #Checks to see if the element is a date in the format mm/dd
+                    if re.findall(r'^\d{1,2}/\d{1,2}$', text):
+                        date = text + '/' + str(year)
+                        temp.append(datetime.strptime(date, '%m/%d/%Y'))
+                        temp.append(spans[i+1].get_text().strip())
+                        i += 1
+                    elif re.findall(r'^\d{1,2}/\d{1,2}:$', text):
+                        date = text + '/' + str(year)
+                        temp.append(datetime.strptime(date, '%m/%d/%Y:'))
+                        temp.append(spans[i+1].get_text().strip())
+                        i += 1
+                    elif re.findall(r'^\d{1,2}/\d{1,2}/\d{1,2}$', text):
+                        temp.append(datetime.strptime(text, '%m/%d/%y'))
+                        temp.append(spans[i+1].get_text().strip())
+                        i += 1
+                    elif re.findall(r'^\d{1,2}/\d{1,2}/\d{1,2}:$', text):
+                        temp.append(datetime.strptime(text, '%m/%d/%y:'))
+                        temp.append(spans[i+1].get_text().strip())
+                        i += 1
+                    #If neither of those, then the date and name are in the same span and need to be split
+                    else:
+                        split_content = text.split(maxsplit=1)
+                        #Checks the format of the date mm/dd
+                        if re.findall(r'^\d{1,2}/\d{1,2}$', split_content[0]): 
+                            date = split_content[0] + '/' + str(year)
+                            temp.append(datetime.strptime(date, '%m/%d/%Y'))
+                        elif re.findall(r'^\d{1,2}/\d{1,2}:$', split_content[0]): 
+                            date = split_content[0] + '/' + str(year)
+                            temp.append(datetime.strptime(date, '%m/%d/%Y:'))
+                        #Checks to see if the format of the date is mm/dd/yy
+                        elif re.findall(r'^\d{1,2}/\d{1,2}/\d{1,2}$', split_content[0]):
+                            temp.append(datetime.strptime(split_content[0], '%m/%d/%y'))
+                        elif re.findall(r'^\d{1,2}/\d{1,2}/\d{1,2}:$', split_content[0]):
+                            temp.append(datetime.strptime(split_content[0], '%m/%d/%y:'))
+
+                        try:
+                            temp.append(split_content[1])
+                        except IndexError:
+                            temp.append(None)
+                        
+                    data.append(temp)
+                else:
+                    i += 1
                 i += 1
         else:
-            #check to see i retruns something
+            #Check the When part of the page
             results = soup.find(lambda tag: tag.name == 'h2' and any(text in tag.get_text() for text in ['When'])).findNext('div')
             results.contents.pop(0)
             data = []
