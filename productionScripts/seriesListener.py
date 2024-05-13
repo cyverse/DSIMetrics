@@ -24,6 +24,7 @@ if __name__ == '__main__':
     logging.FileHandler('/home/austinmedina/DataLabMetrtics/logging/seriesListener.log')
 
     logging.info("STARTING SERIES INSERT LISTENER")
+    print("STARTING SERIES INSERT LISTENER")
 
     conn = psycopg2.connect(database = "DataLab", 
                             user = "postgres", 

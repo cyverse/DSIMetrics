@@ -38,6 +38,7 @@ def getResponse(surveyId, conn, cur) :
         "Accept": "application/json",
         "X-API-TOKEN": f"{apiKey}"
     }
+    
     response = (requests.post(url, json=payload, headers=headers)).json()
 
     if (response["result"]["progressId"] and (response["meta"]["httpStatus"] == "200 - OK")):
