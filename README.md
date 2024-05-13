@@ -71,7 +71,28 @@ Defintions: In this software Series are the overarching collection of workshops.
 On the nagivation bar click 'Series'. The link will bring you to a page containg a form to create, modify, or delete a series, as well as a table to view all series currently in the system.
 ![image](https://github.com/cyverse/DSIMetrics/assets/146140831/02161c42-c194-4c91-9216-350290bff0b0)
 
-#### Adding a series
+#### Adding A Series
+To add a series you will need to fill out the coresponding information on the form
+SeriesID - Ignore, this is automatically generated
+SeriesName - The name that will be displayed on all tables. Must match the qualtrics name
+Zoom Meeting ID - The meeting ID associated with the meeting
+QualtricsID - The qualtrics survery ID can be found in the edit link for the survey. For example in this link 'https://uarizona.co1.qualtrics.com/survey-builder/SV_d0aMpul3tB1wJ1Q/edit', the surveryID is SV_d0aMpul3tB1wJ1Q
+SeriesURL - The calender event for the series, for example 'https://datascience.arizona.edu/events/navigating-world-data-engineering'
+Start Time - The start time of the workshops in the series. If the workshops do not start at the same time they cannot be apart of the series. Select the appropriate AM or PM time and the system will display it in 24 hour time, thats okay
+End Time - The end time of the workshop, same rules apply as start time
+Start Date - The day of the first workshop in the series
+End Date - The day the last workshop in the series occurs
+Semester - Choose between Spring, Summer, Fall, and Winter
+SeriesYear - The year the workshop series is taking place
+
+Once all of the above information has been entered, select 'Save' and the Series will be added to the database. You should be able to see the new entry in the table below the form
+![image](https://github.com/cyverse/DSIMetrics/assets/146140831/2d87b3b3-e9c3-4f08-8f5a-a90c12d2b044)
+
+#### Modifying A Series
+To modify a series, first go to the table at the bottom and find the SeriesID for the series you wish to modify. Next enter in the SeriesID to the form, this will automatically populate the form except for the start and end time which you will have to enter manually. Finally once your modifications are complete, click 'Update'. To verfiy go to the table at the bottom and the changes should be present
+
+#### Deleting A Series
+If you need to remove a series from the database you can easily do so by first going to the table at the bottom and finding the SeriesID for the series you wish to delete. Next enter the SeriesID into the form. Finally click 'Delete Series'. You should be able to see the changes reflected in the table.
 
 
 
