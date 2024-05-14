@@ -71,17 +71,17 @@ On the navigation bar click 'Series'. The link will bring you to a page containi
 
 #### Adding A Series
 To add a series you will need to fill out the corresponding information on the form
-SeriesID - Ignore, this is automatically generated
-SeriesName - The name that will be displayed on all tables. Must match the Qualtrics name
-Zoom Meeting ID - The meeting ID associated with the meeting
-QualtricsID - The Qualtrics survey ID can be found in the edit link for the survey. For example in this link 'https://uarizona.co1.qualtrics.com/survey-builder/SV_d0aMpul3tB1wJ1Q/edit', the surveyID is SV_d0aMpul3tB1wJ1Q
-SeriesURL - The calendar event for the series, for example, 'https://datascience.arizona.edu/events/navigating-world-data-engineering'
-Start Time - The start time of the workshops in the series. If the workshops do not start at the same time they cannot be a part of the series. Select the appropriate AM or PM time and the system will display it in 24 hour time, that's okay.
-End Time - The end time of the workshop, the same rules apply as the start time
-Start Date - The day of the first workshop in the series
-End Date - The day the last workshop in the series occurs
-Semester - Choose between Spring, Summer, Fall, and Winter
-SeriesYear - The year the workshop series is taking place
+* SeriesID - Ignore, this is automatically generated
+* SeriesName - The name that will be displayed on all tables. Must match the Qualtrics name
+* Zoom Meeting ID - The meeting ID associated with the meeting
+* QualtricsID - The Qualtrics survey ID can be found in the edit link for the survey. For example in this link 'https://uarizona.co1.qualtrics.com/survey-builder/SV_d0aMpul3tB1wJ1Q/edit', the surveyID is SV_d0aMpul3tB1wJ1Q
+* SeriesURL - The calendar event for the series, for example, 'https://datascience.arizona.edu/events/navigating-world-data-engineering'
+* Start Time - The start time of the workshops in the series. If the workshops do not start at the same time they cannot be a part of the series. Select the appropriate AM or PM time and the system will display it in 24 hour time, that's okay.
+* End Time - The end time of the workshop, the same rules apply as the start time
+* Start Date - The day of the first workshop in the series
+* End Date - The day the last workshop in the series occurs
+* Semester - Choose between Spring, Summer, Fall, and Winter
+* SeriesYear - The year the workshop series is taking place
 
 Once all of the above information has been entered, select 'Save' and the Series will be added to the database. You should be able to see the new entry in the table below the form
 ![image](https://github.com/cyverse/DSIMetrics/assets/146140831/2d87b3b3-e9c3-4f08-8f5a-a90c12d2b044)
@@ -95,42 +95,56 @@ If you need to remove a series from the database you can easily do so by first g
 ### Adding A New User
 1. As an admin, traversing to the metrics website will take you to the following page:
 ![image](https://github.com/cyverse/DSIMetrics/assets/146140831/5a0ce7c7-90c5-470f-a003-440ff2b1b347)
-2. On this page select the users tab in the top left
-3. On the users page click 'Add users'
+
+3. On this page select the users tab in the top left
+4. On the users page click 'Add users'
 ![image](https://github.com/cyverse/DSIMetrics/assets/146140831/c7984a9d-c089-489b-a16d-731e0182bdf7)
-4. Enter the email for the user you wish to add. You can add multiple by clicking '+ Add email'
+
+5. Enter the email for the user you wish to add. You can add multiple by clicking '+ Add email'
 ![image](https://github.com/cyverse/DSIMetrics/assets/146140831/254ae6ad-3e84-4fab-bb5f-99b78bbaa1e0)
-5. For each user, select the appropriate access level. Currently, all pages can be accessed by basic users
+
+6. For each user, select the appropriate access level. Currently, all pages can be accessed by basic users
 ![image](https://github.com/cyverse/DSIMetrics/assets/146140831/6e412dd1-c7d1-41f4-8cec-507518a8fe73)
-6. Once all emails have been added click the blue 'Add users' button
-7. On the onboarding page select 'Generate passwords for each user
+
+7. Once all emails have been added click the blue 'Add users' button
+8. On the onboarding page select 'Generate passwords for each user
 ![image](https://github.com/cyverse/DSIMetrics/assets/146140831/368ece87-5432-41a7-b4fb-49154648c48a)
-8. Distribute the passwords either by copying them or downloading the CSV
+
+9. Distribute the passwords either by copying them or downloading the CSV
 ![image](https://github.com/cyverse/DSIMetrics/assets/146140831/86431f39-b557-4aeb-b15b-290ca405e44b)
-9. Next navigate back to the apps page and select 'DSI Metrics'
+
+10. Next navigate back to the apps page and select 'DSI Metrics'
 ![image](https://github.com/cyverse/DSIMetrics/assets/146140831/f30de6e1-e2fa-4512-83b6-5748f8bbda2f)
-10. In the top right select 'Users'. If you click the dropdown for each email, you can change their permissions for the DSI Metrics App. You need to select at least "Can use as Basic" for the user to be able to use the app.
+
+11. In the top right select 'Users'. If you click the dropdown for each email, you can change their permissions for the DSI Metrics App. You need to select at least "Can use as Basic" for the user to be able to use the app.
 ![image](https://github.com/cyverse/DSIMetrics/assets/146140831/3b1ce3d3-447e-4702-bb2b-c98a6a491bdc)
-11. The user is all set to access the DSI Metrics App
+
+12. The user is all set to access the DSI Metrics App
     
 ### Deleting A User
 1. To remove a user, navigate to the 'Users' page as an admin
 ![image](https://github.com/cyverse/DSIMetrics/assets/146140831/02e997a4-7911-477c-b4a4-182e70d8aea4)
-2. Select the user using the checkbox on the left of the table and on the top right of the table click 'Delete User'
+
+3. Select the user using the checkbox on the left of the table and on the top right of the table click 'Delete User'
 ![image](https://github.com/cyverse/DSIMetrics/assets/146140831/8916e7d9-b928-42cf-9607-4c8092ad3723)
-3. Confirm the deletion by clicking 'Delete' in the popup window and the user will be deleted from the system, and no longer have access to the DSI Metrics website
+
+4. Confirm the deletion by clicking 'Delete' in the popup window and the user will be deleted from the system, and no longer have access to the DSI Metrics website
 
 ### Authorizing a New Zoom User
 1. While logged into UofA Wifi or the UofA VPN navigate to [Zoom OAUTH](https://cerberus.cyverse.org)
 2. Click on the button to allow OAuth
-![image](https://github.com/cyverse/DSIMetrics/assets/146140831/9894f178-6540-4583-91c3-eea86b88ec6b)
+
+&emsp;&emsp;![image](https://github.com/cyverse/DSIMetrics/assets/146140831/9894f178-6540-4583-91c3-eea86b88ec6b)
+
 3. This button will redirect you to the Zoom website where you will need to authorize the system to access your Zoom information
 4. Sign into your Zoom account as normal and click 'Allow'
 ![image](https://github.com/cyverse/DSIMetrics/assets/146140831/ac818663-38c6-44a6-b64a-c0e7add6a328)
-5. Once you have clicked allow, you will be redirected to a page that will allow you to enter the Zoom Meeting IDs that you have access to, and wish for the software to be able to fetch participants from. These should be the Zoom meeting IDs for series that have already been created.
+
+6. Once you have clicked allow, you will be redirected to a page that will allow you to enter the Zoom Meeting IDs that you have access to, and wish for the software to be able to fetch participants from. These should be the Zoom meeting IDs for series that have already been created.
 ![image](https://github.com/cyverse/DSIMetrics/assets/146140831/62cc53e7-41c1-4456-bc21-3c65e0523c1a)
-6. You can enter as many meeting IDs as you wish. Enter them one at a time and click 'Submit' after each
-7. Once done, exit the page and the keys for each meeting ID will be saved into the database
+
+8. You can enter as many meeting IDs as you wish. Enter them one at a time and click 'Submit' after each
+9. Once done, exit the page and the keys for each meeting ID will be saved into the database
 
 
 ## Repository Breakdown
