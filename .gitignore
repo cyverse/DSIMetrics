@@ -2,7 +2,9 @@ Metrics/
 .vscode/
 initialUploads/zoomCSVs
 unitTesting/qualtricsCSV
+unitTesting/zoomCSVs
 productionScripts/qualtricsCSVs
 initialUploads/qualtricsCSVs
 logging/*
+zoomApp/secrets.py
 

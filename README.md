@@ -2,7 +2,7 @@
 <br />
 <div align="center">
   <a href="https://datascience.arizona.edu/">
-    <img src="readMeImages/logo.png" alt="Logo">
+    <img src="images/logo.png" alt="Logo">
   </a>
 
   <h1 align="center">Data Science Institute Metrics System</h1>

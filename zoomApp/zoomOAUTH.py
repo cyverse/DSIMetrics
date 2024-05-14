@@ -3,12 +3,13 @@ import requests
 import base64
 import psycopg2
 import logging
+from secrets import secret_key
 
 logging.basicConfig(filename = '/home/austinmedina/DataLabMetrtics/logging/ZoomFlaskAppLogging.log', level=logging.DEBUG)
 
 app = Flask(__name__)
 
-app.secret_key = 'DSIMetrics'
+app.secret_key = secret_key
 
 @app.route('/')
 def credentials():

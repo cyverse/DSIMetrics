@@ -1,9 +1,0 @@
-,id,user_id,name,user_email,join_time,leave_time,duration,registrant_id,failover,status
-0,,16778240,Brenda,,2024-04-04T20:47:01Z,2024-04-04T21:51:58Z,3897,,False,in_meeting
-1,yXxO1qhiQkmJy4b80J8xAQ,16779264,Carlos Lizárraga,clizarraga@arizona.edu,2024-04-04T20:52:52Z,2024-04-04T21:52:02Z,3550,,False,in_meeting
-2,ZkLdqAwUSNinABHJ4DJuTg,16780288,Charlene Aparicio,caparicio@arizona.edu,2024-04-04T20:57:54Z,2024-04-04T21:50:56Z,3182,,False,in_meeting
-3,vwMyYuolSe-jzaXoRXkOEQ,16781312,Megh Krishnaswamy,mkrishnaswamy@arizona.edu,2024-04-04T20:59:55Z,2024-04-04T21:51:59Z,3124,,False,in_meeting
-4,cZWGYWGsQMWL1p1dec7k8A,16782336,Dave Drainer,ddrainer@arizona.edu,2024-04-04T21:00:00Z,2024-04-04T21:50:34Z,3034,,False,in_meeting
-5,o1pAyc_uTtuYYJLZ7uy_Cg,16787456,Paul Gignac,pgignac@arizona.edu,2024-04-04T21:01:37Z,2024-04-04T21:51:10Z,2973,,False,in_meeting
-6,rfI315RERdOdYj-pjZ6DdQ,16788480,Christopher Bilinski,cbilinski@arizona.edu,2024-04-04T21:03:19Z,2024-04-04T21:50:59Z,2860,,False,in_meeting
-7,,16789504,Pradnya Raut,,2024-04-04T21:04:57Z,2024-04-04T21:51:04Z,2767,,False,in_meeting
