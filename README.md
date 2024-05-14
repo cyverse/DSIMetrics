@@ -11,33 +11,31 @@
 <details>
   <summary>Table of Contents</summary>
   <ol>
-    <li>
-      <a href="#about-the-project">About The Project</a>
+    <li><a href="#about-the-project">About The Project</a></li>
+    <li><a href="#dsi-metrics-how-to">DSI Metrics How-To</a></li>
       <ul>
-        <li><a href="#built-with">Built With</a></li>
+        <li><a href="#first-time-access">First Time Access</a></li>
+        <li><a href="#accessing-metrics">Accessing Metrics</a></li>
+        <li><a href="#exporting-recontact-list">Exporting Recontact List</a></li>
+        <li><a href="#series-walkthrough">Series Walkthrough</a></li>
+        <ul>
+          <li><a href="#adding-a-series">Adding A Series</a></li>
+          <li><a href="#modifying-a-series">Modifying A Series</a></li>
+          <li><a href="#deleting-a-series">Deleting A Series</a></li>
+        </ul>
+        <li><a href="#adding-a-new-user">Adding A New User</a></li>
+        <li><a href="#deleting-a-user">Deleting A User</a></li>
+        <li><a href="#authorizing-a-new-zoom-user">Authorizing a New Zoom User</a></li>
       </ul>
-    </li>
-    <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
-      </ul>
-    </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a href="#repository-breakdown">Repository Breakdown</a></li>
+    <li><a href="#system-restart">System Restart</a></li>
     <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
 </details>
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-
-The DSI Metrics Project is an end-to-end solution aimed at streamlining the process of data collection and workshop management. The system has been created to automatically fetch registration data from Qualtrics and attendance information from Zoom. The system then will clean the data and perform operations on it to ensure integrity, and then upload it to a Postgres database. The system is interactive, including front-end CRUD and visualization tools, enabling authorized users to interact directly with the database. The data visualtisation and CRUD tools are hosted using Budibase, a business app development software. The system is hosted on a virutal machine on the [Cyverse](https://cyverse.org/) network. Due to University and FERPA restrictions, only authorized users may access the system.
-
+The Data Science Institute (DSI) Metrics System is an end-to-end solution for streamlining data collection and workshop management. It automatically fetches registration data from Qualtrics and attendance information from Zoom, cleans and processes the data, and uploads it to a Postgres database. The system offers front-end CRUD and visualization tools hosted using Budibase, allowing authorized users to interact directly with the database. The system is hosted on a virutal machine on the [Cyverse](https://cyverse.org/) network. Access to the system is restricted to authorized users due to University and FERPA regulations.
 ### Quick Links
 * [DSI Metrics System](dsi-metrics.cyverse.org)
 * [Zoom API authorization](cerberus.cyverse.org)
