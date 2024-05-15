@@ -1,5 +1,5 @@
 #!/home/austinmedina/DataLabMetrtics/Metrics/bin/python
-
+#The above header, allows the file to be independently run by Cron jobs
 import requests
 import base64
 from datetime import datetime, timedelta, date, timezone
@@ -8,16 +8,42 @@ import psycopg2
 import pandas as pd
 import logging  
 
-def getRefreshToken(workshopID, conn, cur):    
+def getRefreshToken(zoomMeetingID, conn, cur):
+    """
+    Key Arguments:
+    zoomMeetingID - The id associated with a zoom meeting that we will fetch a participant list for.
+    conn - The connection to the Postgres database
+    cur - The cursor to the Postgres database 
+
+    Return:
+    tokenList[0] - This is the refresh token needed to gain an access token
+
+    Description:
+    Fetches the refresh token for a specific zoom meeting ID, which is needed to fetch an access token.
+    """
     cur.execute("""SELECT RefreshToken FROM ZoomRefreshTokens 
                 WHERE ZoomMeetingID = %s
-                """, (workshopID,))
+                """, (zoomMeetingID,))
     tokenList = cur.fetchone()
 
     conn.commit()
     return tokenList[0]
 
 def getAccessToken(refreshToken, zoomMeetingID, conn, cur):
+    """
+    Key Arguments:
+    refreshToken - The refresh token needed to get a new access token
+    zoomMeetingID - The id associated with a zoom meeting that we will fetch a participant list for.
+    conn - The connection to the Postgres database
+    cur - The cursor to the Postgres database 
+
+    Returns:
+    accessToken - The token needed to make an API call to zoom for the participant list
+
+    Description:
+    Every meeting participant list can only be fetched with an access token. These access tokens however expire shortly after that are retrieved. The requests also return a refresh key which
+    can be used to fetch a new access token. This function uses the refresh token to fetch a new access token, and stores the newly returned refresh token in the database.
+    """
     cur.execute("""SELECT ElementValue FROM programvariables WHERE ElementName = 'zoom_client_id'""")
     tokenList = cur.fetchone()
     client_id = tokenList[0]
@@ -57,6 +83,20 @@ def getAccessToken(refreshToken, zoomMeetingID, conn, cur):
     return accessToken
 
 def getParticipants(zoomMeetingID, conn, cur):
+    """
+    Fetches a list of meeting participants for a specific zoom meeting ID. Due to limitations in the API, it will only fetch the most recently concluded meeting
+
+    Key Arguments:
+    zoomMeetingID - The id associated with a zoom meeting that we will fetch a participant list for.
+    conn - The connection to the Postgres database
+    cur - The cursor to the Postgres database 
+
+    Returns:
+    people['participants'] - A list of all participants, their email, join time, and leave time
+
+    Description:
+    Fetches the refresh token and access token through auxilary functions and them performs a simple get request to fetch the participants
+    """
     refreshToken = getRefreshToken(zoomMeetingID, conn, cur)
     accessToken = getAccessToken(refreshToken, zoomMeetingID, conn, cur)
     url = f'https://api.zoom.us/v2/past_meetings/{zoomMeetingID}/participants'
@@ -76,13 +116,28 @@ def getParticipants(zoomMeetingID, conn, cur):
         return None
     
 def uploadCheckIn(row, workshopID, conn, cur):
+    """
+    Checks in a user to a specific workshop if they are found in the particpants list
 
-    #Fetch the supposed ID from the has function
+    Key Arguments:
+    row - One person and their information from zoom such as email, join time, and leave time
+    workshopID - The ID for the specific workshop they attended
+    conn - The connection to the Postgres database
+    cur - The cursor to the Postgres database 
+
+    Return:
+    No return, but updates the postgres database
+
+    Description:
+    The function takes in a participants information from the zoom api meeting participants list. Next a hash is created from the users email. We then find the participant in the database 
+    or create a new entry. The users name is split into first and last, and then they are checked into the database by setting the checkedIn value to True.
+    """
+    #Fetch the supposed ID from the hash function
     cur.callproc('hashRegistree', (row.iloc[3].lower(),))
     hashedNum = cur.fetchone()[0]
     conn.commit()
 
-    #See if the RegID is in the databse already
+    #See if the RegID is in the database already
     cur.execute("""SELECT RegID FROM registreeInfo WHERE RegID = %s""", (hashedNum,))
     match = cur.fetchall()
     conn.commit()
@@ -129,6 +184,23 @@ def uploadCheckIn(row, workshopID, conn, cur):
             conn.commit()   
 
 def uploadWithoutEmail(FirstName, LastName, workshopID, conn, cur):
+    """
+    Checks in a user based on first and last name, otherwise adds them to unknown people if they cannot be found.
+
+    Key Arguments:
+    FirstName - The first name as listed by the zoom api
+    LastName - The last name as listed by the zoom api
+    workshopID - The ID for the specific workshop they attended
+    conn - The connection to the Postgres database
+    cur - The cursor to the Postgres database 
+
+    Return:
+    No return but upload the person to the database
+
+    Description:
+    If no email is available for the participant (i.e. they signed in as a guest on zoom) we will attemp to upload them using their first and last name. First the script trys to find an existing
+    registree with that first and last name. If its found, the function checks them in. If they arent found they are added to the unknown people table.
+    """
     FirstName = FirstName.lower().capitalize()
     LastName = LastName.lower().capitalize()
     cur.execute("""SELECT RegID FROM registreeInfo 
@@ -157,6 +229,15 @@ def uploadWithoutEmail(FirstName, LastName, workshopID, conn, cur):
             logging.debug("Unknown Person Already in Database: " + FirstName + " " + LastName)
 
 def convert_to_arizona_time(utc_time_str):
+    """
+    Converts a string time in UTC to arizona time
+
+    Key Arguments:
+    utc_time_str - A timestamp in string format in UTC
+
+    Returns:
+    arizona_time.time() - The time in arizona time in datetime format
+    """
     # Parse the UTC time string into a datetime object
     utc_time = datetime.strptime(utc_time_str, '%Y-%m-%dT%H:%M:%SZ')
 
@@ -170,12 +251,34 @@ def convert_to_arizona_time(utc_time_str):
     return arizona_time.time()
 
 def are_dates_equal(arizona_date, utc_date_str):
+    """
+    Checks if the date in arizona time of a workshop, is equal to a date in utc when the utc date is converted to arizona time. Used to tell if a workshop occured on the same day as the zoom
+
+    Key Arguments:
+    arizona_date - The date of a workshop in Date format
+    utc_date_str - The date of a zoom meeting in utc time as a string
+
+    Return:
+    True or False if the dates are equal or not
+    """
     utc_date = datetime.strptime(utc_date_str, "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=timezone.utc)
     arizona_to_utc_offset = timedelta(hours=7)  # Arizona is UTC-7
     arizona_date_utc = utc_date - arizona_to_utc_offset
-    return arizona_date_utc.date() == utc_date.date()
+    return arizona_date == arizona_date_utc.date()
 
 def zoomProcess(conn, cur):
+    """
+    Matches the most recent zoom meeting with a workshop that occured today and that time, and checks in the participants
+
+    Key Arguments:
+    conn - The connection to the Postgres database
+    cur - The cursor to the Postgres database 
+
+    Description:
+    The function first finds every workshop that occured today and their respective zoom meeting IDs. It then loops through every workshop and fetches the participants list for the associated
+    zoom meeting ID. We then iterates through each person and compared their join and leave time with the start and end time of the workshop. If they joined and/or left within 15 minutes before 
+    or after the start time or end time they will be checked in. Before checking in we verify they have an email, and if not we check them in without an email.
+    """
     cur.execute("""
                 SELECT workshops.WorkshopID, workshops.SeriesID, series.ZoomMeetingID, series.StartTime, series.EndTime, workshops.WorkshopDate FROM workshops
                 JOIN series on workshops.SeriesID = series.SeriesID
@@ -230,6 +333,9 @@ def zoomProcess(conn, cur):
                         
 
 if __name__ == '__main__':
+    """
+    The main function for the script. Configures logging and opens the connection to the database.
+    """
     conn = psycopg2.connect(database = "DataLab", 
                             user = "postgres", 
                             host= 'localhost',

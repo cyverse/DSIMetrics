@@ -7,4 +7,5 @@ productionScripts/qualtricsCSVs
 initialUploads/qualtricsCSVs
 logging/*
 zoomApp/secrets.py
+postgreSQLScripts/keyInserts.sql
 

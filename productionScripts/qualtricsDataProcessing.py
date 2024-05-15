@@ -1,5 +1,5 @@
 #!/home/austinmedina/DataLabMetrtics/Metrics/bin/python
-
+#The above header, allows the file to be independently run by Cron jobs
 import pandas as pd
 import requests
 import time
@@ -9,19 +9,34 @@ import logging
 import psycopg2
 
 def create_workshops_list(row):
+    """
+    This function will create a list of every index where the selected workshop isnt none. In the qualtrics survey, the workshops are listed
+    chronologically. We can also pull the workshops from our database chronologically, so instead of perfectly matching names, we just match the index
+    that the workshops occured.
+
+    Key Arguments:
+    row - Each row is one persons qualtrics response containing their first name, last name, email, netid, major, college, department, and workshops selected
+
+    Example:
+    The users selection looks like this: [Workshop 1, None, None, Workshop 4]
+    The function will then return [0, 3]. 
+    The indexes will be used in createRegistreeWorkshop
+    """
+
     if pd.notnull(row.iloc[6]):
         return list(range(len(row) - 8))
     else:
         return [i for i, workshop in enumerate(row[7:-1], start=0) if pd.notnull(workshop)]
 
 def getResponse(surveyId, conn, cur) :
-    """Initiates the export for a qualtrics form to a csv.
+    """
+    Initiates the export for a qualtrics form to a csv.
     
-        Key arguments:
-        surveyID -- The qualtricsID found on the qualtrics website. Serves as a unique identifier for each survey
+    Key Arguments:
+    surveyID -- The qualtricsID found on the qualtrics website. Serves as a unique identifier for each survey
 
-        Return:
-        Response -- The fileId that can be used to access the file
+    Return:
+    Response -- The fileId that can be used to access the file
     """
     cur.execute("""SELECT ElementValue FROM programvariables 
                     WHERE ElementName = 'qualtrics_api_token'
@@ -89,20 +104,20 @@ def getResponse(surveyId, conn, cur) :
         logging.info(f"Export unable to start. Error: {response.status_code}")
         return None
 
-def processFile(file, seriesName):
-    """Download and process the csv for a specific qualtrics form.
+def processFile(file):
+    """
+    Download and process the csv for a specific qualtrics form.
     
-        Keyword Arguments:
-        file -- The response from getResponse() which returns the bytestream for a file
-        seriesName -- The seriesName from our Postgres database
+    Keyword Arguments:
+    file -- The response from getResponse() which returns the bytestream for a file
 
-        Return:
-        UA_Filtered -- A pandas dataframe containing students who answered 'Yes' to UA Affiliated in the Qualtrics survey
-        nonUA_Filtered -- A pandas dataframe containing students who answered 'No' to UA Affiliated in the Qualtrics survey
+    Return:
+    UA_Filtered -- A pandas dataframe containing students who answered 'Yes' to UA Affiliated in the Qualtrics survey
+    nonUA_Filtered -- A pandas dataframe containing students who answered 'No' to UA Affiliated in the Qualtrics survey
 
-        Description:
-        Decodes the byte stream from the response, and turns it into a csv file. 
-        Pandas is used to parse the csv file and split the values into UA and nonUA dataframes
+    Description:
+    Decodes the byte stream from the response, and turns it into a csv file. 
+    Pandas is used to parse the csv file and split the values into UA and nonUA dataframes
     """
     try:
         with zipfile.ZipFile(io.BytesIO(file.content)) as z:
@@ -122,7 +137,6 @@ def processFile(file, seriesName):
     filteredSurvey['Workshops'] = filteredSurvey.apply(create_workshops_list, axis=1)
     filteredSurvey.drop(columns = filteredSurvey.columns[6:-2], inplace=True)
     filteredSurvey["Recontact"] = filteredSurvey["Recontact"].fillna('No').map({'Yes': True, 'No': False})
-    filteredSurvey['Series'] = seriesName
     UA = filteredSurvey.dropna(subset=["UAEmail"])
     nonUA = filteredSurvey.dropna(subset=["NonUAEmail"])
 
@@ -138,6 +152,19 @@ def processFile(file, seriesName):
     return UA_Filtered, nonUA_Filtered
 
 def createRegistreeWorkshop(regID, seriesID, row, conn, cur):
+    """
+    Inserts a entry into the junction table linking a registree to each workshop they registred for
+
+    Key Arguments:
+    regID - The hashed ID for each user based on their email
+    seriesID - The ID for the series associated with the currently processed qualtrics form
+    row - Each row is one persons qualtrics response containing their first name, last name, email, netid, major, college, department, series, and workshops selected
+    Conn - The connection to the Postgres database
+    Cur - The cursor to the Postgres database
+
+    Returns:
+    Returns nothing, but will update the Postgres database
+    """
     cur.execute("""
                 SELECT workshopID FROM workshops WHERE seriesID = %s
                 ORDER BY workshopDate
@@ -145,6 +172,9 @@ def createRegistreeWorkshop(regID, seriesID, row, conn, cur):
     conn.commit()
 
     workshops = cur.fetchall()
+
+    #This is where the return of the function create_woirkshop_list() is used. row.loc['Workshops'] will return the example list [0, 3]. 
+    #We will then fetch the workshopIDs for the 0th and 3rd element returned from our select workshopID query.
     workshopsToAdd = [workshops[i][0] for i in row.loc['Workshops']]
 
     for workshopID in workshopsToAdd:
@@ -156,6 +186,22 @@ def createRegistreeWorkshop(regID, seriesID, row, conn, cur):
         conn.commit()
 
 def uploadRegistrees(UA, seriesID, conn, cur):
+    """
+    Uploads each registree into the database or updates their information if they are already in the system
+
+    Key Arguments:
+    UA - A pandas dataframe containing all participant information from the qualtrics forms
+    seriesID - The ID for the series associated with the currently processed qualtrics form
+    conn - The connection to the Postgres database
+    cur - The cursor to the Postgres database
+
+    Return:
+    N/A
+
+    Description:
+    Loops through each row of the dataframe, i.e. for each person, and inserts them into the database. Next it will call the createRegistreeWorkshop function which will officially register
+    the participant for each workshop in our system.
+    """
     for _, row in UA.iterrows():
         #Call my custom function hash which will create a hash from the Email
         cur.callproc('hashRegistree', (row.iloc[3],))
@@ -166,14 +212,27 @@ def uploadRegistrees(UA, seriesID, conn, cur):
                     VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
                     ON CONFLICT (RegID) DO UPDATE
                     SET College = excluded.College, Department = excluded.Department, Major = excluded.Major, Recontact = excluded.Recontact;
-                    """, (hashedNum, row.iloc[0], row.iloc[1], row.iloc[2], row.iloc[3], row.iloc[4], row.iloc[5], row.iloc[6], row.iloc[9]))
+                    """, (hashedNum, row.iloc[0], row.iloc[1], row.iloc[2], row.iloc[3], row.iloc[4], row.iloc[5], row.iloc[6], row.iloc[8]))
         conn.commit()
 
         createRegistreeWorkshop(hashedNum, seriesID, row, conn, cur)    
 
 def processAllQualtrics(conn, cur):
+    """
+    Fetches all active series and processes their qualtrics forms
+
+    Key Arguments:
+    conn - The connection to the Postgres database
+    cur - The cursor to the Postgres database 
+
+    Returns:
+    Returns nothing. The function serves as the main functionality for the script
+
+    Description:
+    An SQL query is called to find all series and their qualtrics IDs 
+    """
     cur.execute("""
-                SELECT SeriesName, QualtricsID, SeriesID FROM Series
+                SELECT QualtricsID, SeriesID FROM Series
                 WHERE StartDate <= now()::date AND EndDate >= now()::date;
                 """)
     seriesList = cur.fetchall()
@@ -183,34 +242,37 @@ def processAllQualtrics(conn, cur):
         UA = pd.DataFrame()
         nonUA = pd.DataFrame()
 
-        logging.info(f"Starting export for surveyId: {series[1]}")
+        logging.info(f"Starting export for surveyId: {series[0]}")
         logging.info("------------------------------------------------")
-        file = getResponse(series[1], conn, cur)
+        file = getResponse(series[0], conn, cur)
         logging.info("------------------------------------------------\n")
 
-        logging.info(f"Starting processing for surveyId: {series[1]}")
+        logging.info(f"Starting processing for surveyId: {series[0]}")
         logging.info("------------------------------------------------")
-        UA, nonUA = processFile(file, series[0])
+        UA, nonUA = processFile(file)
 
-        logging.info(f"Survey {series[1]} Complete!")
+        logging.info(f"Survey {series[0]} Complete!")
         logging.info("------------------------------------------------\n")
 
         UA['NetID'] = None
         UA['College'] = None
         UA['Department'] = None
         UA['Major'] = None
-        UA = UA[['FirstName', 'LastName', 'NetID', 'UAEmail', 'College', 'Department', 'Major', 'Series', 'Workshops', 'Recontact']]
+        UA = UA[['FirstName', 'LastName', 'NetID', 'UAEmail', 'College', 'Department', 'Major', 'Workshops', 'Recontact']]
         #Once available, run the NetID system
-        uploadRegistrees(UA, series[2], conn, cur)
+        uploadRegistrees(UA, series[1], conn, cur)
 
         nonUA['Department'] = None
         nonUA['Major'] = None
         nonUA['NetID'] = None
-        nonUA.columns = ['NonUAEmail', 'FirstName', 'LastName', 'College', 'Workshops', 'Series', 'Reconnect', 'Department', 'Major', 'NetID']
-        nonUA = nonUA[['FirstName', 'LastName', 'NetID', 'NonUAEmail', 'College', 'Department', 'Major', 'Series', 'Workshops', 'Reconnect']]
-        uploadRegistrees(nonUA, series[2], conn, cur)
+        nonUA.columns = ['NonUAEmail', 'FirstName', 'LastName', 'College', 'Workshops', 'Reconnect', 'Department', 'Major', 'NetID']
+        nonUA = nonUA[['FirstName', 'LastName', 'NetID', 'NonUAEmail', 'College', 'Department', 'Major', 'Workshops', 'Reconnect']]
+        uploadRegistrees(nonUA, series[1], conn, cur)
 
 if __name__ == '__main__':
+    """
+    The main function for this script configures logging and opens the connection the database.
+    """
     conn = psycopg2.connect(database = "DataLab", 
                             user = "postgres", 
                             host= 'localhost',

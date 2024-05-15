@@ -7,14 +7,27 @@ from secrets import secret_key
 
 logging.basicConfig(filename = '/home/austinmedina/DataLabMetrtics/logging/ZoomFlaskAppLogging.log', level=logging.DEBUG)
 
+"""
+When this python script is run, it will start up a flask server which is connected via HAProxy to cerberus.cyverse.org. This web server is
+responsible for gathering access and refresh tokens for zoom from each user. The server will then allow the user to enter in the meeting IDs
+they wish the system to pull participants for.
+"""
 app = Flask(__name__)
 
 app.secret_key = secret_key
 
+"""
+Main endpoint that will load credentials.html. This contains a button that will redicrect the user to the zoom app and ask for authorization
+"""
 @app.route('/')
 def credentials():
     return render_template('credentials.html')
 
+"""
+Once the user is done authorizing zoom, they will be returned to this endpoint. This endpoint uses their authorization token to request an access token
+The access token is what is actually needed to fetch the participant info. The end point saves the refresh token to a cookie to be inserted into the
+system later with each meetingID. The refresh token allows you to fetch a new access token since the access tokens expire.
+"""
 @app.route('/getAccess')
 def getAccess():
     q = request.args.to_dict()
@@ -63,6 +76,10 @@ def getAccess():
     
     return redirect(url_for("getMeetingID"))
 
+"""
+The user is automatically directed to this page after their refresh key has been saved. The page prompts the user to enter in meeting IDs for
+zooms they wish to get participants for. Everytime the users posts a meetingID, the script will insert the refresh key and meeting ID into a table
+"""
 @app.route('/getMeetingID', methods=["GET", "POST"])
 def getMeetingID():
     if request.method == "POST":

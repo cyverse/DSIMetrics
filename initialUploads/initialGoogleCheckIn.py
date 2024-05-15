@@ -3,18 +3,10 @@ import requests
 from io import StringIO
 from datetime import datetime, timedelta
 import urllib.parse
-import psycopg2
 
 def getData(conn, cur):
     
-    # cur.execute("""SELECT ElementValue FROM programvariables WHERE ElementName = 'check_in_form_id'""")
-    # tokenList = cur.fetchall()
-    # conn.commit()
-    # cur.close()
-    # conn.close()
-    # googleFormID = tokenList[0]
-    
-    lastDateRun = datetime.now() - timedelta(days = 90) #this variable will be the last time we ran the job
+    lastDateRun = datetime.now() - timedelta(days = 180) #this variable will be the last time we ran the job
     query = f"SELECT * WHERE A > date '{lastDateRun.strftime('%Y-%m-%d')}'"
     queryEncoded = urllib.parse.quote(query)
 
