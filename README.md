@@ -293,7 +293,7 @@ Note: The responses will not be collected into the DSI Metrics System until the 
 20. On the virtual machine hosting the DSI Metrics System navigate to zoomApp/templates/credentials.html. On this page at the bottom on line 37 replace the URL with the URL you just copied:
 ![image](https://github.com/cyverse/DSIMetrics/assets/146140831/79598d9a-0165-4e48-af8a-dda53aa86e72)
 
-21. With that everything should be updated for the Zoom App to be working. Verify by going to the [Zoom OAuth App](https://cerberus.cyvserse.org) and going through the process of giving the app access to your account and then entering in a meetingID.
+21. With that everything should be updated for the Zoom App to be working. Verify by going to the [Zoom OAuth App](https://cerberus.cyverse.org) and going through the process of giving the app access to your account and then entering in a meetingID.
 
 ## Repository Breakdown
 
