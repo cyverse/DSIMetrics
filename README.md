@@ -57,8 +57,8 @@
 ## About The Project
 The Data Science Institute (DSI) Metrics System is an end-to-end solution for streamlining data collection and workshop management. It automatically fetches registration data from Qualtrics and attendance information from Zoom, cleans and processes the data, and uploads it to a Postgres database. The system offers front-end CRUD and visualization tools hosted using Budibase, allowing authorized users to interact directly with the database. The system is hosted on a virtual machine on the [Cyverse](https://cyverse.org/) network. Access to the system is restricted to authorized users due to University and FERPA regulations.
 ### Quick Links
-* [DSI Metrics System](dsi-metrics.cyverse.org)
-* [Zoom API authorization](cerberus.cyverse.org)
+* [DSI Metrics System](https://dsi-metrics.cyverse.org)
+* [Zoom API authorization](https://cerberus.cyverse.org)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -293,7 +293,7 @@ Note: The responses will not be collected into the DSI Metrics System until the 
 20. On the virtual machine hosting the DSI Metrics System navigate to zoomApp/templates/credentials.html. On this page at the bottom on line 37 replace the URL with the URL you just copied:
 ![image](https://github.com/cyverse/DSIMetrics/assets/146140831/79598d9a-0165-4e48-af8a-dda53aa86e72)
 
-21. With that everything should be updated for the Zoom App to be working. Verify by going to the [Zoom OAuth App](cerberus.cyvserse.org) and going through the process of giving the app access to your account and then entering in a meetingID.
+21. With that everything should be updated for the Zoom App to be working. Verify by going to the [Zoom OAuth App](https://cerberus.cyvserse.org) and going through the process of giving the app access to your account and then entering in a meetingID.
 
 ## Repository Breakdown
 
