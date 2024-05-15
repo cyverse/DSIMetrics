@@ -28,13 +28,21 @@
           <li><a href="#modifying-a-series">Modifying A Series</a></li>
           <li><a href="#deleting-a-series">Deleting A Series</a></li>
         </ul>
-        <li><a href="#adding-a-new-user">Adding A New User</a></li>
-        <li><a href="#deleting-a-user">Deleting A User</a></li>
-        <li><a href="#authorizing-a-new-zoom-user">Authorizing a New Zoom User</a></li>
+        <li><a href="#workshops-walkthrough">Workshops Walkthrough</a></li>
+        <ul>
+          <li><a href="#adding-a-workshop">Adding A Workshop</a></li>
+          <li><a href="#modifying-a-workshop">Modifying A Workshop</a></li>
+          <li><a href="#deleting-a-workshop">Deleting A Workshop</a></li>
+        </ul>
+        <li><a href="#users-walkthrough">Users Walkthrough</a></li>
+        <ul>
+          <li><a href="#adding-a-new-user">Adding A New User</a></li>
+          <li><a href="#deleting-a-user">Deleting A User</a></li>
+          <li><a href="#authorizing-a-new-zoom-user">Authorizing a New Zoom User</a></li>
+        </ul>
       </ul>
     <li><a href="#repository-breakdown">Repository Breakdown</a></li>
     <li><a href="#system-restart">System Restart</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
 </details>
 
@@ -144,7 +152,8 @@ Definitions: Workshops are the actual events people will be attending, registeri
 3. On the left side of the table select the checkbox of the item(s) you wish to delete and click the trash icon. ⚠️ THE ITEM WILL PERMANENTLY BE DELETED AND ALL REGISTRATION AND CHECK-IN DATA WITH IT.
 ![image](https://github.com/cyverse/DSIMetrics/assets/146140831/15f3b06d-3046-4491-a899-e46d119fc08e)
 
-### Adding A New User
+### Users Walkthrough
+#### Adding A New User
 1. As an admin, traversing to the metrics website will take you to the following page:
 ![image](https://github.com/cyverse/DSIMetrics/assets/146140831/5a0ce7c7-90c5-470f-a003-440ff2b1b347)
 
@@ -173,7 +182,7 @@ Definitions: Workshops are the actual events people will be attending, registeri
 
 12. The user is all set to access the DSI Metrics App.
     
-### Deleting A User
+#### Deleting A User
 1. To remove a user, navigate to the 'Users' page as an admin.
 ![image](https://github.com/cyverse/DSIMetrics/assets/146140831/02e997a4-7911-477c-b4a4-182e70d8aea4)
 
@@ -182,7 +191,7 @@ Definitions: Workshops are the actual events people will be attending, registeri
 
 4. Confirm the deletion by clicking 'Delete' in the popup window and the user will be deleted from the system, and no longer have access to the DSI Metrics website.
 
-### Authorizing a New Zoom User
+#### Authorizing a New Zoom User
 1. While logged into UofA Wifi or the UofA VPN navigate to [Zoom OAUTH](https://cerberus.cyverse.org)
 2. Click on the button to allow OAuth
 
