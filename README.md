@@ -331,4 +331,8 @@ If there are any issues accessing the Zoom App or the DSI Metrics page, perform 
    python productionScripts/seriesListener.py &
    python zoomApp/zoomOAUTH.py
    ```
-6. Ensure you are on the UofA Wifi or VPN before attempting to access
+6. These commands are all run nightly and can be run manually using by running
+   ```bash
+   /home/austinmedina/DataLabMetrtics/linuxSystemFiles/nightlySystemRestart.sh
+   ```
+7. Ensure you are on the UofA Wifi or VPN before attempting to access
