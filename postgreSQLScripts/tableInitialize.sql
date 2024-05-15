@@ -50,7 +50,7 @@ CREATE TABLE RegistreeWorkshops (
     RegID BIGINT NOT NULL,
     WorkshopID INTEGER NOT NULL,
     Registered BOOLEAN,
-    CheckedIn Boolean,
+    CheckedIn BOOLEAN,
     PRIMARY KEY (RegID, WorkshopID),
     FOREIGN KEY (RegID) REFERENCES RegistreeInfo(RegID) ON DELETE CASCADE,
     FOREIGN KEY (WorkshopID) REFERENCES Workshops(WorkshopID) ON DELETE CASCADE
