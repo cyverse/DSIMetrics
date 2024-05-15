@@ -1,3 +1,4 @@
+#!/home/austinmedina/DataLabMetrtics/Metrics/bin/python
 import psycopg2
 import asyncio
 from seriesProcessing import initializeWorkshops
