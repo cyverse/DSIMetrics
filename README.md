@@ -38,7 +38,7 @@
         <ul>
           <li><a href="#adding-a-new-user">Adding A New User</a></li>
           <li><a href="#deleting-a-user">Deleting A User</a></li>
-          <li><a href="#authorizing-a-new-zoom-user">Authorizing a New Zoom User</a></li>
+          <li><a href="#authorizing-a-zoom-meeting-id">Authorizing A Zoom Meeting ID</a></li>
         </ul>
         <li><a href="#qualtrics-walkthrough">Qualtrics Walkthrough</a></li>
         <ul>
@@ -46,6 +46,7 @@
           <li><a href="#modifying-qualtrics-form-id">Modifying Qualtrics Form ID</a></li>
           <li><a href="#switching-owner-of-qualtrics-api-key">Switching Owner Of Qualtrics API Key</a></li>
         </ul>
+        <li><a href="#switching-zoom-api-owner">Switching Zoom API Owner</a></li>
       </ul>
     <li><a href="#repository-breakdown">Repository Breakdown</a></li>
     <li><a href="#system-restart">System Restart</a></li>
@@ -197,9 +198,9 @@ Definitions: Workshops are the actual events people will be attending, registeri
 
 4. Confirm the deletion by clicking 'Delete' in the popup window and the user will be deleted from the system, and no longer have access to the DSI Metrics website.
 
-#### Authorizing a New Zoom User
-1. While logged into UofA Wifi or the UofA VPN navigate to [Zoom OAUTH](https://cerberus.cyverse.org)
-2. Click on the button to allow OAuth
+#### Authorizing A Zoom Meeting ID
+1. While logged into UofA Wifi or the UofA VPN navigate to [Zoom OAUTH](https://cerberus.cyverse.org).
+2. Click on the button to allow OAuth.
 
 &emsp;&emsp;![image](https://github.com/cyverse/DSIMetrics/assets/146140831/9894f178-6540-4583-91c3-eea86b88ec6b)
 
@@ -236,24 +237,63 @@ Note: The responses will not be collected into the DSI Metrics System until the 
 #### Modifying Qualtrics Form ID
 1. [Creating A New Qualtrics Form](#creating-a-new-qualtrics-form) must be completed before this step can take place.
 2. Navigate to the edit page of the Qualtrics survey, ex: https://uarizona.co1.qualtrics.com/survey-builder/SV_d0hMpul3tB1wJ1Q/edit
-3. In the URL the survey ID is the numbers between "survey-builder/" and "/edit", in this case, "SV_d0hMpul3tB1wJ1Q"
+3. In the URL the survey ID is the numbers between "survey-builder/" and "/edit", in this case, "SV_d0hMpul3tB1wJ1Q".
 4. Navigate to the [DSI Metrics Website](https://dsi-metrics.cyverse.org/app/dsi-metrics#/series) and using the navigation bar at the top go to the series page.
 5. Scroll to the table at the bottom and click on the header for "seriesname". Enter the desired series you wish to add the Qualtrics ID for.
 ![image](https://github.com/cyverse/DSIMetrics/assets/146140831/a1fe44d1-3793-4ae8-8d51-2003abc0c232)
 
-6. Once you find the series you wish to add/change the qualtricsID for make note of the seriesID on the left, the start time, and the end time listed to the right (as these are the only values that will not auto-populate in the form)
+6. Once you find the series you wish to add/change the qualtricsID for make note of the seriesID on the left, the start time, and the end time listed to the right (as these are the only values that will not auto-populate in the form).
 7. In the form, enter the seriesID for the series you wish to modify, all fields should populate except for the start and end time, those will need to be entered manually.
-8. Enter the new Qualtrics ID and click 'update'
+8. Enter the new Qualtrics ID and click 'update'.
 ![image](https://github.com/cyverse/DSIMetrics/assets/146140831/0f4f9718-9974-49b1-9bfe-03a56512ae2f)
 
 #### Switching Owner Of Qualtrics API Key
 1. If the owner of the Qualtrics API Key needs to be switched the "qualtrics_api_token" variable must be changed in program variables. Note: This variable can only be changed by users with 'Power' privileges and above. At the time of writing only austinmedina@arizon.edu and sarah.cyvserse@gmail.com have those permissions.
-2. Navigate to [Qualtrics User Settings](https://uarizona.co1.qualtrics.com/admin/account-settings-portal/user-settings)
+2. Navigate to [Qualtrics User Settings](https://uarizona.co1.qualtrics.com/admin/account-settings-portal/user-settings).
 
-3. Under API click 'Generate Token', generating a new API token and immediately invalidating the old one. For more information on the API key, check the [Qualtrics documentation](https://api.qualtrics.com/2b4ffbd8af74e-api-key-authentication)
-4. On the [DSI Metrics Page](dsi-metrics.cyverse.org) when logged in as a 'Power' user or above, navigate to the 'System Variables' section using the navigation bar at the top
-5. Find the cell that says "qualtrics_api_token" and select the cell to the right of it under "elementvalue". Enter the API token from earlier and click anywhere outside the table to save the change
+3. Under API click 'Generate Token', generating a new API token and immediately invalidating the old one. For more information on the API key, check the [Qualtrics documentation](https://api.qualtrics.com/2b4ffbd8af74e-api-key-authentication).
+4. On the [DSI Metrics Page](dsi-metrics.cyverse.org) when logged in as a 'Power' user or above, navigate to the 'System Variables' section using the navigation bar at the top.
+5. Find the cell that says "qualtrics_api_token" and select the cell to the right of it under "elementvalue". Enter the API token from earlier and click anywhere outside the table to save the change.
 6. Ensure all active series Qualtrics forms are shared with the owner of the Qualtrics API key, otherwise the system will not be able to access those surveys.
+
+### Switching Zoom API Owner
+1. To switch the owner of the Zoom API and Zoom App involves multiple steps and approvals from outside the UofA Data Science Institute.
+2. Navigate to the [Zoom Account Settings Page](https://arizona.zoom.us/account) and at the bottom left of the navigation bar under "Admin" select "Account Management" and then "Account Profile".
+
+![image](https://github.com/cyverse/DSIMetrics/assets/146140831/e97be67a-6c77-4dbe-bcb5-da45a5f42edc)
+
+3. Find your account owner listed on that page. Note: For UofA accounts, it should be malcolm@arizona.edu
+4. Send the account owner an email with the subject line: "Requesting Zoom Legacy App Access for Data Science Institute Project".
+5. In the body of the message include "I would like to be granted access to create a Legacy Zoom App for the Data Science Institute. One has already been approved for Austin Medina (austinmedina@arizona.edu) but we need to change the ownership of the app. I will be creating the same application, a user-managed app with OAuth, and the meeting:read:list_past_participants scope, just under a new Zoom account."
+6. Once you have been approved to create a Zoom App go to the [Zoom Marketplace](https://marketplace.zoom.us/)
+7. In the top right-hand corner, select "Develop" and then "Legacy Zoom App". If you cannot select this application, it means you have not been given the proper access.
+![image](https://github.com/cyverse/DSIMetrics/assets/146140831/19c1cf03-d65b-41cf-aa8a-a4b35559c93d)
+
+8. For app type, select O-Auth.
+![image](https://github.com/cyverse/DSIMetrics/assets/146140831/4b60b51d-ed62-46fd-a92b-4ac02cdc7246)
+
+9. Enter the name as "DSI Metrics", select "User-Managed-App", and intend to publish as "No".
+![image](https://github.com/cyverse/DSIMetrics/assets/146140831/d1ae92fe-6bdf-4f3d-9f24-6db771adb4fa)
+
+10. Copy the Client ID and Client Secret.
+11. In a new tab go to the [DSI Metrics Page](dsi-metrics.cyverse.org) when logged in as a 'Power' user or above, and navigate to the 'System Variables' section using the navigation bar at the top.
+12. Find the cells that say "zoom_client_id" and "zoom_client_secret" and select the cell to the right of it under "elementvalue". Enter the client ID and client secret in their respective fields and click anywhere outside the table to save the change.
+13. For any active series, the owner of those zooms must go back through [Authrozing a Zoom Meeting ID](#authorizing-a-zoom-meeting-id). If this step is not done in its entirety for every currently functioning and future Zoom meeting, the system will not be authorized to pull participants for those Zoom meetings and the attendances will not be updated.
+14. Navigating back to the Zoom Marketplace where you received your client keys, enter the "Redirect URL For OAuth" as: https://cerberus.cyverse.org/getAccess
+15. Fill out the rest of the page as shown:
+![image](https://github.com/cyverse/DSIMetrics/assets/146140831/464483e9-02d8-4b66-b413-4fa26e94b2dd)
+  
+16. Fill out the information page as shown below:
+![image](https://github.com/cyverse/DSIMetrics/assets/146140831/a3d672df-e38e-449c-99ae-685eff2971f6)
+
+17. In the "Developer Contact Information" section of the "Information" page, enter your name and your Arizona email that was given access to the Zoom legacy app.
+18. Ignore the "Feature" page and navigate to the "Scopes" page. On this page click "+ Add Scopes" and search for meeting:read:list_past_participants, then click done.
+![image](https://github.com/cyverse/DSIMetrics/assets/146140831/f65832c1-a44d-41e4-a7e3-ee3e73cbcd14)
+19. On the "Activation" page where it says "Add URL" copy the URL listed.
+20. On the virtual machine hosting the DSI Metrics System navigate to zoomApp/templates/credentials.html. On this page at the bottom on line 37 replace the URL with the URL you just copied:
+![image](https://github.com/cyverse/DSIMetrics/assets/146140831/79598d9a-0165-4e48-af8a-dda53aa86e72)
+
+21. With that everything should be updated for the Zoom App to be working. Verify by going to the [Zoom OAuth App](cerberus.cyvserse.org) and going through the process of giving the app access to your account and then entering in a meetingID.
 
 ## Repository Breakdown
 
