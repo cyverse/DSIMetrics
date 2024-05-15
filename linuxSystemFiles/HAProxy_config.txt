@@ -1,0 +1,27 @@
+# This is a copy of the haproxy.cfg file used in the DSI Metrics System
+#---------------------------------------------------------------------
+# main frontend which proxys to the backends
+#---------------------------------------------------------------------
+frontend http-ssl
+     bind *:443 ssl crt /etc/ssl/cyverse.combined
+
+     acl zoomOAUTH hdr(host) -i cerberus.cyverse.org
+     acl budibase hdr(host) -i dsi-metrics.cyverse.org
+
+     use_backend zoomOAUTH if zoomOAUTH
+     use_backend budibase if budibase
+
+#---------------------------------------------------------------------
+# round robin balancing between the various backends
+#---------------------------------------------------------------------
+backend zoomOAUTH
+    option log-health-checks
+    option forwardfor
+    balance roundrobin
+    server localhost localhost:5000 check
+
+backend budibase
+    option log-health-checks
+    option forwardfor
+    balance roundrobin
+    server localhost localhost:10000 check
