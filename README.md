@@ -40,7 +40,7 @@
           <li><a href="#deleting-a-user">Deleting A User</a></li>
           <li><a href="#authorizing-a-new-zoom-user">Authorizing a New Zoom User</a></li>
         </ul>
-        <li><a href="#qualtrics-walkthrough">Users Walkthrough</a></li>
+        <li><a href="#qualtrics-walkthrough">Qualtrics Walkthrough</a></li>
         <ul>
           <li><a href="#creating-a-new-qualtrics-form">Creating A New Qualtrics Form</a></li>
           <li><a href="#modifying-qualtrics-form-id">Modifying Qualtrics Form ID</a></li>
