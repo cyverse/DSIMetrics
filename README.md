@@ -50,6 +50,7 @@
       </ul>
     <li><a href="#repository-breakdown">Repository Breakdown</a></li>
     <li><a href="#system-restart">System Restart</a></li>
+    <li><a href="#future-improvements">Future Improvements</a></li>
   </ol>
 </details>
 
@@ -322,7 +323,7 @@ If there are any issues accessing the Zoom App or the DSI Metrics page, perform 
    cd budibaseDocker
    docker compose down
    ```
-4. Restart the budibase docker image
+4. Restart the Budibase docker image
    ```bash
    docker compose up
    ```
@@ -337,3 +338,13 @@ If there are any issues accessing the Zoom App or the DSI Metrics page, perform 
    /home/austinmedina/DataLabMetrtics/linuxSystemFiles/nightlySystemRestart.sh
    ```
 7. Ensure you are on the UofA Wifi or VPN before attempting to access
+
+## Future Improvements
+- [ ] UofA Net ID Integration
+- [ ] More robust logging
+- [ ] Only store the last 5 days of logging files
+- [ ] More robust error handling
+- [ ] Rewrite Qualtrics and Zoom API Code for efficiency
+- [ ] More graphs and metrics in Budibase
+- [ ] Improve overall system security
+
