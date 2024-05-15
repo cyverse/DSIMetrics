@@ -305,6 +305,7 @@ The repo consists of 7 main folders:
 * **readMeImages** - The images used in this README
 * **unitTesting** - Initial testing and exploration code when first creating this system. Kept in the repo for future developers to use as a reference
 * **zoomApp** - Holds the files for a Flask app which allows a user to authorize the system to access their Zoom meeting information and then prompts the user to enter the Zoom meeting IDs they wish the system to access
+* **linuxSystemFiles** - Contains the files run on the linux system such as the CronJobs, HAProxy file, and a nightly restart script.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
