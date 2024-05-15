@@ -12,6 +12,11 @@
   <summary>Table of Contents</summary>
   <ol>
     <li><a href="#about-the-project">About The Project</a></li>
+    <li><a href="#software-architecture">Software Architecture</a></li>
+    <ul>
+        <li><a href="#system-overview">System Overview</a></li>
+        <li><a href="#database-schema">Database Schema</a></li>
+    </ul>
     <li><a href="#dsi-metrics-how-to">DSI Metrics How-To</a></li>
       <ul>
         <li><a href="#first-time-access">First Time Access</a></li>
@@ -35,23 +40,34 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-The Data Science Institute (DSI) Metrics System is an end-to-end solution for streamlining data collection and workshop management. It automatically fetches registration data from Qualtrics and attendance information from Zoom, cleans and processes the data, and uploads it to a Postgres database. The system offers front-end CRUD and visualization tools hosted using Budibase, allowing authorized users to interact directly with the database. The system is hosted on a virutal machine on the [Cyverse](https://cyverse.org/) network. Access to the system is restricted to authorized users due to University and FERPA regulations.
+The Data Science Institute (DSI) Metrics System is an end-to-end solution for streamlining data collection and workshop management. It automatically fetches registration data from Qualtrics and attendance information from Zoom, cleans and processes the data, and uploads it to a Postgres database. The system offers front-end CRUD and visualization tools hosted using Budibase, allowing authorized users to interact directly with the database. The system is hosted on a virtual machine on the [Cyverse](https://cyverse.org/) network. Access to the system is restricted to authorized users due to University and FERPA regulations.
 ### Quick Links
 * [DSI Metrics System](dsi-metrics.cyverse.org)
 * [Zoom API authorization](cerberus.cyverse.org)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+## Software Architecture
+### System Overview
+<a href="https://datascience.arizona.edu/">
+  <img src="images/DSI Metrics Software Architecture.png" alt="Logo">
+</a>
+
+### Database Schema
+<a href="https://datascience.arizona.edu/">
+  <img src="images/DSI Metrics DB Schema.png" alt="Logo">
+</a>
+
 ## DSI Metrics How-To
 ### First Time Access
-To access the data visualizations available to authorized users, click on the *DSI Metrics System* link in the quick links above. Before you are able to login, the admin must add your email to the system, generate a random password for you, and give you access to the app as discussed later. When prompted fill out the login with the temporary password. The system will them prompt you to change your password. Ensure to remember your password as this is the one you will use everytime you log into the system.
+To access the data visualizations available to authorized users, click on the *DSI Metrics System* link in the quick links above. Before you are able to log in, the admin must add your email to the system, generate a random password for you, and give you access to the app as discussed later. When prompted fill out the login with the temporary password. The system will then prompt you to change your password. Ensure to remember your password as this is the one you will use every time you log into the system.
 ![image](https://github.com/cyverse/DSIMetrics/assets/146140831/3300a9af-67fa-47c0-991b-d05551d173d3)
 
 Once your password is reset, you will once more be prompted to log in using your new password. When you click login, you will be prompted to choose the app you want to access. Select DSI Metrics
 ![image](https://github.com/cyverse/DSIMetrics/assets/146140831/98b42586-6b17-4a6d-a317-678c4782823a)
 
 ### Accessing Metrics
-After you click on the app you will be brought to the Metrics Page. On this page you can select a semester and a year to get attendance information for the selected semester. The first box includes 3 graphs. The first is an attendance over time for all workshops in that semester. The second is the total attendance and unique attendance for each workshop in that semester. The unique attendance is each person that attended a workshop. If someone went to 3 weeks of workshops, they are counted 3 times in the total attendance but not the unique attendance. The final graph is a bar chart for registration information for the semester. The graph breaks down registration into people we were able to identify, not identify, those who registered, those who never attended, etc.
+After you click on the app you will be brought to the Metrics Page. On this page, you can select a semester and a year to get attendance information for the selected semester. The first box includes 3 graphs. The first is attendance over time for all workshops in that semester. The second is the total attendance and unique attendance for each workshop in that semester. The unique attendance is for each person who attended a workshop. If someone went to 3 weeks of workshops, they are counted 3 times in the total attendance but not the unique attendance. The final graph is a bar chart for registration information for the semester. The graph breaks down registration into people we were able to identify, not identify, those who registered, those who never attended, etc.
 ![image](https://github.com/cyverse/DSIMetrics/assets/146140831/3be5dcdf-20d4-4deb-9446-9099f9a07dd4)
 
 If you scroll down you will find another drop down. This menu lets you select any workshop and will display the attendance over time and the workshop names/topics for each week.
