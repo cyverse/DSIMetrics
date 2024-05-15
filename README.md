@@ -40,6 +40,12 @@
           <li><a href="#deleting-a-user">Deleting A User</a></li>
           <li><a href="#authorizing-a-new-zoom-user">Authorizing a New Zoom User</a></li>
         </ul>
+        <li><a href="#qualtrics-walkthrough">Users Walkthrough</a></li>
+        <ul>
+          <li><a href="#creating-a-new-qualtrics-form">Creating A New Qualtrics Form</a></li>
+          <li><a href="#modifying-qualtrics-form-id">Modifying Qualtrics Form ID</a></li>
+          <li><a href="#switching-owner-of-qualtrics-api-key">Switching Owner Of Qualtrics API Key</a></li>
+        </ul>
       </ul>
     <li><a href="#repository-breakdown">Repository Breakdown</a></li>
     <li><a href="#system-restart">System Restart</a></li>
@@ -206,6 +212,48 @@ Definitions: Workshops are the actual events people will be attending, registeri
 
 8. You can enter as many meeting IDs as you wish. Enter them one at a time and click 'Submit' after each.
 9. Once done, exit the page and the keys for each meeting ID will be saved into the database.
+
+### Qualtrics Walkthrough
+Qualtrics is a survey tool offered through the UofA, that allows us to create simple yet modern forms. The forms used in the DSI Metrics System ask a few simple questions: are you UofA affiliated, first name, last name, email, organization (if not UofA affiliated, which workshops they would like to attend, and if they would like to be recontacted. The system is built around these specific questions so no changes can be made to the form structure or organization. The system uses the Qualtrics ID and a Qualtrics API Key to function.
+
+❗EVERY QUALTRICS FORM THAT IS CREATED MUST BE CREATED AS A COPY OF THE [TEMPLATE](https://uarizona.co1.qualtrics.com/survey-builder/SV_eS9bgBRYRehalEy/edit).
+❗EVERY ACTIVE QUALTRICS FORM MUST BE SHARED WITH THE OWNER OF THE API KEY ENTERED INTO THE SYSTEM.
+
+#### Creating A New Qualtrics Form
+1. To create a new registration form, create a copy of the template form listed above.
+  Note: You must have access permissions to view. For permission to access email tina@arizona.edu or slroberts@arizona.edu.
+ ❗DO NOT EDIT THE ORIGINAL. ONLY EDIT A COPY OF THE TEMPLATE
+2. Change the name of the form to your desired series name.
+3. Do not change any information on the form except for the workshops section.
+4. In the workshops section, list the names of the workshops in CHRONOLOGICAL order from earliest to latest starting date. You can include the name and date of the workshop, or just the name (topic) of the workshop.
+5. Click 'Publish' in the top right corner to make your survey public and begin collecting responses.
+6. Once the workshop has been created it needs to be shared with the owner of the API key currently in the system. Navigate to the projects section of Qualtrics.
+7. On the right side click the 3 dots and select 'Collaborate'.
+8. Enter the Arizona email for the owner of the API key the system currently uses. See [Switching Owner Of Qualtrics API Key](#switching-owner-of-qualtrics-api-key) if the owner is unknown or out of date.
+9. Distribute the survey and wait for responses to be collected in the DSI Metrics System.
+Note: The responses will not be collected into the DSI Metrics System until the survey ID is entered in for a series, and the series has started according to its start date.
+
+#### Modifying Qualtrics Form ID
+1. [Creating A New Qualtrics Form](#creating-a-new-qualtrics-form) must be completed before this step can take place.
+2. Navigate to the edit page of the Qualtrics survey, ex: https://uarizona.co1.qualtrics.com/survey-builder/SV_d0hMpul3tB1wJ1Q/edit
+3. In the URL the survey ID is the numbers between "survey-builder/" and "/edit", in this case, "SV_d0hMpul3tB1wJ1Q"
+4. Navigate to the [DSI Metrics Website](https://dsi-metrics.cyverse.org/app/dsi-metrics#/series) and using the navigation bar at the top go to the series page.
+5. Scroll to the table at the bottom and click on the header for "seriesname". Enter the desired series you wish to add the Qualtrics ID for.
+![image](https://github.com/cyverse/DSIMetrics/assets/146140831/a1fe44d1-3793-4ae8-8d51-2003abc0c232)
+
+6. Once you find the series you wish to add/change the qualtricsID for make note of the seriesID on the left, the start time, and the end time listed to the right (as these are the only values that will not auto-populate in the form)
+7. In the form, enter the seriesID for the series you wish to modify, all fields should populate except for the start and end time, those will need to be entered manually.
+8. Enter the new Qualtrics ID and click 'update'
+![image](https://github.com/cyverse/DSIMetrics/assets/146140831/0f4f9718-9974-49b1-9bfe-03a56512ae2f)
+
+#### Switching Owner Of Qualtrics API Key
+1. If the owner of the Qualtrics API Key needs to be switched the "qualtrics_api_token" variable must be changed in program variables. Note: This variable can only be changed by users with 'Power' privileges and above. At the time of writing only austinmedina@arizon.edu and sarah.cyvserse@gmail.com have those permissions.
+2. Navigate to [Qualtrics User Settings](https://uarizona.co1.qualtrics.com/admin/account-settings-portal/user-settings)
+
+3. Under API click 'Generate Token', generating a new API token and immediately invalidating the old one. For more information on the API key, check the [Qualtrics documentation](https://api.qualtrics.com/2b4ffbd8af74e-api-key-authentication)
+4. On the [DSI Metrics Page](dsi-metrics.cyverse.org) when logged in as a 'Power' user or above, navigate to the 'System Variables' section using the navigation bar at the top
+5. Find the cell that says "qualtrics_api_token" and select the cell to the right of it under "elementvalue". Enter the API token from earlier and click anywhere outside the table to save the change
+6. Ensure all active series Qualtrics forms are shared with the owner of the Qualtrics API key, otherwise the system will not be able to access those surveys.
 
 ## Repository Breakdown
 
