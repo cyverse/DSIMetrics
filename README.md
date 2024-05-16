@@ -299,14 +299,14 @@ Note: The responses will not be collected into the DSI Metrics System until the 
 ## Repository Breakdown
 
 The repo consists of 7 main folders:
-* **budibaseDocker** - Holds the docker image for Budibase along with all other supporting files for Budibase to function
+* **budibaseDocker** - Holds the docker image for Budibase along with all other supporting files for Budibase to function. The docker container is what people access when they access the DSI Metrics website.
 * **initialUploads** - Single run scripts used to reinitialize the database with data manually grabbed from Spring 2024
 * **postgreSQLScripts** - Used in initial uploads to create functions used in the system and create the tables used in the database. Also includes common queries used in Budibase visualizations
 * **productionScripts** - Scripts that are automatically run by Cron Jobs on Linux. These scripts are responsible for the main automation of the system including fetching qualities and zoom data and listening from new series to be entered through Budibase
 * **readMeImages** - The images used in this README
 * **unitTesting** - Initial testing and exploration code when first creating this system. Kept in the repo for future developers to use as a reference
-* **zoomApp** - Holds the files for a Flask app which allows a user to authorize the system to access their Zoom meeting information and then prompts the user to enter the Zoom meeting IDs they wish the system to access
-* **linuxSystemFiles** - Contains the files run on the linux system such as the CronJobs, HAProxy file, and a nightly restart script.
+* **zoomApp** - Holds the files for a Flask app which allows a user to authorize the system to access their Zoom meeting information and then prompts the user to enter the Zoom meeting IDs they wish the system to access. The server is whats accessed from cerberus.cyverse.org
+* **linuxSystemFiles** - Contains the files run on the Linux system such as the CronJobs, HAProxy file, and a nightly restart script.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
