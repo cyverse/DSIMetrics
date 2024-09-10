@@ -84,36 +84,43 @@ def getAccessToken(refreshToken, zoomMeetingID, conn, cur):
 
 def getParticipants(zoomMeetingID, conn, cur):
     """
-    Fetches a list of meeting participants for a specific zoom meeting ID. Due to limitations in the API, it will only fetch the most recently concluded meeting
+    Fetches a list of meeting participants for a specific Zoom meeting ID, handling pagination.
 
     Key Arguments:
-    zoomMeetingID - The id associated with a zoom meeting that we will fetch a participant list for.
-    conn - The connection to the Postgres database
-    cur - The cursor to the Postgres database 
+    zoomMeetingID - The ID associated with a Zoom meeting to fetch a participant list.
+    conn - The connection to the Postgres database.
+    cur - The cursor to the Postgres database.
 
     Returns:
-    people['participants'] - A list of all participants, their email, join time, and leave time
-
-    Description:
-    Fetches the refresh token and access token through auxilary functions and them performs a simple get request to fetch the participants
+    all_participants - A list of all participants, their email, join time, and leave time across all pages.
     """
     refreshToken = getRefreshToken(zoomMeetingID, conn, cur)
     accessToken = getAccessToken(refreshToken, zoomMeetingID, conn, cur)
     url = f'https://api.zoom.us/v2/past_meetings/{zoomMeetingID}/participants'
-
+    
     headers = {
-        'Authorization':f'Bearer {accessToken}',
-        'page_size':'100'
+        'Authorization': f'Bearer {accessToken}',
+        'page_size': '100'
     }
 
-    response = requests.get(url, headers=headers)
+    all_participants = []
+    next_page_token = ''
+    
+    while True:
+        params = {'next_page_token': next_page_token} if next_page_token else {}
+        response = requests.get(url, headers=headers, params=params)
 
-    if (response.status_code == 200):
-        people = (response.json())
-        return people['participants']
-    else:
-        print(f'Error: {response.status_code}')
-        return None
+        if response.status_code == 200:
+            data = response.json()
+            all_participants.extend(data.get('participants', []))
+            next_page_token = data.get('next_page_token')
+            if not next_page_token:
+                break
+        else:
+            print(f'Error: {response.status_code}')
+            break
+
+    return all_participants
     
 def uploadCheckIn(row, workshopID, conn, cur):
     """
@@ -282,11 +289,12 @@ def zoomProcess(conn, cur):
     cur.execute("""
                 SELECT workshops.WorkshopID, workshops.SeriesID, series.ZoomMeetingID, series.StartTime, series.EndTime, workshops.WorkshopDate FROM workshops
                 JOIN series on workshops.SeriesID = series.SeriesID
-                WHERE workshops.Workshopdate = now()::date
+                WHERE workshops.Workshopdate = now()::date;
                 """)
 
     workshopList = cur.fetchall()
     conn.commit()
+    logging.info("Workshops found:" + str(workshopList))
 
     today = date.today()
 
@@ -352,7 +360,7 @@ if __name__ == '__main__':
     zoomProcess(conn, cur)
     logging.info("--------------------------------------")
     logging.info("ENDING ZOOM CHECK IN PROCESS")
-    
+    logging.info(" ")
     
     cur.close()
     conn.close()
