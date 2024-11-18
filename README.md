@@ -357,6 +357,24 @@ DSI metric is hosted on a Cyverse VM. To access the VM, you need to be added by 
 
 `ssh -p 1657 <cyverse_user_name>@cerberus.cyverse.org`
 
+You will be prompted for your Cyverse password.
+
 The DSI-metric files are located in `/home/austinmedina`
+
+To view a list of cronjobs type the command `sudo crontab -l`
+
+You can edit the crontab with `sudo crontab -e`
+
+The current crojobs are:
+
+# m h  dom mon dow   command
+30 * * * * /home/austinmedina/DataLabMetrtics/productionScripts/zoomProcessAttendance.py
+10 * * * * /home/austinmedina/DataLabMetrtics/productionScripts/qualtricsDataProcessing.py
+0 2 * * * /home/austinmedina/DataLabMetrtics/linuxSystemFiles/nightlySystemRestart.sh
+
+`zoomProcessAttendance.py` will run on the 30 of every hour (e.g., 1:30, 2:30, etc)
+`qualtricsDataProcessing.py` will run on the 10 of every hour
+`nightlySystemRestart.sh`  will run daily at 2:00 AM.
+
 
 
