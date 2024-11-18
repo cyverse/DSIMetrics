@@ -400,6 +400,10 @@ See a table's structure `\d registreeinfo`
 Fetch all data from a database table `select * from series;`
 
 
-The dates of the geospatial workshop (in Budibase) are all off by 1 day except for Cyverse Geospatial (2024-09-03) and Google Earth Engine (2024-09-10). This corresponds to the fact that only these two workshops have zoom attendance data in Budibase. For example, the workshop 'Deep Learning for Aerial Imagery: DeepForest' occurred on Sept. 17, yet Budibase lists it as Sept. 18. The 'zoomlogging' file shows that the API was contacted and data from the deep learning workshop was pulled on Sept. 17. Zoom data was pulled for Sept. 24, Oct. 1. The Zoom data for Oct 8 had only 1 person, which cannot be correct. Pulled Zoom data for Oct. 15. No data for Oct 22, which can't be correct. Pulled data for Oct. 29. 
+The dates of the geospatial workshop (in Budibase) are all off by 1 day except for Cyverse Geospatial (2024-09-03) and Google Earth Engine (2024-09-10). This corresponds to the fact that only these two workshops have zoom attendance data in Budibase. For example, the workshop 'Deep Learning for Aerial Imagery: DeepForest' occurred on Sept. 17, yet Budibase lists it as Sept. 18. 
 
+However, the 'zoomlogging' file shows that the API was contacted and data from the deep learning workshop was pulled on Sept. 17. Zoom data was pulled for Sept. 24, Oct. 1. The Zoom data for Oct 8 had only 1 person, which cannot be correct. Pulled Zoom data for Oct. 15. No data for Oct 22, which can't be correct. Pulled data for Oct. 29. 
 
+Only geospatial workshopsid 113 (2024-09-10) and 114(2024-09-10) made it into the database. 
+
+Why did the data get pulled from Zoom yet they did not get put into the database??
