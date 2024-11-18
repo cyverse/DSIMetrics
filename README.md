@@ -391,3 +391,11 @@ Current behavior for `zoomProcessingAttendance.py`: If a workshop is scheduled t
 
 Connect to sql `sudo psql -U postgres -d DataLab`
 
+List tables in the database `\dt`
+
+See a table's structure `\d registreeinfo`
+
+Fetch all data from a database table `select * from series;`
+
+
+
