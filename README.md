@@ -350,3 +350,13 @@ If there are any issues accessing the Zoom App or the DSI Metrics page, perform 
 - [ ] More graphs and metrics in Budibase
 - [ ] Improve overall system security
 
+
+## Random Stuff
+
+DSI metric is hosted on a Cyverse VM. To access the VM, you need to be added by Andy Edmonds
+
+`ssh -p 1657 <cyverse_user_name>@cerberus.cyverse.org`
+
+The DSI-metric files are located in `/home/austinmedina`
+
+
