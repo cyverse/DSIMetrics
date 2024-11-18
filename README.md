@@ -361,6 +361,8 @@ You will be prompted for your Cyverse password.
 
 The DSI-metric files are located in `/home/austinmedina`
 
+### Crontab
+
 To view a list of cronjobs type the command `sudo crontab -l`
 
 You can edit the crontab with `sudo crontab -e`
@@ -381,5 +383,11 @@ The current crojobs are:
 
 `nightlySystemRestart.sh`  will run daily at 2:00 AM.
 
+Cronjob script results are logged at /home/austinmedina/DataLabMetrics/logging
 
+Current behavior for `zoomProcessingAttendance.py`: If a workshop is scheduled to occur on a certain date, then the script will execute every hour starting at 12:30 am. The script hits the Zoom API and returns the names of attendees in the Zoom session. This data goes into a Postgresql database. Our workshops are typically back-to-back, e.g., Geospatial is 2-3pm and Bioinformatics is 3-4pm using the same Zoom meeting. 
+
+### PostgreSQL
+
+Connect to sql `sudo psql -U postgres -d DataLab`
 
