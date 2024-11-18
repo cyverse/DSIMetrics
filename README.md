@@ -385,7 +385,9 @@ The current crojobs are:
 
 Cronjob script results are logged at /home/austinmedina/DataLabMetrics/logging
 
-Current behavior for `zoomProcessingAttendance.py`: If a workshop is scheduled to occur on a certain date, then the script will execute every hour starting at 12:30 am. The script hits the Zoom API and returns the names of attendees in the Zoom session. This data goes into a Postgresql database. Our workshops are typically back-to-back, e.g., Geospatial is 2-3pm and Bioinformatics is 3-4pm using the same Zoom meeting. 
+Current behavior for `zoomProcessingAttendance.py`: If a workshop is scheduled to occur on a certain date, then the script will execute every hour starting at 12:30 am. The script hits the Zoom API and returns the names of attendees in the Zoom session. This data goes into a Postgresql database. It appears the script is looking for the most recent Zoom meeting to pull data from. 
+
+Our workshops are typically back-to-back, e.g., Geospatial is 2-3pm and Bioinformatics is 3-4pm using the same Zoom meeting. 
 
 ### PostgreSQL
 
@@ -397,5 +399,7 @@ See a table's structure `\d registreeinfo`
 
 Fetch all data from a database table `select * from series;`
 
+
+The dates of the geospatial workshop (in Budibase) are all off by 1 day except for Cyverse Geospatial (2024-09-03) and Google Earth Engine (2024-09-10). This corresponds to the fact that only these two workshops have zoom attendance data in Budibase. For example, the workshop 'Deep Learning for Aerial Imagery: DeepForest' occurred on Sept. 17, yet Budibase lists it as Sept. 18. The 'zoomlogging' file shows that the API was contacted and data from the deep learning workshop was pulled on Sept. 17. Zoom data was pulled for Sept. 24, Oct. 1. The Zoom data for Oct 8 had only 1 person, which cannot be correct. Pulled Zoom data for Oct. 15. No data for Oct 22, which can't be correct. Pulled data for Oct. 29. 
 
 
