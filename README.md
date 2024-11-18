@@ -8,6 +8,8 @@
   <h1 align="center">Data Science Institute Metrics System</h1>
 </div>
 
+Documentation Created by Austin Medina, May 2024. Updated by Jeff Gillan, Nov. 2024
+
 <details>
   <summary>Table of Contents</summary>
   <ol>
