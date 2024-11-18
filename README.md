@@ -367,13 +367,18 @@ You can edit the crontab with `sudo crontab -e`
 
 The current crojobs are:
 
-# m h  dom mon dow   command
+ m h  dom mon dow   command
+ 
 30 * * * * /home/austinmedina/DataLabMetrtics/productionScripts/zoomProcessAttendance.py
+
 10 * * * * /home/austinmedina/DataLabMetrtics/productionScripts/qualtricsDataProcessing.py
+
 0 2 * * * /home/austinmedina/DataLabMetrtics/linuxSystemFiles/nightlySystemRestart.sh
 
 `zoomProcessAttendance.py` will run on the 30 of every hour (e.g., 1:30, 2:30, etc)
+
 `qualtricsDataProcessing.py` will run on the 10 of every hour
+
 `nightlySystemRestart.sh`  will run daily at 2:00 AM.
 
 
