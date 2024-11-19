@@ -306,11 +306,15 @@ The repo consists of 7 main folders:
 * **postgreSQLScripts** - Used in initial uploads to create functions used in the system and create the tables used in the database. Also includes common queries used in Budibase visualizations
 * **productionScripts** - Scripts that are automatically run by crontab on Linux. These scripts are responsible for the main automation of the system including fetching qualities and zoom data and listening from new series to be entered through Budibase
   * **zoomProcessAttendance.py** - this script is set to run automatically every hour on the 30 minute. It reaches out to the Zoom API and looks for the most recent Zoom meeting and pulls that data into the Postgresql database
-  * **seriesProcessing.py** - This script is run automatically by crontab every night at 2am. It is run from the `nightlySystemRestart.sh` shell script. 
+  * **seriesListener.py** - This script is run automatically by crontab every night at 2am. It is run from the `nightlySystemRestart.sh` shell script. ?????
+  * **seriesProcessing** - This script will scrape html text from a user defined URL that has information on DSI workshop series. (e.g., https://datascience.arizona.edu/events/navigating-world-data-engineering). It will add the information to the postgresql database. This script is called from the `seriesListener.py` script that is run nightly. 
+  * **qualtricsDataProcessing.py** - The script runs automatically by crontab every hour on minute ten. It reaches out to Qualtrics API and pulls down workshop registration data and adds it to the postgresql database. 
 * **readMeImages** - The images used in this README
 * **unitTesting** - Initial testing and exploration code when first creating this system. Kept in the repo for future developers to use as a reference
 * **zoomApp** - Holds the files for a Flask app which allows a user to authorize the system to access their Zoom meeting information and then prompts the user to enter the Zoom meeting IDs they wish the system to access. The server is whats accessed from cerberus.cyverse.org
 * **linuxSystemFiles** - Contains the files run on the Linux system such as the CronJobs, HAProxy file, and a nightly restart script.
+  * **nightlySystemRestart.sh** - this shell script is run every night at 2am from the crontab. It reboots the budibase docker container, runs the `seriesListener.py` script and the `zoomOAuth.py` script.
+  * 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
