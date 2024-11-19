@@ -449,7 +449,7 @@ However, the 'zoomlogging' file shows that the API was contacted and data from t
 
 Only geospatial workshopsid 113 (2024-09-10) and 114(2024-09-10) made it into the database in terms of adding attendee names.
 
-I remember back in August when I was first adding series and workshops. I added workshop names and dates. But when I refreshed the page or looked at it the next day, the dates of workshops were off by one day. These wrong dates were captured in the database. 
+I remember back in August when I was first adding series and workshops. I added workshop names and dates. But when I refreshed the page or looked at it the next day, the dates of workshops were off by one day. These wrong dates were captured in the database. Because I had the wrong dates for my workshops, the `zoomProcessAttendance.py` wasn't able to match the Zoom data with an existing workshop. 
 
 possible confirmation of problem https://github.com/Budibase/budibase/issues/7531
 
