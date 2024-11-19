@@ -71,10 +71,7 @@ The Data Science Institute (DSI) Metrics System is an end-to-end solution for st
   <img src="images/DSI Metrics Software Architecture.png" alt="Logo">
 </a>
 
-### Database Schema
-<a href="https://datascience.arizona.edu/">
-  <img src="images/DSI Metrics DB Schema.png" alt="Logo">
-</a>
+
 
 ## DSI Metrics Front End (Budibase)
 ### First Time Access
@@ -305,6 +302,7 @@ Note: The responses will not be collected into the DSI Metrics System until the 
 <br/>
 <br/>
 <br/>
+
 ## Back End
 
 ### Repository Breakdown
@@ -323,9 +321,77 @@ The repo consists of 7 main folders:
 * **zoomApp** - Holds the files for a Flask app which allows a user to authorize the system to access their Zoom meeting information and then prompts the user to enter the Zoom meeting IDs they wish the system to access. The server is whats accessed from cerberus.cyverse.org
 * **linuxSystemFiles** - Contains the files run on the Linux system such as the CronJobs, HAProxy file, and a nightly restart script.
   * **nightlySystemRestart.sh** - this shell script is run every night at 2am from the crontab. It reboots the budibase docker container, runs the `seriesListener.py` script and the `zoomOAuth.py` script.
-  * 
+  * **crotab.txt**
+  * **HAProxy_config.txt**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<br/>
+<br/>
+
+## Website and Database Hosting
+
+DSI-metric website (budibase), postgresql database, and all scripts are hosted on a Cyverse VM. To access the VM, you need to be added by Andy Edmonds
+
+`ssh -p 1657 <cyverse_user_name>@cerberus.cyverse.org`
+
+You will be prompted for your Cyverse password.
+
+The DSI-metric files are located in `/home/austinmedina`
+
+<br/>
+<br/>
+
+### Crontab
+
+To view a list of cronjobs type the command `sudo crontab -l`
+
+You can edit the crontab with `sudo crontab -e`
+
+The current crojobs are:
+
+ m h  dom mon dow   command
+ 
+30 * * * * /home/austinmedina/DataLabMetrtics/productionScripts/zoomProcessAttendance.py
+
+10 * * * * /home/austinmedina/DataLabMetrtics/productionScripts/qualtricsDataProcessing.py
+
+0 2 * * * /home/austinmedina/DataLabMetrtics/linuxSystemFiles/nightlySystemRestart.sh
+
+`zoomProcessAttendance.py` will run on the 30 of every hour (e.g., 1:30, 2:30, etc)
+
+`qualtricsDataProcessing.py` will run on the 10 of every hour
+
+`nightlySystemRestart.sh`  will run daily at 2:00 AM.
+
+Cronjob script results are logged at /home/austinmedina/DataLabMetrics/logging
+
+Current behavior for `zoomProcessingAttendance.py`: If a workshop is scheduled to occur on a certain date, then the script will execute every hour starting at 12:30 am. The script hits the Zoom API and returns the names of attendees in the Zoom session. This data goes into a Postgresql database. It appears the script is looking for the most recent Zoom meeting to pull data from. 
+
+
+<br/>
+<br/>
+
+### PostgreSQL
+
+
+#### Database Schema
+<a href="https://datascience.arizona.edu/">
+  <img src="images/DSI Metrics DB Schema.png" alt="Logo">
+</a>
+
+
+Connect to sql `sudo psql -U postgres -d DataLab`
+
+List tables in the database `\dt`
+
+See a table's structure `\d registreeinfo`
+
+Fetch all data from a database table `select * from series;`
+
+<br/>
+<br/>
+
 
 <!-- System Restart -->
 ### System Restart
@@ -356,6 +422,9 @@ If there are any issues accessing the Zoom App or the DSI Metrics page, perform 
    ```
 7. Ensure you are on the UofA Wifi or VPN before attempting to access
 
+<br/>
+<br/>
+
 ### Future Improvements
 - [ ] UofA Net ID Integration
 - [ ] More robust logging
@@ -366,53 +435,12 @@ If there are any issues accessing the Zoom App or the DSI Metrics page, perform 
 - [ ] Improve overall system security
 
 
-### Random Stuff
 
-DSI metric is hosted on a Cyverse VM. To access the VM, you need to be added by Andy Edmonds
 
-`ssh -p 1657 <cyverse_user_name>@cerberus.cyverse.org`
 
-You will be prompted for your Cyverse password.
 
-The DSI-metric files are located in `/home/austinmedina`
 
-### Crontab
-
-To view a list of cronjobs type the command `sudo crontab -l`
-
-You can edit the crontab with `sudo crontab -e`
-
-The current crojobs are:
-
- m h  dom mon dow   command
- 
-30 * * * * /home/austinmedina/DataLabMetrtics/productionScripts/zoomProcessAttendance.py
-
-10 * * * * /home/austinmedina/DataLabMetrtics/productionScripts/qualtricsDataProcessing.py
-
-0 2 * * * /home/austinmedina/DataLabMetrtics/linuxSystemFiles/nightlySystemRestart.sh
-
-`zoomProcessAttendance.py` will run on the 30 of every hour (e.g., 1:30, 2:30, etc)
-
-`qualtricsDataProcessing.py` will run on the 10 of every hour
-
-`nightlySystemRestart.sh`  will run daily at 2:00 AM.
-
-Cronjob script results are logged at /home/austinmedina/DataLabMetrics/logging
-
-Current behavior for `zoomProcessingAttendance.py`: If a workshop is scheduled to occur on a certain date, then the script will execute every hour starting at 12:30 am. The script hits the Zoom API and returns the names of attendees in the Zoom session. This data goes into a Postgresql database. It appears the script is looking for the most recent Zoom meeting to pull data from. 
-
-Our workshops are typically back-to-back, e.g., Geospatial is 2-3pm and Bioinformatics is 3-4pm using the same Zoom meeting. 
-
-### PostgreSQL
-
-Connect to sql `sudo psql -U postgres -d DataLab`
-
-List tables in the database `\dt`
-
-See a table's structure `\d registreeinfo`
-
-Fetch all data from a database table `select * from series;`
+### Random stuff
 
 
 The dates of the geospatial workshop (in Budibase) are all off by 1 day except for Cyverse Geospatial (2024-09-03) and Google Earth Engine (2024-09-10). This corresponds to the fact that only these two workshops have zoom attendance data in Budibase. For example, the workshop 'Deep Learning for Aerial Imagery: DeepForest' occurred on Sept. 17, yet Budibase lists it as Sept. 18. 
