@@ -305,6 +305,7 @@ The repo consists of 7 main folders:
 * **initialUploads** - Single run scripts used to reinitialize the database with data manually grabbed from Spring 2024
 * **postgreSQLScripts** - Used in initial uploads to create functions used in the system and create the tables used in the database. Also includes common queries used in Budibase visualizations
 * **productionScripts** - Scripts that are automatically run by Cron Jobs on Linux. These scripts are responsible for the main automation of the system including fetching qualities and zoom data and listening from new series to be entered through Budibase
+  * hello
 * **readMeImages** - The images used in this README
 * **unitTesting** - Initial testing and exploration code when first creating this system. Kept in the repo for future developers to use as a reference
 * **zoomApp** - Holds the files for a Flask app which allows a user to authorize the system to access their Zoom meeting information and then prompts the user to enter the Zoom meeting IDs they wish the system to access. The server is whats accessed from cerberus.cyverse.org
