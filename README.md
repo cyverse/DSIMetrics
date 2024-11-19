@@ -221,7 +221,7 @@ Definitions: Workshops are the actual events people will be attending, registeri
 <br/>
 <br/>
 
-### Qualtrics Walkthrough
+## Qualtrics Walkthrough
 Qualtrics is a survey tool offered through the UofA, that allows us to create simple yet modern forms. The forms used in the DSI Metrics System ask a few simple questions: are you UofA affiliated, first name, last name, email, organization (if not UofA affiliated, which workshops they would like to attend, and if they would like to be recontacted. The system is built around these specific questions so no changes can be made to the form structure or organization. The system uses the Qualtrics ID and a Qualtrics API Key to function.
 
 ❗EVERY QUALTRICS FORM THAT IS CREATED MUST BE CREATED AS A COPY OF THE [TEMPLATE](https://uarizona.co1.qualtrics.com/survey-builder/SV_eS9bgBRYRehalEy/edit).
@@ -263,7 +263,7 @@ Note: The responses will not be collected into the DSI Metrics System until the 
 5. Find the cell that says "qualtrics_api_token" and select the cell to the right of it under "elementvalue". Enter the API token from earlier and click anywhere outside the table to save the change.
 6. Ensure all active series Qualtrics forms are shared with the owner of the Qualtrics API key, otherwise the system will not be able to access those surveys.
 
-### Switching Zoom API Owner
+## Switching Zoom API Owner
 1. To switch the owner of the Zoom API and Zoom App involves multiple steps and approvals from outside the UofA Data Science Institute.
 2. Navigate to the [Zoom Account Settings Page](https://arizona.zoom.us/account) and at the bottom left of the navigation bar under "Admin" select "Account Management" and then "Account Profile".
 
@@ -302,10 +302,15 @@ Note: The responses will not be collected into the DSI Metrics System until the 
 
 21. With that everything should be updated for the Zoom App to be working. Verify by going to the [Zoom OAuth App](https://cerberus.cyverse.org) and going through the process of giving the app access to your account and then entering in a meetingID.
 
-## Repository Breakdown
+<br/>
+<br/>
+<br/>
+## Back End
+
+### Repository Breakdown
 
 The repo consists of 7 main folders:
-* **budibaseDocker** - Holds the docker image for Budibase along with all other supporting files for Budibase to function. The docker container is what people access when they access the DSI Metrics website.
+* **budibaseDocker** - Holds the `docker-compose.yml` which launches a series of docker images for the Budibase website along with all other supporting files for Budibase to function. The docker container is what people access when they access the DSI Metrics website. https://dsi_metrics.cyverse.org
 * **initialUploads** - Single run scripts used to reinitialize the database with data manually grabbed from Spring 2024
 * **postgreSQLScripts** - Used in initial uploads to create functions used in the system and create the tables used in the database. Also includes common queries used in Budibase visualizations
 * **productionScripts** - Scripts that are automatically run by crontab on Linux. These scripts are responsible for the main automation of the system including fetching qualities and zoom data and listening from new series to be entered through Budibase
@@ -323,7 +328,7 @@ The repo consists of 7 main folders:
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- System Restart -->
-## System Restart
+### System Restart
 If there are any issues accessing the Zoom App or the DSI Metrics page, perform the following steps to relaunch the software:
 1. SSH into cyverse vm
 2. The following command will stop all python processes
@@ -351,7 +356,7 @@ If there are any issues accessing the Zoom App or the DSI Metrics page, perform 
    ```
 7. Ensure you are on the UofA Wifi or VPN before attempting to access
 
-## Future Improvements
+### Future Improvements
 - [ ] UofA Net ID Integration
 - [ ] More robust logging
 - [ ] Only store the last 5 days of logging files
@@ -361,7 +366,7 @@ If there are any issues accessing the Zoom App or the DSI Metrics page, perform 
 - [ ] Improve overall system security
 
 
-## Random Stuff
+### Random Stuff
 
 DSI metric is hosted on a Cyverse VM. To access the VM, you need to be added by Andy Edmonds
 
