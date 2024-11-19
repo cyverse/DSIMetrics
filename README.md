@@ -76,7 +76,7 @@ The Data Science Institute (DSI) Metrics System is an end-to-end solution for st
   <img src="images/DSI Metrics DB Schema.png" alt="Logo">
 </a>
 
-## DSI Metrics How-To
+## DSI Metrics Front End (Budibase)
 ### First Time Access
 To access the data visualizations available to authorized users, click on the *DSI Metrics System* link in the quick links above. Before you are able to log in, the admin must add your email to the system, generate a random password for you, and give you access to the app as discussed later. When prompted fill out the login with the temporary password. The system will then prompt you to change your password. Ensure to remember your password as this is the one you will use every time you log into the system.
 ![image](https://github.com/cyverse/DSIMetrics/assets/146140831/3300a9af-67fa-47c0-991b-d05551d173d3)
@@ -216,6 +216,10 @@ Definitions: Workshops are the actual events people will be attending, registeri
 
 8. You can enter as many meeting IDs as you wish. Enter them one at a time and click 'Submit' after each.
 9. Once done, exit the page and the keys for each meeting ID will be saved into the database.
+
+<br/>
+<br/>
+<br/>
 
 ### Qualtrics Walkthrough
 Qualtrics is a survey tool offered through the UofA, that allows us to create simple yet modern forms. The forms used in the DSI Metrics System ask a few simple questions: are you UofA affiliated, first name, last name, email, organization (if not UofA affiliated, which workshops they would like to attend, and if they would like to be recontacted. The system is built around these specific questions so no changes can be made to the form structure or organization. The system uses the Qualtrics ID and a Qualtrics API Key to function.
