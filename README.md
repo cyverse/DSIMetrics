@@ -329,7 +329,7 @@ The repo consists of 7 main folders:
 <br/>
 <br/>
 
-## Website and Database Hosting
+### Website and Database Hosting
 
 DSI-metric website (budibase), postgresql database, and all scripts are hosted on a Cyverse VM. To access the VM, you need to be added by Andy Edmonds
 
