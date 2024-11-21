@@ -376,7 +376,7 @@ Current behavior for `zoomProcessingAttendance.py`: If a workshop is scheduled t
 
 
 #### Database Schema
-<a href="https://datascience.arizona.edu/">
+<a href="">
   <img src="images/DSI Metrics DB Schema.png" alt="Logo">
 </a>
 
