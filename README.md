@@ -388,7 +388,10 @@ The `qualtricsDataProcessing.py` reaches out to Qualtrics API and downloads work
 The `zoomProcessAttendance.py` script, reaches out to Zoom API and brings the attendee data into the database. 
 
 
+The `registreeworkshop` table contains each unique user (RegID) and each of the workshops they either registered for (through Qualtrics) and/or attended (through Zoom). If a user does not have an email, then they are not in this table, they are put in the `unknownpeople` table. 
 
+
+#### SQL Commands
 
 Connect to sql `sudo psql -U postgres -d DataLab`
 
