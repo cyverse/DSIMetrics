@@ -471,4 +471,8 @@ I remember back in August when I was first adding series and workshops. I added 
 possible confirmation of problem https://github.com/Budibase/budibase/issues/7531
 
 
+in the `initialZoomUpload.py` script, if a person has a single name, it will not parse them. 
+
+jeffrey gillan is not getting checked-in. Why? Because I start 15 minutes before start time?
+
 
