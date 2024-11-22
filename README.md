@@ -389,6 +389,8 @@ See a table's structure `\d registreeinfo`
 
 Fetch all data from a database table `select * from series;`
 
+Return records for an exact matching string `select * from registreeinfo where lastname = 'Chen';`
+
 <br/>
 <br/>
 
