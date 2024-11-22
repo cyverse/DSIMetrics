@@ -381,6 +381,12 @@ Current behavior for `zoomProcessingAttendance.py`: If a workshop is scheduled t
 </a>
 
 
+The `registreeinfo` database table is populated by the python script `qualtricsDataProcessing.py` that reaches out to Qualtrics API and downloads workshop registration data. 
+
+
+
+
+
 Connect to sql `sudo psql -U postgres -d DataLab`
 
 List tables in the database `\dt`
@@ -454,4 +460,6 @@ Only geospatial workshopsid 113 (2024-09-10) and 114(2024-09-10) made it into th
 I remember back in August when I was first adding series and workshops. I added workshop names and dates. But when I refreshed the page or looked at it the next day, the dates of workshops were off by one day. These wrong dates were captured in the database. Because I had the wrong dates for my workshops, the `zoomProcessAttendance.py` wasn't able to match the Zoom data with an existing workshop. 
 
 possible confirmation of problem https://github.com/Budibase/budibase/issues/7531
+
+
 
