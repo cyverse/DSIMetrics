@@ -475,4 +475,5 @@ in the `initialZoomUpload.py` script, if a person has a single name, it will not
 
 jeffrey gillan is not getting checked-in. Why? Because I start 15 minutes before start time?
 
+It appears that a person with an email will only get added to the database 1 time. If the person with an email has been added to `registreeinfo`, then they won't counted as coming to any other workshops. 
 
