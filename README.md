@@ -252,7 +252,7 @@ Note: The responses will not be collected into the DSI Metrics System until the 
 ![image](https://github.com/cyverse/DSIMetrics/assets/146140831/0f4f9718-9974-49b1-9bfe-03a56512ae2f)
 
 #### Switching Owner Of Qualtrics API Key
-1. If the owner of the Qualtrics API Key needs to be switched the "qualtrics_api_token" variable must be changed in program variables. Note: This variable can only be changed by users with 'Power' privileges and above. At the time of writing only austinmedina@arizon.edu and sarah.cyvserse@gmail.com have those permissions.
+1. If the owner of the Qualtrics API Key needs to be switched the "qualtrics_api_token" variable must be changed in program variables. Note: This variable can only be changed by users with 'Power' privileges and above. At the time of writing only austinmedina@arizona.edu, sarah.cyvserse@gmail.com, and jgillan@arizona.edu have those permissions. The **Qualtrics API Token is currently through the account of Jeffrey Gillan (jgillan@arizona.edu)**
 2. Navigate to [Qualtrics User Settings](https://uarizona.co1.qualtrics.com/admin/account-settings-portal/user-settings).
 
 3. Under API click 'Generate Token', generating a new API token and immediately invalidating the old one. For more information on the API key, check the [Qualtrics documentation](https://api.qualtrics.com/2b4ffbd8af74e-api-key-authentication).
