@@ -383,6 +383,7 @@ Current behavior for `zoomProcessingAttendance.py`: If a workshop is scheduled t
 
 The `registreeinfo` database table is populated by the python script `qualtricsDataProcessing.py` that reaches out to Qualtrics API and downloads workshop registration data. 
 
+From the `zoomProcessAttendance.py` script, participants on Zoom are put into the `registreeinfo` table if they have an email. They are assigned a RegID base on the email. If they don't have an email, they are put into the `unknownpeople` table. 
 
 
 
