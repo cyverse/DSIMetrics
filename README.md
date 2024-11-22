@@ -397,7 +397,7 @@ Fetch all data from a database table `select * from series;`
 
 Return records for an exact matching string `select * from registreeinfo where lastname = 'Chen';`
 
-Select data from a table and show in numerial descending order `select # from registreeworkshops order by workshopid desc;`
+Select data from a table and show in numerial descending order `select * from registreeworkshops order by workshopid desc;`
 
 
 <br/>
