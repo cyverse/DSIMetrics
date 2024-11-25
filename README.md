@@ -392,8 +392,12 @@ The `zoomProcessAttendance.py` script, reaches out to Zoom API and brings the at
 
 The `registreeworkshop` table contains each unique user (RegID) and each of the workshops they either registered for (through Qualtrics) and/or attended (through Zoom). If a user does not have an email, then they are not in this table, they are put in the `unknownpeople` table. 
 
+The `workshops` table contains the name, date, workshopID and seriesID of each workshop session 
 
-#### SQL Commands
+The `series` table contains the name of the workshops series and other info like startime, endtime, startdate, enddate, etc.
+
+
+#### Useful SQL Commands
 
 Connect to sql `sudo psql -U postgres -d DataLab`
 
@@ -459,23 +463,5 @@ If there are any issues accessing the Zoom App or the DSI Metrics page, perform 
 
 
 
-### Trouble Shooting
 
-
-The dates of the geospatial workshop (in Budibase) are all off by 1 day except for Cyverse Geospatial (2024-09-03) and Google Earth Engine (2024-09-10). This corresponds to the fact that only these two workshops have zoom attendance data in Budibase. For example, the workshop 'Deep Learning for Aerial Imagery: DeepForest' occurred on Sept. 17, yet Budibase lists it as Sept. 18. 
-
-However, the 'zoomlogging' file shows that the API was contacted and data from the deep learning workshop was pulled on Sept. 17. Zoom data was pulled for Sept. 24, Oct. 1. The Zoom data for Oct 8 had only 1 person, which cannot be correct. Pulled Zoom data for Oct. 15. No data for Oct 22, which can't be correct. Pulled data for Oct. 29. 
-
-Only geospatial workshopsid 113 (2024-09-10) and 114(2024-09-10) made it into the database in terms of adding attendee names.
-
-I remember back in August when I was first adding series and workshops. I added workshop names and dates. But when I refreshed the page or looked at it the next day, the dates of workshops were off by one day. These wrong dates were captured in the database. Because I had the wrong dates for my workshops, the `zoomProcessAttendance.py` wasn't able to match the Zoom data with an existing workshop. 
-
-possible confirmation of problem https://github.com/Budibase/budibase/issues/7531
-
-
-in the `initialZoomUpload.py` script, if a person has a single name, it will not parse them. 
-
-jeffrey gillan is not getting checked-in. Why? Because I start 15 minutes before start time?
-
-It appears that a person with an email will only get added to the database 1 time. If the person with an email has been added to `registreeinfo`, then they won't counted as coming to any other workshops. 
 
