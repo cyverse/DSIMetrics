@@ -8,6 +8,8 @@
   <h1 align="center">Data Science Institute Metrics System</h1>
 </div>
 
+Documentation Created by Austin Medina, May 2024. Updated by Jeff Gillan, Nov. 2024
+
 <details>
   <summary>Table of Contents</summary>
   <ol>
@@ -50,12 +52,13 @@
       </ul>
     <li><a href="#repository-breakdown">Repository Breakdown</a></li>
     <li><a href="#system-restart">System Restart</a></li>
+    <li><a href="#future-improvements">Future Improvements</a></li>
   </ol>
 </details>
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-The Data Science Institute (DSI) Metrics System is an end-to-end solution for streamlining data collection and workshop management. It automatically fetches registration data from Qualtrics and attendance information from Zoom, cleans and processes the data, and uploads it to a Postgres database. The system offers front-end CRUD and visualization tools hosted using Budibase, allowing authorized users to interact directly with the database. The system is hosted on a virtual machine on the [Cyverse](https://cyverse.org/) network. Access to the system is restricted to authorized users due to University and FERPA regulations.
+The Data Science Institute (DSI) Metrics System is an end-to-end solution for streamlining data collection and workshop management. It automatically fetches registration data from Qualtrics and attendance information from Zoom, cleans and processes the data, and uploads it to a Postgres database. The system offers front-end CRUD (create, read, update, delete) and visualization tools hosted using Budibase, allowing authorized users to interact directly with the database. The system is hosted on a virtual machine on the [Cyverse](https://cyverse.org/) network. Access to the system is restricted to authorized users due to University and FERPA regulations.
 ### Quick Links
 * [DSI Metrics System](https://dsi-metrics.cyverse.org)
 * [Zoom API authorization](https://cerberus.cyverse.org)
@@ -68,12 +71,9 @@ The Data Science Institute (DSI) Metrics System is an end-to-end solution for st
   <img src="images/DSI Metrics Software Architecture.png" alt="Logo">
 </a>
 
-### Database Schema
-<a href="https://datascience.arizona.edu/">
-  <img src="images/DSI Metrics DB Schema.png" alt="Logo">
-</a>
 
-## DSI Metrics How-To
+
+## DSI Metrics Front End (Budibase)
 ### First Time Access
 To access the data visualizations available to authorized users, click on the *DSI Metrics System* link in the quick links above. Before you are able to log in, the admin must add your email to the system, generate a random password for you, and give you access to the app as discussed later. When prompted fill out the login with the temporary password. The system will then prompt you to change your password. Ensure to remember your password as this is the one you will use every time you log into the system.
 ![image](https://github.com/cyverse/DSIMetrics/assets/146140831/3300a9af-67fa-47c0-991b-d05551d173d3)
@@ -214,7 +214,11 @@ Definitions: Workshops are the actual events people will be attending, registeri
 8. You can enter as many meeting IDs as you wish. Enter them one at a time and click 'Submit' after each.
 9. Once done, exit the page and the keys for each meeting ID will be saved into the database.
 
-### Qualtrics Walkthrough
+<br/>
+<br/>
+<br/>
+
+## Qualtrics Walkthrough
 Qualtrics is a survey tool offered through the UofA, that allows us to create simple yet modern forms. The forms used in the DSI Metrics System ask a few simple questions: are you UofA affiliated, first name, last name, email, organization (if not UofA affiliated, which workshops they would like to attend, and if they would like to be recontacted. The system is built around these specific questions so no changes can be made to the form structure or organization. The system uses the Qualtrics ID and a Qualtrics API Key to function.
 
 ❗EVERY QUALTRICS FORM THAT IS CREATED MUST BE CREATED AS A COPY OF THE [TEMPLATE](https://uarizona.co1.qualtrics.com/survey-builder/SV_eS9bgBRYRehalEy/edit).
@@ -248,7 +252,7 @@ Note: The responses will not be collected into the DSI Metrics System until the 
 ![image](https://github.com/cyverse/DSIMetrics/assets/146140831/0f4f9718-9974-49b1-9bfe-03a56512ae2f)
 
 #### Switching Owner Of Qualtrics API Key
-1. If the owner of the Qualtrics API Key needs to be switched the "qualtrics_api_token" variable must be changed in program variables. Note: This variable can only be changed by users with 'Power' privileges and above. At the time of writing only austinmedina@arizon.edu and sarah.cyvserse@gmail.com have those permissions.
+1. If the owner of the Qualtrics API Key needs to be switched the "qualtrics_api_token" variable must be changed in program variables. Note: This variable can only be changed by users with 'Power' privileges and above. At the time of writing only austinmedina@arizona.edu, sarah.cyvserse@gmail.com, and jgillan@arizona.edu have those permissions. The **Qualtrics API Token is currently through the account of Jeffrey Gillan (jgillan@arizona.edu)**
 2. Navigate to [Qualtrics User Settings](https://uarizona.co1.qualtrics.com/admin/account-settings-portal/user-settings).
 
 3. Under API click 'Generate Token', generating a new API token and immediately invalidating the old one. For more information on the API key, check the [Qualtrics documentation](https://api.qualtrics.com/2b4ffbd8af74e-api-key-authentication).
@@ -256,7 +260,7 @@ Note: The responses will not be collected into the DSI Metrics System until the 
 5. Find the cell that says "qualtrics_api_token" and select the cell to the right of it under "elementvalue". Enter the API token from earlier and click anywhere outside the table to save the change.
 6. Ensure all active series Qualtrics forms are shared with the owner of the Qualtrics API key, otherwise the system will not be able to access those surveys.
 
-### Switching Zoom API Owner
+## Switching Zoom API Owner
 1. To switch the owner of the Zoom API and Zoom App involves multiple steps and approvals from outside the UofA Data Science Institute.
 2. Navigate to the [Zoom Account Settings Page](https://arizona.zoom.us/account) and at the bottom left of the navigation bar under "Admin" select "Account Management" and then "Account Profile".
 
@@ -293,23 +297,127 @@ Note: The responses will not be collected into the DSI Metrics System until the 
 20. On the virtual machine hosting the DSI Metrics System navigate to zoomApp/templates/credentials.html. On this page at the bottom on line 37 replace the URL with the URL you just copied:
 ![image](https://github.com/cyverse/DSIMetrics/assets/146140831/79598d9a-0165-4e48-af8a-dda53aa86e72)
 
-21. With that everything should be updated for the Zoom App to be working. Verify by going to the [Zoom OAuth App](https://cerberus.cyvserse.org) and going through the process of giving the app access to your account and then entering in a meetingID.
+21. With that everything should be updated for the Zoom App to be working. Verify by going to the [Zoom OAuth App](https://cerberus.cyverse.org) and going through the process of giving the app access to your account and then entering in a meetingID.
 
-## Repository Breakdown
+<br/>
+<br/>
+<br/>
+
+## Back End
+
+### Repository Breakdown
 
 The repo consists of 7 main folders:
-* **budibaseDocker** - Holds the docker image for Budibase along with all other supporting files for Budibase to function
-* **initialUploads** - Single run scripts used to reinitialize the database with data manually grabbed from Spring 2024
+* **budibaseDocker** - Holds the `docker-compose.yml` which launches a series of docker images for the Budibase website along with all other supporting files for Budibase to function. The docker container is what people access when they access the DSI Metrics website. https://dsi_metrics.cyverse.org
+* **initialUploads** - Single run scripts used to reinitialize the database with data manually grabbed from Spring 2024. Also contains Zoom attendance data that was manually downloaded. 
+  * **initialZoomUpload_sp24.py** - script that will crawl over CSV files from Spring 2024 and add the data to the postgresql database.
+  * **initialZoomUpload_f24.py** -script that will crawl over CSV files from Fall 2024 and add the data to the postgresql database. There are slight differences in colum titles which makes it necessary to have a different scripts from Fall and Spring 2024. 
 * **postgreSQLScripts** - Used in initial uploads to create functions used in the system and create the tables used in the database. Also includes common queries used in Budibase visualizations
-* **productionScripts** - Scripts that are automatically run by Cron Jobs on Linux. These scripts are responsible for the main automation of the system including fetching qualities and zoom data and listening from new series to be entered through Budibase
+* **productionScripts** - Scripts that are automatically run by crontab on Linux. These scripts are responsible for the main automation of the system including fetching qualities and zoom data and listening from new series to be entered through Budibase
+  * **zoomProcessAttendance.py** - this script is set to run automatically every hour on the 30 minute. It reaches out to the Zoom API and looks for the most recent Zoom meeting and pulls that data into the Postgresql database
+  * **seriesListener.py** - This script is run automatically by crontab every night at 2am. It is run from the `nightlySystemRestart.sh` shell script. ?????
+  * **seriesProcessing.py** - This script will scrape html text from a user defined URL that has information on DSI workshop series. (e.g., https://datascience.arizona.edu/events/navigating-world-data-engineering). It will add the information to the postgresql database. This script is called from the `seriesListener.py` script that is run nightly. 
+  * **qualtricsDataProcessing.py** - The script runs automatically by crontab every hour on minute ten. It reaches out to Qualtrics API and pulls down workshop registration data and adds it to the postgresql database. 
 * **readMeImages** - The images used in this README
 * **unitTesting** - Initial testing and exploration code when first creating this system. Kept in the repo for future developers to use as a reference
-* **zoomApp** - Holds the files for a Flask app which allows a user to authorize the system to access their Zoom meeting information and then prompts the user to enter the Zoom meeting IDs they wish the system to access
+* **zoomApp** - Holds the files for a Flask app which allows a user to authorize the system to access their Zoom meeting information and then prompts the user to enter the Zoom meeting IDs they wish the system to access. The server is whats accessed from cerberus.cyverse.org
+* **linuxSystemFiles** - Contains the files run on the Linux system such as the CronJobs, HAProxy file, and a nightly restart script.
+  * **nightlySystemRestart.sh** - this shell script is run every night at 2am from the crontab. It reboots the budibase docker container, runs the `seriesListener.py` script and the `zoomOAuth.py` script.
+  * **crotab.txt**
+  * **HAProxy_config.txt**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+<br/>
+<br/>
+
+### Website and Database Hosting
+
+DSI-metric website (budibase), postgresql database, and all scripts are hosted on a Cyverse VM. To access the VM, you need to be added by Andy Edmonds
+
+`ssh -p 1657 <cyverse_user_name>@cerberus.cyverse.org`
+
+You will be prompted for your Cyverse password.
+
+The DSI-metric files are located in `/home/austinmedina`
+
+<br/>
+<br/>
+
+### Crontab
+
+To view a list of cronjobs type the command `sudo crontab -l`
+
+You can edit the crontab with `sudo crontab -e`
+
+The current crojobs are:
+
+ m h  dom mon dow   command
+ 
+30 * * * * /home/austinmedina/DataLabMetrtics/productionScripts/zoomProcessAttendance.py
+
+10 * * * * /home/austinmedina/DataLabMetrtics/productionScripts/qualtricsDataProcessing.py
+
+0 2 * * * /home/austinmedina/DataLabMetrtics/linuxSystemFiles/nightlySystemRestart.sh
+
+`zoomProcessAttendance.py` will run on the 30 of every hour (e.g., 1:30, 2:30, etc)
+
+`qualtricsDataProcessing.py` will run on the 10 of every hour
+
+`nightlySystemRestart.sh`  will run daily at 2:00 AM.
+
+Cronjob script results are logged at /home/austinmedina/DataLabMetrics/logging
+
+Current behavior for `zoomProcessingAttendance.py`: If a workshop is scheduled to occur on a certain date, then the script will execute every hour starting at 12:30 am. The script hits the Zoom API and returns the names of attendees in the Zoom session. This data goes into a Postgresql database. It appears the script is looking for the most recent Zoom meeting to pull data from. 
+
+
+<br/>
+<br/>
+
+### PostgreSQL
+
+
+#### Database Schema
+<a href="">
+  <img src="images/DSI Metrics DB Schema.png" alt="Logo">
+</a>
+
+
+The `registreeinfo` database table contains the names of people that registered (through Qualtrics) and/or attended a workshop (through Zoom). For a person to be put in this table, they have to had provided an email through the Qualtrics registration or Zoom attendance. People are assigned a RegID based on their email. If they don't have an email, they are put into the `unknownpeople` table. The python scripts `qualtricsDataProcessing.py` and `zoomProcessAttendance.py` populate the `registreeinfo` table (and the `unknownpeople` table if no email). 
+
+The `qualtricsDataProcessing.py` reaches out to Qualtrics API and downloads workshop registration data. 
+
+The `zoomProcessAttendance.py` script, reaches out to Zoom API and brings the attendee data into the database. 
+
+
+The `registreeworkshop` table contains each unique user (RegID) and each of the workshops they either registered for (through Qualtrics) and/or attended (through Zoom). If a user does not have an email, then they are not in this table, they are put in the `unknownpeople` table. 
+
+The `workshops` table contains the name, date, workshopID and seriesID of each workshop session 
+
+The `series` table contains the name of the workshops series and other info like startime, endtime, startdate, enddate, etc.
+
+
+#### Useful SQL Commands
+
+Connect to sql `sudo psql -U postgres -d DataLab`
+
+List tables in the database `\dt`
+
+See a table's structure `\d registreeinfo`
+
+Fetch all data from a database table `select * from series;`
+
+Return records for an exact matching string `select * from registreeinfo where lastname = 'Chen';`
+
+Select data from a table and show in numerial descending order `select * from registreeworkshops order by workshopid desc;`
+
+
+<br/>
+<br/>
+
+
 <!-- System Restart -->
-## System Restart
+### System Restart
 If there are any issues accessing the Zoom App or the DSI Metrics page, perform the following steps to relaunch the software:
 1. SSH into cyverse vm
 2. The following command will stop all python processes
@@ -321,7 +429,7 @@ If there are any issues accessing the Zoom App or the DSI Metrics page, perform 
    cd budibaseDocker
    docker compose down
    ```
-4. Restart the budibase docker image
+4. Restart the Budibase docker image
    ```bash
    docker compose up
    ```
@@ -336,3 +444,24 @@ If there are any issues accessing the Zoom App or the DSI Metrics page, perform 
    /home/austinmedina/DataLabMetrtics/linuxSystemFiles/nightlySystemRestart.sh
    ```
 7. Ensure you are on the UofA Wifi or VPN before attempting to access
+
+<br/>
+<br/>
+
+### Future Improvements
+- [ ] UofA Net ID Integration
+- [ ] More robust logging
+- [ ] Only store the last 5 days of logging files
+- [ ] More robust error handling
+- [ ] Rewrite Qualtrics and Zoom API Code for efficiency
+- [ ] More graphs and metrics in Budibase
+- [ ] Improve overall system security
+
+
+
+
+
+
+
+
+
