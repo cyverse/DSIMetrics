@@ -2,6 +2,7 @@ import pandas as pd
 from datetime import datetime, date, timedelta
 import os
 import numpy as np
+import psycopg2
 
 def uploadCheckIn(row, workshopID, conn, cur):
     #Fetch the supposed ID from the has function
@@ -14,14 +15,31 @@ def uploadCheckIn(row, workshopID, conn, cur):
     match = cur.fetchall()
     conn.commit()
 
-    #If the list isnt empty then a match was found so we will update their entry
-    if (len(match) != 0):
+    if len(match) != 0:
+        # Check if the participant is already associated with the current workshop
         cur.execute("""
-                    UPDATE RegistreeWorkshops
-                    SET CheckedIn = TRUE
-                    WHERE RegID = %s AND WorkshopId = %s
-                    """, (hashedNum, workshopID))
-        conn.commit()
+            SELECT * FROM RegistreeWorkshops
+            WHERE RegID = %s AND WorkshopId = %s
+        """, (hashedNum, workshopID))
+        workshop_match = cur.fetchall()
+
+        if len(workshop_match) == 0:
+            # Insert a new record for the workshop if not already present
+            cur.execute("""
+                INSERT INTO RegistreeWorkshops (RegID, WorkshopID, Registered, CheckedIn)
+                VALUES (%s, %s, %s, %s)
+                ON CONFLICT DO NOTHING
+            """, (hashedNum, workshopID, False, True))
+            conn.commit()
+        else:
+            # Update the check-in status for the existing workshop entry
+            cur.execute("""
+                UPDATE RegistreeWorkshops
+                SET CheckedIn = TRUE
+                WHERE RegID = %s AND WorkshopId = %s
+            """, (hashedNum, workshopID))
+            conn.commit()
+
     #If the list is empty, there is no registrant matching the workshop so we will need to create an entry for them
     else:
         print("New registree created: " + str(hashedNum))
@@ -68,23 +86,23 @@ def uploadWithoutEmail(FirstName, LastName, workshopID, conn, cur):
     
 
 def zoomProcess(conn, cur):
-    for filename in os.listdir("./initialUploads/zoomCSVs"):
+    for filename in os.listdir("./zoomCSVs_f24"):
         if filename.endswith(".csv"):
             # Construct the full path to the CSV file
-            filepath = os.path.join("./initialUploads/zoomCSVs", filename)
+            filepath = os.path.join("./zoomCSVs_f24", filename)
             
             # Read the CSV file into a pandas DataFrame, skipping the first 3 rows
-            participants = pd.read_csv(filepath, usecols=['Name (Original Name)', 'User Email', 'Join Time', 'Leave Time'],
-                           parse_dates=['Join Time', 'Leave Time'], 
+            participants = pd.read_csv(filepath, usecols=['Name (original name)', 'Email', 'Join time', 'Leave time'],
+                           parse_dates=['Join time', 'Leave time'], 
                            date_format='%m/%d/%Y %I:%M:%S %p')
 
 
-            name_split = participants['Name (Original Name)'].str.split(expand=True)
+            name_split = participants['Name (original name)'].str.split(expand=True)
             participants['FirstName'] = name_split[0]
             participants['LastName'] = name_split.iloc[:, 1:].apply(lambda x: ' '.join(x.dropna()) if any(x.notna()) else None, axis=1)
-            participants['User Email'] = participants['User Email'].replace({np.nan: None})
+            participants['Email'] = participants['Email'].replace({np.nan: None})
 
-            participants = participants[['FirstName', 'LastName', 'User Email', 'Join Time', 'Leave Time']]
+            participants = participants[['FirstName', 'LastName', 'Email', 'Join time', 'Leave time']]
             participants.columns = ['FirstName', 'LastName', 'Email', 'JoinTime', 'LeaveTime']
 
             cur.execute("""
@@ -113,3 +131,21 @@ def zoomProcess(conn, cur):
                             uploadCheckIn(person, workshop[0], conn, cur)
                         elif person['FirstName'] and person['LastName']:
                             uploadWithoutEmail(person['FirstName'], person['LastName'], workshop[0], conn, cur)
+
+if __name__ == '__main__':
+    """
+    The main function for the script. Configures logging and opens the connection to the database.
+    """
+    conn = psycopg2.connect(database = "DataLab", 
+                            user = "postgres", 
+                            host= 'localhost',
+                            password = "",
+                            port = 5432)
+
+    cur = conn.cursor()
+
+    
+    zoomProcess(conn, cur)    
+
+    cur.close()
+    conn.close()

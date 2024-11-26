@@ -4,6 +4,7 @@ import time
 import zipfile
 import io
 import logging
+import psycopg2
 
 def getResponse(surveyId, conn, cur):
     cur.execute("""SELECT ElementValue FROM programvariables WHERE ElementName = 'qualtrics_api_token'""")
@@ -142,22 +143,58 @@ def processSpecialFile(file):
     return UA_Filtered, nonUA_Filtered
 
 def createRegistreeWorkshop(row, regID, conn, cur):
-    cur.execute("""
-                SELECT workshopID FROM workshops 
-                LEFT JOIN series on series.seriesID = workshops.seriesID
-                WHERE LOWER(series.seriesName) =  LOWER(%s)
-                """, (row.iloc[7],))
-    conn.commit()
-    workshops = cur.fetchall()
-    for ID in workshops:
-        workshopID = ID[0]
-        logging.info("Creating registree workshop for reg:" + row.iloc[3] + " workshopID:" + str(workshopID))
+    try:
+        series_name = row.iloc[7]
+        if not series_name:
+            logging.warning("Series name is missing. Skipping.")
+            return
+
+        logging.debug(f"Querying workshops for series name: {series_name}")
         cur.execute("""
-                        INSERT INTO registreeworkshops (RegID, WorkshopID, Registered)
-                        VALUES (%s, %s, %s)
-                        ON CONFLICT DO NOTHING;
-                    """, (regID, workshopID, True))
+                    SELECT workshopID FROM workshops 
+                    LEFT JOIN series on series.seriesID = workshops.seriesID
+                    WHERE LOWER(series.seriesName) = LOWER(%s)
+                    """, (series_name,))
         conn.commit()
+        workshops = cur.fetchall()
+
+        if not workshops:
+            logging.warning(f"No workshops found for series name: {series_name}.")
+            return
+
+        for ID in workshops:
+            workshopID = ID[0]
+            logging.info(f"Creating registree workshop for RegID: {regID}, WorkshopID: {workshopID}")
+            cur.execute("""
+                INSERT INTO registreeworkshops (RegID, WorkshopID, Registered)
+                VALUES (%s, %s, %s)
+                ON CONFLICT DO NOTHING;
+            """, (regID, workshopID, True))
+            conn.commit()
+    except Exception as e:
+        logging.error(f"Error in createRegistreeWorkshop: {e}")
+
+
+
+
+
+
+#    cur.execute("""
+#                SELECT workshopID FROM workshops 
+#                LEFT JOIN series on series.seriesID = workshops.seriesID
+#                WHERE LOWER(series.seriesName) =  LOWER(%s)
+#                """, (row.iloc[7],))
+#    conn.commit()
+#    workshops = cur.fetchall()
+#    for ID in workshops:
+#        workshopID = ID[0]
+#        logging.info("Creating registree workshop for reg:" + row.iloc[3] + " workshopID:" + str(workshopID))
+#        cur.execute("""
+#                        INSERT INTO registreeworkshops (RegID, WorkshopID, Registered)
+#                        VALUES (%s, %s, %s)
+#                        ON CONFLICT DO NOTHING;
+#                    """, (regID, workshopID, True))
+#        conn.commit()
 
 def uploadRegistrees(UA, conn, cur):
     for _, row in UA.iterrows():
@@ -178,7 +215,7 @@ def uploadRegistrees(UA, conn, cur):
 def initializeQualtrics(conn, cur):
     logging.basicConfig(filename='/home/austinmedina/DataLabMetrtics/logging/qualtricsInitialLogging.log', level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
     logging.info("Starting, initial qualtrics upload.")
-    seriesSurveyIDs = ["SV_5BjjU8Exp3GS2sS", "SV_9mLQalGxqyBb7mK", "SV_0fbG5COlxNj5phI", "SV_9TDHtSJnP6d32gS", "SV_exLckAyzfnUTKHc", "SV_9Rfr1WtU3kfMXjw"]
+    seriesSurveyIDs = ["SV_6EwvE8pKzvNI9Mi", "SV_26tcUbyPIqrQ982", "SV_eeA1YNgD44UGV1k", "SV_7Oms1uPaxrehqIu", "SV_9Faz2faJB5vdPNk", "SV_beFsCMaFw69uiYS"]
 
     UA = pd.DataFrame()
     nonUA = pd.DataFrame()
@@ -198,16 +235,16 @@ def initializeQualtrics(conn, cur):
         logging.info(f"Survey {id} Complete!")
         logging.info("------------------------------------------------\n")
 
-    id = "SV_9oGXsP5SKL9jNRA"
-    logging.info(f"Starting export for surveyId: {id}")
-    logging.info("------------------------------------------------")
-    file = getResponse(id, conn, cur)
-    logging.info(f"Starting processing for surveyId: {id}")
-    tempUA, tempNonUA = processSpecialFile(file)
-    UA = pd.concat([UA, tempUA])
-    nonUA = pd.concat([nonUA, tempNonUA])
-    logging.info(f"Survey {id} Complete!")
-    logging.info("------------------------------------------------\n")
+   # id = "SV_9oGXsP5SKL9jNRA"
+   # logging.info(f"Starting export for surveyId: {id}")
+   # logging.info("------------------------------------------------")
+   # file = getResponse(id, conn, cur)
+   # logging.info(f"Starting processing for surveyId: {id}")
+   # tempUA, tempNonUA = processSpecialFile(file)
+   # UA = pd.concat([UA, tempUA])
+   # nonUA = pd.concat([nonUA, tempNonUA])
+   # logging.info(f"Survey {id} Complete!")
+   # logging.info("------------------------------------------------\n")
 
     UA['NetID'] = None
     UA['College'] = None
@@ -226,3 +263,17 @@ def initializeQualtrics(conn, cur):
     logging.info("Uploading nonUA registrees")
     uploadRegistrees(nonUA, conn, cur)
 
+if __name__ == '__main__':
+    """
+    The main function for this script configures logging and opens the connection the database.
+    """
+    conn = psycopg2.connect(database = "DataLab", 
+                            user = "postgres", 
+                            host= 'localhost',
+                            password = "",
+                            port = 5432)
+
+    cur = conn.cursor()
+
+
+    initializeQualtrics(conn, cur)
