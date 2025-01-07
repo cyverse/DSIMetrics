@@ -15,16 +15,16 @@ def uploadCheckIn(row, workshopID, conn, cur):
     match = cur.fetchall()
     conn.commit()
 
-    #If database match is found, returns all the workshops the person is registered in
-    if len(match) != 0: 
+    if len(match) != 0:
+        # Check if the participant is already associated with the current workshop
         cur.execute("""
             SELECT * FROM RegistreeWorkshops
             WHERE RegID = %s AND WorkshopId = %s
         """, (hashedNum, workshopID))
         workshop_match = cur.fetchall()
 
-        #If there is not database match, create a new record in registreeworkshops
         if len(workshop_match) == 0:
+            # Insert a new record for the workshop if not already present
             cur.execute("""
                 INSERT INTO RegistreeWorkshops (RegID, WorkshopID, Registered, CheckedIn)
                 VALUES (%s, %s, %s, %s)
@@ -86,15 +86,15 @@ def uploadWithoutEmail(FirstName, LastName, workshopID, conn, cur):
     
 
 def zoomProcess(conn, cur):
-    for filename in os.listdir("./zoomCSVs_f24"):
+    for filename in os.listdir("./zoomCSVs_f24_"):
         if filename.endswith(".csv"):
             # Construct the full path to the CSV file
-            filepath = os.path.join("./zoomCSVs_f24", filename)
+            filepath = os.path.join("./zoomCSVs_f24_", filename)
             
             # Read the CSV file into a pandas DataFrame
             participants = pd.read_csv(filepath, usecols=['Name (original name)', 'Email', 'Join time', 'Leave time'],
                            parse_dates=['Join time', 'Leave time'], 
-                           date_format='%m/%d/%Y %I:%M:%S %p')
+                           date_format='%m/%d/%Y %H:%M')
 
 
             name_split = participants['Name (original name)'].str.split(expand=True)
@@ -104,7 +104,7 @@ def zoomProcess(conn, cur):
 
             participants = participants[['FirstName', 'LastName', 'Email', 'Join time', 'Leave time']]
             participants.columns = ['FirstName', 'LastName', 'Email', 'JoinTime', 'LeaveTime']
-            # Based on the date of the zoom data csv, query database to return list of workshop IDs that match series start & end time (from series table)
+
             cur.execute("""
                         SELECT workshops.WorkshopID, series.StartTime, series.EndTime FROM workshops
                         JOIN series on workshops.SeriesID = series.SeriesID

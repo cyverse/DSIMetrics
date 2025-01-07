@@ -144,7 +144,7 @@ def processSpecialFile(file):
 
 def createRegistreeWorkshop(row, regID, conn, cur):
     try:
-        series_name = row.iloc[7]
+        series_name = row.iloc[9]
         if not series_name:
             logging.warning("Series name is missing. Skipping.")
             return
@@ -153,7 +153,7 @@ def createRegistreeWorkshop(row, regID, conn, cur):
         cur.execute("""
                     SELECT workshopID FROM workshops 
                     LEFT JOIN series on series.seriesID = workshops.seriesID
-                    WHERE LOWER(series.seriesName) = LOWER(%s)
+                    WHERE LOWER(series.qualtricsID) = LOWER(%s)
                     """, (series_name,))
         conn.commit()
         workshops = cur.fetchall()
@@ -168,7 +168,8 @@ def createRegistreeWorkshop(row, regID, conn, cur):
             cur.execute("""
                 INSERT INTO registreeworkshops (RegID, WorkshopID, Registered)
                 VALUES (%s, %s, %s)
-                ON CONFLICT DO NOTHING;
+                ON CONFLICT (RegID, WorkshopID)
+                DO UPDATE SET Registered = EXCLUDED.Registered;
             """, (regID, workshopID, True))
             conn.commit()
     except Exception as e:
@@ -215,25 +216,47 @@ def uploadRegistrees(UA, conn, cur):
 def initializeQualtrics(conn, cur):
     logging.basicConfig(filename='/home/austinmedina/DataLabMetrtics/logging/qualtricsInitialLogging.log', level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
     logging.info("Starting, initial qualtrics upload.")
-    seriesSurveyIDs = ["SV_6EwvE8pKzvNI9Mi", "SV_26tcUbyPIqrQ982", "SV_eeA1YNgD44UGV1k", "SV_7Oms1uPaxrehqIu", "SV_9Faz2faJB5vdPNk", "SV_beFsCMaFw69uiYS"]
+    seriesSurveyIDs = ["SV_6EwvE8pKzvNI9Mi", "SV_26tcUbyPIqrQ982", "SV_eeA1YNgD44UGV1k", "SV_7Oms1uPaxrehqIu", "SV_9Faz2faJB5vdPNk", "SV_beFsCMaFw69uiYS", "SV_2nnouRRMRJmLYkm", "SV_2nUxddGjDjc2NxA"]
 
     UA = pd.DataFrame()
     nonUA = pd.DataFrame()
+
+
 
     for id in seriesSurveyIDs:
         logging.info(f"Starting export for surveyId: {id}")
         logging.info("------------------------------------------------")
         file = getResponse(id, conn, cur)
-        logging.info("------------------------------------------------\n")
 
-        logging.info(f"Starting processing for surveyId: {id}")
-        logging.info("------------------------------------------------")
-        tempUA, tempNonUA = processOldFile(file)
-        UA = pd.concat([UA, tempUA])
-        nonUA = pd.concat([nonUA, tempNonUA])
+        if file is not None:
+            tempUA, tempNonUA = processOldFile(file)
+
+            if tempUA is not None:
+                tempUA['SeriesSurveyID'] = id  # Add SeriesSurveyID column to UA DataFrame
+                UA = pd.concat([UA, tempUA], ignore_index=True)
+
+            if tempNonUA is not None:
+                tempNonUA['SeriesSurveyID'] = id  # Add SeriesSurveyID column to nonUA DataFrame
+                nonUA = pd.concat([nonUA, tempNonUA], ignore_index=True)
 
         logging.info(f"Survey {id} Complete!")
-        logging.info("------------------------------------------------\n")
+
+
+
+
+
+
+
+ #       logging.info("------------------------------------------------\n")
+
+  #      logging.info(f"Starting processing for surveyId: {id}")
+   #     logging.info("------------------------------------------------")
+    #    tempUA, tempNonUA = processOldFile(file)
+     #   UA = pd.concat([UA, tempUA])
+      #  nonUA = pd.concat([nonUA, tempNonUA])
+
+       # logging.info(f"Survey {id} Complete!")
+       # logging.info("------------------------------------------------\n")
 
    # id = "SV_9oGXsP5SKL9jNRA"
    # logging.info(f"Starting export for surveyId: {id}")
@@ -250,12 +273,15 @@ def initializeQualtrics(conn, cur):
     UA['College'] = None
     UA['Department'] = None
     UA['Major'] = None
-    UA = UA[['FirstName', 'LastName', 'NetID', 'Email', 'College', 'Department', 'Major', 'Series', 'Recontact']]
+    UA = UA[['FirstName', 'LastName', 'NetID', 'Email', 'College', 'Department', 'Major', 'Series', 'Recontact', 'SeriesSurveyID']]
 
-    nonUA['Major'] = None
+    
     nonUA['NetID'] = None
-    nonUA.columns = ['Email', 'FirstName', 'LastName', 'College', 'Department', 'Series', 'Recontact', 'Major', 'NetID', ]
-    nonUA = nonUA[['FirstName', 'LastName', 'NetID', 'Email', 'College', 'Department', 'Major', 'Series', 'Recontact']]
+    nonUA['College'] = None
+    nonUA['Department'] = None
+    nonUA['Major'] = None
+    #nonUA.columns = ['Email', 'FirstName', 'LastName', 'College', 'Department', 'Series', 'Recontact', 'Major', 'NetID', 'SeriesSurveyID' ]
+    nonUA = nonUA[['FirstName', 'LastName', 'NetID', 'Email', 'College', 'Department', 'Major', 'Series', 'Recontact', 'SeriesSurveyID']]
     
     logging.info("Uploading UA registrees")
     uploadRegistrees(UA, conn, cur)
