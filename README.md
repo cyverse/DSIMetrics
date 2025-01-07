@@ -307,7 +307,7 @@ Note: The responses will not be collected into the DSI Metrics System until the 
 
 ### Repository Breakdown
 
-The repo consists of 7 main folders:
+The repo consists of the following directories:
 * **budibaseDocker** - Holds the `docker-compose.yml` which launches a series of docker images for the Budibase website along with all other supporting files for Budibase to function. The docker container is what people access when they access the DSI Metrics website. https://dsi_metrics.cyverse.org
 * **initialUploads** - Single run scripts used to reinitialize the database with data manually grabbed from Spring 2024. Also contains Zoom attendance data that was manually downloaded. 
   * **initialZoomUpload_sp24.py** - script that will crawl over CSV files from Spring 2024 and add the data to the postgresql database.
@@ -315,8 +315,8 @@ The repo consists of 7 main folders:
 * **postgreSQLScripts** - Used in initial uploads to create functions used in the system and create the tables used in the database. Also includes common queries used in Budibase visualizations
 * **productionScripts** - Scripts that are automatically run by crontab on Linux. These scripts are responsible for the main automation of the system including fetching qualities and zoom data and listening from new series to be entered through Budibase
   * **zoomProcessAttendance.py** - this script is set to run automatically every hour on the 30 minute. It reaches out to the Zoom API and looks for the most recent Zoom meeting and pulls that data into the Postgresql database
-  * **seriesListener.py** - This script is run automatically by crontab every night at 2am. It is run from the `nightlySystemRestart.sh` shell script. ?????
-  * **seriesProcessing.py** - This script will scrape html text from a user defined URL that has information on DSI workshop series. (e.g., https://datascience.arizona.edu/events/navigating-world-data-engineering). It will add the information to the postgresql database. This script is called from the `seriesListener.py` script that is run nightly. 
+  * **seriesProcessing.py** - This script will scrape html text from a user defined URL that has information on DSI workshop series. (e.g., https://datascience.arizona.edu/events/navigating-world-data-engineering). It will add the information to the postgresql database. This script is called from the `seriesListener.py` script that is run nightly.
+  * **seriesListern.py** - When new series is added to the Budibase website, the listener gets a notification that a new series has been added. It then triggers the `seriesProcessing.py` script which goes to the DSI webstie url and scrapes workshop sessions for the series and populates it into the `workshops` table in the postgres database. The script is run nightly at 2am. 
   * **qualtricsDataProcessing.py** - The script runs automatically by crontab every hour on minute ten. It reaches out to Qualtrics API and pulls down workshop registration data and adds it to the postgresql database. 
 * **readMeImages** - The images used in this README
 * **unitTesting** - Initial testing and exploration code when first creating this system. Kept in the repo for future developers to use as a reference
@@ -345,6 +345,8 @@ The DSI-metric files are located in `/home/austinmedina`
 <br/>
 
 ### Crontab
+
+The DSI-metrics system deploys a series of python scripts 
 
 To view a list of cronjobs type the command `sudo crontab -l`
 
