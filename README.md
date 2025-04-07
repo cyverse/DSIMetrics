@@ -384,14 +384,18 @@ Definitions: Workshops are the actual events people will be attending, registeri
 1. While logged into UofA Wifi or the UofA VPN navigate to [Zoom OAUTH](https://cerberus.cyverse.org).
 2. Click on the button to allow OAuth.
 
-&emsp;&emsp;![image](https://github.com/cyverse/DSIMetrics/assets/146140831/9894f178-6540-4583-91c3-eea86b88ec6b)
+&emsp;&emsp;<img src="https://github.com/cyverse/DSIMetrics/assets/146140831/9894f178-6540-4583-91c3-eea86b88ec6b" alt="image" width="400">
+
+
 
 3. This button will redirect you to the Zoom website where you will need to authorize the system to access your Zoom information.
 4. Sign into your Zoom account as normal and click 'Allow'.
-![image](https://github.com/cyverse/DSIMetrics/assets/146140831/ac818663-38c6-44a6-b64a-c0e7add6a328)
+
+<img src="https://github.com/cyverse/DSIMetrics/assets/146140831/ac818663-38c6-44a6-b64a-c0e7add6a328" alt="image" width="400">
 
 6. Once you have clicked allow, you will be redirected to a page that will allow you to enter the Zoom Meeting IDs that you have access to, and wish for the software to be able to fetch participants from. These should be the Zoom meeting IDs for series that have already been created.
-![image](https://github.com/cyverse/DSIMetrics/assets/146140831/62cc53e7-41c1-4456-bc21-3c65e0523c1a)
+
+<img src="https://github.com/cyverse/DSIMetrics/assets/146140831/62cc53e7-41c1-4456-bc21-3c65e0523c1a" alt="image" width="400">
 
 8. You can enter as many meeting IDs as you wish. Enter them one at a time and click 'Submit' after each.
 9. Once done, exit the page and the keys for each meeting ID will be saved into the database.
@@ -446,7 +450,7 @@ Note: The responses will not be collected into the DSI Metrics System until the 
 1. To switch the owner of the Zoom API and Zoom App involves multiple steps and approvals from outside the UofA Data Science Institute.
 2. Navigate to the [Zoom Account Settings Page](https://arizona.zoom.us/account) and at the bottom left of the navigation bar under "Admin" select "Account Management" and then "Account Profile".
 
-<img src="https://github.com/cyverse/DSIMetrics/assets/146140831/e97be67a-6c77-4dbe-bcb5-da45a5f42edc" alt="image" width="500">
+<img src="https://github.com/cyverse/DSIMetrics/assets/146140831/e97be67a-6c77-4dbe-bcb5-da45a5f42edc" alt="image" width="300">
 
 3. Find your account owner listed on that page. Note: For UofA accounts, it should be malcolm@arizona.edu
 4. Send the account owner an email with the subject line: "Requesting Zoom Legacy App Access for Data Science Institute Project".
@@ -454,15 +458,15 @@ Note: The responses will not be collected into the DSI Metrics System until the 
 6. Once you have been approved to create a Zoom App go to the [Zoom Marketplace](https://marketplace.zoom.us/)
 7. In the top right-hand corner, select "Develop" and then "Legacy Zoom App". If you cannot select this application, it means you have not been given the proper access.
 
-<img src="https://github.com/cyverse/DSIMetrics/assets/146140831/19c1cf03-d65b-41cf-aa8a-a4b35559c93d" alt="image" width="500">
+<img src="https://github.com/cyverse/DSIMetrics/assets/146140831/19c1cf03-d65b-41cf-aa8a-a4b35559c93d" alt="image" width="400">
 
 8. For app type, select O-Auth.
 
-<img src="https://github.com/cyverse/DSIMetrics/assets/146140831/4b60b51d-ed62-46fd-a92b-4ac02cdc7246" alt="image" width="500">
+<img src="https://github.com/cyverse/DSIMetrics/assets/146140831/4b60b51d-ed62-46fd-a92b-4ac02cdc7246" alt="image" width="400">
 
 10. Enter the name as "DSI Metrics", select "User-Managed-App", and intend to publish as "No".
 
-<img src="https://github.com/cyverse/DSIMetrics/assets/146140831/d1ae92fe-6bdf-4f3d-9f24-6db771adb4fa" alt="image" width="500">
+<img src="https://github.com/cyverse/DSIMetrics/assets/146140831/d1ae92fe-6bdf-4f3d-9f24-6db771adb4fa" alt="image" width="400">
 
 12. Copy the Client ID and Client Secret.
 13. In a new tab go to the [DSI Metrics Page](dsi-metrics.cyverse.org) when logged in as a 'Power' user or above, and navigate to the 'System Variables' section using the navigation bar at the top.
