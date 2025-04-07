@@ -8,7 +8,7 @@
   <h1 align="center">Data Science Institute Metrics System</h1>
 </div>
 
-Documentation Created by Austin Medina, May 2024. Updated by Jeff Gillan, Nov. 2024
+Documentation Created by Austin Medina, May 2024. Updated by Jeff Gillan, Nov. 2024 and April 2025.
 
 <details>
   <summary>Table of Contents</summary>
@@ -58,7 +58,8 @@ Documentation Created by Austin Medina, May 2024. Updated by Jeff Gillan, Nov. 2
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-The Data Science Institute (DSI) Metrics System is an end-to-end solution for streamlining data collection and workshop management. It automatically fetches registration data from Qualtrics and attendance information from Zoom, cleans and processes the data, and uploads it to a Postgres database. The system offers front-end CRUD (create, read, update, delete) and visualization tools hosted using Budibase, allowing authorized users to interact directly with the database. The system is hosted on a virtual machine on the [Cyverse](https://cyverse.org/) network. Access to the system is restricted to authorized users due to University and FERPA regulations.
+Data Science Institute (DSI) Metrics (https://dsi-metrics.cyverse.org) is a software architecture that displays registrations and attendence of DSI educational workshops. It can automatically (and manually) fetch registration data from Qualtrics and attendance information from Zoom and upload into a Postgres database. The system offers front-end CRUD (create, read, update, delete) and visualization tools hosted using Budibase, allowing authorized users to interact directly with the database. The system is hosted on a virtual machine on the [Cyverse](https://cyverse.org/) network. Access to the system is restricted to authorized users due to University and FERPA regulations. Authorized users must be on the Uarizona network (or vpn) to access the visualization website at https://dsi-metrics.cyverse.org.
+
 ### Quick Links
 * [DSI Metrics System](https://dsi-metrics.cyverse.org)
 * [Zoom API authorization](https://cerberus.cyverse.org)
@@ -308,7 +309,7 @@ Note: The responses will not be collected into the DSI Metrics System until the 
 ### Repository Breakdown
 
 The repo consists of the following directories:
-* **budibaseDocker** - Holds the `docker-compose.yml` which launches a series of docker images for the Budibase website along with all other supporting files for Budibase to function. The docker container is what people access when they access the DSI Metrics website. https://dsi_metrics.cyverse.org
+* **budibaseDocker** - Holds the `docker-compose.yml` which launches a series of docker images for the Budibase website along with all other supporting files for Budibase to function. The docker container is what people access when they access the DSI Metrics website. https://dsi-metrics.cyverse.org
 * **initialUploads** - Single run scripts used to reinitialize the database with data manually grabbed from Spring 2024. Also contains Zoom attendance data that was manually downloaded. 
   * **initialZoomUpload_sp24.py** - script that will crawl over CSV files from Spring 2024 and add the data to the postgresql database.
   * **initialZoomUpload_f24.py** -script that will crawl over CSV files from Fall 2024 and add the data to the postgresql database. There are slight differences in colum titles which makes it necessary to have a different scripts from Fall and Spring 2024. 
