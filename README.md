@@ -60,6 +60,14 @@ Documentation Created by Austin Medina, May 2024. Updated by Jeff Gillan, Nov. 2
 ## About The Project
 Data Science Institute (DSI) Metrics (https://dsi-metrics.cyverse.org) is a software architecture that displays registrations and attendence of DSI educational workshops. It can automatically (and manually) fetch registration data from Qualtrics and attendance information from Zoom and upload into a Postgres database. The system offers front-end CRUD (create, read, update, delete) and visualization tools hosted using Budibase, allowing authorized users to interact directly with the database. The system is hosted on a virtual machine on the [Cyverse](https://cyverse.org/) network. Access to the system is restricted to authorized users due to University and FERPA regulations. Authorized users must be on the Uarizona network (or vpn) to access the visualization website at https://dsi-metrics.cyverse.org.
 
+<br>
+
+<a href="">
+  <img src="images/dsi-metrics-viz.png" alt="Logo" width="400">
+</a>
+
+
+
 ### Quick Links
 * [DSI Metrics System](https://dsi-metrics.cyverse.org)
 * [Zoom API authorization](https://cerberus.cyverse.org)
@@ -151,6 +159,7 @@ Definitions: Workshops are the actual events people will be attending, registeri
 ![image](https://github.com/cyverse/DSIMetrics/assets/146140831/1eac7771-db7f-47c6-97c0-8e9fda71fa41)
 
 4. Modify the contents of the cell as you wish and when done just click away from the table or navigate to a new tab and the information will automatically be updated.
+
 
 #### Deleting A Workshop
 1. Navigate to the workshops page using the navigation bar at the top of the app as described in step 1 of [Adding A Workshop](adding-a-workshop).
