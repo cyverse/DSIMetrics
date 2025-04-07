@@ -232,6 +232,7 @@ To access the data visualizations available to authorized users, click on the *D
 <img src="https://github.com/cyverse/DSIMetrics/assets/146140831/3300a9af-67fa-47c0-991b-d05551d173d3" alt="image" width="500">
 
 Once your password is reset, you will once more be prompted to log in using your new password. When you click login, you will be prompted to choose the app you want to access. Select DSI Metrics.
+
 <img src="https://github.com/cyverse/DSIMetrics/assets/146140831/98b42586-6b17-4a6d-a317-678c4782823a" alt="image" width="500">
 
 ### Accessing Metrics
@@ -327,44 +328,55 @@ Definitions: Workshops are the actual events people will be attending, registeri
 <img src="https://github.com/cyverse/DSIMetrics/assets/146140831/1d33f91c-8dca-4347-9151-fb2a96bf119e" alt="image" width="500">
 
 4. On the left side of the table select the checkbox of the item(s) you wish to delete and click the trash icon. ⚠️ THE ITEM WILL PERMANENTLY BE DELETED AND ALL REGISTRATION AND CHECK-IN DATA WITH IT.
-![image](https://github.com/cyverse/DSIMetrics/assets/146140831/15f3b06d-3046-4491-a899-e46d119fc08e)
+
+<img src="https://github.com/cyverse/DSIMetrics/assets/146140831/15f3b06d-3046-4491-a899-e46d119fc08e" alt="image" width="500">
 
 ### Users Walkthrough
 #### Adding A New User
 1. As an admin, traversing to the metrics website will take you to the following page:
-![image](https://github.com/cyverse/DSIMetrics/assets/146140831/5a0ce7c7-90c5-470f-a003-440ff2b1b347)
+
+<img src="https://github.com/cyverse/DSIMetrics/assets/146140831/5a0ce7c7-90c5-470f-a003-440ff2b1b347" alt="image" width="500">
 
 3. On this page select the users tab in the top left.
 4. On the users page click 'Add users'.
-![image](https://github.com/cyverse/DSIMetrics/assets/146140831/c7984a9d-c089-489b-a16d-731e0182bdf7)
+
+<img src="https://github.com/cyverse/DSIMetrics/assets/146140831/c7984a9d-c089-489b-a16d-731e0182bdf7" alt="image" width="500">
 
 5. Enter the email for the user you wish to add. You can add multiple by clicking '+ Add email'.
-![image](https://github.com/cyverse/DSIMetrics/assets/146140831/254ae6ad-3e84-4fab-bb5f-99b78bbaa1e0)
+
+<img src="https://github.com/cyverse/DSIMetrics/assets/146140831/254ae6ad-3e84-4fab-bb5f-99b78bbaa1e0" alt="image" width="500">
 
 6. For each user, select the appropriate access level. Currently, all pages can be accessed by basic users.
-![image](https://github.com/cyverse/DSIMetrics/assets/146140831/6e412dd1-c7d1-41f4-8cec-507518a8fe73)
 
-7. Once all emails have been added click the blue 'Add users' button.
-8. On the onboarding page select 'Generate passwords for each user.
-![image](https://github.com/cyverse/DSIMetrics/assets/146140831/368ece87-5432-41a7-b4fb-49154648c48a)
+<img src="https://github.com/cyverse/DSIMetrics/assets/146140831/6e412dd1-c7d1-41f4-8cec-507518a8fe73" alt="image" width="500">
 
-9. Distribute the passwords either by copying them or downloading the CSV.
-![image](https://github.com/cyverse/DSIMetrics/assets/146140831/86431f39-b557-4aeb-b15b-290ca405e44b)
+8. Once all emails have been added click the blue 'Add users' button.
+9. On the onboarding page select 'Generate passwords for each user.
 
-10. Next navigate back to the apps page and select 'DSI Metrics'.
-![image](https://github.com/cyverse/DSIMetrics/assets/146140831/f30de6e1-e2fa-4512-83b6-5748f8bbda2f)
+<img src="https://github.com/cyverse/DSIMetrics/assets/146140831/368ece87-5432-41a7-b4fb-49154648c48a" alt="image" width="500">
 
-11. In the top right select 'Users'. If you click the dropdown for each email, you can change their permissions for the DSI Metrics App. You need to select at least "Can use as Basic" for the user to be able to use the app.
-![image](https://github.com/cyverse/DSIMetrics/assets/146140831/3b1ce3d3-447e-4702-bb2b-c98a6a491bdc)
+10. Distribute the passwords either by copying them or downloading the CSV.
 
-12. The user is all set to access the DSI Metrics App.
+<img src="https://github.com/cyverse/DSIMetrics/assets/146140831/86431f39-b557-4aeb-b15b-290ca405e44b" alt="image" width="500">
+
+12. Next navigate back to the apps page and select 'DSI Metrics'.
+
+<img src="https://github.com/cyverse/DSIMetrics/assets/146140831/f30de6e1-e2fa-4512-83b6-5748f8bbda2f" alt="image" width="500">
+
+14. In the top right select 'Users'. If you click the dropdown for each email, you can change their permissions for the DSI Metrics App. You need to select at least "Can use as Basic" for the user to be able to use the app.
+
+<img src="https://github.com/cyverse/DSIMetrics/assets/146140831/3b1ce3d3-447e-4702-bb2b-c98a6a491bdc" alt="image" width="500">
+
+16. The user is all set to access the DSI Metrics App.
     
 #### Deleting A User
 1. To remove a user, navigate to the 'Users' page as an admin.
-![image](https://github.com/cyverse/DSIMetrics/assets/146140831/02e997a4-7911-477c-b4a4-182e70d8aea4)
+
+<img src="https://github.com/cyverse/DSIMetrics/assets/146140831/02e997a4-7911-477c-b4a4-182e70d8aea4" alt="image" width="500">
 
 3. Select the user using the checkbox on the left of the table and on the top right of the table click 'Delete User'.
-![image](https://github.com/cyverse/DSIMetrics/assets/146140831/8916e7d9-b928-42cf-9607-4c8092ad3723)
+
+<img src="https://github.com/cyverse/DSIMetrics/assets/146140831/8916e7d9-b928-42cf-9607-4c8092ad3723" alt="image" width="500">
 
 4. Confirm the deletion by clicking 'Delete' in the popup window and the user will be deleted from the system, and no longer have access to the DSI Metrics website.
 
@@ -434,40 +446,48 @@ Note: The responses will not be collected into the DSI Metrics System until the 
 1. To switch the owner of the Zoom API and Zoom App involves multiple steps and approvals from outside the UofA Data Science Institute.
 2. Navigate to the [Zoom Account Settings Page](https://arizona.zoom.us/account) and at the bottom left of the navigation bar under "Admin" select "Account Management" and then "Account Profile".
 
-![image](https://github.com/cyverse/DSIMetrics/assets/146140831/e97be67a-6c77-4dbe-bcb5-da45a5f42edc)
+<img src="https://github.com/cyverse/DSIMetrics/assets/146140831/e97be67a-6c77-4dbe-bcb5-da45a5f42edc" alt="image" width="500">
 
 3. Find your account owner listed on that page. Note: For UofA accounts, it should be malcolm@arizona.edu
 4. Send the account owner an email with the subject line: "Requesting Zoom Legacy App Access for Data Science Institute Project".
 5. In the body of the message include "I would like to be granted access to create a Legacy Zoom App for the Data Science Institute. One has already been approved for Austin Medina (austinmedina@arizona.edu) but we need to change the ownership of the app. I will be creating the same application, a user-managed app with OAuth, and the meeting:read:list_past_participants scope, just under a new Zoom account."
 6. Once you have been approved to create a Zoom App go to the [Zoom Marketplace](https://marketplace.zoom.us/)
 7. In the top right-hand corner, select "Develop" and then "Legacy Zoom App". If you cannot select this application, it means you have not been given the proper access.
-![image](https://github.com/cyverse/DSIMetrics/assets/146140831/19c1cf03-d65b-41cf-aa8a-a4b35559c93d)
+
+<img src="https://github.com/cyverse/DSIMetrics/assets/146140831/19c1cf03-d65b-41cf-aa8a-a4b35559c93d" alt="image" width="500">
 
 8. For app type, select O-Auth.
-![image](https://github.com/cyverse/DSIMetrics/assets/146140831/4b60b51d-ed62-46fd-a92b-4ac02cdc7246)
 
-9. Enter the name as "DSI Metrics", select "User-Managed-App", and intend to publish as "No".
-![image](https://github.com/cyverse/DSIMetrics/assets/146140831/d1ae92fe-6bdf-4f3d-9f24-6db771adb4fa)
+<img src="https://github.com/cyverse/DSIMetrics/assets/146140831/4b60b51d-ed62-46fd-a92b-4ac02cdc7246" alt="image" width="500">
 
-10. Copy the Client ID and Client Secret.
-11. In a new tab go to the [DSI Metrics Page](dsi-metrics.cyverse.org) when logged in as a 'Power' user or above, and navigate to the 'System Variables' section using the navigation bar at the top.
-12. Find the cells that say "zoom_client_id" and "zoom_client_secret" and select the cell to the right of it under "elementvalue". Enter the client ID and client secret in their respective fields and click anywhere outside the table to save the change.
-13. For any active series, the owner of those zooms must go back through [Authrozing a Zoom Meeting ID](#authorizing-a-zoom-meeting-id). If this step is not done in its entirety for every currently functioning and future Zoom meeting, the system will not be authorized to pull participants for those Zoom meetings and the attendances will not be updated.
-14. Navigating back to the Zoom Marketplace where you received your client keys, enter the "Redirect URL For OAuth" as: https://cerberus.cyverse.org/getAccess
-15. Fill out the rest of the page as shown:
-![image](https://github.com/cyverse/DSIMetrics/assets/146140831/464483e9-02d8-4b66-b413-4fa26e94b2dd)
+10. Enter the name as "DSI Metrics", select "User-Managed-App", and intend to publish as "No".
+
+<img src="https://github.com/cyverse/DSIMetrics/assets/146140831/d1ae92fe-6bdf-4f3d-9f24-6db771adb4fa" alt="image" width="500">
+
+12. Copy the Client ID and Client Secret.
+13. In a new tab go to the [DSI Metrics Page](dsi-metrics.cyverse.org) when logged in as a 'Power' user or above, and navigate to the 'System Variables' section using the navigation bar at the top.
+14. Find the cells that say "zoom_client_id" and "zoom_client_secret" and select the cell to the right of it under "elementvalue". Enter the client ID and client secret in their respective fields and click anywhere outside the table to save the change.
+15. For any active series, the owner of those zooms must go back through [Authrozing a Zoom Meeting ID](#authorizing-a-zoom-meeting-id). If this step is not done in its entirety for every currently functioning and future Zoom meeting, the system will not be authorized to pull participants for those Zoom meetings and the attendances will not be updated.
+16. Navigating back to the Zoom Marketplace where you received your client keys, enter the "Redirect URL For OAuth" as: https://cerberus.cyverse.org/getAccess
+17. Fill out the rest of the page as shown:
+
+<img src="https://github.com/cyverse/DSIMetrics/assets/146140831/464483e9-02d8-4b66-b413-4fa26e94b2dd" alt="image" width="500">
   
-16. Fill out the information page as shown below:
-![image](https://github.com/cyverse/DSIMetrics/assets/146140831/a3d672df-e38e-449c-99ae-685eff2971f6)
+19. Fill out the information page as shown below:
 
-17. In the "Developer Contact Information" section of the "Information" page, enter your name and your Arizona email that was given access to the Zoom legacy app.
-18. Ignore the "Feature" page and navigate to the "Scopes" page. On this page click "+ Add Scopes" and search for meeting:read:list_past_participants, then click done.
-![image](https://github.com/cyverse/DSIMetrics/assets/146140831/f65832c1-a44d-41e4-a7e3-ee3e73cbcd14)
-19. On the "Activation" page where it says "Add URL" copy the URL listed.
-20. On the virtual machine hosting the DSI Metrics System navigate to zoomApp/templates/credentials.html. On this page at the bottom on line 37 replace the URL with the URL you just copied:
-![image](https://github.com/cyverse/DSIMetrics/assets/146140831/79598d9a-0165-4e48-af8a-dda53aa86e72)
+<img src="https://github.com/cyverse/DSIMetrics/assets/146140831/a3d672df-e38e-449c-99ae-685eff2971f6" alt="image" width="500">
 
-21. With that everything should be updated for the Zoom App to be working. Verify by going to the [Zoom OAuth App](https://cerberus.cyverse.org) and going through the process of giving the app access to your account and then entering in a meetingID.
+21. In the "Developer Contact Information" section of the "Information" page, enter your name and your Arizona email that was given access to the Zoom legacy app.
+22. Ignore the "Feature" page and navigate to the "Scopes" page. On this page click "+ Add Scopes" and search for meeting:read:list_past_participants, then click done.
+
+<img src="https://github.com/cyverse/DSIMetrics/assets/146140831/f65832c1-a44d-41e4-a7e3-ee3e73cbcd14" alt="image" width="500">
+
+24. On the "Activation" page where it says "Add URL" copy the URL listed.
+25. On the virtual machine hosting the DSI Metrics System navigate to zoomApp/templates/credentials.html. On this page at the bottom on line 37 replace the URL with the URL you just copied:
+
+<img src="https://github.com/cyverse/DSIMetrics/assets/146140831/79598d9a-0165-4e48-af8a-dda53aa86e72" alt="image" width="500">
+
+27. With that everything should be updated for the Zoom App to be working. Verify by going to the [Zoom OAuth App](https://cerberus.cyverse.org) and going through the process of giving the app access to your account and then entering in a meetingID.
 
 <br/>
 <br/>
