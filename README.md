@@ -232,18 +232,23 @@ To access the data visualizations available to authorized users, click on the *D
 <img src="https://github.com/cyverse/DSIMetrics/assets/146140831/3300a9af-67fa-47c0-991b-d05551d173d3" alt="image" width="500">
 
 Once your password is reset, you will once more be prompted to log in using your new password. When you click login, you will be prompted to choose the app you want to access. Select DSI Metrics.
-![image](https://github.com/cyverse/DSIMetrics/assets/146140831/98b42586-6b17-4a6d-a317-678c4782823a)
+<img src="https://github.com/cyverse/DSIMetrics/assets/146140831/98b42586-6b17-4a6d-a317-678c4782823a" alt="image" width="500">
 
 ### Accessing Metrics
 After you click on the app you will be brought to the Metrics Page. On this page, you can select a semester and a year to get attendance information for the selected semester. The first box includes 3 graphs. The first is attendance over time for all workshops in that semester. The second is the total attendance and unique attendance for each workshop in that semester. The unique attendance is for each person who attended a workshop. If someone went to 3 weeks of workshops, they are counted 3 times in the total attendance but not the unique attendance. The final graph is a bar chart for registration information for the semester. The graph breaks down registration into people we were able to identify, not identify, those who registered, those who never attended, etc.
-![image](https://github.com/cyverse/DSIMetrics/assets/146140831/3be5dcdf-20d4-4deb-9446-9099f9a07dd4)
+
+<img src="https://github.com/cyverse/DSIMetrics/assets/146140831/3be5dcdf-20d4-4deb-9446-9099f9a07dd4" alt="image" width="500">
+
 
 If you scroll down you will find another drop down. This menu lets you select any workshop and will display the attendance over time and the workshop names/topics for each week.
-![image](https://github.com/cyverse/DSIMetrics/assets/146140831/6850530b-dce5-4516-8520-0e6a1aca3154)
+
+<img src="https://github.com/cyverse/DSIMetrics/assets/146140831/6850530b-dce5-4516-8520-0e6a1aca3154" alt="image" width="500">
 
 ### Exporting Recontact List
 This feature is only available on Chrome browsers due to javascript compatibility issues. At the top of the page, if you click 'Export Recontact Contact List' it will bring you to a table of every person who has listed they want to be recontacted on the registration form. By default, if they attend but never register, they are not considered for recontact. Once on this page, the system will automatically download a CSV file containing all of their emails for easy use.
-![image](https://github.com/cyverse/DSIMetrics/assets/146140831/b00e93de-7ac9-4d48-807b-e65db969e498)
+
+<img src="https://github.com/cyverse/DSIMetrics/assets/146140831/b00e93de-7ac9-4d48-807b-e65db969e498" alt="image" width="500">
+
 
 ### Series Walkthrough
 Definitions: In this software Series are the overarching collection of workshops. Every workshop will be associated with a series, with the ability for multiple workshops to be connected to one series. Having series' allows us to create one-off workshops, or a weekly workshop all a part of a series. Creating a series is the first step for any new workshop, regardless of the number of workshops occurring.
@@ -251,7 +256,9 @@ Definitions: In this software Series are the overarching collection of workshops
 :warning: IMPORTANT PREREQUISITES: BEFORE ANY SERIES CAN BE CREATED THERE MUST BE A QUALTRICS FORM ALREADY CREATED, A ZOOM MEETING ID ASSOCIATED WITH IT, AND A CALANDER PAGE SETUP ON THE DSI WEBSITE. IF NO CALANDER EVENT HAS BEEN CREATED THE WORKSHOPS' WILL NOT BE AUTOMATICALLY CREATED AND YOU WILL HAVE TO MANUALLY ENTER THEM. ANY OF THIS INFORMATION CAN BE CHANGED AT ANY TIME IF NECESSARY.
 
 On the navigation bar click 'Series'. The link will bring you to a page containing a form to create, modify, or delete a series, as well as a table to view all series currently in the system.
-![image](https://github.com/cyverse/DSIMetrics/assets/146140831/02161c42-c194-4c91-9216-350290bff0b0)
+
+<img src="https://github.com/cyverse/DSIMetrics/assets/146140831/02161c42-c194-4c91-9216-350290bff0b0" alt="image" width="500">
+
 
 #### Adding A Series
 To add a series you will need to fill out the corresponding information on the form
@@ -268,7 +275,8 @@ To add a series you will need to fill out the corresponding information on the f
 * SeriesYear - The year the workshop series is taking place
 
 Once all of the above information has been entered, select 'Save' and the Series will be added to the database. You should be able to see the new entry in the table below the form.
-![image](https://github.com/cyverse/DSIMetrics/assets/146140831/2d87b3b3-e9c3-4f08-8f5a-a90c12d2b044)
+
+<img src="https://github.com/cyverse/DSIMetrics/assets/146140831/2d87b3b3-e9c3-4f08-8f5a-a90c12d2b044" alt="image" width="500">
 
 #### Modifying A Series
 To modify a series, first go to the table at the bottom and find the SeriesID for the series you wish to modify. Next, enter the SeriesID to the form, this will automatically populate the form except for the start and end time which you will have to enter manually. Finally, once your modifications are complete, click 'Update'. To verify go to the table at the bottom and the changes should be present.
@@ -283,24 +291,31 @@ Definitions: Workshops are the actual events people will be attending, registeri
 
 #### Adding A Workshop
 1. First travel to the workshops page using the navigation bar at the top of the app.
-![image](https://github.com/cyverse/DSIMetrics/assets/146140831/48959515-6b19-423e-a8b9-2dada97f440e)
+
+<img src="https://github.com/cyverse/DSIMetrics/assets/146140831/48959515-6b19-423e-a8b9-2dada97f440e" alt="image" width="500">
+
 
 2. Next click the "+" in the top left corner of the table. This will let you interact directly with the table without the need for a form.
 3. Enter the seriesID, workshop name, and workshop date.
 4. If you do not know the seriesID, navigate to the series page, scroll to the table at the bottom, and click on the column header for series name. Here you can search for a workshop by name and find its associated ID on the left.
-![image](https://github.com/cyverse/DSIMetrics/assets/146140831/b31d6d71-76bf-45d8-963d-496386bbcba0)
+<img src="https://github.com/cyverse/DSIMetrics/assets/146140831/b31d6d71-76bf-45d8-963d-496386bbcba0" alt="image" width="500">
+
 
 5. Click the "Save" button to save the workshop into the database.
-![image](https://github.com/cyverse/DSIMetrics/assets/146140831/998ed150-dcc0-4dfd-a251-2533e56e2ffb)
+
+<img src="https://github.com/cyverse/DSIMetrics/assets/146140831/998ed150-dcc0-4dfd-a251-2533e56e2ffb" alt="image" width="500">
+
 
 
 #### Modifying A Workshop
 1. Travel to the workshops page using the navigation bar at the top of the app as described in step 1 of [Adding A Workshop](adding-a-workshop).
 2. Find the data item you wish to modify by scrolling through the table or clicking on a column header to search for a specific value.
-![image](https://github.com/cyverse/DSIMetrics/assets/146140831/1d33f91c-8dca-4347-9151-fb2a96bf119e)
+
+<img src="https://github.com/cyverse/DSIMetrics/assets/146140831/1d33f91c-8dca-4347-9151-fb2a96bf119e" alt="image" width="500">
 
 3. Double-click on the cell of the table you wish to modify Note: You cannot modify the workshopID.
-![image](https://github.com/cyverse/DSIMetrics/assets/146140831/1eac7771-db7f-47c6-97c0-8e9fda71fa41)
+
+<img src="https://github.com/cyverse/DSIMetrics/assets/146140831/1eac7771-db7f-47c6-97c0-8e9fda71fa41" alt="image" width="500">
 
 4. Modify the contents of the cell as you wish and when done just click away from the table or navigate to a new tab and the information will automatically be updated.
 
@@ -308,9 +323,10 @@ Definitions: Workshops are the actual events people will be attending, registeri
 #### Deleting A Workshop
 1. Navigate to the workshops page using the navigation bar at the top of the app as described in step 1 of [Adding A Workshop](adding-a-workshop).
 2. Find the data item you wish to modify by scrolling through the table or clicking on a column header to search for a specific value.
-![image](https://github.com/cyverse/DSIMetrics/assets/146140831/1d33f91c-8dca-4347-9151-fb2a96bf119e)
 
-3. On the left side of the table select the checkbox of the item(s) you wish to delete and click the trash icon. ⚠️ THE ITEM WILL PERMANENTLY BE DELETED AND ALL REGISTRATION AND CHECK-IN DATA WITH IT.
+<img src="https://github.com/cyverse/DSIMetrics/assets/146140831/1d33f91c-8dca-4347-9151-fb2a96bf119e" alt="image" width="500">
+
+4. On the left side of the table select the checkbox of the item(s) you wish to delete and click the trash icon. ⚠️ THE ITEM WILL PERMANENTLY BE DELETED AND ALL REGISTRATION AND CHECK-IN DATA WITH IT.
 ![image](https://github.com/cyverse/DSIMetrics/assets/146140831/15f3b06d-3046-4491-a899-e46d119fc08e)
 
 ### Users Walkthrough
