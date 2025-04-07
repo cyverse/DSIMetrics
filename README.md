@@ -123,7 +123,7 @@ The DSI-metric files are located in `/home/austinmedina/DataLabMetrtics`
 
 ## Crontab
 
-The DSI-metrics system deploys a series of python scripts that fetch registration data from Qualtrics and attendance data from Zoom. These scripts run automatically using crontab. 
+The DSI-metrics system deploys a series of python scripts that fetch registration data from Qualtrics and attendance data from Zoom. These scripts run automatically using crontab. **Currently, Zoom & Qualtrics automatic fetching is disabled**. 
 
 To view a list of cronjobs type the command `sudo crontab -l`
 
