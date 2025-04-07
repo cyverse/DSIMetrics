@@ -77,7 +77,7 @@ Data Science Institute (DSI) Metrics (https://dsi-metrics.cyverse.org) is a soft
 ## Software Architecture
 ### System Overview
 <a href="https://datascience.arizona.edu/">
-  <img src="images/DSI Metrics Software Architecture.png" alt="Logo">
+  <img src="images/DSI Metrics Software Architecture.png" alt="Logo" width="500">
 </a>
 
 ## Back End
