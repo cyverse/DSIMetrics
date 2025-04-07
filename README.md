@@ -86,7 +86,7 @@ This repository (https://github.com/cyverse/DSImetrics) is cloned onto the Cyver
 
 The repository consists of the following directories:
 * **budibaseDocker** - Holds the `docker-compose.yml` which launches a series of docker images for the Budibase website along with all other supporting files for Budibase to function. The docker container is what people access when they access the DSI Metrics website. https://dsi-metrics.cyverse.org
-* **initialUploads** - Single run scripts used to reinitialize the database with data manually grabbed from Spring 2024. Also contains Zoom attendance data that was manually downloaded. 
+* **initialUploads** - Single run scripts that will crawl over locally downloaded CSV files for Zoom attendance and Qualtrics registrations. They will extract data from the CSVs and input into Posgresql database. ❗❗❗Use this scripts ❗❗❗
   * **initialZoomUpload_sp24.py** - script that will crawl over CSV files from Spring 2024 and add the data to the postgresql database.
   * **initialZoomUpload_f24.py** -script that will crawl over CSV files from Fall 2024 and add the data to the postgresql database. There are slight differences in colum titles which makes it necessary to have a different scripts from Fall and Spring 2024.
   * **initialQualtricsProcessing.py** - script that will crawl over Qualtrics CSVs for workshop registrations and add the data to the postgresql database. 
