@@ -63,7 +63,7 @@ Data Science Institute (DSI) Metrics (https://dsi-metrics.cyverse.org) is a soft
 <br>
 
 <a href="">
-  <img src="images/dsi-metrics-viz.png" alt="Logo" width="400">
+  <img src="images/dsi-metrics_viz.png" alt="Logo" width="400">
 </a>
 
 
