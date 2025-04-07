@@ -82,6 +82,8 @@ Data Science Institute (DSI) Metrics (https://dsi-metrics.cyverse.org) is a soft
 
 ## Repository Breakdown
 
+This repository (https://github.com/cyverse/DSImetrics) is cloned onto the Cyverse production server (cerberus) but it is called `DataLabMetrtics` for some reason. It should probably be changed to `DSImetrics` but I'm afraid things will break. 
+
 The repository consists of the following directories:
 * **budibaseDocker** - Holds the `docker-compose.yml` which launches a series of docker images for the Budibase website along with all other supporting files for Budibase to function. The docker container is what people access when they access the DSI Metrics website. https://dsi-metrics.cyverse.org
 * **initialUploads** - Single run scripts used to reinitialize the database with data manually grabbed from Spring 2024. Also contains Zoom attendance data that was manually downloaded. 
@@ -114,7 +116,7 @@ DSI-metric website (budibase), postgresql database, and all scripts are hosted o
 
 You will be prompted for your Cyverse password.
 
-The DSI-metric files are located in `/home/austinmedina`
+The DSI-metric files are located in `/home/austinmedina/DataLabMetrtics`
 
 <br/>
 <br/>
