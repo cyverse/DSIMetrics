@@ -80,11 +80,9 @@ Data Science Institute (DSI) Metrics (https://dsi-metrics.cyverse.org) is a soft
   <img src="images/DSI Metrics Software Architecture.png" alt="Logo" width="500">
 </a>
 
-## Back End
+## Repository Breakdown
 
-### Repository Breakdown
-
-The repo consists of the following directories:
+The repository consists of the following directories:
 * **budibaseDocker** - Holds the `docker-compose.yml` which launches a series of docker images for the Budibase website along with all other supporting files for Budibase to function. The docker container is what people access when they access the DSI Metrics website. https://dsi-metrics.cyverse.org
 * **initialUploads** - Single run scripts used to reinitialize the database with data manually grabbed from Spring 2024. Also contains Zoom attendance data that was manually downloaded. 
   * **initialZoomUpload_sp24.py** - script that will crawl over CSV files from Spring 2024 and add the data to the postgresql database.
@@ -108,9 +106,9 @@ The repo consists of the following directories:
 <br/>
 <br/>
 
-### Website and Database Hosting
+## Website and Database Hosting
 
-DSI-metric website (budibase), postgresql database, and all scripts are hosted on a Cyverse VM. To access the VM, you need to be added by Andy Edmonds
+DSI-metric website (budibase), postgresql database, and all scripts are hosted on a Cyverse VM. This respository is synced to that VM. To access the VM, you need to be added by Andy Edmonds
 
 `ssh -p 1657 <cyverse_user_name>@cerberus.cyverse.org`
 
@@ -121,9 +119,9 @@ The DSI-metric files are located in `/home/austinmedina`
 <br/>
 <br/>
 
-### Crontab
+## Crontab
 
-The DSI-metrics system deploys a series of python scripts 
+The DSI-metrics system deploys a series of python scripts that fetch registration data from Qualtrics and attendance data from Zoom. These scripts run automatically using crontab. 
 
 To view a list of cronjobs type the command `sudo crontab -l`
 
@@ -153,10 +151,10 @@ Current behavior for `zoomProcessingAttendance.py`: If a workshop is scheduled t
 <br/>
 <br/>
 
-### PostgreSQL
+## PostgreSQL
 
 
-#### Database Schema
+### Database Schema
 <a href="">
   <img src="images/DSI Metrics DB Schema.png" alt="Logo">
 </a>
